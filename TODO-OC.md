@@ -8,7 +8,7 @@ machine learning ([predicting risk from clinician notes](https://doi.org/10.1371
 natural language chatbots ([virtual dog playing fetch](https://www.youtube.com/watch?v=FEmpGRLwbqE)) and more.
 This project was pioneered by [Dr. Ben Goertzel](https://en.wikipedia.org/wiki/Ben_Goertzel).
 
-https://github.com/orgs/opencog/repositories?type=all
+🔄 **Automated Repository Discovery**: This document is automatically updated with repository information from https://github.com/orgs/opencog/repositories using GitHub Actions.
 
 Git repos fall into four categories:
 
@@ -61,6 +61,73 @@ These are the immature, incomplete, promising projects that haven't taken off ye
 * [SpaceTime](https://github.com/opencog/spacetime) - Octree spatial bounding boxes and time intervals in Atomese.
 
 # HELP WANTED
+
+## 🔗 Integration Framework
+
+This repository now includes a hybrid integration framework combining:
+- **OpenCog**: Cognitive architecture and reasoning system
+- **ElizaOS**: Multi-agent development and deployment framework  
+- **GnuCash**: Financial management and accounting software
+
+### 🤖 Automated Repository Discovery
+Daily GitHub Actions discover and catalog repositories from:
+- [OpenCog Organization](https://github.com/orgs/opencog/repositories)
+- [ElizaOS Organization](https://github.com/orgs/elizaOS/repositories)
+
+Feature checklists and integration plans are automatically generated. See [Integration Documentation](docs/integration/README.md).
+
+## 🚀 Integration Development Priorities
+
+### Core Infrastructure
+- AtomSpace performance optimization and ElizaOS integration
+- Distributed processing enhancements for multi-agent coordination
+- Cross-language binding improvements (Python, JavaScript, Scheme)
+- Integration testing frameworks for hybrid architectures
+
+### Cognitive-Financial Integration
+- **Fractal Architecture**: GnuCash data → OpenCog reasoning → ElizaOS agents
+- **Pattern Recognition**: Financial behavior analysis using AtomSpace
+- **Predictive Reasoning**: PLN-based financial forecasting
+- **Intelligent Automation**: Multi-agent financial management
+
+### Bridge Implementations
+- **ElizaOS-OpenCog Bridge**: AtomSpace providers, CogServer actions, PLN reasoning
+- **OpenCog-GnuCash Bridge**: Financial data representation, cognitive analysis
+- **ElizaOS-GnuCash Bridge**: Financial agents, conversation interfaces, automation
+
+### Research Areas
+- Hyperon-AtomSpace compatibility layers
+- Advanced reasoning algorithms for financial domains
+- Multi-modal learning systems combining financial and conversational data
+- Real-time cognitive architectures for financial decision-making
+
+## 💡 Implementation Components
+
+### Intelligent Financial Agents
+- **Transaction Categorizer**: AI-powered automatic transaction classification
+- **Expense Analyzer**: Pattern recognition for spending behavior analysis
+- **Budget Optimizer**: Cognitive budget planning and optimization
+- **Investment Advisor**: Multi-agent portfolio analysis and recommendations
+- **Financial Assistant**: Natural language interface for financial queries
+- **Alert Manager**: Smart notification system using cognitive reasoning
+
+### Cognitive Architecture
+```
+ElizaOS Agents (User Interface)
+├── Conversational Financial Agents
+├── Analysis and Reporting Agents
+└── Automation and Alert Agents
+    ↓ Plugin Interface
+OpenCog Reasoning (Cognitive Layer)  
+├── AtomSpace Knowledge Representation
+├── PLN Financial Pattern Recognition
+└── CogServer Distributed Processing
+    ↓ Data Interface
+GnuCash Storage (Data Layer)
+├── Account Structures and Hierarchies
+├── Transaction Records and History
+└── Financial Reports and Analytics
+```
 The above-mentioned commercial projects don't pay the bills. There are far more ideas
 and possibilities than there is time or money. If you're a software developer, bored
 and looking for something to do, there's a lot of great stuff here that is worthy of

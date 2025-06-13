@@ -194,3 +194,14 @@ messages.mo
 /.settings/
 /build/
 *.LCK
+
+# Integration Framework
+.env
+data/repositories/*.json
+docs/integration/*_features.md
+__pycache__/
+*.egg-info/
+.pytest_cache/
+node_modules/
+dist/
+.DS_Store

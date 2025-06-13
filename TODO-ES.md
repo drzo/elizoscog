@@ -248,6 +248,97 @@ Once Eliza is running, access the modern web interface at http://localhost:3000.
 
 
 
+## 🧠 OpenCog-GnuCash Hybrid Integration
+
+This repository implements a revolutionary **fractal integration framework** combining:
+- **ElizaOS**: Multi-agent development and deployment framework
+- **OpenCog**: Cognitive architecture and reasoning system  
+- **GnuCash**: Financial management and accounting software
+
+### 🤖 Automated Repository Discovery
+Daily GitHub Actions discover repositories from [OpenCog](https://github.com/orgs/opencog/repositories) and [ElizaOS](https://github.com/orgs/elizaOS/repositories) organizations, generating feature checklists and integration plans automatically.
+
+### 🏗️ Three-Layer Fractal Architecture
+
+```
+┌─────────────────────────────────────────────────┐
+│                ElizaOS Layer                    │
+│  ┌─────────────┐ ┌─────────────┐ ┌─────────────┐│
+│  │   Agents    │ │   Actions   │ │   Clients   ││
+│  └─────────────┘ └─────────────┘ └─────────────┘│
+└─────────────────────┬───────────────────────────┘
+                      │ Cognitive Interface
+┌─────────────────────▼───────────────────────────┐
+│              OpenCog Layer                      │
+│  ┌─────────────┐ ┌─────────────┐ ┌─────────────┐│
+│  │ AtomSpace   │ │     PLN     │ │ CogServer   ││
+│  └─────────────┘ └─────────────┘ └─────────────┘│
+└─────────────────────┬───────────────────────────┘
+                      │ Data Intelligence
+┌─────────────────────▼───────────────────────────┐
+│               GnuCash Layer                     │
+│  ┌─────────────┐ ┌─────────────┐ ┌─────────────┐│
+│  │  Accounts   │ │Transactions │ │   Reports   ││
+│  └─────────────┘ └─────────────┘ └─────────────┘│
+└─────────────────────────────────────────────────┘
+```
+
+### 💰 Intelligent Financial Management
+
+#### Cognitive Financial Agents
+- **Transaction Categorizer**: AI-powered automatic transaction classification
+- **Expense Analyzer**: Pattern recognition for spending behavior analysis  
+- **Budget Optimizer**: Cognitive budget planning and goal optimization
+- **Investment Advisor**: Multi-agent portfolio analysis and recommendations
+- **Financial Assistant**: Natural language interface for financial queries
+- **Alert Manager**: Smart notification system using cognitive reasoning
+
+#### Fractal Intelligence Principles
+- **Self-Similarity**: Individual transactions → Account patterns → Portfolio behavior
+- **Emergent Cognition**: Simple rules → Complex patterns → Intelligent insights
+- **Recursive Processing**: Data → Information → Knowledge → Wisdom
+
+### 🔧 Implementation Status
+
+#### Bridge Components
+- [x] **ElizaOS-OpenCog Bridge**: AtomSpace providers, CogServer actions, PLN reasoning
+- [x] **OpenCog-GnuCash Bridge**: Financial data representation, cognitive analysis  
+- [x] **ElizaOS-GnuCash Bridge**: Financial agents, conversation interfaces, automation
+- [x] **Integration Framework**: Automated discovery, documentation, testing
+
+#### Development Roadmap
+- **Phase 1 (Q2 2025)**: Core infrastructure and basic integration
+- **Phase 2 (Q3 2025)**: Cognitive financial analysis and agent coordination
+- **Phase 3 (Q4 2025)**: Advanced reasoning and natural language interfaces
+- **Phase 4 (Q1 2026)**: Production optimization and scaling
+
+See [Integration Roadmap](docs/integration/roadmap.md) for detailed milestones.
+
+### 🚀 Getting Started
+
+```bash
+# Install dependencies
+pip install -r requirements.txt
+npm install
+
+# Run repository discovery
+python scripts/discover_repos.py opencog
+python scripts/discover_repos.py elizaOS
+
+# Generate integration documentation  
+python scripts/generate_checklists.py
+python scripts/update_docs.py
+
+# Initialize hybrid framework
+python src/bridges/elizaos_opencog.py
+```
+
+### 📖 Documentation
+- [Integration Overview](docs/integration/README.md)
+- [Development Roadmap](docs/integration/roadmap.md) 
+- [Repository Feature Analysis](docs/integration/)
+- [Bridge Implementation Guides](src/bridges/)
+
 ## Citation
 
 We now have a [paper](https://arxiv.org/pdf/2501.06781) you can cite for the Eliza OS:
