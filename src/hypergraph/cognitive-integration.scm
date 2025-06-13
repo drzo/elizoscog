@@ -435,8 +435,9 @@
 ;; Export main functions
 (export cognitive-integration-blueprint
         integrate-opencog-elizaos-gnucash
-        make-repo-spec repo-spec?
+        make-repo-spec repo-spec? repo-spec-path repo-spec-type repo-spec-metadata
         integration-state? 
         integration-state-repositories integration-state-hypergraph
         integration-state-hybrid-api integration-state-adapted-features
-        integration-state-agents)
+        integration-state-agents
+        create-unified-hybrid-api create-unified-data-model)

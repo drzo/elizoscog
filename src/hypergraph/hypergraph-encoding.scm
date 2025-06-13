@@ -18,7 +18,7 @@
   (type hypernode-type)           ; 'Feature, 'HybridAgent, 'Repository, etc.
   (content hypernode-content)     ; The actual feature or content
   (attributes hypernode-attributes) ; Metadata and annotations
-  (hyperedges hypernode-hyperedges)) ; Connected hyperedges
+  (hyperedges hypernode-hyperedges set-hypernode-hyperedges!)) ; Connected hyperedges
 
 ;; Hyperedge record type  
 (define-record-type <hyperedge>
@@ -34,9 +34,9 @@
 (define-record-type <hypergraph>
   (make-hypergraph nodes edges next-id)
   hypergraph?
-  (nodes hypergraph-nodes)        ; Hash table of hypernode-id -> hypernode
-  (edges hypergraph-edges)        ; Hash table of hyperedge-id -> hyperedge  
-  (next-id hypergraph-next-id))   ; Counter for unique IDs
+  (nodes hypergraph-nodes set-hypergraph-nodes!)      ; Hash table of hypernode-id -> hypernode
+  (edges hypergraph-edges set-hypergraph-edges!)      ; Hash table of hyperedge-id -> hyperedge  
+  (next-id hypergraph-next-id set-hypergraph-next-id!)) ; Counter for unique IDs
 
 ;; Core hypergraph operations as specified in the blueprint
 

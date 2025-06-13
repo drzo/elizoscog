@@ -1,0 +1,370 @@
+{
+  "organization": "opencog",
+  "total_repositories": 68,
+  "generated_at": "2025-06-13T22:09:02.819388",
+  "repositories": {
+    "atomspace": {
+      "features": {
+        "basic_info": {
+          "name": "atomspace",
+          "description": "The OpenCog (hyper-)graph database and graph rewriting system",
+          "url": "https://github.com/opencog/atomspace",
+          "stargazers_count": 800,
+          "forks_count": 200,
+          "archived": false
+        },
+        "languages": {
+          "C++": 70,
+          "Scheme": 25,
+          "Python": 5
+        },
+        "structure": {
+          "has_cmake": true,
+          "has_readme": true,
+          "has_ci": true
+        }
+      },
+      "checklist": {
+        "priority": "high",
+        "elizaos_integration": {
+          "assessment": {
+            "score": 85,
+            "integration_type": "core_component"
+          },
+          "tasks": [
+            "Create Python-AtomSpace bridge for ElizaOS",
+            "Implement agent subprocess communication",
+            "Add TypeScript bindings",
+            "Create comprehensive test suite"
+          ]
+        },
+        "opencog_integration": {
+          "assessment": {
+            "score": 100,
+            "integration_type": "native"
+          },
+          "tasks": [
+            "Core component - no integration needed"
+          ]
+        },
+        "gnucash_integration": {
+          "assessment": {
+            "score": 40,
+            "integration_type": "data_layer"
+          },
+          "tasks": [
+            "Create financial data adapter",
+            "Implement account structure mapping"
+          ]
+        }
+      }
+    },
+    "cogserver": {
+      "features": {
+        "basic_info": {
+          "name": "cogserver",
+          "description": "Distributed AtomSpace Network Server",
+          "url": "https://github.com/opencog/cogserver",
+          "stargazers_count": 120,
+          "forks_count": 45,
+          "archived": false
+        },
+        "languages": {
+          "C++": 80,
+          "Scheme": 20
+        },
+        "structure": {
+          "has_cmake": true,
+          "has_readme": true
+        }
+      },
+      "checklist": {
+        "priority": "high",
+        "elizaos_integration": {
+          "assessment": {
+            "score": 75,
+            "integration_type": "service_layer"
+          },
+          "tasks": [
+            "Create CogServer connector plugin for ElizaOS",
+            "Implement network communication protocols",
+            "Add agent authentication and authorization"
+          ]
+        }
+      }
+    },
+    "pln": {
+      "features": {
+        "basic_info": {
+          "name": "pln",
+          "description": "Probabilistic Logic Networks reasoning engine",
+          "url": "https://github.com/opencog/pln",
+          "stargazers_count": 200,
+          "forks_count": 80,
+          "archived": true
+        },
+        "languages": {
+          "Scheme": 60,
+          "C++": 40
+        },
+        "structure": {
+          "has_readme": true
+        }
+      },
+      "checklist": {
+        "priority": "medium",
+        "elizaos_integration": {
+          "assessment": {
+            "score": 60,
+            "integration_type": "reasoning_engine"
+          },
+          "tasks": [
+            "Port PLN reasoning to ElizaOS actions",
+            "Create probabilistic reasoning interfaces"
+          ]
+        }
+      }
+    },
+    "ure": {
+      "features": {
+        "basic_info": {
+          "name": "ure",
+          "description": "Unified Rule Engine for automated reasoning",
+          "url": "https://github.com/opencog/ure",
+          "stargazers_count": 95,
+          "forks_count": 35,
+          "archived": true
+        },
+        "languages": {
+          "Scheme": 70,
+          "C++": 30
+        },
+        "structure": {
+          "has_readme": true
+        }
+      },
+      "checklist": {
+        "priority": "medium",
+        "elizaos_integration": {
+          "assessment": {
+            "score": 65,
+            "integration_type": "rule_engine"
+          },
+          "tasks": [
+            "Convert URE rules to ElizaOS evaluators",
+            "Implement automated reasoning workflows"
+          ]
+        }
+      }
+    },
+    "miner": {
+      "features": {
+        "basic_info": {
+          "name": "miner",
+          "description": "Frequent and surprising subhypergraph pattern miner",
+          "url": "https://github.com/opencog/miner",
+          "stargazers_count": 45,
+          "forks_count": 15,
+          "archived": false
+        },
+        "languages": {
+          "Scheme": 80,
+          "C++": 20
+        },
+        "structure": {
+          "has_readme": true
+        }
+      },
+      "checklist": {
+        "priority": "medium",
+        "elizaos_integration": {
+          "assessment": {
+            "score": 55,
+            "integration_type": "pattern_mining"
+          },
+          "tasks": [
+            "Create pattern mining actions for ElizaOS",
+            "Implement knowledge discovery workflows"
+          ]
+        },
+        "gnucash_integration": {
+          "assessment": {
+            "score": 35,
+            "integration_type": "financial_patterns"
+          },
+          "tasks": [
+            "Mine financial transaction patterns",
+            "Discover spending behavior insights"
+          ]
+        }
+      }
+    },
+    "learn": {
+      "features": {
+        "basic_info": {
+          "name": "learn",
+          "description": "Neuro-symbolic interpretation learning",
+          "url": "https://github.com/opencog/learn",
+          "stargazers_count": 85,
+          "forks_count": 25,
+          "archived": false
+        },
+        "languages": {
+          "Scheme": 60,
+          "C++": 40
+        },
+        "structure": {
+          "has_readme": true
+        }
+      },
+      "checklist": {
+        "priority": "medium",
+        "elizaos_integration": {
+          "assessment": {
+            "score": 70,
+            "integration_type": "learning_system"
+          },
+          "tasks": [
+            "Integrate learning algorithms into ElizaOS",
+            "Create adaptive agent behaviors"
+          ]
+        }
+      }
+    },
+    "attention": {
+      "features": {
+        "basic_info": {
+          "name": "attention",
+          "description": "OpenCog Attention Allocation Subsystem",
+          "url": "https://github.com/opencog/attention",
+          "stargazers_count": 65,
+          "forks_count": 20,
+          "archived": false
+        },
+        "languages": {
+          "C++": 70,
+          "Scheme": 30
+        },
+        "structure": {
+          "has_readme": true,
+          "has_cmake": true
+        }
+      },
+      "checklist": {
+        "priority": "medium",
+        "elizaos_integration": {
+          "assessment": {
+            "score": 60,
+            "integration_type": "attention_system"
+          },
+          "tasks": [
+            "Implement attention mechanisms in ElizaOS",
+            "Create focus and priority management"
+          ]
+        }
+      }
+    },
+    "relex": {
+      "features": {
+        "basic_info": {
+          "name": "relex",
+          "description": "English Dependency Relationship Extractor",
+          "url": "https://github.com/opencog/relex",
+          "stargazers_count": 110,
+          "forks_count": 40,
+          "archived": false
+        },
+        "languages": {
+          "Java": 70,
+          "Scheme": 20,
+          "Python": 10
+        },
+        "structure": {
+          "has_readme": true
+        }
+      },
+      "checklist": {
+        "priority": "medium",
+        "elizaos_integration": {
+          "assessment": {
+            "score": 75,
+            "integration_type": "nlp_processing"
+          },
+          "tasks": [
+            "Create RelEx plugin for ElizaOS NLP pipeline",
+            "Implement dependency parsing actions"
+          ]
+        }
+      }
+    },
+    "link-grammar": {
+      "features": {
+        "basic_info": {
+          "name": "link-grammar",
+          "description": "The CMU Link Grammar natural language parser",
+          "url": "https://github.com/opencog/link-grammar",
+          "stargazers_count": 300,
+          "forks_count": 100,
+          "archived": false
+        },
+        "languages": {
+          "C": 80,
+          "Python": 15,
+          "Java": 5
+        },
+        "structure": {
+          "has_readme": true,
+          "has_makefile": true
+        }
+      },
+      "checklist": {
+        "priority": "high",
+        "elizaos_integration": {
+          "assessment": {
+            "score": 80,
+            "integration_type": "nlp_core"
+          },
+          "tasks": [
+            "Create Link Grammar bindings for ElizaOS",
+            "Implement syntactic parsing actions",
+            "Add natural language understanding"
+          ]
+        }
+      }
+    }
+  },
+  "summary": {
+    "by_language": {
+      "C++": 6,
+      "Scheme": 9,
+      "Python": 4,
+      "Java": 2,
+      "C": 1
+    },
+    "by_priority": {
+      "high": 3,
+      "medium": 6,
+      "low": 0
+    },
+    "integration_candidates": {
+      "elizaos": [
+        "atomspace",
+        "cogserver",
+        "link-grammar",
+        "relex",
+        "learn"
+      ],
+      "opencog": [
+        "atomspace",
+        "cogserver",
+        "pln",
+        "ure",
+        "miner"
+      ],
+      "gnucash": [
+        "miner",
+        "atomspace"
+      ]
+    }
+  }
+}

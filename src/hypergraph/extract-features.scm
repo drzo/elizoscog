@@ -8,7 +8,8 @@
              (ice-9 regex) 
              (ice-9 textual-ports)
              (srfi srfi-1)
-             (srfi srfi-9))
+             (srfi srfi-9)
+             (ice-9 threads))
 
 ;; Feature record type
 (define-record-type <feature>
@@ -55,30 +56,28 @@
 ;; Repository traversal
 (define (traverse-repository state)
   "Recursively traverse repository and extract features"
-  (define (visit-file filename stat result)
-    (if (regular-file? stat)
-        (let ((language (detect-file-language filename)))
-          (if (not (eq? language 'unknown))
-              (let ((new-features (parse-file filename language)))
-                (make-repo-state
-                  (repo-state-path state)
-                  (append (repo-state-features state) new-features)
-                  filename))
-              state))
-        state))
-  
-  (define (visit-directory dirname stat result)
-    ;; Skip hidden directories and common build/dependency directories
-    (not (or (string-prefix? "." (basename dirname))
-             (string-suffix? "/.git" dirname)
-             (string-suffix? "/node_modules" dirname)
-             (string-suffix? "/build" dirname)
-             (string-suffix? "/__pycache__" dirname))))
-  
-  (file-system-fold visit-file visit-directory
-                    (lambda (dirname stat errno result) result)
-                    state
-                    (repo-state-path state)))
+  ;; Use a simpler approach that definitely works
+  (let ((dir-contents (scandir (repo-state-path state))))
+    (if dir-contents
+        (fold (lambda (entry state-acc)
+                (let ((full-path (string-append (repo-state-path state-acc) "/" entry)))
+                  (if (and (file-exists? full-path)
+                           (not (string-prefix? "." entry)))
+                      (let ((stat (lstat full-path)))
+                        (if (eq? (stat:type stat) 'regular)
+                            (let ((language (detect-file-language full-path)))
+                              (if (not (eq? language 'unknown))
+                                  (let ((new-features (parse-file full-path language)))
+                                    (make-repo-state
+                                      (repo-state-path state-acc)
+                                      (append (repo-state-features state-acc) new-features)
+                                      full-path))
+                                  state-acc))
+                            state-acc))
+                      state-acc)))
+              state
+              dir-contents)
+        state)))
 
 ;; Language-specific parsing
 (define (parse-file filename language)
@@ -127,16 +126,19 @@
                            features)))))
               ((define-module)
                (when (> (length expr) 1)
-                 (set! features
-                   (cons (make-feature
-                           (symbol->string (cadr expr))
-                           'module
-                           'scheme
-                           filename
-                           line-number
-                           '()
-                           `((module-name . ,(cadr expr))))
-                         features))))
+                 (let ((module-name (cadr expr)))
+                   (set! features
+                     (cons (make-feature
+                             (if (symbol? module-name)
+                                 (symbol->string module-name)
+                                 (format #f "~a" module-name))
+                             'module
+                             'scheme
+                             filename
+                             line-number
+                             '()
+                             `((module-name . ,module-name)))
+                           features)))))
               ((define-record-type)
                (when (> (length expr) 1)
                  (set! features
@@ -330,4 +332,7 @@
         feature-name feature-type feature-language feature-file feature-line
         feature-dependencies feature-metadata
         filter-features features-by-language features-by-type
-        feature-summary)
+        feature-summary
+        detect-file-language parse-file
+        make-repo-state repo-state? repo-state-path repo-state-features
+        traverse-repository)
