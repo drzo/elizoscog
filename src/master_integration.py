@@ -323,144 +323,194 @@ class HybridCognitiveFinancialFramework:
                 logger.warning(f"    {translator_name}: ❌ {e}")
     
     # Message routing methods
-    async def _route_elizaos_to_opencog(self, message: Dict) -> Dict:
-        """Route message from ElizaOS to OpenCog"""
-        return {'status': 'routed', 'target': 'opencog', 'timestamp': datetime.now().isoformat()}
+    async def _route_elizaos_to_opencog(self, message: Dict[str, Any]) -> Dict[str, Any]:
+        """Route messages from ElizaOS to OpenCog"""
+        translated_message = await self._translate_agent_to_atom(message)
+        
+        # Send to OpenCog AtomSpace
+        result = {
+            'status': 'routed_to_opencog',
+            'original_message': message,
+            'atomspace_format': translated_message,
+            'processing_node': 'opencog_atomspace'
+        }
+        
+        logger.info(f"Routed ElizaOS message to OpenCog: {message.get('type', 'unknown')}")
+        return result
     
-    async def _route_opencog_to_elizaos(self, message: Dict) -> Dict:
-        """Route message from OpenCog to ElizaOS"""
-        return {'status': 'routed', 'target': 'elizaos', 'timestamp': datetime.now().isoformat()}
+    async def _route_opencog_to_elizaos(self, atom_data: Dict[str, Any]) -> Dict[str, Any]:
+        """Route atom data from OpenCog to ElizaOS"""
+        translated_data = await self._translate_atom_to_agent(atom_data)
+        
+        result = {
+            'status': 'routed_to_elizaos',
+            'original_atom': atom_data,
+            'agent_format': translated_data,
+            'processing_node': 'elizaos_agent'
+        }
+        
+        logger.info(f"Routed OpenCog atom to ElizaOS: {atom_data.get('type', 'unknown')}")
+        return result
     
-    async def _route_elizaos_to_gnucash(self, message: Dict) -> Dict:
-        """Route message from ElizaOS to GnuCash"""
-        return {'status': 'routed', 'target': 'gnucash', 'timestamp': datetime.now().isoformat()}
+    async def _route_elizaos_to_gnucash(self, agent_data: Dict[str, Any]) -> Dict[str, Any]:
+        """Route agent data to GnuCash operations"""
+        financial_data = await self._translate_agent_to_financial(agent_data)
+        
+        result = {
+            'status': 'routed_to_gnucash',
+            'original_data': agent_data,
+            'financial_format': financial_data,
+            'processing_node': 'gnucash_engine'
+        }
+        
+        logger.info(f"Routed ElizaOS data to GnuCash: {agent_data.get('type', 'unknown')}")
+        return result
     
-    async def _route_gnucash_to_elizaos(self, message: Dict) -> Dict:
-        """Route message from GnuCash to ElizaOS"""
-        return {'status': 'routed', 'target': 'elizaos', 'timestamp': datetime.now().isoformat()}
+    async def _route_gnucash_to_elizaos(self, financial_data: Dict[str, Any]) -> Dict[str, Any]:
+        """Route financial data from GnuCash to ElizaOS"""
+        agent_data = await self._translate_financial_to_agent(financial_data)
+        
+        result = {
+            'status': 'routed_to_elizaos',
+            'original_financial': financial_data,
+            'agent_format': agent_data,
+            'processing_node': 'elizaos_financial_agent'
+        }
+        
+        logger.info(f"Routed GnuCash data to ElizaOS: {financial_data.get('type', 'unknown')}")
+        return result
     
-    async def _route_opencog_to_gnucash(self, message: Dict) -> Dict:
-        """Route message from OpenCog to GnuCash"""
-        return {'status': 'routed', 'target': 'gnucash', 'timestamp': datetime.now().isoformat()}
+    async def _route_opencog_to_gnucash(self, atom_data: Dict[str, Any]) -> Dict[str, Any]:
+        """Route cognitive data from OpenCog to GnuCash"""
+        financial_insights = await self._translate_atom_to_financial(atom_data)
+        
+        result = {
+            'status': 'routed_to_gnucash',
+            'original_atom': atom_data,
+            'financial_insights': financial_insights,
+            'processing_node': 'gnucash_cognitive_integration'
+        }
+        
+        logger.info(f"Routed OpenCog reasoning to GnuCash: {atom_data.get('type', 'unknown')}")
+        return result
     
-    async def _route_gnucash_to_opencog(self, message: Dict) -> Dict:
-        """Route message from GnuCash to OpenCog"""
-        return {'status': 'routed', 'target': 'opencog', 'timestamp': datetime.now().isoformat()}
-    
+    async def _route_gnucash_to_opencog(self, financial_data: Dict[str, Any]) -> Dict[str, Any]:
+        """Route financial data from GnuCash to OpenCog for reasoning"""
+        atom_representation = await self._translate_financial_to_atom(financial_data)
+        
+        result = {
+            'status': 'routed_to_opencog',
+            'original_financial': financial_data,
+            'atom_representation': atom_representation,
+            'processing_node': 'opencog_financial_reasoning'
+        }
+        
+        logger.info(f"Routed GnuCash data to OpenCog: {financial_data.get('type', 'unknown')}")
+        return result
+
     # Data translation methods
-    async def _translate_agent_to_atom(self, data: Any) -> Any:
-        """Translate ElizaOS agent data to OpenCog atoms"""
-        return {'atom_type': 'ConceptNode', 'data': data, 'format': 'atomspace'}
-    
-    async def _translate_atom_to_agent(self, data: Any) -> Any:
-        """Translate OpenCog atoms to ElizaOS agent data"""
-        return {'agent_data': data, 'format': 'elizaos'}
-    
-    async def _translate_financial_to_atom(self, data: Any) -> Any:
-        """Translate GnuCash financial data to OpenCog atoms"""
-        return {'atom_type': 'FinancialNode', 'data': data, 'format': 'atomspace'}
-    
-    async def _translate_atom_to_financial(self, data: Any) -> Any:
-        """Translate OpenCog atoms to GnuCash financial data"""
-        return {'financial_data': data, 'format': 'gnucash'}
-    
-    async def _translate_agent_to_financial(self, data: Any) -> Any:
-        """Translate ElizaOS agent data to GnuCash financial format"""
-        return {'financial_data': data, 'format': 'gnucash'}
-    
-    async def _translate_financial_to_agent(self, data: Any) -> Any:
-        """Translate GnuCash financial data to ElizaOS agent format"""
-        return {'agent_data': data, 'format': 'elizaos'}
-    
-    # Test workflow methods
-    async def _test_full_roundtrip_communication(self):
-        """Test full roundtrip communication across all ecosystems"""
-        logger.info("    Testing full roundtrip communication...")
+    async def _translate_agent_to_atom(self, agent_data: Dict[str, Any]) -> Dict[str, Any]:
+        """Translate ElizaOS agent data to OpenCog atom format"""
+        atom_type = 'ConceptNode'
         
-        initial_data = {
-            'query': 'analyze_spending_pattern',
-            'user_id': 'test_user',
-            'timeframe': '30_days'
-        }
+        if agent_data.get('type') == 'financial_query':
+            atom_type = 'EvaluationLink'
+        elif agent_data.get('type') == 'transaction':
+            atom_type = 'InheritanceLink'
         
-        # ElizaOS processes initial request
-        elizaos_result = await self._simulate_elizaos_processing(initial_data)
-        
-        # OpenCog performs cognitive analysis
-        opencog_result = await self._simulate_opencog_reasoning(elizaos_result)
-        
-        # GnuCash provides financial data
-        gnucash_result = await self._simulate_gnucash_query(opencog_result)
-        
-        # Results flow back through the chain
-        final_result = await self._simulate_result_aggregation(gnucash_result)
-        
-        logger.info(f"    Roundtrip complete: {final_result.get('status', 'unknown')}")
-    
-    async def _test_account_reasoning_workflow(self):
-        """Test account reasoning workflow"""
-        agent = self.cognitive_agents['account_reasoning_agent']
-        logger.info(f"    Testing {agent['name']} workflow...")
-        
-        # Simulate account reasoning
-        result = await self._simulate_cognitive_workflow(agent, {
-            'operation': 'categorize_accounts',
-            'data': {'new_account': 'test_account'}
-        })
-        
-        logger.info(f"      Result: {result.get('status', 'unknown')}")
-    
-    async def _test_transaction_analysis_workflow(self):
-        """Test transaction analysis workflow"""
-        agent = self.cognitive_agents['transaction_analysis_agent']
-        logger.info(f"    Testing {agent['name']} workflow...")
-        
-        # Simulate transaction analysis
-        result = await self._simulate_cognitive_workflow(agent, {
-            'operation': 'analyze_patterns',
-            'data': {'transactions': ['test_transaction_1', 'test_transaction_2']}
-        })
-        
-        logger.info(f"      Result: {result.get('status', 'unknown')}")
-    
-    async def _test_budget_planning_workflow(self):
-        """Test budget planning workflow"""
-        agent = self.cognitive_agents['budget_planning_agent']
-        logger.info(f"    Testing {agent['name']} workflow...")
-        
-        # Simulate budget planning
-        result = await self._simulate_cognitive_workflow(agent, {
-            'operation': 'optimize_budget',
-            'data': {'current_budget': {}, 'goals': []}
-        })
-        
-        logger.info(f"      Result: {result.get('status', 'unknown')}")
-    
-    # Simulation methods for testing
-    async def _simulate_elizaos_processing(self, data: Dict) -> Dict:
-        """Simulate ElizaOS agent processing"""
-        return {'status': 'processed', 'source': 'elizaos', 'data': data}
-    
-    async def _simulate_opencog_reasoning(self, data: Dict) -> Dict:
-        """Simulate OpenCog cognitive reasoning"""
-        return {'status': 'reasoned', 'source': 'opencog', 'data': data}
-    
-    async def _simulate_gnucash_query(self, data: Dict) -> Dict:
-        """Simulate GnuCash financial query"""
-        return {'status': 'queried', 'source': 'gnucash', 'data': data}
-    
-    async def _simulate_result_aggregation(self, data: Dict) -> Dict:
-        """Simulate final result aggregation"""
-        return {'status': 'aggregated', 'result': 'success', 'data': data}
-    
-    async def _simulate_cognitive_workflow(self, agent: Dict, request: Dict) -> Dict:
-        """Simulate cognitive agent workflow"""
         return {
-            'status': 'completed',
-            'agent': agent['name'],
-            'capabilities_used': agent['capabilities'][:2],  # Simulate using first 2 capabilities
-            'result': 'workflow_success'
+            'atom_type': atom_type,
+            'name': f"Agent-{agent_data.get('id', 'unknown')}",
+            'data': agent_data,
+            'truthvalue': {
+                'strength': 0.8,
+                'confidence': 0.9
+            },
+            'timestamp': agent_data.get('timestamp', datetime.now().isoformat())
         }
+    
+    async def _translate_atom_to_agent(self, atom_data: Dict[str, Any]) -> Dict[str, Any]:
+        """Translate OpenCog atom to ElizaOS agent format"""
+        return {
+            'type': 'cognitive_result',
+            'content': atom_data.get('data', {}),
+            'reasoning_type': atom_data.get('atom_type', 'unknown'),
+            'confidence': atom_data.get('truthvalue', {}).get('confidence', 0.5),
+            'source': 'opencog_atomspace',
+            'timestamp': atom_data.get('timestamp', datetime.now().isoformat())
+        }
+    
+    async def _translate_financial_to_atom(self, financial_data: Dict[str, Any]) -> Dict[str, Any]:
+        """Translate GnuCash financial data to OpenCog atom format"""
+        return {
+            'atom_type': 'EvaluationLink',
+            'predicate': 'financial_data',
+            'arguments': [
+                financial_data.get('account', 'unknown'),
+                str(financial_data.get('amount', 0)),
+                financial_data.get('date', 'unknown')
+            ],
+            'truthvalue': {
+                'strength': 1.0,  # Financial data is factual
+                'confidence': 0.95
+            },
+            'financial_metadata': financial_data
+        }
+    
+    async def _translate_atom_to_financial(self, atom_data: Dict[str, Any]) -> Dict[str, Any]:
+        """Translate OpenCog reasoning to financial operations"""
+        return {
+            'operation_type': 'cognitive_insight',
+            'insight': atom_data.get('data', {}),
+            'confidence': atom_data.get('truthvalue', {}).get('confidence', 0.5),
+            'reasoning_source': 'opencog_pln',
+            'suggested_actions': self._extract_financial_actions(atom_data),
+            'timestamp': datetime.now().isoformat()
+        }
+    
+    async def _translate_agent_to_financial(self, agent_data: Dict[str, Any]) -> Dict[str, Any]:
+        """Translate ElizaOS agent data to GnuCash operations"""
+        operation_map = {
+            'financial_query': 'query_accounts',
+            'budget_request': 'budget_analysis',
+            'expense_analysis': 'expense_report',
+            'transaction_categorization': 'categorize_transaction'
+        }
+        
+        operation = operation_map.get(agent_data.get('type'), 'general_operation')
+        
+        return {
+            'operation': operation,
+            'parameters': agent_data.get('data', {}),
+            'user_context': agent_data.get('context', {}),
+            'timestamp': agent_data.get('timestamp', datetime.now().isoformat())
+        }
+    
+    async def _translate_financial_to_agent(self, financial_data: Dict[str, Any]) -> Dict[str, Any]:
+        """Translate GnuCash data to ElizaOS agent format"""
+        return {
+            'type': 'financial_data',
+            'content': financial_data,
+            'source': 'gnucash',
+            'processing_status': 'ready_for_agent',
+            'timestamp': datetime.now().isoformat()
+        }
+    
+    def _extract_financial_actions(self, atom_data: Dict[str, Any]) -> List[str]:
+        """Extract actionable financial recommendations from reasoning"""
+        actions = []
+        
+        data = atom_data.get('data', {})
+        if 'anomaly' in str(data).lower():
+            actions.append('review_transaction')
+        if 'budget' in str(data).lower():
+            actions.append('adjust_budget')
+        if 'investment' in str(data).lower():
+            actions.append('review_investment_allocation')
+        
+        return actions if actions else ['general_review']
+
+    # ...existing code...
     
     def get_system_status(self) -> Dict:
         """Get current system status"""

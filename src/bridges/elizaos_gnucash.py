@@ -183,6 +183,115 @@ class ExpenseAnalyzerAgent(FinancialAgent):
                 insights.append("Consider reviewing frequent small transactions - they can add up quickly")
                 
         return insights
+    
+    async def analyze_spending_trends(self, timeframe: Dict[str, Any]) -> Dict[str, Any]:
+        """Analyze spending trends over time with cognitive insights"""
+        start_date = timeframe.get('start_date')
+        end_date = timeframe.get('end_date')
+        
+        if not self.connection:
+            # Return mock data for demonstration
+            return await self._generate_mock_trend_analysis(timeframe)
+            
+        # Real implementation would query GnuCash database for trend data
+        cursor = self.connection.cursor()
+        
+        # Query monthly spending patterns
+        cursor.execute("""
+            SELECT 
+                strftime('%Y-%m', t.post_date) as month,
+                account_name,
+                SUM(ABS(amount)) as monthly_total,
+                COUNT(*) as transaction_count
+            FROM transactions t
+            JOIN splits s ON t.guid = s.tx_guid  
+            WHERE t.post_date BETWEEN ? AND ?
+            AND amount < 0  -- Expenses only
+            GROUP BY month, account_name
+            ORDER BY month, monthly_total DESC
+        """, (start_date, end_date))
+        
+        monthly_data = cursor.fetchall()
+        return await self._process_trend_data(monthly_data, timeframe)
+    
+    async def _generate_mock_trend_analysis(self, timeframe: Dict[str, Any]) -> Dict[str, Any]:
+        """Generate mock trend analysis for demonstration"""
+        return {
+            "timeframe": timeframe,
+            "trend_analysis": {
+                "overall_trend": "increasing",
+                "trend_percentage": 5.2,
+                "seasonal_patterns": [
+                    {"pattern": "holiday_spending", "months": ["November", "December"], "impact": "+15%"},
+                    {"pattern": "summer_travel", "months": ["July", "August"], "impact": "+8%"}
+                ],
+                "category_trends": [
+                    {"category": "groceries", "trend": "stable", "variance": 2.1},
+                    {"category": "gas", "trend": "decreasing", "variance": -3.4},
+                    {"category": "entertainment", "trend": "increasing", "variance": 12.8}
+                ]
+            },
+            "cognitive_insights": [
+                "Your spending shows seasonal patterns consistent with typical consumer behavior",
+                "Entertainment spending is increasing faster than other categories - consider setting limits",
+                "Gas expenses are decreasing, possibly due to changed commuting patterns"
+            ],
+            "recommendations": [
+                "Set aside 15% extra budget for November-December holiday spending",
+                "Consider entertainment budget cap to control growing expenses",
+                "Redirect gas savings toward emergency fund or investments"
+            ]
+        }
+    
+    async def detect_anomalies(self, transaction_history: List[Dict[str, Any]]) -> Dict[str, Any]:
+        """Detect spending anomalies using pattern analysis"""
+        anomalies = []
+        
+        if not transaction_history:
+            return {"anomalies": [], "analysis": "No transaction data available"}
+        
+        # Calculate statistical baselines
+        amounts = [abs(float(t.get('amount', 0))) for t in transaction_history]
+        if not amounts:
+            return {"anomalies": [], "analysis": "No valid transaction amounts"}
+        
+        avg_amount = sum(amounts) / len(amounts)
+        max_amount = max(amounts)
+        
+        # Anomaly detection rules
+        for transaction in transaction_history:
+            amount = abs(float(transaction.get('amount', 0)))
+            description = transaction.get('description', '')
+            
+            # Large transaction anomaly
+            if amount > avg_amount * 3:
+                anomalies.append({
+                    "type": "large_transaction",
+                    "transaction": transaction,
+                    "severity": "high" if amount > avg_amount * 5 else "medium",
+                    "reason": f"Amount ${amount:.2f} is {amount/avg_amount:.1f}x larger than average",
+                    "recommendation": "Review transaction details and verify legitimacy"
+                })
+            
+            # Unusual merchant anomaly
+            if any(suspicious in description.lower() for suspicious in ['unknown', 'pending', 'hold']):
+                anomalies.append({
+                    "type": "unusual_merchant",
+                    "transaction": transaction,
+                    "severity": "medium",
+                    "reason": f"Unusual merchant description: {description}",
+                    "recommendation": "Verify merchant and transaction purpose"
+                })
+        
+        return {
+            "anomalies": anomalies,
+            "analysis": f"Analyzed {len(transaction_history)} transactions, found {len(anomalies)} anomalies",
+            "baseline_stats": {
+                "average_amount": avg_amount,
+                "max_amount": max_amount,
+                "total_transactions": len(transaction_history)
+            }
+        }
 
 
 class BudgetPlannerAgent(FinancialAgent):

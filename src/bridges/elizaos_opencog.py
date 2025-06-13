@@ -3,9 +3,7 @@ ElizaOS-OpenCog Bridge Implementation
 Provides integration between ElizaOS agents and OpenCog AtomSpace
 """
 
-import json
-from typing import Dict, List, Any, Optional
-from abc import ABC, abstractmethod
+from typing import Dict, List, Any
 
 
 class AtomSpaceProvider:
@@ -143,29 +141,151 @@ class PLNReasoner:
         """Perform PLN inference on premises"""
         conclusions = []
         
-        # Mock PLN inference implementation
+        # Enhanced PLN inference implementation
         for premise in premises:
             confidence = premise.get('confidence', 0.5)
+            premise_type = premise.get('type', 'unknown')
             
-            # Simple inference rules
-            if premise.get('type') == 'financial_pattern':
-                conclusion = {
-                    'type': 'financial_prediction',
-                    'content': f"Based on pattern {premise.get('name', 'unknown')}, predict similar future behavior",
-                    'confidence': confidence * 0.8,  # Reduce confidence for predictions
-                    'source_premise': premise.get('name', 'unknown')
-                }
-                conclusions.append(conclusion)
-            elif premise.get('type') == 'conversation':
-                conclusion = {
-                    'type': 'response_intent',
-                    'content': f"Intent analysis suggests response category: {premise.get('category', 'general')}",
-                    'confidence': confidence * 0.9,
+            # Financial reasoning rules
+            if premise_type == 'financial_pattern':
+                conclusions.extend(await self._infer_financial_patterns(premise, confidence))
+            elif premise_type == 'conversation' or premise_type == 'message':
+                conclusions.extend(await self._infer_conversation_intent(premise, confidence))
+            elif premise_type == 'transaction':
+                conclusions.extend(await self._infer_transaction_patterns(premise, confidence))
+            elif premise_type == 'spending_behavior':
+                conclusions.extend(await self._infer_spending_insights(premise, confidence))
+            else:
+                # Generic inference for unknown types
+                conclusions.append({
+                    'type': 'generic_inference',
+                    'content': f"Processed {premise_type} premise with general reasoning",
+                    'confidence': confidence * 0.6,
                     'source_premise': premise.get('content', 'unknown')
-                }
-                conclusions.append(conclusion)
+                })
+        
+        # Apply cross-premise reasoning
+        if len(premises) > 1:
+            cross_conclusions = await self._cross_premise_reasoning(premises)
+            conclusions.extend(cross_conclusions)
         
         print(f"PLN inference processed {len(premises)} premises, generated {len(conclusions)} conclusions")
+        return conclusions
+    
+    async def _infer_financial_patterns(self, premise: Dict[str, Any], confidence: float) -> List[Dict[str, Any]]:
+        """Apply financial pattern reasoning"""
+        conclusions = []
+        pattern_name = premise.get('name', 'unknown')
+        
+        # Trend prediction
+        conclusions.append({
+            'type': 'financial_prediction',
+            'content': f"Based on pattern {pattern_name}, predict similar future behavior",
+            'confidence': confidence * 0.8,
+            'source_premise': pattern_name,
+            'reasoning_type': 'trend_analysis'
+        })
+        
+        # Budget impact analysis
+        if 'expense' in pattern_name.lower() or 'spending' in pattern_name.lower():
+            conclusions.append({
+                'type': 'budget_impact',
+                'content': f"Pattern {pattern_name} may impact budget allocation",
+                'confidence': confidence * 0.7,
+                'source_premise': pattern_name,
+                'reasoning_type': 'budget_analysis'
+            })
+        
+        return conclusions
+    
+    async def _infer_conversation_intent(self, premise: Dict[str, Any], confidence: float) -> List[Dict[str, Any]]:
+        """Apply conversation intent reasoning"""
+        conclusions = []
+        content = premise.get('content', '').lower()
+        category = premise.get('category', 'general')
+        
+        # Intent classification
+        if any(word in content for word in ['spend', 'expense', 'cost', 'money', 'budget']):
+            conclusions.append({
+                'type': 'financial_intent',
+                'content': f"User query indicates financial interest - category: {category}",
+                'confidence': confidence * 0.9,
+                'source_premise': content[:50] + "...",
+                'reasoning_type': 'intent_classification'
+            })
+        
+        # Response strategy
+        conclusions.append({
+            'type': 'response_strategy',
+            'content': f"Recommend {category} response with analytical approach",
+            'confidence': confidence * 0.8,
+            'source_premise': category,
+            'reasoning_type': 'response_planning'
+        })
+        
+        return conclusions
+    
+    async def _infer_transaction_patterns(self, premise: Dict[str, Any], confidence: float) -> List[Dict[str, Any]]:
+        """Apply transaction pattern reasoning"""
+        conclusions = []
+        amount = premise.get('amount', 0)
+        description = premise.get('description', '')
+        
+        # Spending pattern analysis
+        if amount < 0:  # Expense
+            conclusions.append({
+                'type': 'spending_pattern',
+                'content': f"Expense pattern detected: {description} - amount: {abs(amount)}",
+                'confidence': confidence * 0.8,
+                'source_premise': description,
+                'reasoning_type': 'pattern_detection'
+            })
+        
+        # Anomaly detection
+        if abs(amount) > 1000:  # Large transaction
+            conclusions.append({
+                'type': 'anomaly_alert',
+                'content': f"Large transaction detected: {description} - review recommended",
+                'confidence': confidence * 0.9,
+                'source_premise': f"Amount: {amount}",
+                'reasoning_type': 'anomaly_detection'
+            })
+        
+        return conclusions
+    
+    async def _infer_spending_insights(self, premise: Dict[str, Any], confidence: float) -> List[Dict[str, Any]]:
+        """Apply spending behavior reasoning"""
+        conclusions = []
+        behavior_data = premise.get('data', {})
+        
+        # Behavioral insights
+        conclusions.append({
+            'type': 'behavioral_insight',
+            'content': f"Spending behavior analysis reveals patterns in {behavior_data.get('category', 'general')} spending",
+            'confidence': confidence * 0.8,
+            'source_premise': str(behavior_data),
+            'reasoning_type': 'behavioral_analysis'
+        })
+        
+        return conclusions
+    
+    async def _cross_premise_reasoning(self, premises: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
+        """Apply reasoning across multiple premises"""
+        conclusions = []
+        
+        # Find correlations between premises
+        financial_premises = [p for p in premises if 'financial' in p.get('type', '')]
+        conversation_premises = [p for p in premises if 'conversation' in p.get('type', '') or 'message' in p.get('type', '')]
+        
+        if financial_premises and conversation_premises:
+            conclusions.append({
+                'type': 'contextual_synthesis',
+                'content': f"Financial data context enhances conversation understanding - {len(financial_premises)} financial patterns inform response",
+                'confidence': 0.85,
+                'source_premise': 'cross_premise_analysis',
+                'reasoning_type': 'contextual_integration'
+            })
+        
         return conclusions
         
     async def validate_reasoning(self, conclusion: Dict[str, Any]) -> float:
