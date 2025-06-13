@@ -12,7 +12,8 @@
              (hypergraph hypergraph-encoding)
              (hypergraph hybrid-adaptation)
              (ice-9 pretty-print)
-             (ice-9 format))
+             (ice-9 format)
+             (srfi srfi-1))
 
 ;; Demo configuration
 (define demo-repos
