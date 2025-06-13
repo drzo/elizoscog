@@ -24,44 +24,66 @@ def discover_organization_repos(org_name: str, github_token: str) -> List[Dict[s
         
         for repo in org.get_repos():
             try:
-                # Get additional repository information
-                languages = repo.get_languages()
-                topics = repo.get_topics()
+                # Get additional repository information with error handling
+                try:
+                    languages = repo.get_languages() or {}
+                except Exception as e:
+                    print(f"    Warning: Could not get languages for {repo.name}: {e}")
+                    languages = {}
                 
-                # Get recent activity
-                commits = list(repo.get_commits()[:5])  # Last 5 commits
+                try:
+                    topics = repo.get_topics() or []
+                except Exception as e:
+                    print(f"    Warning: Could not get topics for {repo.name}: {e}")
+                    topics = []
+                
+                # Get recent activity with comprehensive error handling
                 recent_activity = []
-                for commit in commits:
-                    recent_activity.append({
-                        'sha': commit.sha,
-                        'message': commit.commit.message,
-                        'date': commit.commit.author.date.isoformat(),
-                        'author': commit.commit.author.name
-                    })
+                try:
+                    commits = list(repo.get_commits()[:5])  # Last 5 commits
+                    for commit in commits:
+                        try:
+                            # Safely access nested commit properties with null checks
+                            commit_data = commit.commit if commit.commit else None
+                            author_data = commit_data.author if commit_data and commit_data.author else None
+                            
+                            recent_activity.append({
+                                'sha': commit.sha if commit.sha else 'unknown',
+                                'message': commit_data.message if commit_data and commit_data.message else 'No message',
+                                'date': author_data.date.isoformat() if author_data and author_data.date else datetime.now().isoformat(),
+                                'author': author_data.name if author_data and author_data.name else 'Unknown'
+                            })
+                        except (AttributeError, TypeError) as e:
+                            # Skip commits with incomplete data but log the issue
+                            print(f"    Warning: Skipping commit with incomplete data: {e}")
+                            continue
+                except Exception as e:
+                    print(f"    Warning: Could not get commits for {repo.name}: {e}")
+                    recent_activity = []
                 
                 repo_info = {
-                    'name': repo.name,
-                    'full_name': repo.full_name,
+                    'name': repo.name or 'Unknown',
+                    'full_name': repo.full_name or 'Unknown',
                     'description': repo.description,
-                    'html_url': repo.html_url,
-                    'clone_url': repo.clone_url,
-                    'ssh_url': repo.ssh_url,
+                    'html_url': repo.html_url or '',
+                    'clone_url': repo.clone_url or '',
+                    'ssh_url': repo.ssh_url or '',
                     'languages': languages,
                     'topics': topics,
-                    'stargazers_count': repo.stargazers_count,
-                    'forks_count': repo.forks_count,
-                    'open_issues_count': repo.open_issues_count,
-                    'size': repo.size,
-                    'default_branch': repo.default_branch,
-                    'created_at': repo.created_at.isoformat(),
-                    'updated_at': repo.updated_at.isoformat(),
+                    'stargazers_count': repo.stargazers_count or 0,
+                    'forks_count': repo.forks_count or 0,
+                    'open_issues_count': repo.open_issues_count or 0,
+                    'size': repo.size or 0,
+                    'default_branch': repo.default_branch or 'main',
+                    'created_at': repo.created_at.isoformat() if repo.created_at else datetime.now().isoformat(),
+                    'updated_at': repo.updated_at.isoformat() if repo.updated_at else datetime.now().isoformat(),
                     'pushed_at': repo.pushed_at.isoformat() if repo.pushed_at else None,
-                    'archived': repo.archived,
-                    'disabled': repo.disabled,
-                    'fork': repo.fork,
+                    'archived': repo.archived or False,
+                    'disabled': repo.disabled or False,
+                    'fork': repo.fork or False,
                     'license': repo.license.name if repo.license else None,
                     'recent_activity': recent_activity,
-                    'readme_url': f"{repo.html_url}/blob/{repo.default_branch}/README.md"
+                    'readme_url': f"{repo.html_url}/blob/{repo.default_branch}/README.md" if repo.html_url and repo.default_branch else ''
                 }
                 
                 repos.append(repo_info)
