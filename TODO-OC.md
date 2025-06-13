@@ -7,6 +7,9 @@ genomics (MOZI and [Rejuve.bio](https://www.rejuve.bio)),
 machine learning ([predicting risk from clinician notes](https://doi.org/10.1371/journal.pone.0085733)),
 natural language chatbots ([virtual dog playing fetch](https://www.youtube.com/watch?v=FEmpGRLwbqE)) and more.
 This project was pioneered by [Dr. Ben Goertzel](https://en.wikipedia.org/wiki/Ben_Goertzel).
+
+https://github.com/orgs/opencog/repositories?type=all
+
 Git repos fall into four categories:
 
 ### OpenCog AtomSpace
