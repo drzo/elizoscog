@@ -66,20 +66,23 @@ class TransactionCategorizerAgent(FinancialAgent):
         
     async def _determine_category(self, description: str, amount: float) -> Optional[str]:
         """Determine transaction category based on description and amount"""
-        # Simple rule-based categorization
-        category_patterns = {
-            'groceries': ['grocery', 'supermarket', 'food', 'market'],
-            'gas': ['gas', 'fuel', 'exxon', 'shell', 'bp'],
-            'restaurants': ['restaurant', 'cafe', 'diner', 'pizza'],
-            'utilities': ['electric', 'water', 'gas company', 'utility'],
-            'transportation': ['uber', 'lyft', 'taxi', 'bus', 'metro'],
-            'entertainment': ['movie', 'theater', 'concert', 'game'],
-            'shopping': ['amazon', 'store', 'mall', 'shop'],
-            'healthcare': ['doctor', 'pharmacy', 'medical', 'hospital']
+        description_lower = description.lower()
+        
+        # Specific store/merchant patterns (more specific matches first)
+        specific_patterns = {
+            'groceries': ['safeway', 'kroger', 'walmart', 'target', 'costco', 'trader joe', 'whole foods', 'aldi', 'publix', 'grocery', 'supermarket', 'food market'],
+            'gas': ['shell', 'exxon', 'bp', 'chevron', 'texaco', 'arco', 'gas station', 'fuel'],
+            'restaurants': ['mcdonalds', 'burger king', 'subway', 'starbucks', 'pizza', 'restaurant', 'cafe', 'diner', 'bistro'],
+            'utilities': ['electric', 'water company', 'gas company', 'utility', 'power', 'edison'],
+            'transportation': ['uber', 'lyft', 'taxi', 'bus', 'metro', 'transit', 'parking'],
+            'entertainment': ['movie', 'theater', 'cinema', 'concert', 'netflix', 'spotify', 'game'],
+            'healthcare': ['doctor', 'pharmacy', 'medical', 'hospital', 'cvs pharmacy', 'walgreens'],
+            'shopping': ['amazon', 'mall', 'shop', 'retail', 'department store']  # More generic patterns last
         }
         
-        for category, patterns in category_patterns.items():
-            if any(pattern in description for pattern in patterns):
+        # Check specific patterns first
+        for category, patterns in specific_patterns.items():
+            if any(pattern in description_lower for pattern in patterns):
                 return category
                 
         # Default category for unmatched transactions
@@ -94,8 +97,21 @@ class TransactionCategorizerAgent(FinancialAgent):
         
     async def _update_transaction_category(self, transaction_id: str, category: str):
         """Update transaction category in GnuCash database"""
-        # TODO: Implement actual GnuCash database update
-        pass
+        if self.connection:
+            try:
+                cursor = self.connection.cursor()
+                # Update transaction with category info (stored as memo or description)
+                cursor.execute("""
+                    UPDATE transactions 
+                    SET description = description || ' [' || ? || ']'
+                    WHERE guid = ?
+                """, (category, transaction_id))
+                self.connection.commit()
+                print(f"Updated transaction {transaction_id} with category: {category}")
+            except Exception as e:
+                print(f"Error updating transaction category: {e}")
+        else:
+            print(f"Mock update: Transaction {transaction_id} categorized as {category}")
 
 
 class ExpenseAnalyzerAgent(FinancialAgent):
