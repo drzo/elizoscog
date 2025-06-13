@@ -114,16 +114,16 @@ def categorize_repos(repos: List[Dict[str, Any]], org_name: str) -> Dict[str, Li
         }
         
         for repo in repos:
-            name_lower = repo['name'].lower()
-            desc_lower = (repo['description'] or '').lower()
-            topics = [t.lower() for t in repo['topics']]
+            name_lower = (repo.get('name') or '').lower()
+            desc_lower = (repo.get('description') or '').lower()
+            topics = [t.lower() for t in (repo.get('topics') or [])]
             
             # Categorization logic for OpenCog
             if any(keyword in name_lower for keyword in ['atomspace', 'atom-space']):
                 categories['atomspace'].append(repo)
             elif 'hyperon' in name_lower or 'hyperon' in desc_lower or 'hyperon' in topics:
                 categories['hyperon'].append(repo)
-            elif repo['archived'] or any(keyword in desc_lower for keyword in ['obsolete', 'deprecated', 'abandoned']):
+            elif repo.get('archived') or any(keyword in desc_lower for keyword in ['obsolete', 'deprecated', 'abandoned']):
                 categories['fossils'].append(repo)
             elif any(keyword in topics for keyword in ['research', 'experimental']):
                 categories['research'].append(repo)
@@ -140,9 +140,9 @@ def categorize_repos(repos: List[Dict[str, Any]], org_name: str) -> Dict[str, Li
         }
         
         for repo in repos:
-            name_lower = repo['name'].lower()
-            desc_lower = (repo['description'] or '').lower()
-            topics = [t.lower() for t in repo['topics']]
+            name_lower = (repo.get('name') or '').lower()
+            desc_lower = (repo.get('description') or '').lower()
+            topics = [t.lower() for t in (repo.get('topics') or [])]
             
             # Categorization logic for ElizaOS
             if any(keyword in name_lower for keyword in ['core', 'engine', 'framework']):
