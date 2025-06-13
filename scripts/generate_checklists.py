@@ -12,10 +12,10 @@ def analyze_repo_features(repo: Dict[str, Any]) -> List[str]:
     """Analyze repository to extract features and capabilities"""
     features = []
     
-    name = repo['name'].lower()
-    description = (repo['description'] or '').lower()
-    languages = repo.get('languages', {})
-    topics = repo.get('topics', [])
+    name = (repo.get('name') or '').lower()
+    description = (repo.get('description') or '').lower()
+    languages = repo.get('languages') or {}
+    topics = repo.get('topics') or []
     
     # Language-based features
     if 'Python' in languages:
@@ -58,18 +58,23 @@ def analyze_repo_features(repo: Dict[str, Any]) -> List[str]:
     }
     
     for pattern, feature in feature_patterns.items():
-        if pattern in name or pattern in description or pattern in ' '.join(topics):
+        topics_str = ' '.join(topics) if topics else ''
+        if pattern in name or pattern in description or pattern in topics_str:
             features.append(feature)
     
     # Topic-based features
-    for topic in topics:
-        if topic not in ['opensource', 'github', 'mit', 'license']:
-            features.append(f"Topic: {topic}")
+    if topics:  # Only iterate if topics is not None/empty
+        for topic in topics:
+            if topic not in ['opensource', 'github', 'mit', 'license']:
+                features.append(f"Topic: {topic}")
     
     # Repository characteristics
-    if repo.get('stargazers_count', 0) > 100:
+    stargazers = repo.get('stargazers_count') or 0
+    forks = repo.get('forks_count') or 0
+    
+    if stargazers > 100:
         features.append("Popular project (100+ stars)")
-    if repo.get('forks_count', 0) > 20:
+    if forks > 20:
         features.append("Active community (20+ forks)")
     if not repo.get('archived', False):
         features.append("Active development")
@@ -139,19 +144,32 @@ This document provides a comprehensive feature analysis and integration checklis
         content += f"## {category.title()} Repositories\n\n"
         
         for repo in repos:
-            content += f"### [{repo['name']}]({repo['html_url']})\n"
-            content += f"**Description:** {repo['description'] or 'No description available'}\n\n"
+            repo_name = repo.get('name') or 'Unknown'
+            repo_url = repo.get('html_url') or '#'
+            repo_desc = repo.get('description') or 'No description available'
             
-            # Repository stats
-            content += f"**Stats:** ⭐ {repo['stargazers_count']} | 🍴 {repo['forks_count']} | 🐛 {repo['open_issues_count']} issues\n"
-            content += f"**Last Updated:** {repo['updated_at'][:10]}\n"
+            content += f"### [{repo_name}]({repo_url})\n"
+            content += f"**Description:** {repo_desc}\n\n"
+            
+            # Repository stats (with None handling)
+            stars = repo.get('stargazers_count') or 0
+            forks = repo.get('forks_count') or 0 
+            issues = repo.get('open_issues_count') or 0
+            updated = repo.get('updated_at')
+            
+            content += f"**Stats:** ⭐ {stars} | 🍴 {forks} | 🐛 {issues} issues\n"
+            if updated:
+                content += f"**Last Updated:** {updated[:10]}\n"
+            else:
+                content += f"**Last Updated:** Unknown\n"
             if repo.get('license'):
                 content += f"**License:** {repo['license']}\n"
             content += "\n"
             
             # Languages
-            if repo.get('languages'):
-                lang_str = ", ".join(repo['languages'].keys())
+            languages = repo.get('languages')
+            if languages:
+                lang_str = ", ".join(languages.keys())
                 content += f"**Languages:** {lang_str}\n\n"
             
             # Features
