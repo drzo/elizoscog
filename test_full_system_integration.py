@@ -13,7 +13,7 @@ sys.path.insert(0, os.path.join(os.path.dirname(__file__), 'src'))
 
 from bridges.elizaos_opencog import OpenCogAgentTemplate, AtomSpaceProvider, PLNReasoner
 from bridges.elizaos_gnucash import TransactionCategorizerAgent, ExpenseAnalyzerAgent
-from master_integration import HybridCognitiveFinancialFramework
+from integration.master_integration import HybridCognitiveFinancialFramework
 
 
 async def test_full_system_workflow():
