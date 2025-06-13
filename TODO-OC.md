@@ -8,30 +8,29 @@ machine learning ([predicting risk from clinician notes](https://doi.org/10.1371
 natural language chatbots ([virtual dog playing fetch](https://www.youtube.com/watch?v=FEmpGRLwbqE)) and more.
 This project was pioneered by [Dr. Ben Goertzel](https://en.wikipedia.org/wiki/Ben_Goertzel).
 
-🔄 **Automated Repository Discovery**: This document is automatically updated with repository information from https://github.com/orgs/opencog/repositories using GitHub Actions.
+https://github.com/orgs/opencog/repositories?type=all
 
 Git repos fall into four categories:
 
 ### OpenCog AtomSpace
 The core of the system. As of 2025, it is active, stable and supported.
 
-* [AtomSpace](https://github.com/opencog/atomspace) - Hypergraph database and query engine.
-* [Storage](https://github.com/opencog/atomspace-storage) - Base class for saving, loading, sending and receiving Atoms and AtomSpaces
-* [CogServer](https://github.com/opencog/cogserver) and [atomspace-cog](https://github.com/opencog/atomspace-cog) - Networking, json, websockets.
-* [atomspace-rocks](https://github.com/opencog/atomspace-rocks) - Disk I/O storage, based on RocksDB.
-* [Proxy Nodes](https://wiki.opencog.org/w/ProxyNode) - Managing Atoms flowing through large Atomspaces. 
-* [Sparse Vectors/Matrix](https://github.com/opencog/matrix) - Working with graphs as (embeddings in) sparse vectors.
-* [Link Grammar](https://github.com/opencog/link-grammar) - Maximal Planar Graph (MPG) parsing, natural lanuage parsing (NLP).
-* [Docker containers](https://github.com/opencog/docker) - System integration and demos.
-* [atomspace-pgres](https://github.com/opencog/atomspace-pgres) - Postgres StorageNode. Works, but old, deprecated.
-
-### OpenCog Research
-Git repos in which active resarch is being carried out:
-* [Learn](https://github.com/opencog/learn) - Symbolic learning ("mature", batch-based processing.)
-* [Agents](https://github.com/opencog/agents) - Refactoring learning for an interactive environment.
-* [Sensory](https://github.com/opencog/sensory) - Dataflow of graphlets to/from external world. Agents I/O system.
-* [Motor](https://github.com/opencog/motor) - Controlling the focus of sensory attention. Perception-action.
-* [Atomese-SIMD](https://github.com/opencog/atomese-simd) - Flowing data to GPU's and other SIMD (OpenCL/CUDA) hardware w/the sensory API.
+* [atomspace](https://github.com/opencog/atomspace) - The OpenCog (hyper-)graph database and graph rewriting system
+* [atomspace-ipfs](https://github.com/opencog/atomspace-ipfs) - IPFS backend to the AtomSpace Graph Database
+* [atomspace-dht](https://github.com/opencog/atomspace-dht) - OpenDHT backend driver for the AtomSpace Graph Database
+* [atomspace-websockets](https://github.com/opencog/atomspace-websockets) - A websocket server to access AtomSpace - https://github.com/opencog/atomspace
+* [atomspace-restful](https://github.com/opencog/atomspace-restful) - RESTful web server for the AtomSpace Graph Database
+* [atomspace-cog](https://github.com/opencog/atomspace-cog) - Distributed AtomSpace Network client
+* [atomspace-rocks](https://github.com/opencog/atomspace-rocks) - AtomSpace Graph Database RocksDB backend
+* [atomspace-agents](https://github.com/opencog/atomspace-agents) - Policy agents for moving Atoms between disk and RAM and network
+* [atomspace-rpc](https://github.com/opencog/atomspace-rpc) - A gRPC server and client to execute pattern matching queries
+* [atomspace-explorer](https://github.com/opencog/atomspace-explorer) - Proof-of-concept visualizer for the AtomSpace
+* [atomspace-js](https://github.com/opencog/atomspace-js) - Javascript bindings to the AtomSpace
+* [atomspace-typescript](https://github.com/opencog/atomspace-typescript) - Typescript (javascript) API into the AtomSpace
+* [atomspace-bridge](https://github.com/opencog/atomspace-bridge) - Read/write interfaces between AtomSpace and SQL databases.
+* [atomspace-metta](https://github.com/opencog/atomspace-metta) - MeTTa on top of AtomSpace
+* [atomspace-pgres](https://github.com/opencog/atomspace-pgres) - Postgres StorageNode for the AtomSpace
+* [atomspace-storage](https://github.com/opencog/atomspace-storage) - AtomSpace StorageNode base system
 
 ### OpenCog Fossils
 Older, abandoned and obsolete components and experiments. These were attempts to build subsystems 
@@ -39,106 +38,170 @@ with specific goals and ideas in mind. As experiments, they provided validation 
 ideas. They were educational and fun, but turned out to be unworkable. Thus, development has
 halted. These projects are no longer maintained. They do contain useful subsystems that could be
 salvaged for future use. This includes:
-* PLN, URE, Attention, Ghost, Relex, R2L, ROS, Hanson Robotics Eva/Sophia
-* MOSES (but not as-moses, see below).
-* Any repo that is marked "read-only" or "obsolete".
+* [unity3d-opencog-game](https://github.com/opencog/unity3d-opencog-game) - A Unity3D game world for OpenCog-controlled agents
+* [linkgrammar-relex-web](https://github.com/opencog/linkgrammar-relex-web) - A Web UI for LinkGrammar and RelEx
+* [ros_opencog_robot_embodiment](https://github.com/opencog/ros_opencog_robot_embodiment) - No description available
+* [rest-api-documentation](https://github.com/opencog/rest-api-documentation) - OpenCog REST API interactive documentation, generated by Swagger and hosted on GitHub Pages.
+* [python-client](https://github.com/opencog/python-client) - Defines a Python client API to allow OpenCog experiments to be written as short Python scripts.
+* [python-destin](https://github.com/opencog/python-destin) - Python implementation of the DeSTIN deep learning perception system using the Theano library
+* [opencog-neo4j](https://github.com/opencog/opencog-neo4j) - Google Summer of Code 2015 Proposal to implement Neo4j Graph Backing Store as described in http:/...
+* [opencog-to-minecraft](https://github.com/opencog/opencog-to-minecraft) - Interface linking Minecraft to OpenCog using ROS
+* [language-learning](https://github.com/opencog/language-learning) - OpenCog Unsupervised Language Learning
+* [pattern-index](https://github.com/opencog/pattern-index) - Fast indexes for the AtomSpace
+* [dimensional-embedding](https://github.com/opencog/dimensional-embedding) - Dimensional Embedding Clustering
+* [visualization](https://github.com/opencog/visualization) - Visualizing the contents of the AtomSpace
+* [python-attic](https://github.com/opencog/python-attic) - Archive of old opencog python code
 
 ### OpenCog Hyperon
 Being developed by [Singularity.net](https://singularitynet.io).
 
+* [pln](https://github.com/opencog/pln) - [NO LONGER MAINTAINED, SUPERSEDED BY https://github.com/trueagi-io/hyperon-pln].  Probabilistic L...
+
 ### OpenCog Incubator
 These are the immature, incomplete, promising projects that haven't taken off yet.
 
-* [SQL Bridge](https://github.com/opencog/atomspace-bridge) - Direct I/O between SQL and AtomSpace
-* [AtomSpace TypeScript](https://github.com/opencog/atomspace-typescript) - TypeScript API and Browser viewer - proof of concept.
-* [Prolog-on-Atomspace](https://github.com/opencog/atomspace/tree/master/opencog/persist/prolog) - proof-of-concept
-* [Chemistry](https://github.com/opencog/cheminformatics) - Molecular bonds, molecular structural formulas (proof-of-concpept.)
-* [agi-bio](https://github.com/opencog/agi-bio) - Genomics, proteomics system used by MOZI and rejuve.bio
-* [visualization](https://github.com/opencog/visualization) - GUI for exploring AtomSpace contents.
-* [as-moses](https://github.com/opencog/as-moses) - Port of MOSES to the AtomSpace.
-* [Vision](https://github.com/opencog/vision) - Extracting structure from images, video (proof-of-concept.)
-* [Hyperon-on-top-of-atomspace](https://github.com/opencog/atomspace-metta) - Hyperon backwards-compat layer (proof-of-concept.)
-* [SpaceTime](https://github.com/opencog/spacetime) - Octree spatial bounding boxes and time intervals in Atomese.
+* [opencog](https://github.com/opencog/opencog) - A framework for integrated Artificial Intelligence & Artificial General Intelligence (AGI)
+* [ocpkg](https://github.com/opencog/ocpkg) - Installing, packaging, deploying and managing OpenCog
+* [destin](https://github.com/opencog/destin) - Deep SpatioTemporal Inference Network (DeSTIN) for vision processing
+* [test-datasets](https://github.com/opencog/test-datasets) - Reference AtomSpace files for testing and development
+* [external-tools](https://github.com/opencog/external-tools) - External, stand-alone tools that work with OpenCog
+* [relex](https://github.com/opencog/relex) - English Dependency Relationship Extractor
+* [docker](https://github.com/opencog/docker) - Docker containers for OpenCog - Robot Operating System (ROS)
+* [link-grammar](https://github.com/opencog/link-grammar) - The CMU Link Grammar natural language parser
+* [agi-bio](https://github.com/opencog/agi-bio) - Genomic and Proteomic data exploration and pattern mining
+* [ros-behavior-scripting](https://github.com/opencog/ros-behavior-scripting) - Hanson Robotics Eva robot sensory and motor API
+* [moses](https://github.com/opencog/moses) - MOSES Machine Learning: Meta-Optimizing Semantic Evolutionary Search. See also AS-MOSES https://g...
+* [cogutil](https://github.com/opencog/cogutil) - Very low-level C++ programming utilities used by several components
+* [opencog.org](https://github.com/opencog/opencog.org) - Page Sources & Configuration Files for opencog.org
+* [tv-toolbox](https://github.com/opencog/tv-toolbox) - ToolBox to experiment with different TruthValue types
+* [pi_vision](https://github.com/opencog/pi_vision) - Pi Vision ported to ROS Noetic
+* [perception](https://github.com/opencog/perception) - Perception synthesizer
+* [blender_api_msgs](https://github.com/opencog/blender_api_msgs) - ROS node for blender_api
+* [blender_api](https://github.com/opencog/blender_api) - Eva Blender Animation API
+* [robots_config](https://github.com/opencog/robots_config) - Robot configuration files
+* [pau2motors](https://github.com/opencog/pau2motors) - ROS node converts PAU (Physiological Action Unit) messages to motor commands.
+* [loving-ai](https://github.com/opencog/loving-ai) - No description available
+* [guile-dbi](https://github.com/opencog/guile-dbi) - Guile Scheme SQL database interfaces
+* [TinyCog](https://github.com/opencog/TinyCog) - Small Robot, Toy Robot platform
+* [semantic-vision](https://github.com/opencog/semantic-vision) - Official repository for the semantic vision research initiative using SynerGAN.
+* [opencog_rpi](https://github.com/opencog/opencog_rpi) - Opencog Cross Compile Toolchain for Raspberry Pi3
+* [asmoses](https://github.com/opencog/asmoses) - MOSES Machine Learning: Meta-Optimizing Semantic Evolutionary Search for the AtomSpace (https://g...
+* [benchmark](https://github.com/opencog/benchmark) - Benchmarking the AtomSpace, the pattern matcher and other OpenCog systems
+* [loving-ai-ghost](https://github.com/opencog/loving-ai-ghost) - A port of the [OpenCog's loving-ai ChatScripts](https://github.com/opencog/loving-ai) to Ghost.  ...
+* [ghost_bridge](https://github.com/opencog/ghost_bridge) - A ROS bridge between the Hanson Robotics stack and OpenCog's GHOST
+* [stochastic-language-generation](https://github.com/opencog/stochastic-language-generation) - No description available
+* [opencog-nix](https://github.com/opencog/opencog-nix) - Build definitions for the NIX package manager
+* [opencog-debian](https://github.com/opencog/opencog-debian) - OpenCog packaging-related files for Debian / Ubuntu
+* [learn](https://github.com/opencog/learn) - Neuro-symbolic interpretation learning (mostly just language-learning, for now)
+* [ure](https://github.com/opencog/ure) - [NO LONGER MAINTAINED, SUPERSEDED BY https://github.com/trueagi-io/chaining]. Unified Rule Engine...
+* [miner](https://github.com/opencog/miner) - Frequent and surprising subhypergraph pattern miner for the AtomSpace.
+* [spacetime](https://github.com/opencog/spacetime) - Save, track and query 3D+time locations of objects in the AtomSpace
+* [distributional-value](https://github.com/opencog/distributional-value) - Distributional Value as described in https://github.com/opencog/atomspace/issues/833
+* [attention](https://github.com/opencog/attention) - OpenCog Attention Allocation Subsystem
+* [cogserver](https://github.com/opencog/cogserver) - Distributed AtomSpace Network Server
+* [generate](https://github.com/opencog/generate) - Generate networks from syntax (e.g. natural language, math proofs, action plans, biome/reactome n...
+* [rocca](https://github.com/opencog/rocca) - Rational OpenCog Controlled Agent (ROCCA). Use OpenCog to control a rational agent in OpenAI Gym ...
+* [pln-brca-xp](https://github.com/opencog/pln-brca-xp) - Apply PLN to the breast-cancer dataset
+* [lg-atomese](https://github.com/opencog/lg-atomese) - Atomese API for Link Grammar
+* [vision](https://github.com/opencog/vision) - Atomese wrappers around a subset of OpenCV
+* [cogprotolab](https://github.com/opencog/cogprotolab) - AtomSpace visualizer
+* [logicmoo_cogserver](https://github.com/opencog/logicmoo_cogserver) - Logicmoo server presenting a CogServer-compatible network interface
+* [cheminformatics](https://github.com/opencog/cheminformatics) - Molecular Chemistry
+* [unify](https://github.com/opencog/unify) - Atomese expression unifier
+* [opencog-cycl](https://github.com/opencog/opencog-cycl) - A transcription of CycL to Atomese
+* [link-grammar-website](https://github.com/opencog/link-grammar-website) - Copy of last working version of link-grammar website
+* [.github](https://github.com/opencog/.github) - Intended to hold the public profile README
+* [sensory](https://github.com/opencog/sensory) - Low-level sensory I/O Atoms
+* [agents](https://github.com/opencog/agents) - Experiments with Agents
+* [motor](https://github.com/opencog/motor) - Sensorimotor research
+* [atomese-simd](https://github.com/opencog/atomese-simd) - Atomese to OpenCL/CUDA (GPU/compute) I/O Channel
+* [matrix](https://github.com/opencog/matrix) - AtomSpace Graph Sparse Vector Library
+* [evidence](https://github.com/opencog/evidence) - Hierarchical similarity and evidence-gathering
+
+
+## Integration with ElizaOS
+
+### Cross-Ecosystem Components
+OpenCog components can be integrated into ElizaOS as plugins and subsystems:
+
+#### AtomSpace Integration
+- **atomspace-python**: Python bindings for AtomSpace integration into ElizaOS agents
+- **atomspace-js**: JavaScript/TypeScript bindings for web-based ElizaOS clients
+- **cogserver-connector**: ElizaOS plugin for CogServer communication
+
+#### Reasoning Integration  
+- **pln-agent**: ElizaOS agent wrapper for PLN reasoning
+- **pattern-matcher**: ElizaOS action for AtomSpace pattern matching
+- **query-engine**: ElizaOS service for Atomese queries
+
+#### Language Processing
+- **link-grammar-plugin**: ElizaOS plugin for syntactic parsing
+- **nlp-pipeline**: ElizaOS action chain for OpenCog NLP processing
+
+### Implementation Roadmap
+- [ ] Create Python binding layer for core AtomSpace in ElizaOS
+- [ ] Implement CogServer connector plugin
+- [ ] Design distributed reasoning coordination
+- [ ] Build Atomese query interface for ElizaOS
+- [ ] Create OpenCog agent templates for ElizaOS
+- [ ] Implement hypergraph visualization for ElizaOS dashboard
+
+## GnuCash Integration
+
+### Hybrid Fractal Financial Structure
+Integrating GnuCash financial management with cognitive architectures:
+
+#### OpenCog Financial Reasoning
+- **financial-atomspace**: Represent financial data as Atoms and Links
+- **accounting-rules**: PLN rules for financial pattern recognition
+- **transaction-analysis**: Cognitive analysis of spending patterns
+- **budget-prediction**: AI-driven budget forecasting
+
+#### ElizaOS Financial Agents
+- **expense-tracker**: ElizaOS agent for automatic expense categorization
+- **investment-advisor**: AI agent for investment recommendations
+- **financial-alerts**: Smart notification system for financial events
+- **budget-assistant**: Conversational budget planning agent
+
+### Fractal Architecture
+```
+GnuCash (Financial Data)
+├── OpenCog Layer (Cognitive Reasoning)
+│   ├── AtomSpace (Knowledge Representation)
+│   ├── PLN (Logical Reasoning)
+│   └── Pattern Recognition
+└── ElizaOS Layer (Agent Interactions)
+    ├── Financial Agents
+    ├── User Interfaces
+    └── Multi-Agent Coordination
+```
+
 
 # HELP WANTED
 
-## 🔗 Integration Framework
-
-This repository now includes a hybrid integration framework combining:
-- **OpenCog**: Cognitive architecture and reasoning system
-- **ElizaOS**: Multi-agent development and deployment framework  
-- **GnuCash**: Financial management and accounting software
-
-### 🤖 Automated Repository Discovery
-Daily GitHub Actions discover and catalog repositories from:
-- [OpenCog Organization](https://github.com/orgs/opencog/repositories)
-- [ElizaOS Organization](https://github.com/orgs/elizaOS/repositories)
-
-Feature checklists and integration plans are automatically generated. See [Integration Documentation](docs/integration/README.md).
-
-## 🚀 Integration Development Priorities
+## Development Priorities
 
 ### Core Infrastructure
-- AtomSpace performance optimization and ElizaOS integration
-- Distributed processing enhancements for multi-agent coordination
-- Cross-language binding improvements (Python, JavaScript, Scheme)
-- Integration testing frameworks for hybrid architectures
-
-### Cognitive-Financial Integration
-- **Fractal Architecture**: GnuCash data → OpenCog reasoning → ElizaOS agents
-- **Pattern Recognition**: Financial behavior analysis using AtomSpace
-- **Predictive Reasoning**: PLN-based financial forecasting
-- **Intelligent Automation**: Multi-agent financial management
-
-### Bridge Implementations
-- **ElizaOS-OpenCog Bridge**: AtomSpace providers, CogServer actions, PLN reasoning
-- **OpenCog-GnuCash Bridge**: Financial data representation, cognitive analysis
-- **ElizaOS-GnuCash Bridge**: Financial agents, conversation interfaces, automation
+- AtomSpace performance optimization
+- Distributed processing enhancements  
+- Cross-language binding improvements
+- Integration testing frameworks
 
 ### Research Areas
 - Hyperon-AtomSpace compatibility layers
-- Advanced reasoning algorithms for financial domains
-- Multi-modal learning systems combining financial and conversational data
-- Real-time cognitive architectures for financial decision-making
+- Advanced reasoning algorithms
+- Multi-modal learning systems
+- Real-time cognitive architectures
 
-## 💡 Implementation Components
-
-### Intelligent Financial Agents
-- **Transaction Categorizer**: AI-powered automatic transaction classification
-- **Expense Analyzer**: Pattern recognition for spending behavior analysis
-- **Budget Optimizer**: Cognitive budget planning and optimization
-- **Investment Advisor**: Multi-agent portfolio analysis and recommendations
-- **Financial Assistant**: Natural language interface for financial queries
-- **Alert Manager**: Smart notification system using cognitive reasoning
-
-### Cognitive Architecture
-```
-ElizaOS Agents (User Interface)
-├── Conversational Financial Agents
-├── Analysis and Reporting Agents
-└── Automation and Alert Agents
-    ↓ Plugin Interface
-OpenCog Reasoning (Cognitive Layer)  
-├── AtomSpace Knowledge Representation
-├── PLN Financial Pattern Recognition
-└── CogServer Distributed Processing
-    ↓ Data Interface
-GnuCash Storage (Data Layer)
-├── Account Structures and Hierarchies
-├── Transaction Records and History
-└── Financial Reports and Analytics
-```
-The above-mentioned commercial projects don't pay the bills. There are far more ideas
-and possibilities than there is time or money. If you're a software developer, bored
-and looking for something to do, there's a lot of great stuff here that is worthy of
-attention. If you are an academic, scientist or grad student, someone who wants to do
-cross-over Symbolic AI and Deep-Learning Neural Net research, and need a base toolset,
-this is the place. We will work with you to make sure this stuff fits your needs and
-does what you want it to do, the way you want it.
-Contact [Linas Vepstas](linasvepstas@gmail.com).
+### Integration Projects
+- ElizaOS-OpenCog bridge development
+- GnuCash cognitive enhancement
+- Financial reasoning frameworks
+- Hybrid agent architectures
 
 ### Commercial support
 If you are a commercial business looking to use any of these components in your products,
 we can provide full-time support, if that's what you want. We'll custom-taylor components,
 systems, and API's to suit your needs. If you are an investor looking to build up a venture,
 well yes, that could happen too. Talk to us. Contact [Linas Vepstas](linasvepstas@gmail.com).
+
