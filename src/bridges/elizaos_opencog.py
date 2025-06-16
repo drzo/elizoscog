@@ -3,7 +3,17 @@ ElizaOS-OpenCog Bridge Implementation
 Provides integration between ElizaOS agents and OpenCog AtomSpace
 """
 
-from typing import Dict, List, Any
+from typing import Dict, List, Any, Optional
+import sys
+import os
+
+# Add financial package to path
+sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..'))
+
+try:
+    from financial import FinancialReasoningEngine
+except ImportError:
+    FinancialReasoningEngine = None
 
 
 class AtomSpaceProvider:
@@ -317,8 +327,28 @@ class OpenCogAgentTemplate:
         self.atomspace_provider = AtomSpaceProvider(agent_config.get('atomspace', {}))
         self.pln_reasoner = PLNReasoner(agent_config.get('pln', {}))
         
+        # Initialize financial reasoning if available
+        self.financial_engine = None
+        if FinancialReasoningEngine and agent_config.get('gnucash_file'):
+            self.financial_engine = FinancialReasoningEngine(
+                agent_config['gnucash_file'],
+                agent_config.get('atomspace', {})
+            )
+        
+    async def initialize(self):
+        """Initialize all components"""
+        await self.atomspace_provider.initialize()
+        
+        if self.financial_engine:
+            await self.financial_engine.initialize()
+    
     async def process_message(self, message: str, context: Dict[str, Any]) -> str:
         """Process message using OpenCog cognitive capabilities"""
+        
+        # Check if this is a financial query
+        if self.financial_engine and self._is_financial_query(message):
+            return await self._process_financial_query(message, context)
+        
         # Store message in AtomSpace
         await self.atomspace_provider.store_knowledge({
             'type': 'message',
@@ -334,6 +364,25 @@ class OpenCogAgentTemplate:
         
         # Generate response
         return self._generate_response(reasoning_result)
+        
+    def _is_financial_query(self, message: str) -> bool:
+        """Determine if message is a financial query"""
+        financial_keywords = [
+            'spend', 'spending', 'budget', 'money', 'expense', 'expenses',
+            'transaction', 'account', 'balance', 'income', 'cost', 'price',
+            'financial', 'groceries', 'utilities', 'rent', 'mortgage'
+        ]
+        
+        message_lower = message.lower()
+        return any(keyword in message_lower for keyword in financial_keywords)
+        
+    async def _process_financial_query(self, message: str, context: Dict[str, Any]) -> str:
+        """Process financial queries using the financial reasoning engine"""
+        try:
+            result = await self.financial_engine.answer_financial_question(message, context)
+            return result['answer']
+        except Exception as e:
+            return f"I encountered an issue processing your financial query: {str(e)}"
         
     def _generate_response(self, reasoning_result: List[Dict[str, Any]]) -> str:
         """Generate natural language response from reasoning result"""
