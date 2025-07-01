@@ -52,11 +52,6 @@ salvaged for future use. This includes:
 * [visualization](https://github.com/opencog/visualization) - Visualizing the contents of the AtomSpace
 * [python-attic](https://github.com/opencog/python-attic) - Archive of old opencog python code
 
-### OpenCog Hyperon
-Being developed by [Singularity.net](https://singularitynet.io).
-
-* [pln](https://github.com/opencog/pln) - [NO LONGER MAINTAINED, SUPERSEDED BY https://github.com/trueagi-io/hyperon-pln].  Probabilistic L...
-
 ### OpenCog Incubator
 These are the immature, incomplete, promising projects that haven't taken off yet.
 
@@ -99,6 +94,7 @@ These are the immature, incomplete, promising projects that haven't taken off ye
 * [distributional-value](https://github.com/opencog/distributional-value) - Distributional Value as described in https://github.com/opencog/atomspace/issues/833
 * [attention](https://github.com/opencog/attention) - OpenCog Attention Allocation Subsystem
 * [cogserver](https://github.com/opencog/cogserver) - Distributed AtomSpace Network Server
+* [pln](https://github.com/opencog/pln) - [NO LONGER MAINTAINED, SUPERSEDED BY https://github.com/trueagi-io/pln-experimental and https://g...
 * [generate](https://github.com/opencog/generate) - Generate networks from syntax (e.g. natural language, math proofs, action plans, biome/reactome n...
 * [rocca](https://github.com/opencog/rocca) - Rational OpenCog Controlled Agent (ROCCA). Use OpenCog to control a rational agent in OpenAI Gym ...
 * [pln-brca-xp](https://github.com/opencog/pln-brca-xp) - Apply PLN to the breast-cancer dataset
