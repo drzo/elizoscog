@@ -35,12 +35,21 @@ jobs:
         run: |
           python scripts/generate_checklists.py
 
+      - name: Test cognitive flowchart components
+        run: |
+          python scripts/test_cognitive_flowchart.py 4,5
+          python scripts/create_cognitive_issues.py 4
+          python scripts/validate_workflow.py
+
       - name: Verify script permissions
         run: |
           ls -la scripts/
           test -x scripts/discover_repos.py
           test -x scripts/generate_checklists.py  
           test -x scripts/update_docs.py
+          test -x scripts/test_cognitive_flowchart.py
+          test -x scripts/create_cognitive_issues.py
+          test -x scripts/validate_workflow.py
 
       - name: Check generated documentation
         run: |
