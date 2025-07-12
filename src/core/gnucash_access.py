@@ -8,7 +8,7 @@ import sqlite3
 import asyncio
 import logging
 from typing import Dict, List, Any, Optional, Tuple
-from datetime import datetime, date
+from datetime import datetime, date, timedelta
 from decimal import Decimal
 from pathlib import Path
 
