@@ -9,6 +9,7 @@ from .service_discovery import ServiceRegistry, ServiceDiscovery
 from .load_balancer import LoadBalancer, EnvoyConfigGenerator, TraefikConfigGenerator
 from .orchestration import ServiceOrchestrator, HealthMonitor
 from .ggml_optimization import GGMLServiceOptimizer, HypergraphMeshEncoder
+from .scheme_cognitive_grammar import SchemeCognitiveGrammarService, AgentGrammarAdapter, MemoryGrammarAdapter
 
 __all__ = [
     'ServiceRegistry',
@@ -19,5 +20,8 @@ __all__ = [
     'ServiceOrchestrator',
     'HealthMonitor',
     'GGMLServiceOptimizer',
-    'HypergraphMeshEncoder'
+    'HypergraphMeshEncoder',
+    'SchemeCognitiveGrammarService',
+    'AgentGrammarAdapter',
+    'MemoryGrammarAdapter'
 ]
