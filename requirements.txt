@@ -4,6 +4,7 @@ numpy>=1.21.0
 pandas>=1.5.0
 matplotlib>=3.6.0
 scikit-learn>=1.1.0
+networkx>=3.0.0
 
 # Microservices dependencies
 aiohttp>=3.8.0
