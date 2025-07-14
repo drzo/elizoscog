@@ -43,7 +43,8 @@ class HybridCognitiveFinancialFramework:
         # Cognitive agents (Phase 2)
         self.cognitive_agents = {}
         
-        # Phase 4 & 5 components
+        # Phase 2: Dynamic mesh integration framework
+        self.dynamic_mesh_framework = None
         self.performance_profiler = None
         self.caching_strategy = None
         self.monitoring_system = None
@@ -175,8 +176,67 @@ class HybridCognitiveFinancialFramework:
         logger.info("✅ Phase 5 Advanced Applications Initialized")
     
     async def _initialize_core_integration_bridges(self):
-        """Initialize Phase 2 core integration bridges (preview)"""
-        logger.info("🔗 Initializing Core Integration Bridges (Phase 2 Preview)...")
+        """Initialize Phase 2 core integration bridges with dynamic mesh"""
+        logger.info("🔗 Initializing Core Integration Bridges (Phase 2 Dynamic Mesh)...")
+        
+        # Import and initialize dynamic mesh integration
+        from integration.dynamic_mesh_integration import DynamicMeshIntegrationFramework
+        
+        # Configure dynamic mesh for cognitive agents
+        mesh_config = {
+            'topology': {
+                'max_connections': 8,
+                'min_connections': 3,
+                'update_interval': 30
+            },
+            'attention': {
+                'attention_budget': 1.0,
+                'algorithm': 'priority_based',
+                'coordination_interval': 5
+            },
+            'reconfiguration': {
+                'reconfiguration_threshold': 0.7,
+                'stability_window': 60,
+                'max_concurrent': 3
+            },
+            'state_propagation': {
+                'protocol': 'epidemic',
+                'max_hops': 5,
+                'timeout': 10.0
+            },
+            'fault_tolerance': {
+                'heartbeat_interval': 5,
+                'failure_threshold': 3,
+                'recovery_timeout': 30
+            },
+            'load_distribution': {
+                'algorithm': 'cognitive_aware',
+                'rebalancing_threshold': 0.3
+            }
+        }
+        
+        # Initialize dynamic mesh framework
+        self.dynamic_mesh_framework = DynamicMeshIntegrationFramework(mesh_config)
+        
+        # Convert cognitive agents to mesh nodes
+        mesh_nodes = []
+        for agent_name, agent_config in self.cognitive_agents.items():
+            if agent_config.get('active', False):
+                mesh_node = {
+                    'node_id': agent_name,
+                    'type': 'cognitive_agent',
+                    'capabilities': agent_config.get('capabilities', []),
+                    'max_capacity': 1.0,
+                    'position': (len(mesh_nodes) * 0.5, (len(mesh_nodes) % 2) * 0.5)
+                }
+                mesh_nodes.append(mesh_node)
+        
+        # Initialize dynamic mesh with cognitive agents
+        mesh_success = await self.dynamic_mesh_framework.initialize_dynamic_mesh(mesh_nodes)
+        if not mesh_success:
+            logger.warning("Dynamic mesh initialization failed, continuing with basic bridges")
+        else:
+            logger.info("✅ Dynamic mesh integration initialized successfully")
         
         # ElizaOS ↔ OpenCog bridges
         elizaos_opencog_bridges = [
@@ -215,6 +275,7 @@ class HybridCognitiveFinancialFramework:
         
         self.integration_status['opencog_gnucash'] = 'active'
         self.integration_status['elizaos_gnucash'] = 'active'
+        self.integration_status['phase2_core_integration'] = 'active'
     
     async def _initialize_cognitive_financial_agents(self):
         """Initialize cognitive financial agents (Phase 2 preview)"""
@@ -316,11 +377,11 @@ class HybridCognitiveFinancialFramework:
         logger.info("✅ System integration validated successfully")
     
     async def process_financial_query(self, query: str, context: Optional[Dict] = None) -> Dict[str, Any]:
-        """Process a financial query through the complete cognitive system"""
+        """Process a financial query through the complete cognitive system with dynamic mesh"""
         if self.integration_status['full_hybrid'] != 'active':
             raise RuntimeError("System not fully initialized")
         
-        logger.info(f"🔍 Processing financial query: '{query[:50]}...'")
+        logger.info(f"🔍 Processing financial query through dynamic mesh: '{query[:50]}...'")
         
         # Store query in AtomSpace
         query_atom = self.financial_atomspace.create_atom('ConceptNode', f"Query-{datetime.now().isoformat()}")
@@ -338,17 +399,53 @@ class HybridCognitiveFinancialFramework:
         # Apply cognitive agents (Phase 2)
         cognitive_analysis = await self._apply_cognitive_agents(query, context)
         
+        # Apply dynamic mesh cognitive processing if available
+        mesh_processing = {}
+        if self.dynamic_mesh_framework:
+            try:
+                # Create attention requests for financial query processing
+                attention_requests = [
+                    {
+                        'requesting_node': 'account_reasoning_agent',
+                        'target_node': 'transaction_analysis_agent',
+                        'attention_amount': 0.4,
+                        'priority': 2,
+                        'task_type': 'financial_analysis',
+                        'duration': 10.0
+                    },
+                    {
+                        'requesting_node': 'budget_planning_agent',
+                        'target_node': 'account_reasoning_agent',
+                        'attention_amount': 0.3,
+                        'priority': 1,
+                        'task_type': 'financial_planning',
+                        'duration': 8.0
+                    }
+                ]
+                
+                mesh_coordination = await self.coordinate_distributed_attention(attention_requests)
+                mesh_processing['attention_coordination'] = mesh_coordination
+                
+                # Get mesh status for query context
+                mesh_status = await self.get_mesh_cognitive_status()
+                mesh_processing['mesh_status'] = mesh_status
+                
+            except Exception as e:
+                logger.warning(f"Dynamic mesh processing encountered error: {e}")
+                mesh_processing['error'] = str(e)
+        
         # Generate integrated response
         response = {
             'query': query,
             'query_atom_id': query_atom,
             'plugin_results': plugin_results,
             'cognitive_analysis': cognitive_analysis,
+            'dynamic_mesh_processing': mesh_processing,
             'system_stats': await self.get_system_status(),
             'processed_at': datetime.now().isoformat()
         }
         
-        logger.info("✅ Financial query processed successfully")
+        logger.info("✅ Financial query processed successfully through dynamic mesh")
         return response
     
     async def _apply_cognitive_agents(self, query: str, context: Optional[Dict]) -> Dict[str, Any]:
@@ -395,6 +492,100 @@ class HybridCognitiveFinancialFramework:
             })
         
         return analysis
+    
+    async def optimize_mesh_topology(self) -> Dict[str, Any]:
+        """Optimize the dynamic mesh topology for cognitive efficiency"""
+        if not self.dynamic_mesh_framework:
+            return {"error": "Dynamic mesh not initialized"}
+        
+        logger.info("🕸️ Optimizing dynamic mesh topology")
+        
+        try:
+            optimization_result = await self.dynamic_mesh_framework.optimize_topology()
+            
+            # Record optimization in AtomSpace
+            optimization_atom = self.financial_atomspace.create_atom(
+                'ConceptNode', f"MeshOptimization-{optimization_result.get('optimization_id', 'unknown')}"
+            )
+            
+            return {
+                "mesh_optimization": optimization_result,
+                "atomspace_record": optimization_atom,
+                "timestamp": datetime.now().isoformat()
+            }
+            
+        except Exception as e:
+            logger.error(f"❌ Mesh topology optimization failed: {e}")
+            return {"error": str(e)}
+    
+    async def coordinate_distributed_attention(self, attention_requests: List[Dict[str, Any]]) -> Dict[str, Any]:
+        """Coordinate attention allocation across the dynamic mesh"""
+        if not self.dynamic_mesh_framework:
+            return {"error": "Dynamic mesh not initialized"}
+        
+        logger.info(f"🎯 Coordinating distributed attention for {len(attention_requests)} requests")
+        
+        try:
+            coordination_result = await self.dynamic_mesh_framework.coordinate_attention_allocation(attention_requests)
+            
+            # Update cognitive agents with attention flow data
+            for agent_name, agent_config in self.cognitive_agents.items():
+                agent_config['last_attention_coordination'] = datetime.now().isoformat()
+            
+            return {
+                "attention_coordination": coordination_result,
+                "cognitive_agents_updated": len(self.cognitive_agents),
+                "timestamp": datetime.now().isoformat()
+            }
+            
+        except Exception as e:
+            logger.error(f"❌ Distributed attention coordination failed: {e}")
+            return {"error": str(e)}
+    
+    async def reconfigure_cognitive_mesh(self, trigger: Dict[str, Any]) -> Dict[str, Any]:
+        """Reconfigure the cognitive mesh based on trigger conditions"""
+        if not self.dynamic_mesh_framework:
+            return {"error": "Dynamic mesh not initialized"}
+        
+        logger.info(f"🔄 Reconfiguring cognitive mesh: {trigger.get('type', 'unknown')}")
+        
+        try:
+            reconfiguration_result = await self.dynamic_mesh_framework.reconfigure_mesh(trigger)
+            
+            # Update integration status based on reconfiguration
+            if reconfiguration_result.get("success", False):
+                self.integration_status['phase2_core_integration'] = 'optimized'
+            
+            return {
+                "mesh_reconfiguration": reconfiguration_result,
+                "integration_status_updated": True,
+                "timestamp": datetime.now().isoformat()
+            }
+            
+        except Exception as e:
+            logger.error(f"❌ Cognitive mesh reconfiguration failed: {e}")
+            return {"error": str(e)}
+    
+    async def get_mesh_cognitive_status(self) -> Dict[str, Any]:
+        """Get comprehensive status of the dynamic mesh cognitive system"""
+        if not self.dynamic_mesh_framework:
+            return {"error": "Dynamic mesh not initialized"}
+        
+        try:
+            mesh_status = await self.dynamic_mesh_framework.get_mesh_status()
+            
+            # Combine with existing system status
+            system_status = await self.get_system_status()
+            
+            return {
+                "dynamic_mesh_status": mesh_status,
+                "cognitive_system_status": system_status,
+                "integration_timestamp": datetime.now().isoformat()
+            }
+            
+        except Exception as e:
+            logger.error(f"❌ Failed to get mesh cognitive status: {e}")
+            return {"error": str(e)}
     
     async def get_system_status(self) -> Dict[str, Any]:
         """Get comprehensive system status"""
