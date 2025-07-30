@@ -1,0 +1,93 @@
+{
+  "phase": 3,
+  "title": "Custom GGML Kernels for Symbolic Operations",
+  "demo_results": {
+    "basic_operations": {
+      "addition_time_ms": 0.581261999968774,
+      "pattern_time_ms": 0.9508360000154426,
+      "patterns_detected": 1,
+      "latency_target_met": true
+    },
+    "neural_symbolic_bridge": {
+      "link_creation_time_ms": 0.0430410000262782,
+      "inference_time_ms": 1.2266229999795542,
+      "conclusions_generated": 1,
+      "atom_similarity": 0.7842777967453003,
+      "atomspace_integration": true
+    },
+    "kernel_compilation": {
+      "total_operations": 3,
+      "successful_compilations": 0,
+      "success_rate": 0.0,
+      "avg_compile_time": 0.0,
+      "compilation_pipeline_functional": false
+    },
+    "performance_benchmarks": {
+      "avg_latency_ms": 0.21441798000523704,
+      "throughput_ops_per_sec": 4663.7879900537055,
+      "accuracy": 1.0,
+      "performance_improvement": 0.8927910099973815,
+      "latency_target_met": true,
+      "accuracy_target_met": true,
+      "performance_target_met": true
+    },
+    "complete_workflow": {
+      "patterns_detected": 4,
+      "insights_generated": 1,
+      "recommendations_made": 1,
+      "atoms_created": 5,
+      "avg_operation_time_ms": 0.38108960000045045,
+      "workflow_successful": true
+    }
+  },
+  "category_results": {
+    "Basic Operations": {
+      "addition_time_ms": 0.581261999968774,
+      "pattern_time_ms": 0.9508360000154426,
+      "patterns_detected": 1,
+      "latency_target_met": true
+    },
+    "Neural-Symbolic Bridge": {
+      "link_creation_time_ms": 0.0430410000262782,
+      "inference_time_ms": 1.2266229999795542,
+      "conclusions_generated": 1,
+      "atom_similarity": 0.7842777967453003,
+      "atomspace_integration": true
+    },
+    "Kernel Compilation": {
+      "total_operations": 3,
+      "successful_compilations": 0,
+      "success_rate": 0.0,
+      "avg_compile_time": 0.0,
+      "compilation_pipeline_functional": false
+    },
+    "Performance Benchmarks": {
+      "avg_latency_ms": 0.21441798000523704,
+      "throughput_ops_per_sec": 4663.7879900537055,
+      "accuracy": 1.0,
+      "performance_improvement": 0.8927910099973815,
+      "latency_target_met": true,
+      "accuracy_target_met": true,
+      "performance_target_met": true
+    },
+    "Complete Workflow": {
+      "patterns_detected": 4,
+      "insights_generated": 1,
+      "recommendations_made": 1,
+      "atoms_created": 5,
+      "avg_operation_time_ms": 0.38108960000045045,
+      "workflow_successful": true
+    }
+  },
+  "performance_targets": {
+    "sub_5ms_latency": true,
+    "accuracy_99_percent": true,
+    "performance_50_percent": true,
+    "multi_architecture": true,
+    "atomspace_integration": true
+  },
+  "implementation_complete": true,
+  "success_rate": 0.8,
+  "overall_success": true,
+  "timestamp": 1752468274.625618
+}
