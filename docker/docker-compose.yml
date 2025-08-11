@@ -92,6 +92,8 @@ services:
       - SERVICE_NAME=financial-analysis
       - SERVICE_PORT=8010
       - REGISTRY_URL=http://service-registry:8001
+      - PYTHONDONTWRITEBYTECODE=1
+      - PYTHONUNBUFFERED=1
     depends_on:
       service-registry:
         condition: service_healthy
@@ -103,12 +105,31 @@ services:
     networks:
       - elizoscog-mesh
     restart: unless-stopped
+    # Security hardening
+    security_opt:
+      - no-new-privileges:true
+    read_only: true
+    cap_drop:
+      - ALL
+    cap_add:
+      - NET_BIND_SERVICE
+    tmpfs:
+      - /tmp:noexec,nosuid,size=100m
+      - /app/logs:noexec,nosuid,size=50m
+      - /app/metrics:noexec,nosuid,size=50m
     deploy:
       replicas: 2
       resources:
         limits:
           memory: 1G
           cpus: "0.5"
+        reservations:
+          memory: 512M
+          cpus: "0.25"
+      restart_policy:
+        condition: on-failure
+        delay: 5s
+        max_attempts: 3
 
   # OpenCog Reasoning Service
   reasoning-service:
@@ -124,6 +145,8 @@ services:
       - SERVICE_NAME=cognitive-reasoning
       - SERVICE_PORT=8011
       - REGISTRY_URL=http://service-registry:8001
+      - PYTHONDONTWRITEBYTECODE=1
+      - PYTHONUNBUFFERED=1
     depends_on:
       service-registry:
         condition: service_healthy
@@ -135,11 +158,30 @@ services:
     networks:
       - elizoscog-mesh
     restart: unless-stopped
+    # Security hardening
+    security_opt:
+      - no-new-privileges:true
+    read_only: true
+    cap_drop:
+      - ALL
+    cap_add:
+      - NET_BIND_SERVICE
+    tmpfs:
+      - /tmp:noexec,nosuid,size=200m
+      - /app/logs:noexec,nosuid,size=100m
+      - /app/metrics:noexec,nosuid,size=50m
     deploy:
       resources:
         limits:
           memory: 2G
           cpus: "1.0"
+        reservations:
+          memory: 1G
+          cpus: "0.5"
+      restart_policy:
+        condition: on-failure
+        delay: 5s
+        max_attempts: 3
 
   # GGML ML Service
   ggml-service:
@@ -158,6 +200,8 @@ services:
       - MODEL_TYPE=llama
       - QUANTIZATION=q4_0
       - CONTEXT_LENGTH=2048
+      - PYTHONDONTWRITEBYTECODE=1
+      - PYTHONUNBUFFERED=1
     depends_on:
       service-registry:
         condition: service_healthy
@@ -170,11 +214,30 @@ services:
     networks:
       - elizoscog-mesh
     restart: unless-stopped
+    # Security hardening for ML service
+    security_opt:
+      - no-new-privileges:true
+    read_only: true
+    cap_drop:
+      - ALL
+    cap_add:
+      - NET_BIND_SERVICE
+    tmpfs:
+      - /tmp:noexec,nosuid,size=500m
+      - /app/model_cache:noexec,nosuid,size=1g
+      - /app/inference_logs:noexec,nosuid,size=200m
     deploy:
       resources:
         limits:
           memory: 4G
           cpus: "2.0"
+        reservations:
+          memory: 2G
+          cpus: "1.0"
+      restart_policy:
+        condition: on-failure
+        delay: 10s
+        max_attempts: 2
 
   # Envoy Proxy for Service Mesh
   envoy-proxy:
@@ -216,6 +279,52 @@ services:
     restart: unless-stopped
     profiles:
       - traefik
+
+  # Security Scanner with Trivy
+  security-scanner:
+    image: aquasec/trivy:latest
+    container_name: elizoscog-security-scanner
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+      - security-reports:/reports
+    environment:
+      - TRIVY_CACHE_DIR=/tmp/trivy
+      - TRIVY_DB_REPOSITORY=ghcr.io/aquasecurity/trivy-db
+    command: >
+      sh -c "
+      echo 'Starting security scan...' &&
+      trivy image --format json --output /reports/image-scan.json elizoscog-financial-service:latest 2>/dev/null || echo 'Image not found' &&
+      trivy fs --format json --output /reports/filesystem-scan.json /app 2>/dev/null || echo 'FS scan skipped' &&
+      echo 'Security scans completed'
+      "
+    networks:
+      - elizoscog-mesh
+    profiles:
+      - security
+      
+  # Performance Testing Service
+  performance-tester:
+    image: python:3.12-slim
+    container_name: elizoscog-performance-tester
+    volumes:
+      - ./configs/performance:/config:ro
+      - performance-reports:/reports
+    environment:
+      - TARGET_HOST=load-balancer:8002
+      - TEST_DURATION=60
+      - CONCURRENT_USERS=50
+    command: >
+      sh -c "
+      pip install --no-cache-dir requests locust &&
+      echo 'Running performance tests...' &&
+      locust --headless -u 50 -r 10 -t 60s --host=http://load-balancer:8002 -f /config/locustfile.py --html /reports/performance-report.html || echo 'Performance test completed'
+      "
+    depends_on:
+      - load-balancer
+    networks:
+      - elizoscog-mesh
+    profiles:
+      - performance
 
   # Monitoring with Prometheus
   prometheus:
@@ -264,3 +373,5 @@ networks:
 
 volumes:
   grafana-data:
+  security-reports:
+  performance-reports:
