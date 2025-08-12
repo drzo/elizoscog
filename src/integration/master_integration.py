@@ -51,12 +51,17 @@ class HybridCognitiveFinancialFramework:
         self.financial_advisor = None
         self.market_analysis_engine = None
         
+        # Phase 4: Embodiment layer
+        self.embodiment_manager = None
+        self.embodiment_platforms = {}
+        
         # Integration status
         self.integration_status = {
             'phase1_foundation': 'pending',
             'phase2_core_integration': 'pending',
             'phase3_advanced_features': 'pending',
             'phase4_optimization': 'pending',
+            'phase4_embodiment': 'pending',
             'phase5_advanced_applications': 'pending',
             'elizaos_opencog': 'pending',
             'opencog_gnucash': 'pending', 
@@ -157,6 +162,51 @@ class HybridCognitiveFinancialFramework:
         
         self.integration_status['phase4_optimization'] = 'active'
         logger.info("✅ Phase 4 Optimization & Scaling Initialized")
+        
+        # Initialize Phase 4 Embodiment Layer
+        await self._initialize_phase4_embodiment()
+    
+    async def _initialize_phase4_embodiment(self):
+        """Initialize Phase 4 embodiment layer bindings"""
+        logger.info("🤖 Initializing Phase 4 Embodiment Layer Bindings...")
+        
+        try:
+            # Import embodiment components
+            from embodiment.embodiment_manager import EmbodimentManager
+            
+            # Initialize embodiment manager with platform configurations
+            embodiment_config = self.config.get('embodiment', {})
+            
+            # Set default embodiment configuration if not provided
+            if not embodiment_config:
+                embodiment_config = {
+                    'unity3d': {'enabled': True, 'host': 'localhost', 'port': 12345},
+                    'ros': {'enabled': True, 'node_name': 'cognitive_integration_node'}, 
+                    'websocket': {'enabled': True, 'host': 'localhost', 'port': 8765},
+                    'sync_interval': 0.1,
+                    'max_sync_delay': 0.5
+                }
+            
+            self.embodiment_manager = EmbodimentManager(embodiment_config)
+            
+            if not await self.embodiment_manager.initialize():
+                raise RuntimeError("Failed to initialize embodiment manager")
+            
+            # Start embodiment manager in background
+            asyncio.create_task(self.embodiment_manager.start())
+            
+            self.integration_status['phase4_embodiment'] = 'active'
+            logger.info("✅ Phase 4 Embodiment Layer Initialized")
+            logger.info("  • Unity3D cognitive interface bindings ready")
+            logger.info("  • ROS node integrations for robotic platforms ready") 
+            logger.info("  • WebSocket interfaces for web agents ready")
+            logger.info("  • Multi-platform embodiment synchronization active")
+            
+        except Exception as e:
+            logger.error(f"❌ Failed to initialize embodiment layer: {e}")
+            self.integration_status['phase4_embodiment'] = 'error'
+            # Don't fail the entire initialization for embodiment issues
+            logger.warning("⚠️  Continuing without embodiment layer")
     
     async def _initialize_phase5_advanced_applications(self):
         """Initialize Phase 5 advanced applications"""
@@ -608,6 +658,177 @@ class HybridCognitiveFinancialFramework:
             'last_updated': datetime.now().isoformat()
         }
     
+    # Embodiment Layer Methods
+    
+    async def register_embodied_agent(self, agent_id: str, platforms: List[str], 
+                                     initial_state: Optional[Dict[str, Any]] = None) -> bool:
+        """Register a new embodied agent across specified platforms"""
+        if not self.embodiment_manager:
+            logger.error("Embodiment manager not initialized")
+            return False
+        
+        try:
+            from embodiment.embodiment_manager import EmbodimentPlatform
+            
+            # Convert platform strings to enum
+            platform_enums = set()
+            for platform_str in platforms:
+                try:
+                    platform_enums.add(EmbodimentPlatform(platform_str))
+                except ValueError:
+                    logger.warning(f"Unknown platform: {platform_str}")
+            
+            return await self.embodiment_manager.register_agent(agent_id, platform_enums, initial_state)
+            
+        except Exception as e:
+            logger.error(f"Error registering embodied agent {agent_id}: {e}")
+            return False
+    
+    async def send_embodied_action(self, agent_id: str, action_type: str, 
+                                  parameters: Dict[str, Any], 
+                                  target_platforms: Optional[List[str]] = None) -> Optional[str]:
+        """Send synchronized action to embodied agent"""
+        if not self.embodiment_manager:
+            logger.error("Embodiment manager not initialized")
+            return None
+        
+        try:
+            from embodiment.embodiment_manager import EmbodimentPlatform
+            
+            # Convert platform strings to enum if specified
+            platform_enums = None
+            if target_platforms:
+                platform_enums = set()
+                for platform_str in target_platforms:
+                    try:
+                        platform_enums.add(EmbodimentPlatform(platform_str))
+                    except ValueError:
+                        logger.warning(f"Unknown platform: {platform_str}")
+            
+            return await self.embodiment_manager.send_action_to_agent(
+                agent_id, action_type, parameters, platform_enums
+            )
+            
+        except Exception as e:
+            logger.error(f"Error sending embodied action: {e}")
+            return None
+    
+    def get_embodied_agent_state(self, agent_id: str) -> Optional[Dict[str, Any]]:
+        """Get current state of an embodied agent"""
+        if not self.embodiment_manager:
+            return None
+        
+        agent_state = self.embodiment_manager.get_agent_state(agent_id)
+        if agent_state:
+            return {
+                'agent_id': agent_state.agent_id,
+                'platforms': [p.value for p in agent_state.platforms],
+                'position': agent_state.position,
+                'orientation': agent_state.orientation,
+                'velocity': agent_state.velocity,
+                'cognitive_state': agent_state.cognitive_state,
+                'sensor_data': agent_state.sensor_data,
+                'last_update': agent_state.last_update,
+                'status': agent_state.status.value
+            }
+        
+        return None
+    
+    def get_all_embodied_agents(self) -> Dict[str, Dict[str, Any]]:
+        """Get all embodied agents"""
+        if not self.embodiment_manager:
+            return {}
+        
+        agents = self.embodiment_manager.get_all_agents()
+        result = {}
+        
+        for agent_id, agent_state in agents.items():
+            result[agent_id] = {
+                'agent_id': agent_state.agent_id,
+                'platforms': [p.value for p in agent_state.platforms],
+                'position': agent_state.position,
+                'orientation': agent_state.orientation,
+                'velocity': agent_state.velocity,
+                'last_update': agent_state.last_update,
+                'status': agent_state.status.value
+            }
+        
+        return result
+    
+    def get_embodiment_status(self) -> Dict[str, Any]:
+        """Get embodiment layer status"""
+        if not self.embodiment_manager:
+            return {'status': 'not_initialized'}
+        
+        platform_states = self.embodiment_manager.get_platform_states()
+        performance_metrics = self.embodiment_manager.get_performance_metrics()
+        
+        return {
+            'status': 'active',
+            'platform_states': {p.value: s.value for p, s in platform_states.items()},
+            'performance_metrics': performance_metrics,
+            'agents_count': len(self.embodiment_manager.get_all_agents()),
+            'integration_status': self.integration_status.get('phase4_embodiment', 'unknown')
+        }
+    
+    async def process_embodied_cognitive_query(self, agent_id: str, query: str, 
+                                              context: Optional[Dict] = None) -> Dict[str, Any]:
+        """Process cognitive query with embodiment context"""
+        try:
+            # Get embodied agent state for context
+            agent_state = self.get_embodied_agent_state(agent_id)
+            
+            # Enhance context with embodiment data
+            enhanced_context = context or {}
+            if agent_state:
+                enhanced_context['embodiment'] = {
+                    'agent_id': agent_id,
+                    'position': agent_state['position'],
+                    'orientation': agent_state['orientation'],
+                    'sensor_data': agent_state.get('sensor_data', {}),
+                    'platforms': agent_state['platforms']
+                }
+            
+            # Process through normal cognitive query pipeline
+            result = await self.process_financial_query(query, enhanced_context)
+            
+            # Add embodiment-specific processing
+            if agent_state and 'recommendations' in result:
+                result['embodiment_actions'] = self._generate_embodiment_actions(
+                    result['recommendations'], agent_state
+                )
+            
+            return result
+            
+        except Exception as e:
+            logger.error(f"Error processing embodied cognitive query: {e}")
+            return {'error': str(e), 'query': query}
+    
+    def _generate_embodiment_actions(self, recommendations: List[Dict], agent_state: Dict) -> List[Dict]:
+        """Generate embodiment actions based on cognitive recommendations"""
+        actions = []
+        
+        for recommendation in recommendations:
+            # Simple mapping of cognitive recommendations to embodiment actions
+            if 'navigate' in recommendation.get('action', '').lower():
+                actions.append({
+                    'type': 'move',
+                    'parameters': {
+                        'target_position': recommendation.get('target', agent_state['position']),
+                        'speed': 1.0
+                    }
+                })
+            elif 'display' in recommendation.get('action', '').lower():
+                actions.append({
+                    'type': 'display',
+                    'parameters': {
+                        'content': recommendation.get('content', ''),
+                        'duration': 5.0
+                    }
+                })
+        
+        return actions
+    
     async def shutdown(self):
         """Shutdown the hybrid framework gracefully"""
         logger.info("🛑 Shutting down Hybrid Cognitive-Financial Framework...")
@@ -615,6 +836,10 @@ class HybridCognitiveFinancialFramework:
         # Cleanup plugins
         if self.plugin_manager:
             await self.plugin_manager.cleanup_all_plugins()
+        
+        # Shutdown embodiment manager
+        if self.embodiment_manager:
+            await self.embodiment_manager.stop()
         
         # Close GnuCash connection
         if self.gnucash_access:
