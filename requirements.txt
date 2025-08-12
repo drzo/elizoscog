@@ -25,3 +25,18 @@ memory-profiler>=0.60.0
 # Optional ML dependencies for GGML optimization
 torch>=2.0.0;extra=="ml"
 transformers>=4.20.0;extra=="ml"
+
+# Embodiment layer dependencies
+websockets>=11.0.0
+asyncio-mqtt>=0.11.0
+roslibpy>=1.5.0
+
+# Optional ROS2 dependencies (install separately if needed)
+# rclpy>=3.0.0;extra=="ros2"
+# std_msgs>=4.0.0;extra=="ros2"
+# geometry_msgs>=4.0.0;extra=="ros2"
+# sensor_msgs>=4.0.0;extra=="ros2"
+
+# Unity3D communication dependencies  
+socket.io>=5.8.0
+socketio-client>=0.7.2
