@@ -21,6 +21,7 @@ from .realtime_sentiment_analyzer import (
     RealTimeSentimentAnalyzer, NewsDataSource, SocialMediaDataSource, 
     MarketDataSource, DataSourceType
 )
+from .onnx_optimization import ONNXIntegration, ONNXModelConfig, ONNXOptimizationLevel, ONNXProviderType
 
 logger = logging.getLogger(__name__)
 
@@ -62,6 +63,9 @@ class Phase5MLIntegratedSystem:
             'base_path': str(self.base_path / 'sentiment_analysis'),
             **self.config.get('sentiment_analysis', {})
         })
+        
+        # Phase 6: Add ONNX optimization integration
+        self.onnx_integration = ONNXIntegration()
         
         # System state
         self.is_running = False
@@ -596,5 +600,106 @@ class Phase5MLIntegratedSystem:
             ]),
             'data_sources_active': len(self.sentiment_analyzer.data_sources),
             'current_sentiment': self.sentiment_analyzer.get_current_sentiment_synthesis(),
-            'uptime': 'running' if self.is_running else 'stopped'
+            'uptime': 'running' if self.is_running else 'stopped',
+            # Phase 6 enhancements
+            'onnx_optimizers': len(self.onnx_integration.optimizers),
+            'onnx_models_ready': sum(1 for opt in self.onnx_integration.optimizers.values() if opt.session is not None),
+            'phase6_features_enabled': True
         }
+    
+    # Phase 6: ONNX Optimization Methods
+    
+    async def setup_onnx_optimization(self, model_id: str, input_shape: Tuple[int, ...], 
+                                     output_shape: Tuple[int, ...], 
+                                     optimization_level: ONNXOptimizationLevel = ONNXOptimizationLevel.EXTENDED,
+                                     provider_type: ONNXProviderType = ONNXProviderType.CPU) -> str:
+        """Setup ONNX optimization for a specific model"""
+        config = ONNXModelConfig(
+            model_name=model_id,
+            input_shape=input_shape,
+            output_shape=output_shape,
+            optimization_level=optimization_level,
+            provider_type=provider_type
+        )
+        
+        optimizer = await self.onnx_integration.create_optimizer(model_id, config)
+        logger.info(f"ONNX optimization setup for model {model_id}")
+        
+        return f"onnx_optimizer_{model_id}"
+    
+    async def optimize_model_with_onnx(self, model_id: str, source_model: Any, 
+                                      model_format: str = "pytorch") -> Dict[str, Any]:
+        """Optimize an existing model using ONNX"""
+        try:
+            result = await self.onnx_integration.optimize_pipeline_model(
+                model_id, source_model, model_format
+            )
+            
+            logger.info(f"Successfully optimized model {model_id} with ONNX")
+            return {
+                "status": "success",
+                "model_id": model_id,
+                "optimization_result": result,
+                "performance_gains": "Estimated 1.2-3x speedup depending on model complexity"
+            }
+            
+        except Exception as e:
+            logger.error(f"Failed to optimize model {model_id} with ONNX: {e}")
+            return {
+                "status": "error",
+                "model_id": model_id,
+                "error": str(e)
+            }
+    
+    async def benchmark_onnx_models(self, test_data_size: int = 32) -> Dict[str, Any]:
+        """Benchmark all ONNX optimized models"""
+        import numpy as np
+        
+        benchmark_results = {}
+        
+        for model_name, optimizer in self.onnx_integration.optimizers.items():
+            try:
+                # Generate test data based on model input shape
+                test_data = np.random.randn(test_data_size, *optimizer.config.input_shape[1:]).astype(np.float32)
+                
+                # Run benchmark
+                benchmark_result = await optimizer.benchmark_model(test_data, num_iterations=50)
+                benchmark_results[model_name] = benchmark_result
+                
+                logger.info(f"Benchmarked ONNX model {model_name}: {benchmark_result['latency_stats']['mean_ms']:.2f}ms avg latency")
+                
+            except Exception as e:
+                logger.error(f"Failed to benchmark ONNX model {model_name}: {e}")
+                benchmark_results[model_name] = {"error": str(e)}
+        
+        return {
+            "benchmark_timestamp": datetime.now().isoformat(),
+            "test_batch_size": test_data_size,
+            "model_results": benchmark_results,
+            "summary": self._summarize_onnx_benchmarks(benchmark_results)
+        }
+    
+    def _summarize_onnx_benchmarks(self, results: Dict[str, Any]) -> Dict[str, Any]:
+        """Summarize ONNX benchmark results"""
+        successful_results = [r for r in results.values() if "error" not in r]
+        
+        if not successful_results:
+            return {"status": "no_successful_benchmarks"}
+        
+        import numpy as np
+        latencies = [r["latency_stats"]["mean_ms"] for r in successful_results]
+        throughputs = [r["throughput_stats"]["mean_ops_per_sec"] for r in successful_results]
+        
+        return {
+            "total_models": len(results),
+            "successful_benchmarks": len(successful_results),
+            "average_latency_ms": np.mean(latencies),
+            "best_latency_ms": np.min(latencies),
+            "worst_latency_ms": np.max(latencies),
+            "average_throughput": np.mean(throughputs),
+            "total_model_size_mb": sum(r.get("model_size_mb", 0) for r in successful_results)
+        }
+    
+    def get_onnx_optimization_report(self) -> Dict[str, Any]:
+        """Get comprehensive ONNX optimization report"""
+        return self.onnx_integration.get_all_optimization_reports()
