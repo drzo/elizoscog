@@ -971,7 +971,220 @@ class SystemResourceMonitor:
                 break
 
 
+# Integration with Adaptive Optimization
+class AdaptivePerformanceProfiler(EnhancedPerformanceProfiler):
+    """Enhanced performance profiler with adaptive optimization integration"""
+    
+    def __init__(self, history_size: int = 1000, enable_adaptive_optimization: bool = True):
+        super().__init__(history_size)
+        self.enable_adaptive_optimization = enable_adaptive_optimization
+        self.adaptive_engine = None
+        self.optimization_callbacks = []
+        
+        # Adaptive optimization metrics
+        self.adaptive_improvement_history = []
+        self.last_optimization_trigger = 0.0
+        self.optimization_cooldown = 300.0  # 5 minutes
+        
+    def register_adaptive_engine(self, adaptive_engine):
+        """Register an adaptive optimization engine for integration"""
+        self.adaptive_engine = adaptive_engine
+        logger.info("🔗 Adaptive optimization engine registered with performance profiler")
+    
+    def add_optimization_callback(self, callback: Callable):
+        """Add callback to be triggered on performance issues"""
+        self.optimization_callbacks.append(callback)
+    
+    async def trigger_adaptive_optimization(self, regression_alert: RegressionAlert) -> Dict[str, Any]:
+        """Trigger adaptive optimization in response to performance regression"""
+        if not self.enable_adaptive_optimization:
+            return {"status": "adaptive_optimization_disabled"}
+        
+        # Check cooldown period
+        if time.time() - self.last_optimization_trigger < self.optimization_cooldown:
+            return {"status": "cooldown_active", "remaining_seconds": 
+                   self.optimization_cooldown - (time.time() - self.last_optimization_trigger)}
+        
+        self.last_optimization_trigger = time.time()
+        
+        # Prepare optimization context
+        optimization_context = {
+            "trigger_type": "performance_regression",
+            "regression_details": {
+                "operation": regression_alert.operation,
+                "architecture": regression_alert.architecture,
+                "metric_type": regression_alert.metric_type,
+                "regression_factor": regression_alert.regression_factor,
+                "severity": regression_alert.severity
+            },
+            "current_baselines": self.performance_baselines.copy(),
+            "recent_performance": self.get_performance_summary()
+        }
+        
+        # Trigger adaptive engine if available
+        optimization_result = {"status": "no_adaptive_engine"}
+        if self.adaptive_engine:
+            try:
+                # This would integrate with the adaptive optimization engine
+                optimization_result = await self._execute_adaptive_optimization(optimization_context)
+            except Exception as e:
+                logger.error(f"Adaptive optimization failed: {e}")
+                optimization_result = {"status": "optimization_failed", "error": str(e)}
+        
+        # Execute callbacks
+        for callback in self.optimization_callbacks:
+            try:
+                await callback(optimization_context, optimization_result)
+            except Exception as e:
+                logger.error(f"Optimization callback failed: {e}")
+        
+        # Record improvement attempt
+        self.adaptive_improvement_history.append({
+            "timestamp": time.time(),
+            "trigger": regression_alert,
+            "optimization_context": optimization_context,
+            "result": optimization_result
+        })
+        
+        logger.info(f"🔧 Adaptive optimization triggered for {regression_alert.operation} "
+                   f"({regression_alert.severity} {regression_alert.metric_type} regression)")
+        
+        return optimization_result
+    
+    async def _execute_adaptive_optimization(self, context: Dict[str, Any]) -> Dict[str, Any]:
+        """Execute adaptive optimization with the registered engine"""
+        if not self.adaptive_engine:
+            return {"status": "no_engine"}
+        
+        # Get current engine status
+        engine_status = self.adaptive_engine.get_comprehensive_status()
+        
+        # Check if engine is already running optimization
+        if engine_status["engine_status"]["running"]:
+            return {"status": "optimization_already_running"}
+        
+        # Create adaptive parameters based on regression type
+        regression_details = context["regression_details"]
+        suggested_parameters = self._suggest_optimization_parameters(regression_details)
+        
+        # This would typically trigger parameter adjustment or re-optimization
+        optimization_suggestion = {
+            "parameter_adjustments": suggested_parameters,
+            "optimization_strategy": self._recommend_optimization_strategy(regression_details),
+            "expected_improvement": self._estimate_improvement_potential(regression_details)
+        }
+        
+        return {
+            "status": "optimization_suggested",
+            "suggestions": optimization_suggestion,
+            "engine_status": engine_status
+        }
+    
+    def _suggest_optimization_parameters(self, regression_details: Dict[str, Any]) -> Dict[str, Any]:
+        """Suggest parameter adjustments based on regression type"""
+        metric_type = regression_details.get("metric_type", "unknown")
+        severity = regression_details.get("severity", "minor")
+        
+        suggestions = {}
+        
+        if metric_type == "latency":
+            suggestions.update({
+                "execution_optimization": "increase",
+                "parallelization": "consider",
+                "caching_strategy": "aggressive"
+            })
+        elif metric_type == "memory":
+            suggestions.update({
+                "memory_management": "optimize",
+                "garbage_collection": "tune",
+                "buffer_sizes": "reduce"
+            })
+        elif metric_type == "throughput":
+            suggestions.update({
+                "batch_processing": "optimize",
+                "resource_allocation": "increase",
+                "bottleneck_analysis": "required"
+            })
+        
+        # Adjust aggressiveness based on severity
+        if severity == "critical":
+            suggestions["optimization_aggressiveness"] = "high"
+            suggestions["immediate_action"] = "required"
+        elif severity == "major":
+            suggestions["optimization_aggressiveness"] = "medium"
+        else:
+            suggestions["optimization_aggressiveness"] = "conservative"
+        
+        return suggestions
+    
+    def _recommend_optimization_strategy(self, regression_details: Dict[str, Any]) -> str:
+        """Recommend optimization strategy based on regression pattern"""
+        metric_type = regression_details.get("metric_type", "unknown")
+        severity = regression_details.get("severity", "minor")
+        
+        if severity == "critical":
+            return "emergency_optimization"
+        elif metric_type in ["latency", "throughput"]:
+            return "performance_focused"
+        elif metric_type == "memory":
+            return "resource_efficiency"
+        else:
+            return "balanced_optimization"
+    
+    def _estimate_improvement_potential(self, regression_details: Dict[str, Any]) -> float:
+        """Estimate potential improvement from optimization"""
+        regression_factor = regression_details.get("regression_factor", 1.0)
+        severity = regression_details.get("severity", "minor")
+        
+        # Base improvement potential based on regression severity
+        base_potential = min(0.5, (regression_factor - 1.0) * 0.8)
+        
+        # Adjust based on severity
+        severity_multiplier = {"minor": 0.7, "major": 0.9, "critical": 1.2}.get(severity, 0.8)
+        
+        return min(1.0, base_potential * severity_multiplier)
+    
+    def get_adaptive_optimization_summary(self) -> Dict[str, Any]:
+        """Get summary of adaptive optimization activities"""
+        if not self.adaptive_improvement_history:
+            return {"status": "no_optimization_history"}
+        
+        recent_optimizations = self.adaptive_improvement_history[-10:]
+        
+        # Calculate success metrics
+        successful_optimizations = [
+            opt for opt in recent_optimizations 
+            if opt["result"].get("status") not in ["optimization_failed", "no_engine"]
+        ]
+        
+        success_rate = len(successful_optimizations) / len(recent_optimizations) if recent_optimizations else 0.0
+        
+        # Analyze optimization triggers
+        trigger_analysis = {}
+        for opt in recent_optimizations:
+            trigger = opt["trigger"]
+            key = f"{trigger.metric_type}_{trigger.severity}"
+            trigger_analysis[key] = trigger_analysis.get(key, 0) + 1
+        
+        return {
+            "total_optimization_attempts": len(self.adaptive_improvement_history),
+            "recent_attempts": len(recent_optimizations),
+            "success_rate": success_rate,
+            "trigger_analysis": trigger_analysis,
+            "last_optimization": self.adaptive_improvement_history[-1]["timestamp"] if self.adaptive_improvement_history else None,
+            "cooldown_remaining": max(0, self.optimization_cooldown - (time.time() - self.last_optimization_trigger)),
+            "adaptive_engine_available": self.adaptive_engine is not None
+        }
+
+
 # Factory function for easy instantiation
 def create_performance_profiler(history_size: int = 1000) -> EnhancedPerformanceProfiler:
     """Create and return a configured performance profiler"""
     return EnhancedPerformanceProfiler(history_size=history_size)
+
+
+def create_adaptive_performance_profiler(history_size: int = 1000, 
+                                       enable_adaptive_optimization: bool = True) -> AdaptivePerformanceProfiler:
+    """Create and return an adaptive performance profiler with optimization capabilities"""
+    return AdaptivePerformanceProfiler(history_size=history_size, 
+                                     enable_adaptive_optimization=enable_adaptive_optimization)
