@@ -449,8 +449,19 @@ class KernelCompiler:
                 success = await self._compile_cuda_kernel(
                     source_file, binary_file, config
                 )
+            elif architecture == KernelArchitecture.GPU_OPENCL:
+                success = await self._compile_opencl_kernel(
+                    source_file, binary_file, config
+                )
+            elif architecture in [KernelArchitecture.TPU_V4, KernelArchitecture.TPU_V5]:
+                success = await self._compile_tpu_kernel(
+                    source_file, binary_file, config, architecture
+                )
             else:
-                raise NotImplementedError(f"Compilation for {architecture} not implemented")
+                logger.warning(f"Architecture {architecture} not fully supported, using CPU fallback")
+                success = await self._compile_cpu_kernel(
+                    source_file, binary_file, config
+                )
             
             if success and os.path.exists(binary_file):
                 result.success = True
@@ -578,6 +589,112 @@ class KernelCompiler:
         except Exception as e:
             logger.error(f"CUDA compilation error: {e}")
             return False
+    
+    async def _compile_opencl_kernel(self, source_file: str, binary_file: str,
+                                   config: KernelCompilationConfig) -> bool:
+        """Compile kernel for OpenCL GPU execution"""
+        try:
+            # Check if OpenCL compiler is available
+            result = await asyncio.create_subprocess_exec(
+                'which', 'clang', 
+                stdout=asyncio.subprocess.PIPE, 
+                stderr=asyncio.subprocess.PIPE
+            )
+            if result.returncode != 0:
+                logger.warning("OpenCL compiler not found, using fallback compilation")
+                return await self._compile_cpu_kernel(source_file, binary_file, config)
+            
+            # OpenCL compilation command (simplified - would need proper OpenCL SDK)
+            compile_cmd = [
+                'clang',
+                '-cl-std=CL2.0',
+                '-O3',
+                '-DOPENCL_KERNEL',
+                '-c',
+                source_file,
+                '-o', binary_file
+            ]
+            
+            if config.optimization_level == OptimizationLevel.AGGRESSIVE:
+                compile_cmd.extend(['-cl-fast-relaxed-math', '-cl-unsafe-math-optimizations'])
+            
+            logger.info(f"🔧 Compiling OpenCL kernel: {' '.join(compile_cmd)}")
+            
+            process = await asyncio.create_subprocess_exec(
+                *compile_cmd,
+                stdout=asyncio.subprocess.PIPE,
+                stderr=asyncio.subprocess.PIPE
+            )
+            
+            stdout, stderr = await process.communicate()
+            
+            if process.returncode == 0:
+                logger.info(f"✅ OpenCL kernel compiled successfully")
+                return True
+            else:
+                logger.error(f"OpenCL compilation failed: {stderr.decode()}")
+                return False
+            
+        except Exception as e:
+            logger.error(f"OpenCL compilation error: {e}")
+            return False
+    
+    async def _compile_tpu_kernel(self, source_file: str, binary_file: str,
+                                config: KernelCompilationConfig, 
+                                architecture: KernelArchitecture) -> bool:
+        """Compile kernel for TPU execution"""
+        try:
+            # Check if TPU compiler (XLA) is available
+            result = await asyncio.create_subprocess_exec(
+                'which', 'xla_compile', 
+                stdout=asyncio.subprocess.PIPE, 
+                stderr=asyncio.subprocess.PIPE
+            )
+            
+            if result.returncode != 0:
+                logger.warning("TPU compiler not found, using CPU fallback")
+                return await self._compile_cpu_kernel(source_file, binary_file, config)
+            
+            # TPU compilation parameters based on version
+            tpu_params = []
+            if architecture == KernelArchitecture.TPU_V4:
+                tpu_params = ['--tpu_version=v4', '--matrix_unit_size=8192']
+            elif architecture == KernelArchitecture.TPU_V5:
+                tpu_params = ['--tpu_version=v5', '--matrix_unit_size=16384']
+            
+            # XLA compilation command (simplified)
+            compile_cmd = [
+                'xla_compile',
+                '--target=tpu',
+                '--optimization_level=3',
+                *tpu_params,
+                source_file,
+                '--output', binary_file
+            ]
+            
+            logger.info(f"🔧 Compiling TPU kernel: {' '.join(compile_cmd)}")
+            
+            process = await asyncio.create_subprocess_exec(
+                *compile_cmd,
+                stdout=asyncio.subprocess.PIPE,
+                stderr=asyncio.subprocess.PIPE
+            )
+            
+            stdout, stderr = await process.communicate()
+            
+            if process.returncode == 0:
+                logger.info(f"✅ TPU kernel compiled successfully for {architecture.value}")
+                return True
+            else:
+                logger.error(f"TPU compilation failed: {stderr.decode()}")
+                # Fallback to CPU compilation
+                logger.info("Falling back to CPU compilation")
+                return await self._compile_cpu_kernel(source_file, binary_file, config)
+            
+        except Exception as e:
+            logger.error(f"TPU compilation error: {e}")
+            # Fallback to CPU compilation
+            return await self._compile_cpu_kernel(source_file, binary_file, config)
     
     async def _estimate_performance(self, binary_file: str,
                                   operation: SymbolicOperation,

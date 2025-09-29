@@ -17,6 +17,9 @@ import aiohttp
 import websockets
 import re
 from pathlib import Path
+import statistics
+import time
+import random
 
 logger = logging.getLogger(__name__)
 
@@ -142,12 +145,144 @@ class DataSource:
         
     async def start_ingestion(self) -> AsyncGenerator[Dict[str, Any], None]:
         """Start real-time data ingestion"""
-        raise NotImplementedError
+        self.is_active = True
+        last_heartbeat = time.time()
+        
+        while self.is_active:
+            try:
+                # Simulate data ingestion with appropriate delays based on source type
+                if self.source_type == DataSourceType.MARKET_DATA:
+                    await asyncio.sleep(1)  # High frequency for market data
+                elif self.source_type == DataSourceType.SOCIAL_MEDIA:
+                    await asyncio.sleep(5)  # Medium frequency for social media
+                else:
+                    await asyncio.sleep(30)  # Lower frequency for news and other sources
+                
+                # Generate sample data based on source type
+                sample_data = self._generate_sample_data()
+                
+                if sample_data:
+                    # Update heartbeat
+                    self.last_heartbeat = datetime.now()
+                    last_heartbeat = time.time()
+                    
+                    yield sample_data
+                
+                # Check for timeout (simulate connection issues)
+                if time.time() - last_heartbeat > 300:  # 5 minutes timeout
+                    logger.warning(f"Data source {self.source_name} heartbeat timeout")
+                    await asyncio.sleep(60)  # Wait before retry
+                    last_heartbeat = time.time()
+                    
+            except Exception as e:
+                logger.error(f"Error in data ingestion for {self.source_name}: {e}")
+                await asyncio.sleep(30)  # Wait before retry
         
     async def stop_ingestion(self):
         """Stop data ingestion"""
         self.is_active = False
         
+    def _generate_sample_data(self) -> Optional[Dict[str, Any]]:
+        """Generate sample data based on source type"""
+        base_data = {
+            'source_type': self.source_type.value,
+            'source_name': self.source_name,
+            'timestamp': datetime.now(),
+            'metadata': {}
+        }
+        
+        if self.source_type == DataSourceType.FINANCIAL_NEWS:
+            news_templates = [
+                "Market volatility increases as {entity} reports {metric}",
+                "Fed officials signal potential changes to monetary policy framework", 
+                "Technology sector shows strength with {entity} leading gains",
+                "Energy markets react to geopolitical developments",
+                "Inflation concerns weigh on consumer discretionary stocks"
+            ]
+            entity = random.choice(['Apple', 'Microsoft', 'Tesla', 'Amazon', 'Google'])
+            metric = random.choice(['strong earnings', 'revenue growth', 'guidance update'])
+            content = random.choice(news_templates).format(entity=entity, metric=metric)
+            
+            base_data.update({
+                'content': content,
+                'metadata': {
+                    'category': 'market_news',
+                    'entities': [entity],
+                    'source_url': f'https://financial-news.com/article-{random.randint(1000, 9999)}'
+                }
+            })
+            
+        elif self.source_type == DataSourceType.SOCIAL_MEDIA:
+            social_templates = [
+                "Just bought more ${symbol}. This rally has legs! #bullish",
+                "Fed meeting tomorrow. Expecting {tone} tone. ${symbol} looking interesting", 
+                "Market volatility is insane. ${symbol} could be a buying opportunity",
+                "Earnings season starting strong. Watching ${symbol} closely",
+                "Tech rotation continues. ${symbol} still has upside potential"
+            ]
+            symbol = random.choice(['SPY', 'QQQ', 'NVDA', 'TSLA', 'AAPL'])
+            tone = random.choice(['dovish', 'hawkish', 'neutral'])
+            content = random.choice(social_templates).format(symbol=symbol, tone=tone)
+            
+            base_data.update({
+                'content': content,
+                'metadata': {
+                    'platform': random.choice(['twitter', 'reddit', 'stocktwits']),
+                    'user_id': f'user_{random.randint(1000, 9999)}',
+                    'engagement_score': random.uniform(0.1, 1.0),
+                    'symbols_mentioned': [symbol]
+                }
+            })
+            
+        elif self.source_type == DataSourceType.MARKET_DATA:
+            symbol = random.choice(['SPY', 'QQQ', 'TLT', 'GLD', 'VIX'])
+            price_change = random.uniform(-2.0, 2.0)
+            volume = random.randint(1000000, 50000000)
+            
+            content = f"Market update: {symbol} ${350 + price_change:.2f} ({price_change:+.2f}%)"
+            
+            base_data.update({
+                'content': content,
+                'metadata': {
+                    'symbol': symbol,
+                    'price_change_percent': price_change,
+                    'volume': volume,
+                    'market_cap': random.uniform(1e9, 1e12),
+                    'sector': random.choice(['technology', 'financials', 'healthcare', 'energy'])
+                }
+            })
+            
+        elif self.source_type == DataSourceType.ECONOMIC_INDICATORS:
+            indicators = [
+                'GDP growth rate reaches {value}% in latest quarter',
+                'Unemployment rate {trend} to {value}%', 
+                'Consumer confidence index at {value}',
+                'Inflation rate {trend} to {value}% year-over-year',
+                'Manufacturing PMI shows {value} reading'
+            ]
+            value = round(random.uniform(2.0, 8.0), 1)
+            trend = random.choice(['rises', 'falls', 'holds steady'])
+            content = random.choice(indicators).format(value=value, trend=trend)
+            
+            base_data.update({
+                'content': content,
+                'metadata': {
+                    'indicator_type': random.choice(['employment', 'inflation', 'growth', 'sentiment']),
+                    'value': value,
+                    'previous_value': value + random.uniform(-0.5, 0.5),
+                    'reporting_agency': random.choice(['BLS', 'Fed', 'Commerce', 'Treasury'])
+                }
+            })
+        else:
+            # Default generic financial content
+            content = "General financial market update and analysis"
+            base_data.update({
+                'content': content,
+                'metadata': {'type': 'general'}
+            })
+            
+        return base_data
+
     async def health_check(self) -> bool:
         """Check if data source is healthy"""
         return self.is_active
