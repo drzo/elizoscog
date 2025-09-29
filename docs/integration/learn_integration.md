@@ -5,7 +5,7 @@
 **Repository**: [learn](https://github.com/opencog/learn)  
 **Description**: Neuro-symbolic interpretation learning  
 **Priority**: Medium  
-**Generated**: 2025-06-13T22:11:51.746992
+**Generated**: 2025-09-29T22:18:52.640724
 
 ## Integration Assessment
 

@@ -5,7 +5,7 @@ import { Plugin, Action, Provider, Evaluator } from "@elizaos/core";
  * 
  * Description: Unified Rule Engine for automated reasoning
  * Original Repository: https://github.com/opencog/ure
- * Generated: 2025-06-13T22:11:51.746137
+ * Generated: 2025-09-29T22:18:52.639322
  */
 
 interface UreConfig {

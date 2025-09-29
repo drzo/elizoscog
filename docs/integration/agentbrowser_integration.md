@@ -5,7 +5,7 @@
 **Repository**: [agentbrowser](https://github.com/elizaOS/agentbrowser)  
 **Description**: A browser for your agent  
 **Priority**: High  
-**Generated**: 2025-06-13T22:11:51.748894
+**Generated**: 2025-09-29T22:18:52.643984
 
 ## Integration Assessment
 

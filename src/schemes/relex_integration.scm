@@ -1,7 +1,7 @@
 ;; relex OpenCog Integration
 ;; Description: English Dependency Relationship Extractor
 ;; Original Repository: https://github.com/opencog/relex
-;; Generated: 2025-06-13T22:11:51.747513
+;; Generated: 2025-09-29T22:18:52.641479
 
 (use-modules (opencog)
              (opencog atom-types)

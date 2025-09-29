@@ -5,7 +5,7 @@ import { Plugin, Action, Provider, Evaluator } from "@elizaos/core";
  * 
  * Description: Probabilistic Logic Networks reasoning engine
  * Original Repository: https://github.com/opencog/pln
- * Generated: 2025-06-13T22:11:51.745772
+ * Generated: 2025-09-29T22:18:52.638771
  */
 
 interface PlnConfig {

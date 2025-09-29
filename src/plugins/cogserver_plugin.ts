@@ -5,7 +5,7 @@ import { Plugin, Action, Provider, Evaluator } from "@elizaos/core";
  * 
  * Description: Distributed AtomSpace Network Server
  * Original Repository: https://github.com/opencog/cogserver
- * Generated: 2025-06-13T22:11:51.745281
+ * Generated: 2025-09-29T22:18:52.638211
  */
 
 interface CogserverConfig {

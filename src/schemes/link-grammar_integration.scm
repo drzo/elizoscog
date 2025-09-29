@@ -1,7 +1,7 @@
 ;; link-grammar OpenCog Integration
 ;; Description: The CMU Link Grammar natural language parser
 ;; Original Repository: https://github.com/opencog/link-grammar
-;; Generated: 2025-06-13T22:11:51.747819
+;; Generated: 2025-09-29T22:18:52.641984
 
 (use-modules (opencog)
              (opencog atom-types)

@@ -1,7 +1,7 @@
 ;; pln OpenCog Integration
 ;; Description: Probabilistic Logic Networks reasoning engine
 ;; Original Repository: https://github.com/opencog/pln
-;; Generated: 2025-06-13T22:11:51.745882
+;; Generated: 2025-09-29T22:18:52.638919
 
 (use-modules (opencog)
              (opencog atom-types)

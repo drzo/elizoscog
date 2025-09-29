@@ -5,7 +5,7 @@ import { Plugin, Action, Provider, Evaluator } from "@elizaos/core";
  * 
  * Description: The CMU Link Grammar natural language parser
  * Original Repository: https://github.com/opencog/link-grammar
- * Generated: 2025-06-13T22:11:51.747727
+ * Generated: 2025-09-29T22:18:52.641849
  */
 
 interface Link-GrammarConfig {

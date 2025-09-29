@@ -5,7 +5,7 @@ import { Plugin, Action, Provider, Evaluator } from "@elizaos/core";
  * 
  * Description: Easy-to-use agent memory, powered by chromadb and postgres
  * Original Repository: https://github.com/elizaOS/agentmemory
- * Generated: 2025-06-13T22:11:51.748063
+ * Generated: 2025-09-29T22:18:52.642432
  */
 
 interface AgentmemoryConfig {

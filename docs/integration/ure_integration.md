@@ -5,7 +5,7 @@
 **Repository**: [ure](https://github.com/opencog/ure)  
 **Description**: Unified Rule Engine for automated reasoning  
 **Priority**: Medium  
-**Generated**: 2025-06-13T22:11:51.746365
+**Generated**: 2025-09-29T22:18:52.639714
 
 ## Integration Assessment
 

@@ -5,7 +5,7 @@
 **Repository**: [miner](https://github.com/opencog/miner)  
 **Description**: Frequent and surprising subhypergraph pattern miner  
 **Priority**: Medium  
-**Generated**: 2025-06-13T22:11:51.746689
+**Generated**: 2025-09-29T22:18:52.640258
 
 ## Integration Assessment
 

@@ -5,7 +5,7 @@ import { Plugin, Action, Provider, Evaluator } from "@elizaos/core";
  * 
  * Description: A simple, lightweight loop for your agent
  * Original Repository: https://github.com/elizaOS/agentloop
- * Generated: 2025-06-13T22:11:51.748973
+ * Generated: 2025-09-29T22:18:52.644172
  */
 
 interface AgentloopConfig {

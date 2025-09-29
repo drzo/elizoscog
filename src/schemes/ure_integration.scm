@@ -1,7 +1,7 @@
 ;; ure OpenCog Integration
 ;; Description: Unified Rule Engine for automated reasoning
 ;; Original Repository: https://github.com/opencog/ure
-;; Generated: 2025-06-13T22:11:51.746230
+;; Generated: 2025-09-29T22:18:52.639467
 
 (use-modules (opencog)
              (opencog atom-types)
