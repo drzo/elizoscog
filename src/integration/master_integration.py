@@ -1,11 +1,12 @@
 #!/usr/bin/env python3
 """
-Master Integration Framework - Phase 1 Foundation Implementation
+Master Integration Framework - Complete ElizaOS Implementation
 
 Coordinates all cross-ecosystem integrations between ElizaOS, OpenCog, and GnuCash
 to create the unified hybrid cognitive-financial intelligence system.
 
-This implementation provides the Phase 1 foundation with previews of Phase 2+ features.
+This implementation now includes complete ElizaOS features integrated with the 
+cognitive-financial framework.
 """
 
 import asyncio
@@ -23,11 +24,14 @@ from core.atomspace_bindings import AtomSpaceCore, FinancialAtomSpace
 from core.elizaos_plugin_architecture import ElizaOSPluginManager, OpenCogAgentPlugin, FinancialCognitivePlugin
 from core.gnucash_access import GnuCashDataAccess, FinancialPatternAnalyzer
 
+# Import complete ElizaOS features
+from elizaos.integration import ElizaOSFramework, integrate_elizaos_with_cognitive_framework, create_default_elizaos_config
+
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
 class HybridCognitiveFinancialFramework:
-    """Master framework coordinating all ecosystem integrations with Phase 1 foundation"""
+    """Master framework coordinating all ecosystem integrations with complete ElizaOS features"""
     
     def __init__(self, config: Optional[Dict[str, Any]] = None):
         self.config = config or {}
@@ -42,6 +46,10 @@ class HybridCognitiveFinancialFramework:
         
         # Cognitive agents (Phase 2)
         self.cognitive_agents = {}
+        
+        # Complete ElizaOS integration
+        self.elizaos = None
+        self.elizaos_config = config.get('elizaos', create_default_elizaos_config())
         
         # Phase 2: Dynamic mesh integration framework
         self.dynamic_mesh_framework = None
@@ -63,6 +71,7 @@ class HybridCognitiveFinancialFramework:
             'phase4_optimization': 'pending',
             'phase4_embodiment': 'pending',
             'phase5_advanced_applications': 'pending',
+            'elizaos_complete': 'pending',
             'elizaos_opencog': 'pending',
             'opencog_gnucash': 'pending', 
             'elizaos_gnucash': 'pending',
@@ -73,12 +82,15 @@ class HybridCognitiveFinancialFramework:
         self.active_sessions = {}
         
     async def initialize(self) -> bool:
-        """Initialize the complete hybrid framework with Phase 1 foundation"""
-        logger.info("🚀 Initializing Hybrid Cognitive-Financial Framework (Phase 1+)")
+        """Initialize the complete hybrid framework with full ElizaOS integration"""
+        logger.info("🚀 Initializing Hybrid Cognitive-Financial Framework (Complete ElizaOS)")
         
         try:
             # Phase 1: Initialize foundation infrastructure
             await self._initialize_phase1_foundation()
+            
+            # Initialize complete ElizaOS framework
+            await self._initialize_complete_elizaos()
             
             # Phase 2: Initialize core integration bridges
             await self._initialize_core_integration_bridges()
@@ -95,11 +107,36 @@ class HybridCognitiveFinancialFramework:
             # Validate full system integration
             await self._validate_system_integration()
             
-            logger.info("✅ Complete hybrid framework initialized successfully - All Phases 1-5")
+            logger.info("✅ Complete hybrid framework initialized successfully - All Phases + ElizaOS")
             return True
             
         except Exception as e:
             logger.error(f"❌ Failed to initialize hybrid framework: {e}")
+            return False
+    
+    async def _initialize_complete_elizaos(self) -> bool:
+        """Initialize complete ElizaOS framework with all features"""
+        try:
+            logger.info("🤖 Initializing complete ElizaOS framework...")
+            
+            # Initialize ElizaOS with cognitive framework integration
+            self.elizaos = await integrate_elizaos_with_cognitive_framework(
+                self, self.elizaos_config
+            )
+            
+            if self.elizaos:
+                self.integration_status['elizaos_complete'] = 'active'
+                logger.info("✅ Complete ElizaOS framework initialized successfully")
+                logger.info(f"📊 Dashboard available at: http://localhost:{self.elizaos_config.get('dashboard', {}).get('port', 3000)}")
+                return True
+            else:
+                self.integration_status['elizaos_complete'] = 'failed'
+                logger.error("❌ Failed to initialize ElizaOS framework")
+                return False
+                
+        except Exception as e:
+            logger.error(f"❌ ElizaOS initialization error: {e}")
+            self.integration_status['elizaos_complete'] = 'failed'
             return False
     
     async def _initialize_phase1_foundation(self):
@@ -829,9 +866,89 @@ class HybridCognitiveFinancialFramework:
         
         return actions
     
+    async def process_natural_language_message(self, message: str, 
+                                             context: Dict[str, Any] = None) -> Dict[str, Any]:
+        """Process natural language message through complete ElizaOS pipeline"""
+        try:
+            if self.elizaos:
+                # Use ElizaOS complete message processing
+                result = await self.elizaos.process_message(message, context)
+                logger.info(f"📥 Processed message via ElizaOS: {message[:50]}...")
+                return result
+            
+            # Fallback to cognitive agents
+            if context and context.get('platform'):
+                # Route based on platform and content
+                agent_name = self._route_message_to_agent(message, context)
+                if agent_name in self.cognitive_agents:
+                    agent = self.cognitive_agents[agent_name]
+                    result = await agent.process_message(message, context)
+                    logger.info(f"📥 Processed message via {agent_name}: {message[:50]}...")
+                    return result
+            
+            return {
+                'response': 'Message received but no processing capability available.',
+                'source': 'framework_fallback'
+            }
+            
+        except Exception as e:
+            logger.error(f"❌ Message processing error: {e}")
+            return {
+                'response': f'Sorry, I encountered an error: {str(e)}',
+                'source': 'framework_error'
+            }
+    
+    async def execute_elizaos_action(self, action_name: str, parameters: Dict[str, Any] = None) -> Dict[str, Any]:
+        """Execute an ElizaOS action"""
+        try:
+            if self.elizaos:
+                result = await self.elizaos.execute_action(action_name, parameters)
+                logger.info(f"⚡ Executed ElizaOS action: {action_name}")
+                return result
+            
+            return {'success': False, 'error': 'ElizaOS framework not available'}
+            
+        except Exception as e:
+            logger.error(f"❌ Action execution error: {e}")
+            return {'success': False, 'error': str(e)}
+    
+    def _route_message_to_agent(self, message: str, context: Dict) -> str:
+        """Route message to appropriate cognitive agent"""
+        message_lower = message.lower()
+        
+        # Financial keywords
+        financial_keywords = ['money', 'budget', 'spend', 'account', 'balance', 'transaction']
+        if any(keyword in message_lower for keyword in financial_keywords):
+            return 'financial_chat_agent'
+        
+        # Budget keywords
+        budget_keywords = ['budget', 'plan', 'save', 'goal', 'forecast']
+        if any(keyword in message_lower for keyword in budget_keywords):
+            return 'budget_planning_agent'
+        
+        # Analysis keywords
+        analysis_keywords = ['analyze', 'pattern', 'trend', 'anomaly']
+        if any(keyword in message_lower for keyword in analysis_keywords):
+            return 'transaction_analysis_agent'
+        
+        # Default
+        return 'financial_chat_agent'
+    
+    async def get_elizaos_status(self) -> Dict[str, Any]:
+        """Get ElizaOS framework status"""
+        if self.elizaos:
+            return await self.elizaos.get_system_status()
+        
+        return {'error': 'ElizaOS framework not available'}
+    
     async def shutdown(self):
         """Shutdown the hybrid framework gracefully"""
         logger.info("🛑 Shutting down Hybrid Cognitive-Financial Framework...")
+        
+        # Shutdown ElizaOS framework
+        if self.elizaos:
+            await self.elizaos.shutdown()
+            logger.info("📴 ElizaOS framework shutdown complete")
         
         # Cleanup plugins
         if self.plugin_manager:
