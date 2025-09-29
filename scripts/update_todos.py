@@ -574,8 +574,12 @@ GnuCash Financial Data (Base Layer)
             else:
                 updated_content = current_content[:start_idx] + enhancement
         else:
-            # Append to end
-            updated_content = current_content + enhancement
+            # Append to end only if the content isn't already there
+            if enhancement.strip() not in current_content:
+                updated_content = current_content + enhancement
+            else:
+                print("  Content already exists, skipping append to prevent duplication")
+                updated_content = current_content
             
         with open(todo_es_path, 'w') as f:
             f.write(updated_content)
@@ -609,8 +613,12 @@ GnuCash Financial Data (Base Layer)
             else:
                 updated_content = current_content[:start_idx] + enhancement
         else:
-            # Append to end
-            updated_content = current_content + enhancement
+            # Append to end only if the content isn't already there
+            if enhancement.strip() not in current_content:
+                updated_content = current_content + enhancement
+            else:
+                print("  Content already exists, skipping append to prevent duplication")
+                updated_content = current_content
             
         with open(todo_oc_path, 'w') as f:
             f.write(updated_content)
