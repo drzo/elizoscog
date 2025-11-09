@@ -5,6 +5,7 @@ Update documentation files with integration information and cross-references
 
 import json
 import os
+import re
 from datetime import datetime
 from typing import Dict, List, Any
 
@@ -264,8 +265,22 @@ GnuCash Data (Storage Layer)
 
 """
     
-    # Insert integration section before existing repository structure section
-    if "## 📂 Repository Structure" in current_content:
+    # Insert integration section, replacing existing if it exists
+    if "## 🧠 OpenCog Integration" in current_content:
+        # Replace existing OpenCog integration section to prevent duplication
+        start_marker = "## 🧠 OpenCog Integration"
+        start_idx = current_content.find(start_marker)
+        
+        # Find the end of this section (next ## header or end of file)
+        remaining = current_content[start_idx + len(start_marker):]
+        next_section_match = re.search(r'\n## ', remaining)
+        
+        if next_section_match:
+            end_idx = start_idx + len(start_marker) + next_section_match.start()
+            updated_content = current_content[:start_idx] + integration_section + current_content[end_idx:]
+        else:
+            updated_content = current_content[:start_idx] + integration_section
+    elif "## 📂 Repository Structure" in current_content:
         parts = current_content.split("## 📂 Repository Structure", 1)
         updated_content = parts[0] + integration_section + "\n## 📂 Repository Structure" + parts[1]
     else:

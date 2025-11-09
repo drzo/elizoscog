@@ -1,0 +1,158 @@
+admin:
+  address:
+    socket_address:
+      address: 0.0.0.0
+      port_value: 9901
+
+static_resources:
+  listeners:
+  - name: main_listener
+    address:
+      socket_address:
+        address: 0.0.0.0
+        port_value: 10000
+    filter_chains:
+    - filters:
+      - name: envoy.filters.network.http_connection_manager
+        typed_config:
+          "@type": type.googleapis.com/envoy.extensions.filters.network.http_connection_manager.v3.HttpConnectionManager
+          stat_prefix: ingress_http
+          access_log:
+          - name: envoy.access_loggers.stdout
+            typed_config:
+              "@type": type.googleapis.com/envoy.extensions.access_loggers.stream.v3.StdoutAccessLog
+          http_filters:
+          - name: envoy.filters.http.router
+            typed_config:
+              "@type": type.googleapis.com/envoy.extensions.filters.http.router.v3.Router
+          route_config:
+            name: local_route
+            virtual_hosts:
+            - name: local_service
+              domains: ["*"]
+              routes:
+              # Financial Service Route
+              - match:
+                  prefix: "/financial"
+                route:
+                  cluster: financial_cluster
+                  timeout: 15s
+              # Reasoning Service Route  
+              - match:
+                  prefix: "/reasoning"
+                route:
+                  cluster: reasoning_cluster
+                  timeout: 30s
+              # GGML Service Route
+              - match:
+                  prefix: "/ml"
+                route:
+                  cluster: ggml_cluster
+                  timeout: 60s
+              # Service Discovery Route
+              - match:
+                  prefix: "/registry"
+                route:
+                  cluster: registry_cluster
+                  timeout: 5s
+              # Default route
+              - match:
+                  prefix: "/"
+                route:
+                  cluster: financial_cluster
+
+  clusters:
+  # Financial Analysis Cluster
+  - name: financial_cluster
+    connect_timeout: 5s
+    type: STRICT_DNS
+    lb_policy: ROUND_ROBIN
+    health_checks:
+    - timeout: 5s
+      interval: 30s
+      unhealthy_threshold: 3
+      healthy_threshold: 2
+      http_health_check:
+        path: "/health"
+    load_assignment:
+      cluster_name: financial_cluster
+      endpoints:
+      - lb_endpoints:
+        - endpoint:
+            address:
+              socket_address:
+                address: financial-service
+                port_value: 8010
+
+  # Cognitive Reasoning Cluster
+  - name: reasoning_cluster
+    connect_timeout: 10s
+    type: STRICT_DNS
+    lb_policy: ROUND_ROBIN
+    health_checks:
+    - timeout: 10s
+      interval: 30s
+      unhealthy_threshold: 3
+      healthy_threshold: 2
+      http_health_check:
+        path: "/health"
+    load_assignment:
+      cluster_name: reasoning_cluster
+      endpoints:
+      - lb_endpoints:
+        - endpoint:
+            address:
+              socket_address:
+                address: reasoning-service
+                port_value: 8011
+
+  # GGML ML Inference Cluster
+  - name: ggml_cluster
+    connect_timeout: 30s
+    type: STRICT_DNS
+    lb_policy: LEAST_REQUEST
+    health_checks:
+    - timeout: 30s
+      interval: 60s
+      unhealthy_threshold: 2
+      healthy_threshold: 1
+      http_health_check:
+        path: "/health"
+    circuit_breakers:
+      thresholds:
+      - priority: DEFAULT
+        max_connections: 10
+        max_pending_requests: 5
+        max_requests: 100
+        max_retries: 3
+    load_assignment:
+      cluster_name: ggml_cluster
+      endpoints:
+      - lb_endpoints:
+        - endpoint:
+            address:
+              socket_address:
+                address: ggml-service
+                port_value: 8012
+
+  # Service Registry Cluster
+  - name: registry_cluster
+    connect_timeout: 2s
+    type: STRICT_DNS
+    lb_policy: ROUND_ROBIN
+    health_checks:
+    - timeout: 2s
+      interval: 10s
+      unhealthy_threshold: 2
+      healthy_threshold: 1
+      http_health_check:
+        path: "/health"
+    load_assignment:
+      cluster_name: registry_cluster
+      endpoints:
+      - lb_endpoints:
+        - endpoint:
+            address:
+              socket_address:
+                address: service-registry
+                port_value: 8001

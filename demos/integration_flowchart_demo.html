@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OpenCog-ElizaOS-GnuCash Integration Workflow</title>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <style>
+        body { margin: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: #0a0a0a; color: white; }
+        #flowchart { width: 100vw; height: 100vh; }
+        .info-panel { position: absolute; top: 20px; left: 20px; background: rgba(0,0,0,0.9); padding: 20px; border-radius: 10px; border: 1px solid #333; }
+        .node { cursor: pointer; filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3)); }
+        .node-start { fill: #4CAF50; }
+        .node-end { fill: #F44336; }
+        .node-process { fill: #2196F3; }
+        .node-decision { fill: #FF9800; }
+        .node-data { fill: #9C27B0; }
+        .node-agent { fill: #00BCD4; }
+        .node-reasoning { fill: #3F51B5; }
+        .node-integration { fill: #607D8B; }
+        .edge { stroke: #666; stroke-width: 2px; fill: none; marker-end: url(#arrowhead); }
+        .edge-label { fill: white; font-size: 12px; text-anchor: middle; }
+        .node-label { fill: white; font-size: 14px; font-weight: bold; text-anchor: middle; }
+        .tooltip { position: absolute; background: rgba(0,0,0,0.9); color: white; padding: 15px; border-radius: 8px; pointer-events: none; border: 1px solid #333; }
+    </style>
+</head>
+<body>
+    <div id="flowchart"></div>
+    <div class="info-panel">
+        <h3>OpenCog-ElizaOS-GnuCash Integration Workflow</h3>
+        <p>Cognitive integration flowchart for hybrid financial intelligence</p>
+        <p>Nodes: <span id="node-count">10</span></p>
+        <p>Edges: <span id="edge-count">12</span></p>
+        <p>Generated: 2025-09-29T22:30:59.530368</p>
+    </div>
+    
+    <script>
+        const data = {"nodes": [{"id": "start", "type": "start", "label": "Integration Request", "position": {"x": 400, "y": 50}, "description": "User initiates integration workflow"}, {"id": "analyze_request", "type": "reasoning", "label": "Analyze Request", "position": {"x": 400, "y": 150}, "description": "OpenCog PLN analyzes integration requirements"}, {"id": "check_compatibility", "type": "decision", "label": "Compatible?", "position": {"x": 400, "y": 250}, "description": "Check component compatibility"}, {"id": "elizaos_agent", "type": "agent", "label": "ElizaOS Agent", "position": {"x": 200, "y": 350}, "description": "Create ElizaOS bridge agent"}, {"id": "opencog_subsystem", "type": "integration", "label": "OpenCog Subsystem", "position": {"x": 400, "y": 350}, "description": "Initialize OpenCog subsystem"}, {"id": "gnucash_bridge", "type": "data", "label": "GnuCash Bridge", "position": {"x": 600, "y": 350}, "description": "Connect to GnuCash financial data"}, {"id": "cognitive_coordination", "type": "reasoning", "label": "Cognitive Coordination", "position": {"x": 400, "y": 450}, "description": "Multi-agent cognitive coordination"}, {"id": "validate_integration", "type": "process", "label": "Validate Integration", "position": {"x": 400, "y": 550}, "description": "Test integrated system functionality"}, {"id": "success", "type": "end", "label": "Integration Complete", "position": {"x": 300, "y": 650}, "description": "Successful integration achieved"}, {"id": "failure", "type": "end", "label": "Integration Failed", "position": {"x": 500, "y": 650}, "description": "Integration unsuccessful"}], "edges": [{"source": "start", "target": "analyze_request", "label": "Initialize"}, {"source": "analyze_request", "target": "check_compatibility", "label": "Analysis Complete"}, {"source": "check_compatibility", "target": "elizaos_agent", "label": "Yes - ElizaOS"}, {"source": "check_compatibility", "target": "opencog_subsystem", "label": "Yes - OpenCog"}, {"source": "check_compatibility", "target": "gnucash_bridge", "label": "Yes - GnuCash"}, {"source": "check_compatibility", "target": "failure", "label": "No - Incompatible"}, {"source": "elizaos_agent", "target": "cognitive_coordination", "label": "Agent Ready"}, {"source": "opencog_subsystem", "target": "cognitive_coordination", "label": "Subsystem Ready"}, {"source": "gnucash_bridge", "target": "cognitive_coordination", "label": "Bridge Ready"}, {"source": "cognitive_coordination", "target": "validate_integration", "label": "Coordinate"}, {"source": "validate_integration", "target": "success", "label": "Valid"}, {"source": "validate_integration", "target": "failure", "label": "Invalid"}], "metadata": {"title": "OpenCog-ElizaOS-GnuCash Integration Workflow", "description": "Cognitive integration flowchart for hybrid financial intelligence", "created_at": "2025-09-29T22:30:59.530368", "node_count": 10, "edge_count": 12}};
+        
+        const width = window.innerWidth;
+        const height = window.innerHeight;
+        
+        const svg = d3.select("#flowchart")
+            .append("svg")
+            .attr("width", width)
+            .attr("height", height);
+        
+        // Define arrow marker
+        svg.append("defs").append("marker")
+            .attr("id", "arrowhead")
+            .attr("viewBox", "0 -5 10 10")
+            .attr("refX", 8)
+            .attr("refY", 0)
+            .attr("markerWidth", 6)
+            .attr("markerHeight", 6)
+            .attr("orient", "auto")
+            .append("path")
+            .attr("d", "M0,-5L10,0L0,5")
+            .attr("fill", "#666");
+        
+        // Create edges
+        const edges = svg.append("g")
+            .selectAll("path")
+            .data(data.edges)
+            .enter().append("path")
+            .attr("class", "edge")
+            .attr("d", d => {
+                const sourceNode = data.nodes.find(n => n.id === d.source);
+                const targetNode = data.nodes.find(n => n.id === d.target);
+                return `M${sourceNode.position.x},${sourceNode.position.y} L${targetNode.position.x},${targetNode.position.y}`;
+            });
+        
+        // Create edge labels
+        const edgeLabels = svg.append("g")
+            .selectAll("text")
+            .data(data.edges)
+            .enter().append("text")
+            .attr("class", "edge-label")
+            .attr("x", d => {
+                const sourceNode = data.nodes.find(n => n.id === d.source);
+                const targetNode = data.nodes.find(n => n.id === d.target);
+                return (sourceNode.position.x + targetNode.position.x) / 2;
+            })
+            .attr("y", d => {
+                const sourceNode = data.nodes.find(n => n.id === d.source);
+                const targetNode = data.nodes.find(n => n.id === d.target);
+                return (sourceNode.position.y + targetNode.position.y) / 2 - 5;
+            })
+            .text(d => d.label);
+        
+        // Create nodes
+        const nodes = svg.append("g")
+            .selectAll("g")
+            .data(data.nodes)
+            .enter().append("g")
+            .attr("class", "node")
+            .attr("transform", d => `translate(${d.position.x},${d.position.y})`);
+        
+        // Add node shapes based on type
+        nodes.each(function(d) {
+            const nodeGroup = d3.select(this);
+            
+            switch(d.type) {
+                case 'start':
+                case 'end':
+                    nodeGroup.append("circle")
+                        .attr("r", 30)
+                        .attr("class", `node-${d.type}`);
+                    break;
+                case 'decision':
+                    nodeGroup.append("polygon")
+                        .attr("points", "0,-30 40,0 0,30 -40,0")
+                        .attr("class", `node-${d.type}`);
+                    break;
+                default:
+                    nodeGroup.append("rect")
+                        .attr("x", -50)
+                        .attr("y", -20)
+                        .attr("width", 100)
+                        .attr("height", 40)
+                        .attr("rx", 8)
+                        .attr("class", `node-${d.type}`);
+            }
+        });
+        
+        // Add node labels
+        nodes.append("text")
+            .attr("class", "node-label")
+            .attr("dy", "0.35em")
+            .text(d => d.label)
+            .each(function(d) {
+                const text = d3.select(this);
+                const words = d.label.split(' ');
+                if (words.length > 2) {
+                    text.text('');
+                    text.append('tspan').attr('x', 0).attr('dy', '-0.2em').text(words.slice(0, 2).join(' '));
+                    text.append('tspan').attr('x', 0).attr('dy', '1.2em').text(words.slice(2).join(' '));
+                }
+            });
+        
+        // Add tooltips
+        const tooltip = d3.select("body").append("div")
+            .attr("class", "tooltip")
+            .style("opacity", 0);
+        
+        nodes.on("mouseover", function(event, d) {
+            tooltip.transition().duration(200).style("opacity", .9);
+            tooltip.html(`
+                <strong>${d.label}</strong><br/>
+                Type: ${d.type}<br/>
+                ${d.description}
+            `)
+            .style("left", (event.pageX + 10) + "px")
+            .style("top", (event.pageY - 28) + "px");
+        })
+        .on("mouseout", function(d) {
+            tooltip.transition().duration(500).style("opacity", 0);
+        });
+        
+        // Add click interactions
+        nodes.on("click", function(event, d) {
+            console.log("Node clicked:", d);
+            // Add custom interaction logic here
+        });
+        
+        // Add zoom and pan
+        const zoom = d3.zoom()
+            .scaleExtent([0.1, 3])
+            .on("zoom", function(event) {
+                svg.selectAll("g").attr("transform", event.transform);
+            });
+        
+        svg.call(zoom);
+    </script>
+</body>
+</html>

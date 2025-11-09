@@ -1,0 +1,154 @@
+http:
+  routers:
+    # Financial Service Router
+    financial-router:
+      rule: "PathPrefix(`/financial`)"
+      service: "financial-service"
+      entryPoints:
+        - "web"
+      middlewares:
+        - "financial-strip"
+        - "timeout-15s"
+
+    # Reasoning Service Router
+    reasoning-router:
+      rule: "PathPrefix(`/reasoning`)"
+      service: "reasoning-service"
+      entryPoints:
+        - "web"
+      middlewares:
+        - "reasoning-strip"
+        - "timeout-30s"
+
+    # GGML ML Service Router
+    ggml-router:
+      rule: "PathPrefix(`/ml`)"
+      service: "ggml-service"
+      entryPoints:
+        - "web"
+      middlewares:
+        - "ggml-strip"
+        - "timeout-60s"
+        - "circuit-breaker"
+
+    # Service Registry Router
+    registry-router:
+      rule: "PathPrefix(`/registry`)"
+      service: "registry-service"
+      entryPoints:
+        - "web"
+      middlewares:
+        - "registry-strip"
+        - "timeout-5s"
+
+  services:
+    # Financial Analysis Service
+    financial-service:
+      loadBalancer:
+        servers:
+          - url: "http://financial-service:8010"
+        healthCheck:
+          path: "/health"
+          interval: "30s"
+          timeout: "5s"
+
+    # Cognitive Reasoning Service
+    reasoning-service:
+      loadBalancer:
+        servers:
+          - url: "http://reasoning-service:8011"
+        healthCheck:
+          path: "/health"
+          interval: "30s"
+          timeout: "10s"
+
+    # GGML ML Inference Service
+    ggml-service:
+      loadBalancer:
+        servers:
+          - url: "http://ggml-service:8012"
+        healthCheck:
+          path: "/health"
+          interval: "60s"
+          timeout: "30s"
+
+    # Service Registry
+    registry-service:
+      loadBalancer:
+        servers:
+          - url: "http://service-registry:8001"
+        healthCheck:
+          path: "/health"
+          interval: "10s"
+          timeout: "2s"
+
+  middlewares:
+    # Path stripping middlewares
+    financial-strip:
+      stripPrefix:
+        prefixes:
+          - "/financial"
+
+    reasoning-strip:
+      stripPrefix:
+        prefixes:
+          - "/reasoning"
+
+    ggml-strip:
+      stripPrefix:
+        prefixes:
+          - "/ml"
+
+    registry-strip:
+      stripPrefix:
+        prefixes:
+          - "/registry"
+
+    # Timeout middlewares
+    timeout-5s:
+      timeout:
+        forwardTimeout: "5s"
+
+    timeout-15s:
+      timeout:
+        forwardTimeout: "15s"
+
+    timeout-30s:
+      timeout:
+        forwardTimeout: "30s"
+
+    timeout-60s:
+      timeout:
+        forwardTimeout: "60s"
+
+    # Circuit breaker for ML services
+    circuit-breaker:
+      circuitBreaker:
+        expression: "NetworkErrorRatio() > 0.3 || ResponseCodeRatio(500, 600, 0, 600) > 0.3"
+        checkPeriod: "10s"
+        fallbackDuration: "30s"
+        recoveryDuration: "60s"
+
+    # Rate limiting
+    rate-limit:
+      rateLimit:
+        average: 100
+        burst: 200
+        period: "1m"
+
+    # CORS for API access
+    cors:
+      headers:
+        accessControlAllowMethods:
+          - GET
+          - POST
+          - PUT
+          - DELETE
+          - OPTIONS
+        accessControlAllowOriginList:
+          - "*"
+        accessControlAllowHeaders:
+          - "*"
+        accessControlExposeHeaders:
+          - "*"
+        accessControlMaxAge: 3600

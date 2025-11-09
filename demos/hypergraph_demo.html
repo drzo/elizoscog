@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D Hypergraph Visualization</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dat-gui/0.7.9/dat.gui.min.js"></script>
+    <style>
+        body { margin: 0; padding: 0; background: #000; color: white; font-family: Arial, sans-serif; overflow: hidden; }
+        #container { width: 100vw; height: 100vh; }
+        #info { position: absolute; top: 10px; left: 10px; background: rgba(0,0,0,0.8); padding: 15px; border-radius: 5px; z-index: 100; }
+        #controls { position: absolute; top: 10px; right: 10px; background: rgba(0,0,0,0.8); padding: 15px; border-radius: 5px; z-index: 100; }
+        .node-label { color: white; font-size: 12px; }
+        button { background: #4CAF50; color: white; border: none; padding: 10px 15px; margin: 5px; border-radius: 5px; cursor: pointer; }
+        button:hover { background: #45a049; }
+    </style>
+</head>
+<body>
+    <div id="container"></div>
+    <div id="info">
+        <h3>🧠 3D Hypergraph Explorer</h3>
+        <p>Nodes: <span id="node-count">6</span></p>
+        <p>Hyperedges: <span id="edge-count">6</span></p>
+        <p>Click nodes for details</p>
+    </div>
+    <div id="controls">
+        <button onclick="resetCamera()">Reset View</button><br>
+        <button onclick="togglePhysics()">Toggle Physics</button><br>
+        <button onclick="changeLayout()">Change Layout</button><br>
+        <button onclick="exportView()">Export View</button>
+    </div>
+    
+    <script>
+        const hypergraphData = {"nodes": [{"id": "concept_animal", "label": "Animal", "node_type": "ConceptNode", "position": [0, 0, 0], "properties": {"truth_value": {"strength": 0.9, "confidence": 0.8}}}, {"id": "concept_dog", "label": "Dog", "node_type": "ConceptNode", "position": [100, 0, 0], "properties": {"truth_value": {"strength": 0.95, "confidence": 0.9}}}, {"id": "concept_cat", "label": "Cat", "node_type": "ConceptNode", "position": [50, 100, 0], "properties": {"truth_value": {"strength": 0.92, "confidence": 0.85}}}, {"id": "predicate_breathes", "label": "Breathes", "node_type": "PredicateNode", "position": [0, 50, 100], "properties": {"truth_value": {"strength": 0.99, "confidence": 0.95}}}, {"id": "predicate_walks", "label": "Walks", "node_type": "PredicateNode", "position": [100, 50, 100], "properties": {"truth_value": {"strength": 0.88, "confidence": 0.8}}}, {"id": "schema_movement", "label": "MovementSchema", "node_type": "SchemaNode", "position": [50, 0, 150], "properties": {"truth_value": {"strength": 0.75, "confidence": 0.7}}}], "hyperedges": [{"id": "inheritance_1", "nodes": ["concept_dog", "concept_animal"], "edge_type": "InheritanceLink", "strength": 0.9, "properties": {"relationship": "is_a"}}, {"id": "inheritance_2", "nodes": ["concept_cat", "concept_animal"], "edge_type": "InheritanceLink", "strength": 0.85, "properties": {"relationship": "is_a"}}, {"id": "evaluation_1", "nodes": ["predicate_breathes", "concept_animal"], "edge_type": "EvaluationLink", "strength": 0.95, "properties": {"relationship": "capability"}}, {"id": "complex_relation_1", "nodes": ["concept_dog", "predicate_walks", "schema_movement"], "edge_type": "ExecutionLink", "strength": 0.88, "properties": {"relationship": "behavioral_pattern", "complexity": "high"}}, {"id": "similarity_1", "nodes": ["concept_dog", "concept_cat"], "edge_type": "SimilarityLink", "strength": 0.75, "properties": {"relationship": "semantic_similarity"}}, {"id": "implication_1", "nodes": ["concept_animal", "predicate_breathes", "predicate_walks"], "edge_type": "ImplicationLink", "strength": 0.7, "properties": {"relationship": "logical_implication", "complexity": "high"}}], "metadata": {"total_nodes": 6, "total_hyperedges": 6, "dimensions": 3, "generated_at": "2025-09-29T22:30:59.530984"}};
+        
+        // Scene setup
+        const scene = new THREE.Scene();
+        const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 10000);
+        const renderer = new THREE.WebGLRenderer({ antialias: true });
+        renderer.setSize(window.innerWidth, window.innerHeight);
+        renderer.setClearColor(0x000011);
+        document.getElementById('container').appendChild(renderer.domElement);
+        
+        // Camera controls (basic mouse interaction)
+        let mouseX = 0, mouseY = 0;
+        let cameraRadius = 500;
+        let cameraTheta = 0;
+        let cameraPhi = Math.PI / 2;
+        
+        // Node and edge storage
+        const nodeObjects = {};
+        const edgeObjects = [];
+        const nodeLabels = [];
+        
+        // Materials
+        const materials = {
+            ConceptNode: new THREE.MeshPhongMaterial({ color: 0x4CAF50 }),
+            PredicateNode: new THREE.MeshPhongMaterial({ color: 0x2196F3 }),
+            SchemaNode: new THREE.MeshPhongMaterial({ color: 0xFF9800 }),
+            InputNode: new THREE.MeshPhongMaterial({ color: 0x9C27B0 }),
+            OutputNode: new THREE.MeshPhongMaterial({ color: 0xF44336 }),
+            ProcessNode: new THREE.MeshPhongMaterial({ color: 0x00BCD4 }),
+            ReasoningNode: new THREE.MeshPhongMaterial({ color: 0x3F51B5 }),
+            DecisionNode: new THREE.MeshPhongMaterial({ color: 0xFF5722 }),
+            default: new THREE.MeshPhongMaterial({ color: 0x607D8B })
+        };
+        
+        // Create nodes
+        hypergraphData.nodes.forEach(nodeData => {
+            const geometry = new THREE.SphereGeometry(10, 16, 16);
+            const material = materials[nodeData.node_type] || materials.default;
+            const sphere = new THREE.Mesh(geometry, material);
+            
+            sphere.position.set(nodeData.position[0], nodeData.position[1], nodeData.position[2]);
+            sphere.userData = nodeData;
+            
+            scene.add(sphere);
+            nodeObjects[nodeData.id] = sphere;
+            
+            // Add text label
+            const canvas = document.createElement('canvas');
+            const context = canvas.getContext('2d');
+            canvas.width = 256;
+            canvas.height = 64;
+            context.fillStyle = 'white';
+            context.font = '24px Arial';
+            context.textAlign = 'center';
+            context.fillText(nodeData.label, 128, 40);
+            
+            const texture = new THREE.CanvasTexture(canvas);
+            const spriteMaterial = new THREE.SpriteMaterial({ map: texture });
+            const sprite = new THREE.Sprite(spriteMaterial);
+            sprite.position.copy(sphere.position);
+            sprite.position.y += 20;
+            sprite.scale.set(50, 12.5, 1);
+            
+            scene.add(sprite);
+            nodeLabels.push(sprite);
+        });
+        
+        // Create hyperedges
+        hypergraphData.hyperedges.forEach(edgeData => {
+            if (edgeData.nodes.length === 2) {
+                // Simple edge between two nodes
+                const node1 = nodeObjects[edgeData.nodes[0]];
+                const node2 = nodeObjects[edgeData.nodes[1]];
+                
+                if (node1 && node2) {
+                    const geometry = new THREE.BufferGeometry().setFromPoints([
+                        node1.position, node2.position
+                    ]);
+                    const material = new THREE.LineBasicMaterial({ 
+                        color: 0x666666, 
+                        opacity: edgeData.strength,
+                        transparent: true
+                    });
+                    const line = new THREE.Line(geometry, material);
+                    scene.add(line);
+                    edgeObjects.push(line);
+                }
+            } else if (edgeData.nodes.length > 2) {
+                // Hyperedge - create hub and spokes
+                const centerPos = new THREE.Vector3();
+                const validNodes = [];
+                
+                edgeData.nodes.forEach(nodeId => {
+                    const node = nodeObjects[nodeId];
+                    if (node) {
+                        centerPos.add(node.position);
+                        validNodes.push(node);
+                    }
+                });
+                
+                if (validNodes.length > 1) {
+                    centerPos.divideScalar(validNodes.length);
+                    
+                    // Create hub
+                    const hubGeometry = new THREE.OctahedronGeometry(5);
+                    const hubMaterial = new THREE.MeshPhongMaterial({ 
+                        color: 0xFF6600,
+                        opacity: 0.7,
+                        transparent: true
+                    });
+                    const hub = new THREE.Mesh(hubGeometry, hubMaterial);
+                    hub.position.copy(centerPos);
+                    scene.add(hub);
+                    
+                    // Create spokes to each node
+                    validNodes.forEach(node => {
+                        const geometry = new THREE.BufferGeometry().setFromPoints([
+                            centerPos, node.position
+                        ]);
+                        const material = new THREE.LineBasicMaterial({ 
+                            color: 0xFF6600,
+                            opacity: edgeData.strength * 0.8,
+                            transparent: true
+                        });
+                        const line = new THREE.Line(geometry, material);
+                        scene.add(line);
+                        edgeObjects.push(line);
+                    });
+                }
+            }
+        });
+        
+        // Lighting
+        const ambientLight = new THREE.AmbientLight(0x404040, 0.6);
+        scene.add(ambientLight);
+        
+        const directionalLight = new THREE.DirectionalLight(0xffffff, 0.8);
+        directionalLight.position.set(100, 100, 100);
+        scene.add(directionalLight);
+        
+        // Mouse interaction
+        document.addEventListener('mousemove', onMouseMove, false);
+        document.addEventListener('wheel', onMouseWheel, false);
+        document.addEventListener('click', onMouseClick, false);
+        
+        function onMouseMove(event) {
+            mouseX = (event.clientX / window.innerWidth) * 2 - 1;
+            mouseY = -(event.clientY / window.innerHeight) * 2 + 1;
+            
+            cameraTheta = mouseX * Math.PI;
+            cameraPhi = (mouseY + 1) * Math.PI / 2;
+        }
+        
+        function onMouseWheel(event) {
+            cameraRadius += event.deltaY * 0.5;
+            cameraRadius = Math.max(100, Math.min(2000, cameraRadius));
+        }
+        
+        function onMouseClick(event) {
+            const raycaster = new THREE.Raycaster();
+            const mouse = new THREE.Vector2();
+            
+            mouse.x = (event.clientX / window.innerWidth) * 2 - 1;
+            mouse.y = -(event.clientY / window.innerHeight) * 2 + 1;
+            
+            raycaster.setFromCamera(mouse, camera);
+            
+            const nodeArray = Object.values(nodeObjects);
+            const intersects = raycaster.intersectObjects(nodeArray);
+            
+            if (intersects.length > 0) {
+                const selectedNode = intersects[0].object;
+                console.log('Selected node:', selectedNode.userData);
+                alert(`Node: ${selectedNode.userData.label}\nType: ${selectedNode.userData.node_type}\nProperties: ${JSON.stringify(selectedNode.userData.properties, null, 2)}`);
+            }
+        }
+        
+        // Control functions
+        function resetCamera() {
+            cameraRadius = 500;
+            cameraTheta = 0;
+            cameraPhi = Math.PI / 2;
+        }
+        
+        function togglePhysics() {
+            console.log('Physics toggle not implemented in this demo');
+        }
+        
+        function changeLayout() {
+            console.log('Layout change not implemented in this demo');
+        }
+        
+        function exportView() {
+            const dataUrl = renderer.domElement.toDataURL();
+            const link = document.createElement('a');
+            link.download = 'hypergraph_view.png';
+            link.href = dataUrl;
+            link.click();
+        }
+        
+        // Animation loop
+        function animate() {
+            requestAnimationFrame(animate);
+            
+            // Update camera position
+            camera.position.x = cameraRadius * Math.sin(cameraPhi) * Math.cos(cameraTheta);
+            camera.position.y = cameraRadius * Math.cos(cameraPhi);
+            camera.position.z = cameraRadius * Math.sin(cameraPhi) * Math.sin(cameraTheta);
+            
+            camera.lookAt(scene.position);
+            
+            // Rotate nodes slightly for visual effect
+            Object.values(nodeObjects).forEach(node => {
+                node.rotation.y += 0.01;
+            });
+            
+            renderer.render(scene, camera);
+        }
+        
+        // Start animation
+        camera.position.set(0, 0, 500);
+        animate();
+        
+        // Handle window resize
+        window.addEventListener('resize', () => {
+            camera.aspect = window.innerWidth / window.innerHeight;
+            camera.updateProjectionMatrix();
+            renderer.setSize(window.innerWidth, window.innerHeight);
+        });
+    </script>
+</body>
+</html>

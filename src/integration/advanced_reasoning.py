@@ -2,9 +2,10 @@
 Advanced Reasoning - Phase 3 Implementation
 Temporal logic, causal reasoning, probabilistic models, meta-cognitive reflection,
 and learning from user feedback for financial analysis
+
+Enhanced with Phase 5: Recursive Meta-Cognitive Pathways
 """
 
-import numpy as np
 import json
 from typing import Dict, List, Any, Optional, Tuple, Union
 from datetime import datetime, timedelta
@@ -13,6 +14,30 @@ from enum import Enum
 import logging
 from collections import defaultdict
 import math
+
+# Try to import numpy, but fall back gracefully if not available
+try:
+    import numpy as np
+    HAS_NUMPY = True
+except ImportError:
+    HAS_NUMPY = False
+    # Provide minimal numpy-like functionality
+    class np:
+        @staticmethod
+        def array(data):
+            return data
+        
+        @staticmethod
+        def mean(data):
+            return sum(data) / len(data) if data else 0
+        
+        @staticmethod
+        def std(data):
+            if not data or len(data) < 2:
+                return 0
+            mean_val = sum(data) / len(data)
+            variance = sum((x - mean_val) ** 2 for x in data) / len(data)
+            return math.sqrt(variance)
 
 logger = logging.getLogger(__name__)
 
@@ -98,31 +123,43 @@ class UserFeedback:
 
 class AdvancedReasoningEngine:
     """
-    Advanced reasoning engine for cognitive financial analysis
-    Implements temporal logic, causal reasoning, probabilistic models,
-    meta-cognitive reflection, and learning from feedback
+    Advanced reasoning engine with temporal logic, causal reasoning, probabilistic models,
+    and meta-cognitive reflection capabilities enhanced with recursive meta-cognitive pathways
     """
     
-    def __init__(self, config: Dict[str, Any] = None):
+    def __init__(self, enable_recursive_metacognition: bool = True, config: Dict[str, Any] = None):
+        # Configuration
         self.config = config or {}
         
-        # Reasoning components
+        # Existing initialization
         self.temporal_rules: Dict[str, TemporalRule] = {}
         self.causal_relationships: Dict[str, CausalRelationship] = {}
         self.probabilistic_models: Dict[str, ProbabilisticModel] = {}
+        
         self.reasoning_history: List[ReasoningConclusion] = []
         self.user_feedback: List[UserFeedback] = []
         
-        # Meta-cognitive components
-        self.meta_knowledge: Dict[str, Any] = {}
-        self.reasoning_strategies: Dict[str, Dict[str, Any]] = {}
-        self.confidence_calibration: Dict[str, List[float]] = defaultdict(list)
+        # Meta-cognitive tracking
+        self.meta_knowledge = {}
+        self.confidence_calibration = {}
+        self.reasoning_patterns = {}
+        self.feedback_patterns = defaultdict(int)
         
-        # Learning components
-        self.feedback_patterns: Dict[str, int] = defaultdict(int)
+        # Additional components from original constructor
+        self.reasoning_strategies: Dict[str, Dict[str, Any]] = {}
         self.model_performance: Dict[str, List[float]] = defaultdict(list)
         
+        # Initialize base knowledge
         self._initialize_base_knowledge()
+        
+        # Phase 5: Recursive Meta-Cognitive Pathways
+        self.enable_recursive_metacognition = enable_recursive_metacognition
+        if self.enable_recursive_metacognition:
+            # Import here to avoid circular imports
+            from .recursive_metacognition import RecursiveMetaCognitiveEngine
+            self.recursive_meta_engine = RecursiveMetaCognitiveEngine(self)
+        else:
+            self.recursive_meta_engine = None
     
     async def perform_temporal_reasoning(self, 
                                        financial_events: List[Dict[str, Any]], 
@@ -264,30 +301,23 @@ class AdvancedReasoningEngine:
                                              reasoning_results: List[ReasoningConclusion]) -> Dict[str, Any]:
         """
         Perform meta-cognitive reflection on reasoning processes and outcomes
+        Enhanced with recursive meta-cognitive pathways
         """
         logger.info("Performing meta-cognitive reflection on reasoning processes")
         
-        # Analyze reasoning patterns
+        # Original meta-cognitive reflection
         pattern_analysis = await self._analyze_reasoning_patterns(reasoning_results)
-        
-        # Assess confidence calibration
         confidence_assessment = await self._assess_confidence_calibration(reasoning_results)
-        
-        # Identify reasoning biases
         bias_analysis = await self._identify_reasoning_biases(reasoning_results)
-        
-        # Evaluate strategy effectiveness
         strategy_evaluation = await self._evaluate_reasoning_strategies(reasoning_results)
         
-        # Generate meta-cognitive insights
         meta_insights = await self._generate_metacognitive_insights(
             pattern_analysis, confidence_assessment, bias_analysis, strategy_evaluation
         )
         
-        # Update meta-knowledge
         self._update_meta_knowledge(meta_insights)
         
-        return {
+        base_reflection = {
             "reflection_timestamp": datetime.now().isoformat(),
             "reasoning_patterns": pattern_analysis,
             "confidence_calibration": confidence_assessment,
@@ -296,6 +326,38 @@ class AdvancedReasoningEngine:
             "meta_insights": meta_insights,
             "improvement_recommendations": await self._generate_improvement_recommendations(meta_insights)
         }
+        
+        # Enhanced Phase 5: Recursive Meta-Cognitive Analysis
+        if self.recursive_meta_engine:
+            try:
+                # Perform recursive self-analysis
+                recursive_analysis = await self.recursive_meta_engine.recursive_self_analysis()
+                
+                # Evolve cognitive strategies
+                evolution_results = await self.recursive_meta_engine.evolve_cognitive_strategies()
+                
+                # Detect recursive patterns
+                recursive_patterns = await self.recursive_meta_engine.detect_recursive_patterns()
+                
+                # Validate self-optimization effectiveness
+                optimization_validation = await self.recursive_meta_engine.validate_self_optimization_effectiveness()
+                
+                # Add recursive meta-cognitive results
+                base_reflection.update({
+                    "recursive_analysis": recursive_analysis,
+                    "cognitive_evolution": evolution_results,
+                    "recursive_patterns": recursive_patterns,
+                    "optimization_validation": optimization_validation,
+                    "cognitive_status": self.recursive_meta_engine.get_cognitive_status_report()
+                })
+                
+                logger.info("Enhanced meta-cognitive reflection completed with recursive analysis")
+                
+            except Exception as e:
+                logger.error(f"Error in recursive meta-cognitive analysis: {e}")
+                base_reflection["recursive_meta_cognitive_error"] = str(e)
+        
+        return base_reflection
     
     async def learn_from_feedback(self, feedback: UserFeedback) -> Dict[str, Any]:
         """
@@ -1451,6 +1513,69 @@ class AdvancedReasoningEngine:
             "meta_confidence": 0.8,
             "assessment_notes": f"Meta-analysis of {reasoning_type} reasoning completed"
         }
+    
+    async def recursive_self_improvement(self) -> Dict[str, Any]:
+        """
+        Perform recursive self-improvement using evolutionary algorithms
+        This is a new Phase 5 capability
+        """
+        if not self.recursive_meta_engine:
+            return {"error": "Recursive meta-cognitive engine not enabled"}
+        
+        logger.info("Initiating recursive self-improvement process")
+        
+        try:
+            # Observe current cognitive state
+            observation = await self.recursive_meta_engine.observe_cognitive_state()
+            
+            # Generate improvement recommendations
+            improvement_actions = await self.recursive_meta_engine.generate_self_improvement_recommendations(observation)
+            
+            # Implement the most promising improvement action
+            implementation_results = []
+            for action in improvement_actions[:3]:  # Implement top 3 actions
+                result = await self.recursive_meta_engine.implement_self_improvement_action(action)
+                implementation_results.append(result)
+            
+            # Perform recursive analysis to evaluate improvements
+            recursive_analysis = await self.recursive_meta_engine.recursive_self_analysis(depth=2)
+            
+            return {
+                "observation": observation,
+                "improvement_actions": improvement_actions,
+                "implementation_results": implementation_results,
+                "recursive_analysis": recursive_analysis,
+                "timestamp": datetime.now().isoformat()
+            }
+            
+        except Exception as e:
+            logger.error(f"Error in recursive self-improvement: {e}")
+            return {"error": str(e)}
+    
+    async def get_enhanced_cognitive_status(self) -> Dict[str, Any]:
+        """
+        Get comprehensive cognitive status including recursive meta-cognitive state
+        """
+        base_status = {
+            "reasoning_history_count": len(self.reasoning_history),
+            "feedback_count": len(self.user_feedback),
+            "temporal_rules_count": len(self.temporal_rules),
+            "causal_relationships_count": len(self.causal_relationships),
+            "probabilistic_models_count": len(self.probabilistic_models),
+            "meta_knowledge_entries": len(self.meta_knowledge),
+            "last_reasoning_timestamp": self.reasoning_history[-1].timestamp.isoformat() if self.reasoning_history else None
+        }
+        
+        if self.recursive_meta_engine:
+            recursive_status = self.recursive_meta_engine.get_cognitive_status_report()
+            base_status.update({
+                "recursive_metacognition": recursive_status,
+                "enhanced_capabilities": True
+            })
+        else:
+            base_status["enhanced_capabilities"] = False
+        
+        return base_status
 
 
 # Additional imports needed

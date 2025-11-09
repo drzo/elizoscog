@@ -1,7 +1,7 @@
 ;; atomspace OpenCog Integration
 ;; Description: The OpenCog (hyper-)graph database and graph rewriting system
 ;; Original Repository: https://github.com/opencog/atomspace
-;; Generated: 2025-06-13T22:11:51.744896
+;; Generated: 2025-09-29T22:18:52.637733
 
 (use-modules (opencog)
              (opencog atom-types)

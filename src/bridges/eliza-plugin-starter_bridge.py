@@ -3,7 +3,7 @@ eliza-plugin-starter Bridge Implementation
 
 Description: A starter plugin repo for ElizaOS
 Original Repository: https://github.com/elizaOS/eliza-plugin-starter
-Generated: 2025-06-13T22:11:51.749768
+Generated: 2025-09-29T22:18:52.645538
 
 This bridge enables cross-ecosystem integration between:
 - ElizaOS (TypeScript/JavaScript agents)
@@ -20,7 +20,7 @@ import logging
 
 logger = logging.getLogger(__name__)
 
-class ElizaPluginStarterBridge:
+class Eliza-Plugin-StarterBridge:
     """Bridge for eliza-plugin-starter cross-ecosystem integration"""
     
     def __init__(self, config: Optional[Dict] = None):
@@ -171,14 +171,14 @@ class ElizaPluginStarterBridge:
         logger.info(f"Shutting down {self.name} bridge")
         self.initialized = False
 
-class ElizaPluginStarterIntegrationFramework:
+class Eliza-Plugin-StarterIntegrationFramework:
     """Framework for managing eliza-plugin-starter integrations"""
     
     def __init__(self):
         self.bridges = {}
         self.active_sessions = {}
         
-    async def register_bridge(self, bridge: ElizaPluginStarterBridge) -> bool:
+    async def register_bridge(self, bridge: Eliza-Plugin-StarterBridge) -> bool:
         """Register a new bridge"""
         try:
             await bridge.initialize()

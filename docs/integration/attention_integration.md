@@ -5,7 +5,7 @@
 **Repository**: [attention](https://github.com/opencog/attention)  
 **Description**: OpenCog Attention Allocation Subsystem  
 **Priority**: Medium  
-**Generated**: 2025-06-13T22:11:51.747341
+**Generated**: 2025-09-29T22:18:52.641213
 
 ## Integration Assessment
 

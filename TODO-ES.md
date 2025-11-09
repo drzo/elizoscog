@@ -376,6 +376,84 @@ bun run pre-commit
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ## 🧠 OpenCog Integration
 
 ### Cognitive Architecture Components
@@ -383,3093 +461,13 @@ ElizaOS integrates with OpenCog to provide advanced reasoning capabilities:
 
 #### Repository Ecosystem
 
-**Core (38 repositories)**
+**Core (51 repositories)**
 - [agentmemory](https://github.com/elizaOS/agentmemory) - Easy-to-use agent memory, powered by chromadb and postgres
 - [easycompletion](https://github.com/elizaOS/easycompletion) - Easy OpenAI text completion and function calling
 - [agentbrowser](https://github.com/elizaOS/agentbrowser) - A browser for your agent.
 - [agentloop](https://github.com/elizaOS/agentloop) - A simple, lightweight loop for your agent. Start/stop, step-through, and more.
 - [agentaction](https://github.com/elizaOS/agentaction) - Action chaining and history for agents
-- ... and 33 more repositories
-
-**Plugins (3 repositories)**
-- [eliza-plugin-starter](https://github.com/elizaOS/eliza-plugin-starter) - A starter plugin repo for the Solana hackathon
-- [plugin-specification](https://github.com/elizaOS/plugin-specification) - No description available
-- [plugins-automation](https://github.com/elizaOS/plugins-automation) - Automation scripts to manage the 150+ plugins in eliza-plugins organization.
-
-**Tools (1 repositories)**
-- [LJSpeechTools](https://github.com/elizaOS/LJSpeechTools) - Tools for making LJSpeech datasets
-
-
-### Integration Patterns
-
-#### Agent-Cognitive Bridges
-- **AtomSpace Agents**: ElizaOS agents backed by OpenCog AtomSpace knowledge
-- **Reasoning Actions**: ElizaOS actions that invoke PLN reasoning
-- **Pattern Matching**: AtomSpace pattern matching as ElizaOS evaluators
-- **Distributed Cognition**: Multi-agent cognitive processing coordination
-
-#### Implementation Architecture
-```
-ElizaOS Framework
-├── Core Engine
-│   ├── Agent Management
-│   ├── Action Processing  
-│   └── Memory Systems
-├── OpenCog Integration Layer
-│   ├── AtomSpace Connector
-│   ├── CogServer Bridge
-│   ├── PLN Reasoning Interface
-│   └── Scheme Interpreter
-└── Hybrid Applications
-    ├── Cognitive Chatbots
-    ├── Reasoning Agents
-    └── Knowledge Management
-```
-
-### Development Roadmap
-- [ ] Implement AtomSpace storage provider for ElizaOS
-- [ ] Create OpenCog reasoning action templates
-- [ ] Build CogServer communication plugin
-- [ ] Design cognitive agent architecture patterns
-- [ ] Implement distributed reasoning coordination
-- [ ] Create OpenCog-aware ElizaOS dashboard components
-
-## 💰 GnuCash Financial Integration
-
-### Intelligent Financial Management
-Combining ElizaOS agents with GnuCash for smart financial management:
-
-#### Financial Agent Ecosystem
-- **Transaction Categorizer**: AI agent for automatic transaction classification
-- **Expense Analyzer**: Pattern recognition for spending behavior analysis
-- **Budget Optimizer**: Intelligent budget planning and optimization
-- **Investment Tracker**: Multi-asset portfolio monitoring and analysis
-- **Financial Assistant**: Conversational interface for financial queries
-- **Alert Manager**: Smart notification system for financial events
-
-#### Fractal Integration Architecture
-```
-ElizaOS Agents (User Interface)
-├── Financial Conversation Agents
-├── Analysis and Reporting Agents
-└── Automation and Alert Agents
-    ↓
-OpenCog Reasoning (Cognitive Layer)  
-├── Financial Pattern Recognition
-├── Predictive Analysis
-└── Decision Support
-    ↓
-GnuCash Data (Storage Layer)
-├── Account Structures
-├── Transaction Records
-└── Financial Reports
-```
-
-### Implementation Features
-- **Natural Language Queries**: Ask questions about finances in plain English
-- **Predictive Analytics**: AI-powered forecasting and trend analysis
-- **Automated Categorization**: Smart transaction classification
-- **Behavioral Insights**: Understanding spending patterns and habits
-- **Goal Tracking**: Intelligent progress monitoring for financial goals
-- **Risk Assessment**: Cognitive evaluation of financial decisions
-
-
-
-
-## 🧠 OpenCog Integration
-
-### Cognitive Architecture Components
-ElizaOS integrates with OpenCog to provide advanced reasoning capabilities:
-
-#### Repository Ecosystem
-
-**Core (38 repositories)**
-- [agentmemory](https://github.com/elizaOS/agentmemory) - Easy-to-use agent memory, powered by chromadb and postgres
-- [easycompletion](https://github.com/elizaOS/easycompletion) - Easy OpenAI text completion and function calling
-- [agentbrowser](https://github.com/elizaOS/agentbrowser) - A browser for your agent.
-- [agentloop](https://github.com/elizaOS/agentloop) - A simple, lightweight loop for your agent. Start/stop, step-through, and more.
-- [agentaction](https://github.com/elizaOS/agentaction) - Action chaining and history for agents
-- ... and 33 more repositories
-
-**Plugins (3 repositories)**
-- [eliza-plugin-starter](https://github.com/elizaOS/eliza-plugin-starter) - A starter plugin repo for the Solana hackathon
-- [plugin-specification](https://github.com/elizaOS/plugin-specification) - No description available
-- [plugins-automation](https://github.com/elizaOS/plugins-automation) - Automation scripts to manage the 150+ plugins in eliza-plugins organization.
-
-**Tools (1 repositories)**
-- [LJSpeechTools](https://github.com/elizaOS/LJSpeechTools) - Tools for making LJSpeech datasets
-
-
-### Integration Patterns
-
-#### Agent-Cognitive Bridges
-- **AtomSpace Agents**: ElizaOS agents backed by OpenCog AtomSpace knowledge
-- **Reasoning Actions**: ElizaOS actions that invoke PLN reasoning
-- **Pattern Matching**: AtomSpace pattern matching as ElizaOS evaluators
-- **Distributed Cognition**: Multi-agent cognitive processing coordination
-
-#### Implementation Architecture
-```
-ElizaOS Framework
-├── Core Engine
-│   ├── Agent Management
-│   ├── Action Processing  
-│   └── Memory Systems
-├── OpenCog Integration Layer
-│   ├── AtomSpace Connector
-│   ├── CogServer Bridge
-│   ├── PLN Reasoning Interface
-│   └── Scheme Interpreter
-└── Hybrid Applications
-    ├── Cognitive Chatbots
-    ├── Reasoning Agents
-    └── Knowledge Management
-```
-
-### Development Roadmap
-- [ ] Implement AtomSpace storage provider for ElizaOS
-- [ ] Create OpenCog reasoning action templates
-- [ ] Build CogServer communication plugin
-- [ ] Design cognitive agent architecture patterns
-- [ ] Implement distributed reasoning coordination
-- [ ] Create OpenCog-aware ElizaOS dashboard components
-
-## 💰 GnuCash Financial Integration
-
-### Intelligent Financial Management
-Combining ElizaOS agents with GnuCash for smart financial management:
-
-#### Financial Agent Ecosystem
-- **Transaction Categorizer**: AI agent for automatic transaction classification
-- **Expense Analyzer**: Pattern recognition for spending behavior analysis
-- **Budget Optimizer**: Intelligent budget planning and optimization
-- **Investment Tracker**: Multi-asset portfolio monitoring and analysis
-- **Financial Assistant**: Conversational interface for financial queries
-- **Alert Manager**: Smart notification system for financial events
-
-#### Fractal Integration Architecture
-```
-ElizaOS Agents (User Interface)
-├── Financial Conversation Agents
-├── Analysis and Reporting Agents
-└── Automation and Alert Agents
-    ↓
-OpenCog Reasoning (Cognitive Layer)  
-├── Financial Pattern Recognition
-├── Predictive Analysis
-└── Decision Support
-    ↓
-GnuCash Data (Storage Layer)
-├── Account Structures
-├── Transaction Records
-└── Financial Reports
-```
-
-### Implementation Features
-- **Natural Language Queries**: Ask questions about finances in plain English
-- **Predictive Analytics**: AI-powered forecasting and trend analysis
-- **Automated Categorization**: Smart transaction classification
-- **Behavioral Insights**: Understanding spending patterns and habits
-- **Goal Tracking**: Intelligent progress monitoring for financial goals
-- **Risk Assessment**: Cognitive evaluation of financial decisions
-
-
-
-
-## 🧠 OpenCog Integration
-
-### Cognitive Architecture Components
-ElizaOS integrates with OpenCog to provide advanced reasoning capabilities:
-
-#### Repository Ecosystem
-
-**Core (38 repositories)**
-- [agentmemory](https://github.com/elizaOS/agentmemory) - Easy-to-use agent memory, powered by chromadb and postgres
-- [easycompletion](https://github.com/elizaOS/easycompletion) - Easy OpenAI text completion and function calling
-- [agentbrowser](https://github.com/elizaOS/agentbrowser) - A browser for your agent.
-- [agentloop](https://github.com/elizaOS/agentloop) - A simple, lightweight loop for your agent. Start/stop, step-through, and more.
-- [agentaction](https://github.com/elizaOS/agentaction) - Action chaining and history for agents
-- ... and 33 more repositories
-
-**Plugins (3 repositories)**
-- [eliza-plugin-starter](https://github.com/elizaOS/eliza-plugin-starter) - A starter plugin repo for the Solana hackathon
-- [plugin-specification](https://github.com/elizaOS/plugin-specification) - No description available
-- [plugins-automation](https://github.com/elizaOS/plugins-automation) - Automation scripts to manage the 150+ plugins in eliza-plugins organization.
-
-**Tools (1 repositories)**
-- [LJSpeechTools](https://github.com/elizaOS/LJSpeechTools) - Tools for making LJSpeech datasets
-
-
-### Integration Patterns
-
-#### Agent-Cognitive Bridges
-- **AtomSpace Agents**: ElizaOS agents backed by OpenCog AtomSpace knowledge
-- **Reasoning Actions**: ElizaOS actions that invoke PLN reasoning
-- **Pattern Matching**: AtomSpace pattern matching as ElizaOS evaluators
-- **Distributed Cognition**: Multi-agent cognitive processing coordination
-
-#### Implementation Architecture
-```
-ElizaOS Framework
-├── Core Engine
-│   ├── Agent Management
-│   ├── Action Processing  
-│   └── Memory Systems
-├── OpenCog Integration Layer
-│   ├── AtomSpace Connector
-│   ├── CogServer Bridge
-│   ├── PLN Reasoning Interface
-│   └── Scheme Interpreter
-└── Hybrid Applications
-    ├── Cognitive Chatbots
-    ├── Reasoning Agents
-    └── Knowledge Management
-```
-
-### Development Roadmap
-- [ ] Implement AtomSpace storage provider for ElizaOS
-- [ ] Create OpenCog reasoning action templates
-- [ ] Build CogServer communication plugin
-- [ ] Design cognitive agent architecture patterns
-- [ ] Implement distributed reasoning coordination
-- [ ] Create OpenCog-aware ElizaOS dashboard components
-
-## 💰 GnuCash Financial Integration
-
-### Intelligent Financial Management
-Combining ElizaOS agents with GnuCash for smart financial management:
-
-#### Financial Agent Ecosystem
-- **Transaction Categorizer**: AI agent for automatic transaction classification
-- **Expense Analyzer**: Pattern recognition for spending behavior analysis
-- **Budget Optimizer**: Intelligent budget planning and optimization
-- **Investment Tracker**: Multi-asset portfolio monitoring and analysis
-- **Financial Assistant**: Conversational interface for financial queries
-- **Alert Manager**: Smart notification system for financial events
-
-#### Fractal Integration Architecture
-```
-ElizaOS Agents (User Interface)
-├── Financial Conversation Agents
-├── Analysis and Reporting Agents
-└── Automation and Alert Agents
-    ↓
-OpenCog Reasoning (Cognitive Layer)  
-├── Financial Pattern Recognition
-├── Predictive Analysis
-└── Decision Support
-    ↓
-GnuCash Data (Storage Layer)
-├── Account Structures
-├── Transaction Records
-└── Financial Reports
-```
-
-### Implementation Features
-- **Natural Language Queries**: Ask questions about finances in plain English
-- **Predictive Analytics**: AI-powered forecasting and trend analysis
-- **Automated Categorization**: Smart transaction classification
-- **Behavioral Insights**: Understanding spending patterns and habits
-- **Goal Tracking**: Intelligent progress monitoring for financial goals
-- **Risk Assessment**: Cognitive evaluation of financial decisions
-
-
-
-
-## 🧠 OpenCog Integration
-
-### Cognitive Architecture Components
-ElizaOS integrates with OpenCog to provide advanced reasoning capabilities:
-
-#### Repository Ecosystem
-
-**Core (1 repositories)**
-- [eliza](https://github.com/elizaOS/eliza) - ElizaOS conversational AI framework
-
-**Agents (1 repositories)**
-- [agent-framework](https://github.com/elizaOS/agent-framework) - Multi-agent framework for ElizaOS
-
-
-### Integration Patterns
-
-#### Agent-Cognitive Bridges
-- **AtomSpace Agents**: ElizaOS agents backed by OpenCog AtomSpace knowledge
-- **Reasoning Actions**: ElizaOS actions that invoke PLN reasoning
-- **Pattern Matching**: AtomSpace pattern matching as ElizaOS evaluators
-- **Distributed Cognition**: Multi-agent cognitive processing coordination
-
-#### Implementation Architecture
-```
-ElizaOS Framework
-├── Core Engine
-│   ├── Agent Management
-│   ├── Action Processing  
-│   └── Memory Systems
-├── OpenCog Integration Layer
-│   ├── AtomSpace Connector
-│   ├── CogServer Bridge
-│   ├── PLN Reasoning Interface
-│   └── Scheme Interpreter
-└── Hybrid Applications
-    ├── Cognitive Chatbots
-    ├── Reasoning Agents
-    └── Knowledge Management
-```
-
-### Development Roadmap
-- [ ] Implement AtomSpace storage provider for ElizaOS
-- [ ] Create OpenCog reasoning action templates
-- [ ] Build CogServer communication plugin
-- [ ] Design cognitive agent architecture patterns
-- [ ] Implement distributed reasoning coordination
-- [ ] Create OpenCog-aware ElizaOS dashboard components
-
-## 💰 GnuCash Financial Integration
-
-### Intelligent Financial Management
-Combining ElizaOS agents with GnuCash for smart financial management:
-
-#### Financial Agent Ecosystem
-- **Transaction Categorizer**: AI agent for automatic transaction classification
-- **Expense Analyzer**: Pattern recognition for spending behavior analysis
-- **Budget Optimizer**: Intelligent budget planning and optimization
-- **Investment Tracker**: Multi-asset portfolio monitoring and analysis
-- **Financial Assistant**: Conversational interface for financial queries
-- **Alert Manager**: Smart notification system for financial events
-
-#### Fractal Integration Architecture
-```
-ElizaOS Agents (User Interface)
-├── Financial Conversation Agents
-├── Analysis and Reporting Agents
-└── Automation and Alert Agents
-    ↓
-OpenCog Reasoning (Cognitive Layer)  
-├── Financial Pattern Recognition
-├── Predictive Analysis
-└── Decision Support
-    ↓
-GnuCash Data (Storage Layer)
-├── Account Structures
-├── Transaction Records
-└── Financial Reports
-```
-
-### Implementation Features
-- **Natural Language Queries**: Ask questions about finances in plain English
-- **Predictive Analytics**: AI-powered forecasting and trend analysis
-- **Automated Categorization**: Smart transaction classification
-- **Behavioral Insights**: Understanding spending patterns and habits
-- **Goal Tracking**: Intelligent progress monitoring for financial goals
-- **Risk Assessment**: Cognitive evaluation of financial decisions
-
-
-
-
-## 🧠 OpenCog Integration
-
-### Cognitive Architecture Components
-ElizaOS integrates with OpenCog to provide advanced reasoning capabilities:
-
-#### Repository Ecosystem
-
-**Core (1 repositories)**
-- [eliza](https://github.com/elizaOS/eliza) - ElizaOS conversational AI framework
-
-**Agents (1 repositories)**
-- [agent-framework](https://github.com/elizaOS/agent-framework) - Multi-agent framework for ElizaOS
-
-
-### Integration Patterns
-
-#### Agent-Cognitive Bridges
-- **AtomSpace Agents**: ElizaOS agents backed by OpenCog AtomSpace knowledge
-- **Reasoning Actions**: ElizaOS actions that invoke PLN reasoning
-- **Pattern Matching**: AtomSpace pattern matching as ElizaOS evaluators
-- **Distributed Cognition**: Multi-agent cognitive processing coordination
-
-#### Implementation Architecture
-```
-ElizaOS Framework
-├── Core Engine
-│   ├── Agent Management
-│   ├── Action Processing  
-│   └── Memory Systems
-├── OpenCog Integration Layer
-│   ├── AtomSpace Connector
-│   ├── CogServer Bridge
-│   ├── PLN Reasoning Interface
-│   └── Scheme Interpreter
-└── Hybrid Applications
-    ├── Cognitive Chatbots
-    ├── Reasoning Agents
-    └── Knowledge Management
-```
-
-### Development Roadmap
-- [ ] Implement AtomSpace storage provider for ElizaOS
-- [ ] Create OpenCog reasoning action templates
-- [ ] Build CogServer communication plugin
-- [ ] Design cognitive agent architecture patterns
-- [ ] Implement distributed reasoning coordination
-- [ ] Create OpenCog-aware ElizaOS dashboard components
-
-## 💰 GnuCash Financial Integration
-
-### Intelligent Financial Management
-Combining ElizaOS agents with GnuCash for smart financial management:
-
-#### Financial Agent Ecosystem
-- **Transaction Categorizer**: AI agent for automatic transaction classification
-- **Expense Analyzer**: Pattern recognition for spending behavior analysis
-- **Budget Optimizer**: Intelligent budget planning and optimization
-- **Investment Tracker**: Multi-asset portfolio monitoring and analysis
-- **Financial Assistant**: Conversational interface for financial queries
-- **Alert Manager**: Smart notification system for financial events
-
-#### Fractal Integration Architecture
-```
-ElizaOS Agents (User Interface)
-├── Financial Conversation Agents
-├── Analysis and Reporting Agents
-└── Automation and Alert Agents
-    ↓
-OpenCog Reasoning (Cognitive Layer)  
-├── Financial Pattern Recognition
-├── Predictive Analysis
-└── Decision Support
-    ↓
-GnuCash Data (Storage Layer)
-├── Account Structures
-├── Transaction Records
-└── Financial Reports
-```
-
-### Implementation Features
-- **Natural Language Queries**: Ask questions about finances in plain English
-- **Predictive Analytics**: AI-powered forecasting and trend analysis
-- **Automated Categorization**: Smart transaction classification
-- **Behavioral Insights**: Understanding spending patterns and habits
-- **Goal Tracking**: Intelligent progress monitoring for financial goals
-- **Risk Assessment**: Cognitive evaluation of financial decisions
-
-
-
-
-## 🧠 OpenCog Integration
-
-### Cognitive Architecture Components
-ElizaOS integrates with OpenCog to provide advanced reasoning capabilities:
-
-#### Repository Ecosystem
-
-**Core (38 repositories)**
-- [agentmemory](https://github.com/elizaOS/agentmemory) - Easy-to-use agent memory, powered by chromadb and postgres
-- [easycompletion](https://github.com/elizaOS/easycompletion) - Easy OpenAI text completion and function calling
-- [agentbrowser](https://github.com/elizaOS/agentbrowser) - A browser for your agent.
-- [agentloop](https://github.com/elizaOS/agentloop) - A simple, lightweight loop for your agent. Start/stop, step-through, and more.
-- [agentaction](https://github.com/elizaOS/agentaction) - Action chaining and history for agents
-- ... and 33 more repositories
-
-**Plugins (3 repositories)**
-- [eliza-plugin-starter](https://github.com/elizaOS/eliza-plugin-starter) - A starter plugin repo for the Solana hackathon
-- [plugin-specification](https://github.com/elizaOS/plugin-specification) - No description available
-- [plugins-automation](https://github.com/elizaOS/plugins-automation) - Automation scripts to manage the 150+ plugins in eliza-plugins organization.
-
-**Tools (1 repositories)**
-- [LJSpeechTools](https://github.com/elizaOS/LJSpeechTools) - Tools for making LJSpeech datasets
-
-
-### Integration Patterns
-
-#### Agent-Cognitive Bridges
-- **AtomSpace Agents**: ElizaOS agents backed by OpenCog AtomSpace knowledge
-- **Reasoning Actions**: ElizaOS actions that invoke PLN reasoning
-- **Pattern Matching**: AtomSpace pattern matching as ElizaOS evaluators
-- **Distributed Cognition**: Multi-agent cognitive processing coordination
-
-#### Implementation Architecture
-```
-ElizaOS Framework
-├── Core Engine
-│   ├── Agent Management
-│   ├── Action Processing  
-│   └── Memory Systems
-├── OpenCog Integration Layer
-│   ├── AtomSpace Connector
-│   ├── CogServer Bridge
-│   ├── PLN Reasoning Interface
-│   └── Scheme Interpreter
-└── Hybrid Applications
-    ├── Cognitive Chatbots
-    ├── Reasoning Agents
-    └── Knowledge Management
-```
-
-### Development Roadmap
-- [ ] Implement AtomSpace storage provider for ElizaOS
-- [ ] Create OpenCog reasoning action templates
-- [ ] Build CogServer communication plugin
-- [ ] Design cognitive agent architecture patterns
-- [ ] Implement distributed reasoning coordination
-- [ ] Create OpenCog-aware ElizaOS dashboard components
-
-## 💰 GnuCash Financial Integration
-
-### Intelligent Financial Management
-Combining ElizaOS agents with GnuCash for smart financial management:
-
-#### Financial Agent Ecosystem
-- **Transaction Categorizer**: AI agent for automatic transaction classification
-- **Expense Analyzer**: Pattern recognition for spending behavior analysis
-- **Budget Optimizer**: Intelligent budget planning and optimization
-- **Investment Tracker**: Multi-asset portfolio monitoring and analysis
-- **Financial Assistant**: Conversational interface for financial queries
-- **Alert Manager**: Smart notification system for financial events
-
-#### Fractal Integration Architecture
-```
-ElizaOS Agents (User Interface)
-├── Financial Conversation Agents
-├── Analysis and Reporting Agents
-└── Automation and Alert Agents
-    ↓
-OpenCog Reasoning (Cognitive Layer)  
-├── Financial Pattern Recognition
-├── Predictive Analysis
-└── Decision Support
-    ↓
-GnuCash Data (Storage Layer)
-├── Account Structures
-├── Transaction Records
-└── Financial Reports
-```
-
-### Implementation Features
-- **Natural Language Queries**: Ask questions about finances in plain English
-- **Predictive Analytics**: AI-powered forecasting and trend analysis
-- **Automated Categorization**: Smart transaction classification
-- **Behavioral Insights**: Understanding spending patterns and habits
-- **Goal Tracking**: Intelligent progress monitoring for financial goals
-- **Risk Assessment**: Cognitive evaluation of financial decisions
-
-
-
-
-## 🧠 OpenCog Integration
-
-### Cognitive Architecture Components
-ElizaOS integrates with OpenCog to provide advanced reasoning capabilities:
-
-#### Repository Ecosystem
-
-**Core (38 repositories)**
-- [agentmemory](https://github.com/elizaOS/agentmemory) - Easy-to-use agent memory, powered by chromadb and postgres
-- [easycompletion](https://github.com/elizaOS/easycompletion) - Easy OpenAI text completion and function calling
-- [agentbrowser](https://github.com/elizaOS/agentbrowser) - A browser for your agent.
-- [agentloop](https://github.com/elizaOS/agentloop) - A simple, lightweight loop for your agent. Start/stop, step-through, and more.
-- [agentaction](https://github.com/elizaOS/agentaction) - Action chaining and history for agents
-- ... and 33 more repositories
-
-**Plugins (3 repositories)**
-- [eliza-plugin-starter](https://github.com/elizaOS/eliza-plugin-starter) - A starter plugin repo for the Solana hackathon
-- [plugin-specification](https://github.com/elizaOS/plugin-specification) - No description available
-- [plugins-automation](https://github.com/elizaOS/plugins-automation) - Automation scripts to manage the 150+ plugins in eliza-plugins organization.
-
-**Tools (1 repositories)**
-- [LJSpeechTools](https://github.com/elizaOS/LJSpeechTools) - Tools for making LJSpeech datasets
-
-
-### Integration Patterns
-
-#### Agent-Cognitive Bridges
-- **AtomSpace Agents**: ElizaOS agents backed by OpenCog AtomSpace knowledge
-- **Reasoning Actions**: ElizaOS actions that invoke PLN reasoning
-- **Pattern Matching**: AtomSpace pattern matching as ElizaOS evaluators
-- **Distributed Cognition**: Multi-agent cognitive processing coordination
-
-#### Implementation Architecture
-```
-ElizaOS Framework
-├── Core Engine
-│   ├── Agent Management
-│   ├── Action Processing  
-│   └── Memory Systems
-├── OpenCog Integration Layer
-│   ├── AtomSpace Connector
-│   ├── CogServer Bridge
-│   ├── PLN Reasoning Interface
-│   └── Scheme Interpreter
-└── Hybrid Applications
-    ├── Cognitive Chatbots
-    ├── Reasoning Agents
-    └── Knowledge Management
-```
-
-### Development Roadmap
-- [ ] Implement AtomSpace storage provider for ElizaOS
-- [ ] Create OpenCog reasoning action templates
-- [ ] Build CogServer communication plugin
-- [ ] Design cognitive agent architecture patterns
-- [ ] Implement distributed reasoning coordination
-- [ ] Create OpenCog-aware ElizaOS dashboard components
-
-## 💰 GnuCash Financial Integration
-
-### Intelligent Financial Management
-Combining ElizaOS agents with GnuCash for smart financial management:
-
-#### Financial Agent Ecosystem
-- **Transaction Categorizer**: AI agent for automatic transaction classification
-- **Expense Analyzer**: Pattern recognition for spending behavior analysis
-- **Budget Optimizer**: Intelligent budget planning and optimization
-- **Investment Tracker**: Multi-asset portfolio monitoring and analysis
-- **Financial Assistant**: Conversational interface for financial queries
-- **Alert Manager**: Smart notification system for financial events
-
-#### Fractal Integration Architecture
-```
-ElizaOS Agents (User Interface)
-├── Financial Conversation Agents
-├── Analysis and Reporting Agents
-└── Automation and Alert Agents
-    ↓
-OpenCog Reasoning (Cognitive Layer)  
-├── Financial Pattern Recognition
-├── Predictive Analysis
-└── Decision Support
-    ↓
-GnuCash Data (Storage Layer)
-├── Account Structures
-├── Transaction Records
-└── Financial Reports
-```
-
-### Implementation Features
-- **Natural Language Queries**: Ask questions about finances in plain English
-- **Predictive Analytics**: AI-powered forecasting and trend analysis
-- **Automated Categorization**: Smart transaction classification
-- **Behavioral Insights**: Understanding spending patterns and habits
-- **Goal Tracking**: Intelligent progress monitoring for financial goals
-- **Risk Assessment**: Cognitive evaluation of financial decisions
-
-
-
-
-## 🧠 OpenCog Integration
-
-### Cognitive Architecture Components
-ElizaOS integrates with OpenCog to provide advanced reasoning capabilities:
-
-#### Repository Ecosystem
-
-**Core (38 repositories)**
-- [agentmemory](https://github.com/elizaOS/agentmemory) - Easy-to-use agent memory, powered by chromadb and postgres
-- [easycompletion](https://github.com/elizaOS/easycompletion) - Easy OpenAI text completion and function calling
-- [agentbrowser](https://github.com/elizaOS/agentbrowser) - A browser for your agent.
-- [agentloop](https://github.com/elizaOS/agentloop) - A simple, lightweight loop for your agent. Start/stop, step-through, and more.
-- [agentaction](https://github.com/elizaOS/agentaction) - Action chaining and history for agents
-- ... and 33 more repositories
-
-**Plugins (3 repositories)**
-- [eliza-plugin-starter](https://github.com/elizaOS/eliza-plugin-starter) - A starter plugin repo for the Solana hackathon
-- [plugin-specification](https://github.com/elizaOS/plugin-specification) - No description available
-- [plugins-automation](https://github.com/elizaOS/plugins-automation) - Automation scripts to manage the 150+ plugins in eliza-plugins organization.
-
-**Tools (1 repositories)**
-- [LJSpeechTools](https://github.com/elizaOS/LJSpeechTools) - Tools for making LJSpeech datasets
-
-
-### Integration Patterns
-
-#### Agent-Cognitive Bridges
-- **AtomSpace Agents**: ElizaOS agents backed by OpenCog AtomSpace knowledge
-- **Reasoning Actions**: ElizaOS actions that invoke PLN reasoning
-- **Pattern Matching**: AtomSpace pattern matching as ElizaOS evaluators
-- **Distributed Cognition**: Multi-agent cognitive processing coordination
-
-#### Implementation Architecture
-```
-ElizaOS Framework
-├── Core Engine
-│   ├── Agent Management
-│   ├── Action Processing  
-│   └── Memory Systems
-├── OpenCog Integration Layer
-│   ├── AtomSpace Connector
-│   ├── CogServer Bridge
-│   ├── PLN Reasoning Interface
-│   └── Scheme Interpreter
-└── Hybrid Applications
-    ├── Cognitive Chatbots
-    ├── Reasoning Agents
-    └── Knowledge Management
-```
-
-### Development Roadmap
-- [ ] Implement AtomSpace storage provider for ElizaOS
-- [ ] Create OpenCog reasoning action templates
-- [ ] Build CogServer communication plugin
-- [ ] Design cognitive agent architecture patterns
-- [ ] Implement distributed reasoning coordination
-- [ ] Create OpenCog-aware ElizaOS dashboard components
-
-## 💰 GnuCash Financial Integration
-
-### Intelligent Financial Management
-Combining ElizaOS agents with GnuCash for smart financial management:
-
-#### Financial Agent Ecosystem
-- **Transaction Categorizer**: AI agent for automatic transaction classification
-- **Expense Analyzer**: Pattern recognition for spending behavior analysis
-- **Budget Optimizer**: Intelligent budget planning and optimization
-- **Investment Tracker**: Multi-asset portfolio monitoring and analysis
-- **Financial Assistant**: Conversational interface for financial queries
-- **Alert Manager**: Smart notification system for financial events
-
-#### Fractal Integration Architecture
-```
-ElizaOS Agents (User Interface)
-├── Financial Conversation Agents
-├── Analysis and Reporting Agents
-└── Automation and Alert Agents
-    ↓
-OpenCog Reasoning (Cognitive Layer)  
-├── Financial Pattern Recognition
-├── Predictive Analysis
-└── Decision Support
-    ↓
-GnuCash Data (Storage Layer)
-├── Account Structures
-├── Transaction Records
-└── Financial Reports
-```
-
-### Implementation Features
-- **Natural Language Queries**: Ask questions about finances in plain English
-- **Predictive Analytics**: AI-powered forecasting and trend analysis
-- **Automated Categorization**: Smart transaction classification
-- **Behavioral Insights**: Understanding spending patterns and habits
-- **Goal Tracking**: Intelligent progress monitoring for financial goals
-- **Risk Assessment**: Cognitive evaluation of financial decisions
-
-
-
-
-## 🧠 OpenCog Integration
-
-### Cognitive Architecture Components
-ElizaOS integrates with OpenCog to provide advanced reasoning capabilities:
-
-#### Repository Ecosystem
-
-**Core (38 repositories)**
-- [agentmemory](https://github.com/elizaOS/agentmemory) - Easy-to-use agent memory, powered by chromadb and postgres
-- [easycompletion](https://github.com/elizaOS/easycompletion) - Easy OpenAI text completion and function calling
-- [agentbrowser](https://github.com/elizaOS/agentbrowser) - A browser for your agent.
-- [agentloop](https://github.com/elizaOS/agentloop) - A simple, lightweight loop for your agent. Start/stop, step-through, and more.
-- [agentaction](https://github.com/elizaOS/agentaction) - Action chaining and history for agents
-- ... and 33 more repositories
-
-**Plugins (3 repositories)**
-- [eliza-plugin-starter](https://github.com/elizaOS/eliza-plugin-starter) - A starter plugin repo for the Solana hackathon
-- [plugin-specification](https://github.com/elizaOS/plugin-specification) - No description available
-- [plugins-automation](https://github.com/elizaOS/plugins-automation) - Automation scripts to manage the 150+ plugins in eliza-plugins organization.
-
-**Tools (1 repositories)**
-- [LJSpeechTools](https://github.com/elizaOS/LJSpeechTools) - Tools for making LJSpeech datasets
-
-
-### Integration Patterns
-
-#### Agent-Cognitive Bridges
-- **AtomSpace Agents**: ElizaOS agents backed by OpenCog AtomSpace knowledge
-- **Reasoning Actions**: ElizaOS actions that invoke PLN reasoning
-- **Pattern Matching**: AtomSpace pattern matching as ElizaOS evaluators
-- **Distributed Cognition**: Multi-agent cognitive processing coordination
-
-#### Implementation Architecture
-```
-ElizaOS Framework
-├── Core Engine
-│   ├── Agent Management
-│   ├── Action Processing  
-│   └── Memory Systems
-├── OpenCog Integration Layer
-│   ├── AtomSpace Connector
-│   ├── CogServer Bridge
-│   ├── PLN Reasoning Interface
-│   └── Scheme Interpreter
-└── Hybrid Applications
-    ├── Cognitive Chatbots
-    ├── Reasoning Agents
-    └── Knowledge Management
-```
-
-### Development Roadmap
-- [ ] Implement AtomSpace storage provider for ElizaOS
-- [ ] Create OpenCog reasoning action templates
-- [ ] Build CogServer communication plugin
-- [ ] Design cognitive agent architecture patterns
-- [ ] Implement distributed reasoning coordination
-- [ ] Create OpenCog-aware ElizaOS dashboard components
-
-## 💰 GnuCash Financial Integration
-
-### Intelligent Financial Management
-Combining ElizaOS agents with GnuCash for smart financial management:
-
-#### Financial Agent Ecosystem
-- **Transaction Categorizer**: AI agent for automatic transaction classification
-- **Expense Analyzer**: Pattern recognition for spending behavior analysis
-- **Budget Optimizer**: Intelligent budget planning and optimization
-- **Investment Tracker**: Multi-asset portfolio monitoring and analysis
-- **Financial Assistant**: Conversational interface for financial queries
-- **Alert Manager**: Smart notification system for financial events
-
-#### Fractal Integration Architecture
-```
-ElizaOS Agents (User Interface)
-├── Financial Conversation Agents
-├── Analysis and Reporting Agents
-└── Automation and Alert Agents
-    ↓
-OpenCog Reasoning (Cognitive Layer)  
-├── Financial Pattern Recognition
-├── Predictive Analysis
-└── Decision Support
-    ↓
-GnuCash Data (Storage Layer)
-├── Account Structures
-├── Transaction Records
-└── Financial Reports
-```
-
-### Implementation Features
-- **Natural Language Queries**: Ask questions about finances in plain English
-- **Predictive Analytics**: AI-powered forecasting and trend analysis
-- **Automated Categorization**: Smart transaction classification
-- **Behavioral Insights**: Understanding spending patterns and habits
-- **Goal Tracking**: Intelligent progress monitoring for financial goals
-- **Risk Assessment**: Cognitive evaluation of financial decisions
-
-
-
-
-## 🧠 OpenCog Integration
-
-### Cognitive Architecture Components
-ElizaOS integrates with OpenCog to provide advanced reasoning capabilities:
-
-#### Repository Ecosystem
-
-**Core (38 repositories)**
-- [agentmemory](https://github.com/elizaOS/agentmemory) - Easy-to-use agent memory, powered by chromadb and postgres
-- [easycompletion](https://github.com/elizaOS/easycompletion) - Easy OpenAI text completion and function calling
-- [agentbrowser](https://github.com/elizaOS/agentbrowser) - A browser for your agent.
-- [agentloop](https://github.com/elizaOS/agentloop) - A simple, lightweight loop for your agent. Start/stop, step-through, and more.
-- [agentaction](https://github.com/elizaOS/agentaction) - Action chaining and history for agents
-- ... and 33 more repositories
-
-**Plugins (3 repositories)**
-- [eliza-plugin-starter](https://github.com/elizaOS/eliza-plugin-starter) - A starter plugin repo for the Solana hackathon
-- [plugin-specification](https://github.com/elizaOS/plugin-specification) - No description available
-- [plugins-automation](https://github.com/elizaOS/plugins-automation) - Automation scripts to manage the 150+ plugins in eliza-plugins organization.
-
-**Tools (1 repositories)**
-- [LJSpeechTools](https://github.com/elizaOS/LJSpeechTools) - Tools for making LJSpeech datasets
-
-
-### Integration Patterns
-
-#### Agent-Cognitive Bridges
-- **AtomSpace Agents**: ElizaOS agents backed by OpenCog AtomSpace knowledge
-- **Reasoning Actions**: ElizaOS actions that invoke PLN reasoning
-- **Pattern Matching**: AtomSpace pattern matching as ElizaOS evaluators
-- **Distributed Cognition**: Multi-agent cognitive processing coordination
-
-#### Implementation Architecture
-```
-ElizaOS Framework
-├── Core Engine
-│   ├── Agent Management
-│   ├── Action Processing  
-│   └── Memory Systems
-├── OpenCog Integration Layer
-│   ├── AtomSpace Connector
-│   ├── CogServer Bridge
-│   ├── PLN Reasoning Interface
-│   └── Scheme Interpreter
-└── Hybrid Applications
-    ├── Cognitive Chatbots
-    ├── Reasoning Agents
-    └── Knowledge Management
-```
-
-### Development Roadmap
-- [ ] Implement AtomSpace storage provider for ElizaOS
-- [ ] Create OpenCog reasoning action templates
-- [ ] Build CogServer communication plugin
-- [ ] Design cognitive agent architecture patterns
-- [ ] Implement distributed reasoning coordination
-- [ ] Create OpenCog-aware ElizaOS dashboard components
-
-## 💰 GnuCash Financial Integration
-
-### Intelligent Financial Management
-Combining ElizaOS agents with GnuCash for smart financial management:
-
-#### Financial Agent Ecosystem
-- **Transaction Categorizer**: AI agent for automatic transaction classification
-- **Expense Analyzer**: Pattern recognition for spending behavior analysis
-- **Budget Optimizer**: Intelligent budget planning and optimization
-- **Investment Tracker**: Multi-asset portfolio monitoring and analysis
-- **Financial Assistant**: Conversational interface for financial queries
-- **Alert Manager**: Smart notification system for financial events
-
-#### Fractal Integration Architecture
-```
-ElizaOS Agents (User Interface)
-├── Financial Conversation Agents
-├── Analysis and Reporting Agents
-└── Automation and Alert Agents
-    ↓
-OpenCog Reasoning (Cognitive Layer)  
-├── Financial Pattern Recognition
-├── Predictive Analysis
-└── Decision Support
-    ↓
-GnuCash Data (Storage Layer)
-├── Account Structures
-├── Transaction Records
-└── Financial Reports
-```
-
-### Implementation Features
-- **Natural Language Queries**: Ask questions about finances in plain English
-- **Predictive Analytics**: AI-powered forecasting and trend analysis
-- **Automated Categorization**: Smart transaction classification
-- **Behavioral Insights**: Understanding spending patterns and habits
-- **Goal Tracking**: Intelligent progress monitoring for financial goals
-- **Risk Assessment**: Cognitive evaluation of financial decisions
-
-
-
-
-## 🧠 OpenCog Integration
-
-### Cognitive Architecture Components
-ElizaOS integrates with OpenCog to provide advanced reasoning capabilities:
-
-#### Repository Ecosystem
-
-**Core (38 repositories)**
-- [agentmemory](https://github.com/elizaOS/agentmemory) - Easy-to-use agent memory, powered by chromadb and postgres
-- [easycompletion](https://github.com/elizaOS/easycompletion) - Easy OpenAI text completion and function calling
-- [agentbrowser](https://github.com/elizaOS/agentbrowser) - A browser for your agent.
-- [agentloop](https://github.com/elizaOS/agentloop) - A simple, lightweight loop for your agent. Start/stop, step-through, and more.
-- [agentaction](https://github.com/elizaOS/agentaction) - Action chaining and history for agents
-- ... and 33 more repositories
-
-**Plugins (3 repositories)**
-- [eliza-plugin-starter](https://github.com/elizaOS/eliza-plugin-starter) - A starter plugin repo for the Solana hackathon
-- [plugin-specification](https://github.com/elizaOS/plugin-specification) - No description available
-- [plugins-automation](https://github.com/elizaOS/plugins-automation) - Automation scripts to manage the 150+ plugins in eliza-plugins organization.
-
-**Tools (1 repositories)**
-- [LJSpeechTools](https://github.com/elizaOS/LJSpeechTools) - Tools for making LJSpeech datasets
-
-
-### Integration Patterns
-
-#### Agent-Cognitive Bridges
-- **AtomSpace Agents**: ElizaOS agents backed by OpenCog AtomSpace knowledge
-- **Reasoning Actions**: ElizaOS actions that invoke PLN reasoning
-- **Pattern Matching**: AtomSpace pattern matching as ElizaOS evaluators
-- **Distributed Cognition**: Multi-agent cognitive processing coordination
-
-#### Implementation Architecture
-```
-ElizaOS Framework
-├── Core Engine
-│   ├── Agent Management
-│   ├── Action Processing  
-│   └── Memory Systems
-├── OpenCog Integration Layer
-│   ├── AtomSpace Connector
-│   ├── CogServer Bridge
-│   ├── PLN Reasoning Interface
-│   └── Scheme Interpreter
-└── Hybrid Applications
-    ├── Cognitive Chatbots
-    ├── Reasoning Agents
-    └── Knowledge Management
-```
-
-### Development Roadmap
-- [ ] Implement AtomSpace storage provider for ElizaOS
-- [ ] Create OpenCog reasoning action templates
-- [ ] Build CogServer communication plugin
-- [ ] Design cognitive agent architecture patterns
-- [ ] Implement distributed reasoning coordination
-- [ ] Create OpenCog-aware ElizaOS dashboard components
-
-## 💰 GnuCash Financial Integration
-
-### Intelligent Financial Management
-Combining ElizaOS agents with GnuCash for smart financial management:
-
-#### Financial Agent Ecosystem
-- **Transaction Categorizer**: AI agent for automatic transaction classification
-- **Expense Analyzer**: Pattern recognition for spending behavior analysis
-- **Budget Optimizer**: Intelligent budget planning and optimization
-- **Investment Tracker**: Multi-asset portfolio monitoring and analysis
-- **Financial Assistant**: Conversational interface for financial queries
-- **Alert Manager**: Smart notification system for financial events
-
-#### Fractal Integration Architecture
-```
-ElizaOS Agents (User Interface)
-├── Financial Conversation Agents
-├── Analysis and Reporting Agents
-└── Automation and Alert Agents
-    ↓
-OpenCog Reasoning (Cognitive Layer)  
-├── Financial Pattern Recognition
-├── Predictive Analysis
-└── Decision Support
-    ↓
-GnuCash Data (Storage Layer)
-├── Account Structures
-├── Transaction Records
-└── Financial Reports
-```
-
-### Implementation Features
-- **Natural Language Queries**: Ask questions about finances in plain English
-- **Predictive Analytics**: AI-powered forecasting and trend analysis
-- **Automated Categorization**: Smart transaction classification
-- **Behavioral Insights**: Understanding spending patterns and habits
-- **Goal Tracking**: Intelligent progress monitoring for financial goals
-- **Risk Assessment**: Cognitive evaluation of financial decisions
-
-
-
-
-## 🧠 OpenCog Integration
-
-### Cognitive Architecture Components
-ElizaOS integrates with OpenCog to provide advanced reasoning capabilities:
-
-#### Repository Ecosystem
-
-**Core (38 repositories)**
-- [agentmemory](https://github.com/elizaOS/agentmemory) - Easy-to-use agent memory, powered by chromadb and postgres
-- [easycompletion](https://github.com/elizaOS/easycompletion) - Easy OpenAI text completion and function calling
-- [agentbrowser](https://github.com/elizaOS/agentbrowser) - A browser for your agent.
-- [agentloop](https://github.com/elizaOS/agentloop) - A simple, lightweight loop for your agent. Start/stop, step-through, and more.
-- [agentaction](https://github.com/elizaOS/agentaction) - Action chaining and history for agents
-- ... and 33 more repositories
-
-**Plugins (3 repositories)**
-- [eliza-plugin-starter](https://github.com/elizaOS/eliza-plugin-starter) - A starter plugin repo for the Solana hackathon
-- [plugin-specification](https://github.com/elizaOS/plugin-specification) - No description available
-- [plugins-automation](https://github.com/elizaOS/plugins-automation) - Automation scripts to manage the 150+ plugins in eliza-plugins organization.
-
-**Tools (1 repositories)**
-- [LJSpeechTools](https://github.com/elizaOS/LJSpeechTools) - Tools for making LJSpeech datasets
-
-
-### Integration Patterns
-
-#### Agent-Cognitive Bridges
-- **AtomSpace Agents**: ElizaOS agents backed by OpenCog AtomSpace knowledge
-- **Reasoning Actions**: ElizaOS actions that invoke PLN reasoning
-- **Pattern Matching**: AtomSpace pattern matching as ElizaOS evaluators
-- **Distributed Cognition**: Multi-agent cognitive processing coordination
-
-#### Implementation Architecture
-```
-ElizaOS Framework
-├── Core Engine
-│   ├── Agent Management
-│   ├── Action Processing  
-│   └── Memory Systems
-├── OpenCog Integration Layer
-│   ├── AtomSpace Connector
-│   ├── CogServer Bridge
-│   ├── PLN Reasoning Interface
-│   └── Scheme Interpreter
-└── Hybrid Applications
-    ├── Cognitive Chatbots
-    ├── Reasoning Agents
-    └── Knowledge Management
-```
-
-### Development Roadmap
-- [ ] Implement AtomSpace storage provider for ElizaOS
-- [ ] Create OpenCog reasoning action templates
-- [ ] Build CogServer communication plugin
-- [ ] Design cognitive agent architecture patterns
-- [ ] Implement distributed reasoning coordination
-- [ ] Create OpenCog-aware ElizaOS dashboard components
-
-## 💰 GnuCash Financial Integration
-
-### Intelligent Financial Management
-Combining ElizaOS agents with GnuCash for smart financial management:
-
-#### Financial Agent Ecosystem
-- **Transaction Categorizer**: AI agent for automatic transaction classification
-- **Expense Analyzer**: Pattern recognition for spending behavior analysis
-- **Budget Optimizer**: Intelligent budget planning and optimization
-- **Investment Tracker**: Multi-asset portfolio monitoring and analysis
-- **Financial Assistant**: Conversational interface for financial queries
-- **Alert Manager**: Smart notification system for financial events
-
-#### Fractal Integration Architecture
-```
-ElizaOS Agents (User Interface)
-├── Financial Conversation Agents
-├── Analysis and Reporting Agents
-└── Automation and Alert Agents
-    ↓
-OpenCog Reasoning (Cognitive Layer)  
-├── Financial Pattern Recognition
-├── Predictive Analysis
-└── Decision Support
-    ↓
-GnuCash Data (Storage Layer)
-├── Account Structures
-├── Transaction Records
-└── Financial Reports
-```
-
-### Implementation Features
-- **Natural Language Queries**: Ask questions about finances in plain English
-- **Predictive Analytics**: AI-powered forecasting and trend analysis
-- **Automated Categorization**: Smart transaction classification
-- **Behavioral Insights**: Understanding spending patterns and habits
-- **Goal Tracking**: Intelligent progress monitoring for financial goals
-- **Risk Assessment**: Cognitive evaluation of financial decisions
-
-
-
-
-## 🧠 OpenCog Integration
-
-### Cognitive Architecture Components
-ElizaOS integrates with OpenCog to provide advanced reasoning capabilities:
-
-#### Repository Ecosystem
-
-**Core (38 repositories)**
-- [agentmemory](https://github.com/elizaOS/agentmemory) - Easy-to-use agent memory, powered by chromadb and postgres
-- [easycompletion](https://github.com/elizaOS/easycompletion) - Easy OpenAI text completion and function calling
-- [agentbrowser](https://github.com/elizaOS/agentbrowser) - A browser for your agent.
-- [agentloop](https://github.com/elizaOS/agentloop) - A simple, lightweight loop for your agent. Start/stop, step-through, and more.
-- [agentaction](https://github.com/elizaOS/agentaction) - Action chaining and history for agents
-- ... and 33 more repositories
-
-**Plugins (3 repositories)**
-- [eliza-plugin-starter](https://github.com/elizaOS/eliza-plugin-starter) - A starter plugin repo for the Solana hackathon
-- [plugin-specification](https://github.com/elizaOS/plugin-specification) - No description available
-- [plugins-automation](https://github.com/elizaOS/plugins-automation) - Automation scripts to manage the 150+ plugins in eliza-plugins organization.
-
-**Tools (1 repositories)**
-- [LJSpeechTools](https://github.com/elizaOS/LJSpeechTools) - Tools for making LJSpeech datasets
-
-
-### Integration Patterns
-
-#### Agent-Cognitive Bridges
-- **AtomSpace Agents**: ElizaOS agents backed by OpenCog AtomSpace knowledge
-- **Reasoning Actions**: ElizaOS actions that invoke PLN reasoning
-- **Pattern Matching**: AtomSpace pattern matching as ElizaOS evaluators
-- **Distributed Cognition**: Multi-agent cognitive processing coordination
-
-#### Implementation Architecture
-```
-ElizaOS Framework
-├── Core Engine
-│   ├── Agent Management
-│   ├── Action Processing  
-│   └── Memory Systems
-├── OpenCog Integration Layer
-│   ├── AtomSpace Connector
-│   ├── CogServer Bridge
-│   ├── PLN Reasoning Interface
-│   └── Scheme Interpreter
-└── Hybrid Applications
-    ├── Cognitive Chatbots
-    ├── Reasoning Agents
-    └── Knowledge Management
-```
-
-### Development Roadmap
-- [ ] Implement AtomSpace storage provider for ElizaOS
-- [ ] Create OpenCog reasoning action templates
-- [ ] Build CogServer communication plugin
-- [ ] Design cognitive agent architecture patterns
-- [ ] Implement distributed reasoning coordination
-- [ ] Create OpenCog-aware ElizaOS dashboard components
-
-## 💰 GnuCash Financial Integration
-
-### Intelligent Financial Management
-Combining ElizaOS agents with GnuCash for smart financial management:
-
-#### Financial Agent Ecosystem
-- **Transaction Categorizer**: AI agent for automatic transaction classification
-- **Expense Analyzer**: Pattern recognition for spending behavior analysis
-- **Budget Optimizer**: Intelligent budget planning and optimization
-- **Investment Tracker**: Multi-asset portfolio monitoring and analysis
-- **Financial Assistant**: Conversational interface for financial queries
-- **Alert Manager**: Smart notification system for financial events
-
-#### Fractal Integration Architecture
-```
-ElizaOS Agents (User Interface)
-├── Financial Conversation Agents
-├── Analysis and Reporting Agents
-└── Automation and Alert Agents
-    ↓
-OpenCog Reasoning (Cognitive Layer)  
-├── Financial Pattern Recognition
-├── Predictive Analysis
-└── Decision Support
-    ↓
-GnuCash Data (Storage Layer)
-├── Account Structures
-├── Transaction Records
-└── Financial Reports
-```
-
-### Implementation Features
-- **Natural Language Queries**: Ask questions about finances in plain English
-- **Predictive Analytics**: AI-powered forecasting and trend analysis
-- **Automated Categorization**: Smart transaction classification
-- **Behavioral Insights**: Understanding spending patterns and habits
-- **Goal Tracking**: Intelligent progress monitoring for financial goals
-- **Risk Assessment**: Cognitive evaluation of financial decisions
-
-
-
-
-## 🧠 OpenCog Integration
-
-### Cognitive Architecture Components
-ElizaOS integrates with OpenCog to provide advanced reasoning capabilities:
-
-#### Repository Ecosystem
-
-**Core (38 repositories)**
-- [agentmemory](https://github.com/elizaOS/agentmemory) - Easy-to-use agent memory, powered by chromadb and postgres
-- [easycompletion](https://github.com/elizaOS/easycompletion) - Easy OpenAI text completion and function calling
-- [agentbrowser](https://github.com/elizaOS/agentbrowser) - A browser for your agent.
-- [agentloop](https://github.com/elizaOS/agentloop) - A simple, lightweight loop for your agent. Start/stop, step-through, and more.
-- [agentaction](https://github.com/elizaOS/agentaction) - Action chaining and history for agents
-- ... and 33 more repositories
-
-**Plugins (3 repositories)**
-- [eliza-plugin-starter](https://github.com/elizaOS/eliza-plugin-starter) - A starter plugin repo for the Solana hackathon
-- [plugin-specification](https://github.com/elizaOS/plugin-specification) - No description available
-- [plugins-automation](https://github.com/elizaOS/plugins-automation) - Automation scripts to manage the 150+ plugins in eliza-plugins organization.
-
-**Tools (1 repositories)**
-- [LJSpeechTools](https://github.com/elizaOS/LJSpeechTools) - Tools for making LJSpeech datasets
-
-
-### Integration Patterns
-
-#### Agent-Cognitive Bridges
-- **AtomSpace Agents**: ElizaOS agents backed by OpenCog AtomSpace knowledge
-- **Reasoning Actions**: ElizaOS actions that invoke PLN reasoning
-- **Pattern Matching**: AtomSpace pattern matching as ElizaOS evaluators
-- **Distributed Cognition**: Multi-agent cognitive processing coordination
-
-#### Implementation Architecture
-```
-ElizaOS Framework
-├── Core Engine
-│   ├── Agent Management
-│   ├── Action Processing  
-│   └── Memory Systems
-├── OpenCog Integration Layer
-│   ├── AtomSpace Connector
-│   ├── CogServer Bridge
-│   ├── PLN Reasoning Interface
-│   └── Scheme Interpreter
-└── Hybrid Applications
-    ├── Cognitive Chatbots
-    ├── Reasoning Agents
-    └── Knowledge Management
-```
-
-### Development Roadmap
-- [ ] Implement AtomSpace storage provider for ElizaOS
-- [ ] Create OpenCog reasoning action templates
-- [ ] Build CogServer communication plugin
-- [ ] Design cognitive agent architecture patterns
-- [ ] Implement distributed reasoning coordination
-- [ ] Create OpenCog-aware ElizaOS dashboard components
-
-## 💰 GnuCash Financial Integration
-
-### Intelligent Financial Management
-Combining ElizaOS agents with GnuCash for smart financial management:
-
-#### Financial Agent Ecosystem
-- **Transaction Categorizer**: AI agent for automatic transaction classification
-- **Expense Analyzer**: Pattern recognition for spending behavior analysis
-- **Budget Optimizer**: Intelligent budget planning and optimization
-- **Investment Tracker**: Multi-asset portfolio monitoring and analysis
-- **Financial Assistant**: Conversational interface for financial queries
-- **Alert Manager**: Smart notification system for financial events
-
-#### Fractal Integration Architecture
-```
-ElizaOS Agents (User Interface)
-├── Financial Conversation Agents
-├── Analysis and Reporting Agents
-└── Automation and Alert Agents
-    ↓
-OpenCog Reasoning (Cognitive Layer)  
-├── Financial Pattern Recognition
-├── Predictive Analysis
-└── Decision Support
-    ↓
-GnuCash Data (Storage Layer)
-├── Account Structures
-├── Transaction Records
-└── Financial Reports
-```
-
-### Implementation Features
-- **Natural Language Queries**: Ask questions about finances in plain English
-- **Predictive Analytics**: AI-powered forecasting and trend analysis
-- **Automated Categorization**: Smart transaction classification
-- **Behavioral Insights**: Understanding spending patterns and habits
-- **Goal Tracking**: Intelligent progress monitoring for financial goals
-- **Risk Assessment**: Cognitive evaluation of financial decisions
-
-
-
-
-## 🧠 OpenCog Integration
-
-### Cognitive Architecture Components
-ElizaOS integrates with OpenCog to provide advanced reasoning capabilities:
-
-#### Repository Ecosystem
-
-**Core (38 repositories)**
-- [agentmemory](https://github.com/elizaOS/agentmemory) - Easy-to-use agent memory, powered by chromadb and postgres
-- [easycompletion](https://github.com/elizaOS/easycompletion) - Easy OpenAI text completion and function calling
-- [agentbrowser](https://github.com/elizaOS/agentbrowser) - A browser for your agent.
-- [agentloop](https://github.com/elizaOS/agentloop) - A simple, lightweight loop for your agent. Start/stop, step-through, and more.
-- [agentaction](https://github.com/elizaOS/agentaction) - Action chaining and history for agents
-- ... and 33 more repositories
-
-**Plugins (3 repositories)**
-- [eliza-plugin-starter](https://github.com/elizaOS/eliza-plugin-starter) - A starter plugin repo for the Solana hackathon
-- [plugin-specification](https://github.com/elizaOS/plugin-specification) - No description available
-- [plugins-automation](https://github.com/elizaOS/plugins-automation) - Automation scripts to manage the 150+ plugins in eliza-plugins organization.
-
-**Tools (1 repositories)**
-- [LJSpeechTools](https://github.com/elizaOS/LJSpeechTools) - Tools for making LJSpeech datasets
-
-
-### Integration Patterns
-
-#### Agent-Cognitive Bridges
-- **AtomSpace Agents**: ElizaOS agents backed by OpenCog AtomSpace knowledge
-- **Reasoning Actions**: ElizaOS actions that invoke PLN reasoning
-- **Pattern Matching**: AtomSpace pattern matching as ElizaOS evaluators
-- **Distributed Cognition**: Multi-agent cognitive processing coordination
-
-#### Implementation Architecture
-```
-ElizaOS Framework
-├── Core Engine
-│   ├── Agent Management
-│   ├── Action Processing  
-│   └── Memory Systems
-├── OpenCog Integration Layer
-│   ├── AtomSpace Connector
-│   ├── CogServer Bridge
-│   ├── PLN Reasoning Interface
-│   └── Scheme Interpreter
-└── Hybrid Applications
-    ├── Cognitive Chatbots
-    ├── Reasoning Agents
-    └── Knowledge Management
-```
-
-### Development Roadmap
-- [ ] Implement AtomSpace storage provider for ElizaOS
-- [ ] Create OpenCog reasoning action templates
-- [ ] Build CogServer communication plugin
-- [ ] Design cognitive agent architecture patterns
-- [ ] Implement distributed reasoning coordination
-- [ ] Create OpenCog-aware ElizaOS dashboard components
-
-## 💰 GnuCash Financial Integration
-
-### Intelligent Financial Management
-Combining ElizaOS agents with GnuCash for smart financial management:
-
-#### Financial Agent Ecosystem
-- **Transaction Categorizer**: AI agent for automatic transaction classification
-- **Expense Analyzer**: Pattern recognition for spending behavior analysis
-- **Budget Optimizer**: Intelligent budget planning and optimization
-- **Investment Tracker**: Multi-asset portfolio monitoring and analysis
-- **Financial Assistant**: Conversational interface for financial queries
-- **Alert Manager**: Smart notification system for financial events
-
-#### Fractal Integration Architecture
-```
-ElizaOS Agents (User Interface)
-├── Financial Conversation Agents
-├── Analysis and Reporting Agents
-└── Automation and Alert Agents
-    ↓
-OpenCog Reasoning (Cognitive Layer)  
-├── Financial Pattern Recognition
-├── Predictive Analysis
-└── Decision Support
-    ↓
-GnuCash Data (Storage Layer)
-├── Account Structures
-├── Transaction Records
-└── Financial Reports
-```
-
-### Implementation Features
-- **Natural Language Queries**: Ask questions about finances in plain English
-- **Predictive Analytics**: AI-powered forecasting and trend analysis
-- **Automated Categorization**: Smart transaction classification
-- **Behavioral Insights**: Understanding spending patterns and habits
-- **Goal Tracking**: Intelligent progress monitoring for financial goals
-- **Risk Assessment**: Cognitive evaluation of financial decisions
-
-
-
-
-## 🧠 OpenCog Integration
-
-### Cognitive Architecture Components
-ElizaOS integrates with OpenCog to provide advanced reasoning capabilities:
-
-#### Repository Ecosystem
-
-**Core (38 repositories)**
-- [agentmemory](https://github.com/elizaOS/agentmemory) - Easy-to-use agent memory, powered by chromadb and postgres
-- [easycompletion](https://github.com/elizaOS/easycompletion) - Easy OpenAI text completion and function calling
-- [agentbrowser](https://github.com/elizaOS/agentbrowser) - A browser for your agent.
-- [agentloop](https://github.com/elizaOS/agentloop) - A simple, lightweight loop for your agent. Start/stop, step-through, and more.
-- [agentaction](https://github.com/elizaOS/agentaction) - Action chaining and history for agents
-- ... and 33 more repositories
-
-**Plugins (3 repositories)**
-- [eliza-plugin-starter](https://github.com/elizaOS/eliza-plugin-starter) - A starter plugin repo for the Solana hackathon
-- [plugin-specification](https://github.com/elizaOS/plugin-specification) - No description available
-- [plugins-automation](https://github.com/elizaOS/plugins-automation) - Automation scripts to manage the 150+ plugins in eliza-plugins organization.
-
-**Tools (1 repositories)**
-- [LJSpeechTools](https://github.com/elizaOS/LJSpeechTools) - Tools for making LJSpeech datasets
-
-
-### Integration Patterns
-
-#### Agent-Cognitive Bridges
-- **AtomSpace Agents**: ElizaOS agents backed by OpenCog AtomSpace knowledge
-- **Reasoning Actions**: ElizaOS actions that invoke PLN reasoning
-- **Pattern Matching**: AtomSpace pattern matching as ElizaOS evaluators
-- **Distributed Cognition**: Multi-agent cognitive processing coordination
-
-#### Implementation Architecture
-```
-ElizaOS Framework
-├── Core Engine
-│   ├── Agent Management
-│   ├── Action Processing  
-│   └── Memory Systems
-├── OpenCog Integration Layer
-│   ├── AtomSpace Connector
-│   ├── CogServer Bridge
-│   ├── PLN Reasoning Interface
-│   └── Scheme Interpreter
-└── Hybrid Applications
-    ├── Cognitive Chatbots
-    ├── Reasoning Agents
-    └── Knowledge Management
-```
-
-### Development Roadmap
-- [ ] Implement AtomSpace storage provider for ElizaOS
-- [ ] Create OpenCog reasoning action templates
-- [ ] Build CogServer communication plugin
-- [ ] Design cognitive agent architecture patterns
-- [ ] Implement distributed reasoning coordination
-- [ ] Create OpenCog-aware ElizaOS dashboard components
-
-## 💰 GnuCash Financial Integration
-
-### Intelligent Financial Management
-Combining ElizaOS agents with GnuCash for smart financial management:
-
-#### Financial Agent Ecosystem
-- **Transaction Categorizer**: AI agent for automatic transaction classification
-- **Expense Analyzer**: Pattern recognition for spending behavior analysis
-- **Budget Optimizer**: Intelligent budget planning and optimization
-- **Investment Tracker**: Multi-asset portfolio monitoring and analysis
-- **Financial Assistant**: Conversational interface for financial queries
-- **Alert Manager**: Smart notification system for financial events
-
-#### Fractal Integration Architecture
-```
-ElizaOS Agents (User Interface)
-├── Financial Conversation Agents
-├── Analysis and Reporting Agents
-└── Automation and Alert Agents
-    ↓
-OpenCog Reasoning (Cognitive Layer)  
-├── Financial Pattern Recognition
-├── Predictive Analysis
-└── Decision Support
-    ↓
-GnuCash Data (Storage Layer)
-├── Account Structures
-├── Transaction Records
-└── Financial Reports
-```
-
-### Implementation Features
-- **Natural Language Queries**: Ask questions about finances in plain English
-- **Predictive Analytics**: AI-powered forecasting and trend analysis
-- **Automated Categorization**: Smart transaction classification
-- **Behavioral Insights**: Understanding spending patterns and habits
-- **Goal Tracking**: Intelligent progress monitoring for financial goals
-- **Risk Assessment**: Cognitive evaluation of financial decisions
-
-
-
-
-## 🧠 OpenCog Integration
-
-### Cognitive Architecture Components
-ElizaOS integrates with OpenCog to provide advanced reasoning capabilities:
-
-#### Repository Ecosystem
-
-**Core (38 repositories)**
-- [agentmemory](https://github.com/elizaOS/agentmemory) - Easy-to-use agent memory, powered by chromadb and postgres
-- [easycompletion](https://github.com/elizaOS/easycompletion) - Easy OpenAI text completion and function calling
-- [agentbrowser](https://github.com/elizaOS/agentbrowser) - A browser for your agent.
-- [agentloop](https://github.com/elizaOS/agentloop) - A simple, lightweight loop for your agent. Start/stop, step-through, and more.
-- [agentaction](https://github.com/elizaOS/agentaction) - Action chaining and history for agents
-- ... and 33 more repositories
-
-**Plugins (3 repositories)**
-- [eliza-plugin-starter](https://github.com/elizaOS/eliza-plugin-starter) - A starter plugin repo for the Solana hackathon
-- [plugin-specification](https://github.com/elizaOS/plugin-specification) - No description available
-- [plugins-automation](https://github.com/elizaOS/plugins-automation) - Automation scripts to manage the 150+ plugins in eliza-plugins organization.
-
-**Tools (1 repositories)**
-- [LJSpeechTools](https://github.com/elizaOS/LJSpeechTools) - Tools for making LJSpeech datasets
-
-
-### Integration Patterns
-
-#### Agent-Cognitive Bridges
-- **AtomSpace Agents**: ElizaOS agents backed by OpenCog AtomSpace knowledge
-- **Reasoning Actions**: ElizaOS actions that invoke PLN reasoning
-- **Pattern Matching**: AtomSpace pattern matching as ElizaOS evaluators
-- **Distributed Cognition**: Multi-agent cognitive processing coordination
-
-#### Implementation Architecture
-```
-ElizaOS Framework
-├── Core Engine
-│   ├── Agent Management
-│   ├── Action Processing  
-│   └── Memory Systems
-├── OpenCog Integration Layer
-│   ├── AtomSpace Connector
-│   ├── CogServer Bridge
-│   ├── PLN Reasoning Interface
-│   └── Scheme Interpreter
-└── Hybrid Applications
-    ├── Cognitive Chatbots
-    ├── Reasoning Agents
-    └── Knowledge Management
-```
-
-### Development Roadmap
-- [ ] Implement AtomSpace storage provider for ElizaOS
-- [ ] Create OpenCog reasoning action templates
-- [ ] Build CogServer communication plugin
-- [ ] Design cognitive agent architecture patterns
-- [ ] Implement distributed reasoning coordination
-- [ ] Create OpenCog-aware ElizaOS dashboard components
-
-## 💰 GnuCash Financial Integration
-
-### Intelligent Financial Management
-Combining ElizaOS agents with GnuCash for smart financial management:
-
-#### Financial Agent Ecosystem
-- **Transaction Categorizer**: AI agent for automatic transaction classification
-- **Expense Analyzer**: Pattern recognition for spending behavior analysis
-- **Budget Optimizer**: Intelligent budget planning and optimization
-- **Investment Tracker**: Multi-asset portfolio monitoring and analysis
-- **Financial Assistant**: Conversational interface for financial queries
-- **Alert Manager**: Smart notification system for financial events
-
-#### Fractal Integration Architecture
-```
-ElizaOS Agents (User Interface)
-├── Financial Conversation Agents
-├── Analysis and Reporting Agents
-└── Automation and Alert Agents
-    ↓
-OpenCog Reasoning (Cognitive Layer)  
-├── Financial Pattern Recognition
-├── Predictive Analysis
-└── Decision Support
-    ↓
-GnuCash Data (Storage Layer)
-├── Account Structures
-├── Transaction Records
-└── Financial Reports
-```
-
-### Implementation Features
-- **Natural Language Queries**: Ask questions about finances in plain English
-- **Predictive Analytics**: AI-powered forecasting and trend analysis
-- **Automated Categorization**: Smart transaction classification
-- **Behavioral Insights**: Understanding spending patterns and habits
-- **Goal Tracking**: Intelligent progress monitoring for financial goals
-- **Risk Assessment**: Cognitive evaluation of financial decisions
-
-
-
-
-## 🧠 OpenCog Integration
-
-### Cognitive Architecture Components
-ElizaOS integrates with OpenCog to provide advanced reasoning capabilities:
-
-#### Repository Ecosystem
-
-**Core (38 repositories)**
-- [agentmemory](https://github.com/elizaOS/agentmemory) - Easy-to-use agent memory, powered by chromadb and postgres
-- [easycompletion](https://github.com/elizaOS/easycompletion) - Easy OpenAI text completion and function calling
-- [agentbrowser](https://github.com/elizaOS/agentbrowser) - A browser for your agent.
-- [agentloop](https://github.com/elizaOS/agentloop) - A simple, lightweight loop for your agent. Start/stop, step-through, and more.
-- [agentaction](https://github.com/elizaOS/agentaction) - Action chaining and history for agents
-- ... and 33 more repositories
-
-**Plugins (3 repositories)**
-- [eliza-plugin-starter](https://github.com/elizaOS/eliza-plugin-starter) - A starter plugin repo for the Solana hackathon
-- [plugin-specification](https://github.com/elizaOS/plugin-specification) - No description available
-- [plugins-automation](https://github.com/elizaOS/plugins-automation) - Automation scripts to manage the 150+ plugins in eliza-plugins organization.
-
-**Tools (1 repositories)**
-- [LJSpeechTools](https://github.com/elizaOS/LJSpeechTools) - Tools for making LJSpeech datasets
-
-
-### Integration Patterns
-
-#### Agent-Cognitive Bridges
-- **AtomSpace Agents**: ElizaOS agents backed by OpenCog AtomSpace knowledge
-- **Reasoning Actions**: ElizaOS actions that invoke PLN reasoning
-- **Pattern Matching**: AtomSpace pattern matching as ElizaOS evaluators
-- **Distributed Cognition**: Multi-agent cognitive processing coordination
-
-#### Implementation Architecture
-```
-ElizaOS Framework
-├── Core Engine
-│   ├── Agent Management
-│   ├── Action Processing  
-│   └── Memory Systems
-├── OpenCog Integration Layer
-│   ├── AtomSpace Connector
-│   ├── CogServer Bridge
-│   ├── PLN Reasoning Interface
-│   └── Scheme Interpreter
-└── Hybrid Applications
-    ├── Cognitive Chatbots
-    ├── Reasoning Agents
-    └── Knowledge Management
-```
-
-### Development Roadmap
-- [ ] Implement AtomSpace storage provider for ElizaOS
-- [ ] Create OpenCog reasoning action templates
-- [ ] Build CogServer communication plugin
-- [ ] Design cognitive agent architecture patterns
-- [ ] Implement distributed reasoning coordination
-- [ ] Create OpenCog-aware ElizaOS dashboard components
-
-## 💰 GnuCash Financial Integration
-
-### Intelligent Financial Management
-Combining ElizaOS agents with GnuCash for smart financial management:
-
-#### Financial Agent Ecosystem
-- **Transaction Categorizer**: AI agent for automatic transaction classification
-- **Expense Analyzer**: Pattern recognition for spending behavior analysis
-- **Budget Optimizer**: Intelligent budget planning and optimization
-- **Investment Tracker**: Multi-asset portfolio monitoring and analysis
-- **Financial Assistant**: Conversational interface for financial queries
-- **Alert Manager**: Smart notification system for financial events
-
-#### Fractal Integration Architecture
-```
-ElizaOS Agents (User Interface)
-├── Financial Conversation Agents
-├── Analysis and Reporting Agents
-└── Automation and Alert Agents
-    ↓
-OpenCog Reasoning (Cognitive Layer)  
-├── Financial Pattern Recognition
-├── Predictive Analysis
-└── Decision Support
-    ↓
-GnuCash Data (Storage Layer)
-├── Account Structures
-├── Transaction Records
-└── Financial Reports
-```
-
-### Implementation Features
-- **Natural Language Queries**: Ask questions about finances in plain English
-- **Predictive Analytics**: AI-powered forecasting and trend analysis
-- **Automated Categorization**: Smart transaction classification
-- **Behavioral Insights**: Understanding spending patterns and habits
-- **Goal Tracking**: Intelligent progress monitoring for financial goals
-- **Risk Assessment**: Cognitive evaluation of financial decisions
-
-
-
-
-## 🧠 OpenCog Integration
-
-### Cognitive Architecture Components
-ElizaOS integrates with OpenCog to provide advanced reasoning capabilities:
-
-#### Repository Ecosystem
-
-**Core (38 repositories)**
-- [agentmemory](https://github.com/elizaOS/agentmemory) - Easy-to-use agent memory, powered by chromadb and postgres
-- [easycompletion](https://github.com/elizaOS/easycompletion) - Easy OpenAI text completion and function calling
-- [agentbrowser](https://github.com/elizaOS/agentbrowser) - A browser for your agent.
-- [agentloop](https://github.com/elizaOS/agentloop) - A simple, lightweight loop for your agent. Start/stop, step-through, and more.
-- [agentaction](https://github.com/elizaOS/agentaction) - Action chaining and history for agents
-- ... and 33 more repositories
-
-**Plugins (3 repositories)**
-- [eliza-plugin-starter](https://github.com/elizaOS/eliza-plugin-starter) - A starter plugin repo for the Solana hackathon
-- [plugin-specification](https://github.com/elizaOS/plugin-specification) - No description available
-- [plugins-automation](https://github.com/elizaOS/plugins-automation) - Automation scripts to manage the 150+ plugins in eliza-plugins organization.
-
-**Tools (1 repositories)**
-- [LJSpeechTools](https://github.com/elizaOS/LJSpeechTools) - Tools for making LJSpeech datasets
-
-
-### Integration Patterns
-
-#### Agent-Cognitive Bridges
-- **AtomSpace Agents**: ElizaOS agents backed by OpenCog AtomSpace knowledge
-- **Reasoning Actions**: ElizaOS actions that invoke PLN reasoning
-- **Pattern Matching**: AtomSpace pattern matching as ElizaOS evaluators
-- **Distributed Cognition**: Multi-agent cognitive processing coordination
-
-#### Implementation Architecture
-```
-ElizaOS Framework
-├── Core Engine
-│   ├── Agent Management
-│   ├── Action Processing  
-│   └── Memory Systems
-├── OpenCog Integration Layer
-│   ├── AtomSpace Connector
-│   ├── CogServer Bridge
-│   ├── PLN Reasoning Interface
-│   └── Scheme Interpreter
-└── Hybrid Applications
-    ├── Cognitive Chatbots
-    ├── Reasoning Agents
-    └── Knowledge Management
-```
-
-### Development Roadmap
-- [ ] Implement AtomSpace storage provider for ElizaOS
-- [ ] Create OpenCog reasoning action templates
-- [ ] Build CogServer communication plugin
-- [ ] Design cognitive agent architecture patterns
-- [ ] Implement distributed reasoning coordination
-- [ ] Create OpenCog-aware ElizaOS dashboard components
-
-## 💰 GnuCash Financial Integration
-
-### Intelligent Financial Management
-Combining ElizaOS agents with GnuCash for smart financial management:
-
-#### Financial Agent Ecosystem
-- **Transaction Categorizer**: AI agent for automatic transaction classification
-- **Expense Analyzer**: Pattern recognition for spending behavior analysis
-- **Budget Optimizer**: Intelligent budget planning and optimization
-- **Investment Tracker**: Multi-asset portfolio monitoring and analysis
-- **Financial Assistant**: Conversational interface for financial queries
-- **Alert Manager**: Smart notification system for financial events
-
-#### Fractal Integration Architecture
-```
-ElizaOS Agents (User Interface)
-├── Financial Conversation Agents
-├── Analysis and Reporting Agents
-└── Automation and Alert Agents
-    ↓
-OpenCog Reasoning (Cognitive Layer)  
-├── Financial Pattern Recognition
-├── Predictive Analysis
-└── Decision Support
-    ↓
-GnuCash Data (Storage Layer)
-├── Account Structures
-├── Transaction Records
-└── Financial Reports
-```
-
-### Implementation Features
-- **Natural Language Queries**: Ask questions about finances in plain English
-- **Predictive Analytics**: AI-powered forecasting and trend analysis
-- **Automated Categorization**: Smart transaction classification
-- **Behavioral Insights**: Understanding spending patterns and habits
-- **Goal Tracking**: Intelligent progress monitoring for financial goals
-- **Risk Assessment**: Cognitive evaluation of financial decisions
-
-
-
-
-## 🧠 OpenCog Integration
-
-### Cognitive Architecture Components
-ElizaOS integrates with OpenCog to provide advanced reasoning capabilities:
-
-#### Repository Ecosystem
-
-**Core (38 repositories)**
-- [agentmemory](https://github.com/elizaOS/agentmemory) - Easy-to-use agent memory, powered by chromadb and postgres
-- [easycompletion](https://github.com/elizaOS/easycompletion) - Easy OpenAI text completion and function calling
-- [agentbrowser](https://github.com/elizaOS/agentbrowser) - A browser for your agent.
-- [agentloop](https://github.com/elizaOS/agentloop) - A simple, lightweight loop for your agent. Start/stop, step-through, and more.
-- [agentaction](https://github.com/elizaOS/agentaction) - Action chaining and history for agents
-- ... and 33 more repositories
-
-**Plugins (3 repositories)**
-- [eliza-plugin-starter](https://github.com/elizaOS/eliza-plugin-starter) - A starter plugin repo for the Solana hackathon
-- [plugin-specification](https://github.com/elizaOS/plugin-specification) - No description available
-- [plugins-automation](https://github.com/elizaOS/plugins-automation) - Automation scripts to manage the 150+ plugins in eliza-plugins organization.
-
-**Tools (1 repositories)**
-- [LJSpeechTools](https://github.com/elizaOS/LJSpeechTools) - Tools for making LJSpeech datasets
-
-
-### Integration Patterns
-
-#### Agent-Cognitive Bridges
-- **AtomSpace Agents**: ElizaOS agents backed by OpenCog AtomSpace knowledge
-- **Reasoning Actions**: ElizaOS actions that invoke PLN reasoning
-- **Pattern Matching**: AtomSpace pattern matching as ElizaOS evaluators
-- **Distributed Cognition**: Multi-agent cognitive processing coordination
-
-#### Implementation Architecture
-```
-ElizaOS Framework
-├── Core Engine
-│   ├── Agent Management
-│   ├── Action Processing  
-│   └── Memory Systems
-├── OpenCog Integration Layer
-│   ├── AtomSpace Connector
-│   ├── CogServer Bridge
-│   ├── PLN Reasoning Interface
-│   └── Scheme Interpreter
-└── Hybrid Applications
-    ├── Cognitive Chatbots
-    ├── Reasoning Agents
-    └── Knowledge Management
-```
-
-### Development Roadmap
-- [ ] Implement AtomSpace storage provider for ElizaOS
-- [ ] Create OpenCog reasoning action templates
-- [ ] Build CogServer communication plugin
-- [ ] Design cognitive agent architecture patterns
-- [ ] Implement distributed reasoning coordination
-- [ ] Create OpenCog-aware ElizaOS dashboard components
-
-## 💰 GnuCash Financial Integration
-
-### Intelligent Financial Management
-Combining ElizaOS agents with GnuCash for smart financial management:
-
-#### Financial Agent Ecosystem
-- **Transaction Categorizer**: AI agent for automatic transaction classification
-- **Expense Analyzer**: Pattern recognition for spending behavior analysis
-- **Budget Optimizer**: Intelligent budget planning and optimization
-- **Investment Tracker**: Multi-asset portfolio monitoring and analysis
-- **Financial Assistant**: Conversational interface for financial queries
-- **Alert Manager**: Smart notification system for financial events
-
-#### Fractal Integration Architecture
-```
-ElizaOS Agents (User Interface)
-├── Financial Conversation Agents
-├── Analysis and Reporting Agents
-└── Automation and Alert Agents
-    ↓
-OpenCog Reasoning (Cognitive Layer)  
-├── Financial Pattern Recognition
-├── Predictive Analysis
-└── Decision Support
-    ↓
-GnuCash Data (Storage Layer)
-├── Account Structures
-├── Transaction Records
-└── Financial Reports
-```
-
-### Implementation Features
-- **Natural Language Queries**: Ask questions about finances in plain English
-- **Predictive Analytics**: AI-powered forecasting and trend analysis
-- **Automated Categorization**: Smart transaction classification
-- **Behavioral Insights**: Understanding spending patterns and habits
-- **Goal Tracking**: Intelligent progress monitoring for financial goals
-- **Risk Assessment**: Cognitive evaluation of financial decisions
-
-
-
-
-## 🧠 OpenCog Integration
-
-### Cognitive Architecture Components
-ElizaOS integrates with OpenCog to provide advanced reasoning capabilities:
-
-#### Repository Ecosystem
-
-**Core (38 repositories)**
-- [agentmemory](https://github.com/elizaOS/agentmemory) - Easy-to-use agent memory, powered by chromadb and postgres
-- [easycompletion](https://github.com/elizaOS/easycompletion) - Easy OpenAI text completion and function calling
-- [agentbrowser](https://github.com/elizaOS/agentbrowser) - A browser for your agent.
-- [agentloop](https://github.com/elizaOS/agentloop) - A simple, lightweight loop for your agent. Start/stop, step-through, and more.
-- [agentaction](https://github.com/elizaOS/agentaction) - Action chaining and history for agents
-- ... and 33 more repositories
-
-**Plugins (3 repositories)**
-- [eliza-plugin-starter](https://github.com/elizaOS/eliza-plugin-starter) - A starter plugin repo for the Solana hackathon
-- [plugin-specification](https://github.com/elizaOS/plugin-specification) - No description available
-- [plugins-automation](https://github.com/elizaOS/plugins-automation) - Automation scripts to manage the 150+ plugins in eliza-plugins organization.
-
-**Tools (1 repositories)**
-- [LJSpeechTools](https://github.com/elizaOS/LJSpeechTools) - Tools for making LJSpeech datasets
-
-
-### Integration Patterns
-
-#### Agent-Cognitive Bridges
-- **AtomSpace Agents**: ElizaOS agents backed by OpenCog AtomSpace knowledge
-- **Reasoning Actions**: ElizaOS actions that invoke PLN reasoning
-- **Pattern Matching**: AtomSpace pattern matching as ElizaOS evaluators
-- **Distributed Cognition**: Multi-agent cognitive processing coordination
-
-#### Implementation Architecture
-```
-ElizaOS Framework
-├── Core Engine
-│   ├── Agent Management
-│   ├── Action Processing  
-│   └── Memory Systems
-├── OpenCog Integration Layer
-│   ├── AtomSpace Connector
-│   ├── CogServer Bridge
-│   ├── PLN Reasoning Interface
-│   └── Scheme Interpreter
-└── Hybrid Applications
-    ├── Cognitive Chatbots
-    ├── Reasoning Agents
-    └── Knowledge Management
-```
-
-### Development Roadmap
-- [ ] Implement AtomSpace storage provider for ElizaOS
-- [ ] Create OpenCog reasoning action templates
-- [ ] Build CogServer communication plugin
-- [ ] Design cognitive agent architecture patterns
-- [ ] Implement distributed reasoning coordination
-- [ ] Create OpenCog-aware ElizaOS dashboard components
-
-## 💰 GnuCash Financial Integration
-
-### Intelligent Financial Management
-Combining ElizaOS agents with GnuCash for smart financial management:
-
-#### Financial Agent Ecosystem
-- **Transaction Categorizer**: AI agent for automatic transaction classification
-- **Expense Analyzer**: Pattern recognition for spending behavior analysis
-- **Budget Optimizer**: Intelligent budget planning and optimization
-- **Investment Tracker**: Multi-asset portfolio monitoring and analysis
-- **Financial Assistant**: Conversational interface for financial queries
-- **Alert Manager**: Smart notification system for financial events
-
-#### Fractal Integration Architecture
-```
-ElizaOS Agents (User Interface)
-├── Financial Conversation Agents
-├── Analysis and Reporting Agents
-└── Automation and Alert Agents
-    ↓
-OpenCog Reasoning (Cognitive Layer)  
-├── Financial Pattern Recognition
-├── Predictive Analysis
-└── Decision Support
-    ↓
-GnuCash Data (Storage Layer)
-├── Account Structures
-├── Transaction Records
-└── Financial Reports
-```
-
-### Implementation Features
-- **Natural Language Queries**: Ask questions about finances in plain English
-- **Predictive Analytics**: AI-powered forecasting and trend analysis
-- **Automated Categorization**: Smart transaction classification
-- **Behavioral Insights**: Understanding spending patterns and habits
-- **Goal Tracking**: Intelligent progress monitoring for financial goals
-- **Risk Assessment**: Cognitive evaluation of financial decisions
-
-
-
-
-## 🧠 OpenCog Integration
-
-### Cognitive Architecture Components
-ElizaOS integrates with OpenCog to provide advanced reasoning capabilities:
-
-#### Repository Ecosystem
-
-**Core (38 repositories)**
-- [agentmemory](https://github.com/elizaOS/agentmemory) - Easy-to-use agent memory, powered by chromadb and postgres
-- [easycompletion](https://github.com/elizaOS/easycompletion) - Easy OpenAI text completion and function calling
-- [agentbrowser](https://github.com/elizaOS/agentbrowser) - A browser for your agent.
-- [agentloop](https://github.com/elizaOS/agentloop) - A simple, lightweight loop for your agent. Start/stop, step-through, and more.
-- [agentaction](https://github.com/elizaOS/agentaction) - Action chaining and history for agents
-- ... and 33 more repositories
-
-**Plugins (3 repositories)**
-- [eliza-plugin-starter](https://github.com/elizaOS/eliza-plugin-starter) - A starter plugin repo for the Solana hackathon
-- [plugin-specification](https://github.com/elizaOS/plugin-specification) - No description available
-- [plugins-automation](https://github.com/elizaOS/plugins-automation) - Automation scripts to manage the 150+ plugins in eliza-plugins organization.
-
-**Tools (1 repositories)**
-- [LJSpeechTools](https://github.com/elizaOS/LJSpeechTools) - Tools for making LJSpeech datasets
-
-
-### Integration Patterns
-
-#### Agent-Cognitive Bridges
-- **AtomSpace Agents**: ElizaOS agents backed by OpenCog AtomSpace knowledge
-- **Reasoning Actions**: ElizaOS actions that invoke PLN reasoning
-- **Pattern Matching**: AtomSpace pattern matching as ElizaOS evaluators
-- **Distributed Cognition**: Multi-agent cognitive processing coordination
-
-#### Implementation Architecture
-```
-ElizaOS Framework
-├── Core Engine
-│   ├── Agent Management
-│   ├── Action Processing  
-│   └── Memory Systems
-├── OpenCog Integration Layer
-│   ├── AtomSpace Connector
-│   ├── CogServer Bridge
-│   ├── PLN Reasoning Interface
-│   └── Scheme Interpreter
-└── Hybrid Applications
-    ├── Cognitive Chatbots
-    ├── Reasoning Agents
-    └── Knowledge Management
-```
-
-### Development Roadmap
-- [ ] Implement AtomSpace storage provider for ElizaOS
-- [ ] Create OpenCog reasoning action templates
-- [ ] Build CogServer communication plugin
-- [ ] Design cognitive agent architecture patterns
-- [ ] Implement distributed reasoning coordination
-- [ ] Create OpenCog-aware ElizaOS dashboard components
-
-## 💰 GnuCash Financial Integration
-
-### Intelligent Financial Management
-Combining ElizaOS agents with GnuCash for smart financial management:
-
-#### Financial Agent Ecosystem
-- **Transaction Categorizer**: AI agent for automatic transaction classification
-- **Expense Analyzer**: Pattern recognition for spending behavior analysis
-- **Budget Optimizer**: Intelligent budget planning and optimization
-- **Investment Tracker**: Multi-asset portfolio monitoring and analysis
-- **Financial Assistant**: Conversational interface for financial queries
-- **Alert Manager**: Smart notification system for financial events
-
-#### Fractal Integration Architecture
-```
-ElizaOS Agents (User Interface)
-├── Financial Conversation Agents
-├── Analysis and Reporting Agents
-└── Automation and Alert Agents
-    ↓
-OpenCog Reasoning (Cognitive Layer)  
-├── Financial Pattern Recognition
-├── Predictive Analysis
-└── Decision Support
-    ↓
-GnuCash Data (Storage Layer)
-├── Account Structures
-├── Transaction Records
-└── Financial Reports
-```
-
-### Implementation Features
-- **Natural Language Queries**: Ask questions about finances in plain English
-- **Predictive Analytics**: AI-powered forecasting and trend analysis
-- **Automated Categorization**: Smart transaction classification
-- **Behavioral Insights**: Understanding spending patterns and habits
-- **Goal Tracking**: Intelligent progress monitoring for financial goals
-- **Risk Assessment**: Cognitive evaluation of financial decisions
-
-
-
-
-## 🧠 OpenCog Integration
-
-### Cognitive Architecture Components
-ElizaOS integrates with OpenCog to provide advanced reasoning capabilities:
-
-#### Repository Ecosystem
-
-**Core (38 repositories)**
-- [agentmemory](https://github.com/elizaOS/agentmemory) - Easy-to-use agent memory, powered by chromadb and postgres
-- [easycompletion](https://github.com/elizaOS/easycompletion) - Easy OpenAI text completion and function calling
-- [agentbrowser](https://github.com/elizaOS/agentbrowser) - A browser for your agent.
-- [agentloop](https://github.com/elizaOS/agentloop) - A simple, lightweight loop for your agent. Start/stop, step-through, and more.
-- [agentaction](https://github.com/elizaOS/agentaction) - Action chaining and history for agents
-- ... and 33 more repositories
-
-**Plugins (3 repositories)**
-- [eliza-plugin-starter](https://github.com/elizaOS/eliza-plugin-starter) - A starter plugin repo for the Solana hackathon
-- [plugin-specification](https://github.com/elizaOS/plugin-specification) - No description available
-- [plugins-automation](https://github.com/elizaOS/plugins-automation) - Automation scripts to manage the 150+ plugins in eliza-plugins organization.
-
-**Tools (1 repositories)**
-- [LJSpeechTools](https://github.com/elizaOS/LJSpeechTools) - Tools for making LJSpeech datasets
-
-
-### Integration Patterns
-
-#### Agent-Cognitive Bridges
-- **AtomSpace Agents**: ElizaOS agents backed by OpenCog AtomSpace knowledge
-- **Reasoning Actions**: ElizaOS actions that invoke PLN reasoning
-- **Pattern Matching**: AtomSpace pattern matching as ElizaOS evaluators
-- **Distributed Cognition**: Multi-agent cognitive processing coordination
-
-#### Implementation Architecture
-```
-ElizaOS Framework
-├── Core Engine
-│   ├── Agent Management
-│   ├── Action Processing  
-│   └── Memory Systems
-├── OpenCog Integration Layer
-│   ├── AtomSpace Connector
-│   ├── CogServer Bridge
-│   ├── PLN Reasoning Interface
-│   └── Scheme Interpreter
-└── Hybrid Applications
-    ├── Cognitive Chatbots
-    ├── Reasoning Agents
-    └── Knowledge Management
-```
-
-### Development Roadmap
-- [ ] Implement AtomSpace storage provider for ElizaOS
-- [ ] Create OpenCog reasoning action templates
-- [ ] Build CogServer communication plugin
-- [ ] Design cognitive agent architecture patterns
-- [ ] Implement distributed reasoning coordination
-- [ ] Create OpenCog-aware ElizaOS dashboard components
-
-## 💰 GnuCash Financial Integration
-
-### Intelligent Financial Management
-Combining ElizaOS agents with GnuCash for smart financial management:
-
-#### Financial Agent Ecosystem
-- **Transaction Categorizer**: AI agent for automatic transaction classification
-- **Expense Analyzer**: Pattern recognition for spending behavior analysis
-- **Budget Optimizer**: Intelligent budget planning and optimization
-- **Investment Tracker**: Multi-asset portfolio monitoring and analysis
-- **Financial Assistant**: Conversational interface for financial queries
-- **Alert Manager**: Smart notification system for financial events
-
-#### Fractal Integration Architecture
-```
-ElizaOS Agents (User Interface)
-├── Financial Conversation Agents
-├── Analysis and Reporting Agents
-└── Automation and Alert Agents
-    ↓
-OpenCog Reasoning (Cognitive Layer)  
-├── Financial Pattern Recognition
-├── Predictive Analysis
-└── Decision Support
-    ↓
-GnuCash Data (Storage Layer)
-├── Account Structures
-├── Transaction Records
-└── Financial Reports
-```
-
-### Implementation Features
-- **Natural Language Queries**: Ask questions about finances in plain English
-- **Predictive Analytics**: AI-powered forecasting and trend analysis
-- **Automated Categorization**: Smart transaction classification
-- **Behavioral Insights**: Understanding spending patterns and habits
-- **Goal Tracking**: Intelligent progress monitoring for financial goals
-- **Risk Assessment**: Cognitive evaluation of financial decisions
-
-
-
-
-## 🧠 OpenCog Integration
-
-### Cognitive Architecture Components
-ElizaOS integrates with OpenCog to provide advanced reasoning capabilities:
-
-#### Repository Ecosystem
-
-**Core (38 repositories)**
-- [agentmemory](https://github.com/elizaOS/agentmemory) - Easy-to-use agent memory, powered by chromadb and postgres
-- [easycompletion](https://github.com/elizaOS/easycompletion) - Easy OpenAI text completion and function calling
-- [agentbrowser](https://github.com/elizaOS/agentbrowser) - A browser for your agent.
-- [agentloop](https://github.com/elizaOS/agentloop) - A simple, lightweight loop for your agent. Start/stop, step-through, and more.
-- [agentaction](https://github.com/elizaOS/agentaction) - Action chaining and history for agents
-- ... and 33 more repositories
-
-**Plugins (3 repositories)**
-- [eliza-plugin-starter](https://github.com/elizaOS/eliza-plugin-starter) - A starter plugin repo for the Solana hackathon
-- [plugin-specification](https://github.com/elizaOS/plugin-specification) - No description available
-- [plugins-automation](https://github.com/elizaOS/plugins-automation) - Automation scripts to manage the 150+ plugins in eliza-plugins organization.
-
-**Tools (1 repositories)**
-- [LJSpeechTools](https://github.com/elizaOS/LJSpeechTools) - Tools for making LJSpeech datasets
-
-
-### Integration Patterns
-
-#### Agent-Cognitive Bridges
-- **AtomSpace Agents**: ElizaOS agents backed by OpenCog AtomSpace knowledge
-- **Reasoning Actions**: ElizaOS actions that invoke PLN reasoning
-- **Pattern Matching**: AtomSpace pattern matching as ElizaOS evaluators
-- **Distributed Cognition**: Multi-agent cognitive processing coordination
-
-#### Implementation Architecture
-```
-ElizaOS Framework
-├── Core Engine
-│   ├── Agent Management
-│   ├── Action Processing  
-│   └── Memory Systems
-├── OpenCog Integration Layer
-│   ├── AtomSpace Connector
-│   ├── CogServer Bridge
-│   ├── PLN Reasoning Interface
-│   └── Scheme Interpreter
-└── Hybrid Applications
-    ├── Cognitive Chatbots
-    ├── Reasoning Agents
-    └── Knowledge Management
-```
-
-### Development Roadmap
-- [ ] Implement AtomSpace storage provider for ElizaOS
-- [ ] Create OpenCog reasoning action templates
-- [ ] Build CogServer communication plugin
-- [ ] Design cognitive agent architecture patterns
-- [ ] Implement distributed reasoning coordination
-- [ ] Create OpenCog-aware ElizaOS dashboard components
-
-## 💰 GnuCash Financial Integration
-
-### Intelligent Financial Management
-Combining ElizaOS agents with GnuCash for smart financial management:
-
-#### Financial Agent Ecosystem
-- **Transaction Categorizer**: AI agent for automatic transaction classification
-- **Expense Analyzer**: Pattern recognition for spending behavior analysis
-- **Budget Optimizer**: Intelligent budget planning and optimization
-- **Investment Tracker**: Multi-asset portfolio monitoring and analysis
-- **Financial Assistant**: Conversational interface for financial queries
-- **Alert Manager**: Smart notification system for financial events
-
-#### Fractal Integration Architecture
-```
-ElizaOS Agents (User Interface)
-├── Financial Conversation Agents
-├── Analysis and Reporting Agents
-└── Automation and Alert Agents
-    ↓
-OpenCog Reasoning (Cognitive Layer)  
-├── Financial Pattern Recognition
-├── Predictive Analysis
-└── Decision Support
-    ↓
-GnuCash Data (Storage Layer)
-├── Account Structures
-├── Transaction Records
-└── Financial Reports
-```
-
-### Implementation Features
-- **Natural Language Queries**: Ask questions about finances in plain English
-- **Predictive Analytics**: AI-powered forecasting and trend analysis
-- **Automated Categorization**: Smart transaction classification
-- **Behavioral Insights**: Understanding spending patterns and habits
-- **Goal Tracking**: Intelligent progress monitoring for financial goals
-- **Risk Assessment**: Cognitive evaluation of financial decisions
-
-
-
-
-## 🧠 OpenCog Integration
-
-### Cognitive Architecture Components
-ElizaOS integrates with OpenCog to provide advanced reasoning capabilities:
-
-#### Repository Ecosystem
-
-**Core (38 repositories)**
-- [agentmemory](https://github.com/elizaOS/agentmemory) - Easy-to-use agent memory, powered by chromadb and postgres
-- [easycompletion](https://github.com/elizaOS/easycompletion) - Easy OpenAI text completion and function calling
-- [agentbrowser](https://github.com/elizaOS/agentbrowser) - A browser for your agent.
-- [agentloop](https://github.com/elizaOS/agentloop) - A simple, lightweight loop for your agent. Start/stop, step-through, and more.
-- [agentaction](https://github.com/elizaOS/agentaction) - Action chaining and history for agents
-- ... and 33 more repositories
-
-**Plugins (3 repositories)**
-- [eliza-plugin-starter](https://github.com/elizaOS/eliza-plugin-starter) - A starter plugin repo for the Solana hackathon
-- [plugin-specification](https://github.com/elizaOS/plugin-specification) - No description available
-- [plugins-automation](https://github.com/elizaOS/plugins-automation) - Automation scripts to manage the 150+ plugins in eliza-plugins organization.
-
-**Tools (1 repositories)**
-- [LJSpeechTools](https://github.com/elizaOS/LJSpeechTools) - Tools for making LJSpeech datasets
-
-
-### Integration Patterns
-
-#### Agent-Cognitive Bridges
-- **AtomSpace Agents**: ElizaOS agents backed by OpenCog AtomSpace knowledge
-- **Reasoning Actions**: ElizaOS actions that invoke PLN reasoning
-- **Pattern Matching**: AtomSpace pattern matching as ElizaOS evaluators
-- **Distributed Cognition**: Multi-agent cognitive processing coordination
-
-#### Implementation Architecture
-```
-ElizaOS Framework
-├── Core Engine
-│   ├── Agent Management
-│   ├── Action Processing  
-│   └── Memory Systems
-├── OpenCog Integration Layer
-│   ├── AtomSpace Connector
-│   ├── CogServer Bridge
-│   ├── PLN Reasoning Interface
-│   └── Scheme Interpreter
-└── Hybrid Applications
-    ├── Cognitive Chatbots
-    ├── Reasoning Agents
-    └── Knowledge Management
-```
-
-### Development Roadmap
-- [ ] Implement AtomSpace storage provider for ElizaOS
-- [ ] Create OpenCog reasoning action templates
-- [ ] Build CogServer communication plugin
-- [ ] Design cognitive agent architecture patterns
-- [ ] Implement distributed reasoning coordination
-- [ ] Create OpenCog-aware ElizaOS dashboard components
-
-## 💰 GnuCash Financial Integration
-
-### Intelligent Financial Management
-Combining ElizaOS agents with GnuCash for smart financial management:
-
-#### Financial Agent Ecosystem
-- **Transaction Categorizer**: AI agent for automatic transaction classification
-- **Expense Analyzer**: Pattern recognition for spending behavior analysis
-- **Budget Optimizer**: Intelligent budget planning and optimization
-- **Investment Tracker**: Multi-asset portfolio monitoring and analysis
-- **Financial Assistant**: Conversational interface for financial queries
-- **Alert Manager**: Smart notification system for financial events
-
-#### Fractal Integration Architecture
-```
-ElizaOS Agents (User Interface)
-├── Financial Conversation Agents
-├── Analysis and Reporting Agents
-└── Automation and Alert Agents
-    ↓
-OpenCog Reasoning (Cognitive Layer)  
-├── Financial Pattern Recognition
-├── Predictive Analysis
-└── Decision Support
-    ↓
-GnuCash Data (Storage Layer)
-├── Account Structures
-├── Transaction Records
-└── Financial Reports
-```
-
-### Implementation Features
-- **Natural Language Queries**: Ask questions about finances in plain English
-- **Predictive Analytics**: AI-powered forecasting and trend analysis
-- **Automated Categorization**: Smart transaction classification
-- **Behavioral Insights**: Understanding spending patterns and habits
-- **Goal Tracking**: Intelligent progress monitoring for financial goals
-- **Risk Assessment**: Cognitive evaluation of financial decisions
-
-
-
-
-## 🧠 OpenCog Integration
-
-### Cognitive Architecture Components
-ElizaOS integrates with OpenCog to provide advanced reasoning capabilities:
-
-#### Repository Ecosystem
-
-**Core (38 repositories)**
-- [agentmemory](https://github.com/elizaOS/agentmemory) - Easy-to-use agent memory, powered by chromadb and postgres
-- [easycompletion](https://github.com/elizaOS/easycompletion) - Easy OpenAI text completion and function calling
-- [agentbrowser](https://github.com/elizaOS/agentbrowser) - A browser for your agent.
-- [agentloop](https://github.com/elizaOS/agentloop) - A simple, lightweight loop for your agent. Start/stop, step-through, and more.
-- [agentaction](https://github.com/elizaOS/agentaction) - Action chaining and history for agents
-- ... and 33 more repositories
-
-**Plugins (3 repositories)**
-- [eliza-plugin-starter](https://github.com/elizaOS/eliza-plugin-starter) - A starter plugin repo for the Solana hackathon
-- [plugin-specification](https://github.com/elizaOS/plugin-specification) - No description available
-- [plugins-automation](https://github.com/elizaOS/plugins-automation) - Automation scripts to manage the 150+ plugins in eliza-plugins organization.
-
-**Tools (1 repositories)**
-- [LJSpeechTools](https://github.com/elizaOS/LJSpeechTools) - Tools for making LJSpeech datasets
-
-
-### Integration Patterns
-
-#### Agent-Cognitive Bridges
-- **AtomSpace Agents**: ElizaOS agents backed by OpenCog AtomSpace knowledge
-- **Reasoning Actions**: ElizaOS actions that invoke PLN reasoning
-- **Pattern Matching**: AtomSpace pattern matching as ElizaOS evaluators
-- **Distributed Cognition**: Multi-agent cognitive processing coordination
-
-#### Implementation Architecture
-```
-ElizaOS Framework
-├── Core Engine
-│   ├── Agent Management
-│   ├── Action Processing  
-│   └── Memory Systems
-├── OpenCog Integration Layer
-│   ├── AtomSpace Connector
-│   ├── CogServer Bridge
-│   ├── PLN Reasoning Interface
-│   └── Scheme Interpreter
-└── Hybrid Applications
-    ├── Cognitive Chatbots
-    ├── Reasoning Agents
-    └── Knowledge Management
-```
-
-### Development Roadmap
-- [ ] Implement AtomSpace storage provider for ElizaOS
-- [ ] Create OpenCog reasoning action templates
-- [ ] Build CogServer communication plugin
-- [ ] Design cognitive agent architecture patterns
-- [ ] Implement distributed reasoning coordination
-- [ ] Create OpenCog-aware ElizaOS dashboard components
-
-## 💰 GnuCash Financial Integration
-
-### Intelligent Financial Management
-Combining ElizaOS agents with GnuCash for smart financial management:
-
-#### Financial Agent Ecosystem
-- **Transaction Categorizer**: AI agent for automatic transaction classification
-- **Expense Analyzer**: Pattern recognition for spending behavior analysis
-- **Budget Optimizer**: Intelligent budget planning and optimization
-- **Investment Tracker**: Multi-asset portfolio monitoring and analysis
-- **Financial Assistant**: Conversational interface for financial queries
-- **Alert Manager**: Smart notification system for financial events
-
-#### Fractal Integration Architecture
-```
-ElizaOS Agents (User Interface)
-├── Financial Conversation Agents
-├── Analysis and Reporting Agents
-└── Automation and Alert Agents
-    ↓
-OpenCog Reasoning (Cognitive Layer)  
-├── Financial Pattern Recognition
-├── Predictive Analysis
-└── Decision Support
-    ↓
-GnuCash Data (Storage Layer)
-├── Account Structures
-├── Transaction Records
-└── Financial Reports
-```
-
-### Implementation Features
-- **Natural Language Queries**: Ask questions about finances in plain English
-- **Predictive Analytics**: AI-powered forecasting and trend analysis
-- **Automated Categorization**: Smart transaction classification
-- **Behavioral Insights**: Understanding spending patterns and habits
-- **Goal Tracking**: Intelligent progress monitoring for financial goals
-- **Risk Assessment**: Cognitive evaluation of financial decisions
-
-
-
-
-## 🧠 OpenCog Integration
-
-### Cognitive Architecture Components
-ElizaOS integrates with OpenCog to provide advanced reasoning capabilities:
-
-#### Repository Ecosystem
-
-**Core (38 repositories)**
-- [agentmemory](https://github.com/elizaOS/agentmemory) - Easy-to-use agent memory, powered by chromadb and postgres
-- [easycompletion](https://github.com/elizaOS/easycompletion) - Easy OpenAI text completion and function calling
-- [agentbrowser](https://github.com/elizaOS/agentbrowser) - A browser for your agent.
-- [agentloop](https://github.com/elizaOS/agentloop) - A simple, lightweight loop for your agent. Start/stop, step-through, and more.
-- [agentaction](https://github.com/elizaOS/agentaction) - Action chaining and history for agents
-- ... and 33 more repositories
-
-**Plugins (3 repositories)**
-- [eliza-plugin-starter](https://github.com/elizaOS/eliza-plugin-starter) - A starter plugin repo for the Solana hackathon
-- [plugin-specification](https://github.com/elizaOS/plugin-specification) - No description available
-- [plugins-automation](https://github.com/elizaOS/plugins-automation) - Automation scripts to manage the 150+ plugins in eliza-plugins organization.
-
-**Tools (1 repositories)**
-- [LJSpeechTools](https://github.com/elizaOS/LJSpeechTools) - Tools for making LJSpeech datasets
-
-
-### Integration Patterns
-
-#### Agent-Cognitive Bridges
-- **AtomSpace Agents**: ElizaOS agents backed by OpenCog AtomSpace knowledge
-- **Reasoning Actions**: ElizaOS actions that invoke PLN reasoning
-- **Pattern Matching**: AtomSpace pattern matching as ElizaOS evaluators
-- **Distributed Cognition**: Multi-agent cognitive processing coordination
-
-#### Implementation Architecture
-```
-ElizaOS Framework
-├── Core Engine
-│   ├── Agent Management
-│   ├── Action Processing  
-│   └── Memory Systems
-├── OpenCog Integration Layer
-│   ├── AtomSpace Connector
-│   ├── CogServer Bridge
-│   ├── PLN Reasoning Interface
-│   └── Scheme Interpreter
-└── Hybrid Applications
-    ├── Cognitive Chatbots
-    ├── Reasoning Agents
-    └── Knowledge Management
-```
-
-### Development Roadmap
-- [ ] Implement AtomSpace storage provider for ElizaOS
-- [ ] Create OpenCog reasoning action templates
-- [ ] Build CogServer communication plugin
-- [ ] Design cognitive agent architecture patterns
-- [ ] Implement distributed reasoning coordination
-- [ ] Create OpenCog-aware ElizaOS dashboard components
-
-## 💰 GnuCash Financial Integration
-
-### Intelligent Financial Management
-Combining ElizaOS agents with GnuCash for smart financial management:
-
-#### Financial Agent Ecosystem
-- **Transaction Categorizer**: AI agent for automatic transaction classification
-- **Expense Analyzer**: Pattern recognition for spending behavior analysis
-- **Budget Optimizer**: Intelligent budget planning and optimization
-- **Investment Tracker**: Multi-asset portfolio monitoring and analysis
-- **Financial Assistant**: Conversational interface for financial queries
-- **Alert Manager**: Smart notification system for financial events
-
-#### Fractal Integration Architecture
-```
-ElizaOS Agents (User Interface)
-├── Financial Conversation Agents
-├── Analysis and Reporting Agents
-└── Automation and Alert Agents
-    ↓
-OpenCog Reasoning (Cognitive Layer)  
-├── Financial Pattern Recognition
-├── Predictive Analysis
-└── Decision Support
-    ↓
-GnuCash Data (Storage Layer)
-├── Account Structures
-├── Transaction Records
-└── Financial Reports
-```
-
-### Implementation Features
-- **Natural Language Queries**: Ask questions about finances in plain English
-- **Predictive Analytics**: AI-powered forecasting and trend analysis
-- **Automated Categorization**: Smart transaction classification
-- **Behavioral Insights**: Understanding spending patterns and habits
-- **Goal Tracking**: Intelligent progress monitoring for financial goals
-- **Risk Assessment**: Cognitive evaluation of financial decisions
-
-
-
-
-## 🧠 OpenCog Integration
-
-### Cognitive Architecture Components
-ElizaOS integrates with OpenCog to provide advanced reasoning capabilities:
-
-#### Repository Ecosystem
-
-**Core (38 repositories)**
-- [agentmemory](https://github.com/elizaOS/agentmemory) - Easy-to-use agent memory, powered by chromadb and postgres
-- [easycompletion](https://github.com/elizaOS/easycompletion) - Easy OpenAI text completion and function calling
-- [agentbrowser](https://github.com/elizaOS/agentbrowser) - A browser for your agent.
-- [agentloop](https://github.com/elizaOS/agentloop) - A simple, lightweight loop for your agent. Start/stop, step-through, and more.
-- [agentaction](https://github.com/elizaOS/agentaction) - Action chaining and history for agents
-- ... and 33 more repositories
-
-**Plugins (3 repositories)**
-- [eliza-plugin-starter](https://github.com/elizaOS/eliza-plugin-starter) - A starter plugin repo for the Solana hackathon
-- [plugin-specification](https://github.com/elizaOS/plugin-specification) - No description available
-- [plugins-automation](https://github.com/elizaOS/plugins-automation) - Automation scripts to manage the 150+ plugins in eliza-plugins organization.
-
-**Tools (1 repositories)**
-- [LJSpeechTools](https://github.com/elizaOS/LJSpeechTools) - Tools for making LJSpeech datasets
-
-
-### Integration Patterns
-
-#### Agent-Cognitive Bridges
-- **AtomSpace Agents**: ElizaOS agents backed by OpenCog AtomSpace knowledge
-- **Reasoning Actions**: ElizaOS actions that invoke PLN reasoning
-- **Pattern Matching**: AtomSpace pattern matching as ElizaOS evaluators
-- **Distributed Cognition**: Multi-agent cognitive processing coordination
-
-#### Implementation Architecture
-```
-ElizaOS Framework
-├── Core Engine
-│   ├── Agent Management
-│   ├── Action Processing  
-│   └── Memory Systems
-├── OpenCog Integration Layer
-│   ├── AtomSpace Connector
-│   ├── CogServer Bridge
-│   ├── PLN Reasoning Interface
-│   └── Scheme Interpreter
-└── Hybrid Applications
-    ├── Cognitive Chatbots
-    ├── Reasoning Agents
-    └── Knowledge Management
-```
-
-### Development Roadmap
-- [ ] Implement AtomSpace storage provider for ElizaOS
-- [ ] Create OpenCog reasoning action templates
-- [ ] Build CogServer communication plugin
-- [ ] Design cognitive agent architecture patterns
-- [ ] Implement distributed reasoning coordination
-- [ ] Create OpenCog-aware ElizaOS dashboard components
-
-## 💰 GnuCash Financial Integration
-
-### Intelligent Financial Management
-Combining ElizaOS agents with GnuCash for smart financial management:
-
-#### Financial Agent Ecosystem
-- **Transaction Categorizer**: AI agent for automatic transaction classification
-- **Expense Analyzer**: Pattern recognition for spending behavior analysis
-- **Budget Optimizer**: Intelligent budget planning and optimization
-- **Investment Tracker**: Multi-asset portfolio monitoring and analysis
-- **Financial Assistant**: Conversational interface for financial queries
-- **Alert Manager**: Smart notification system for financial events
-
-#### Fractal Integration Architecture
-```
-ElizaOS Agents (User Interface)
-├── Financial Conversation Agents
-├── Analysis and Reporting Agents
-└── Automation and Alert Agents
-    ↓
-OpenCog Reasoning (Cognitive Layer)  
-├── Financial Pattern Recognition
-├── Predictive Analysis
-└── Decision Support
-    ↓
-GnuCash Data (Storage Layer)
-├── Account Structures
-├── Transaction Records
-└── Financial Reports
-```
-
-### Implementation Features
-- **Natural Language Queries**: Ask questions about finances in plain English
-- **Predictive Analytics**: AI-powered forecasting and trend analysis
-- **Automated Categorization**: Smart transaction classification
-- **Behavioral Insights**: Understanding spending patterns and habits
-- **Goal Tracking**: Intelligent progress monitoring for financial goals
-- **Risk Assessment**: Cognitive evaluation of financial decisions
-
-
-
-
-## 🧠 OpenCog Integration
-
-### Cognitive Architecture Components
-ElizaOS integrates with OpenCog to provide advanced reasoning capabilities:
-
-#### Repository Ecosystem
-
-**Core (39 repositories)**
-- [agentmemory](https://github.com/elizaOS/agentmemory) - Easy-to-use agent memory, powered by chromadb and postgres
-- [easycompletion](https://github.com/elizaOS/easycompletion) - Easy OpenAI text completion and function calling
-- [agentbrowser](https://github.com/elizaOS/agentbrowser) - A browser for your agent.
-- [agentloop](https://github.com/elizaOS/agentloop) - A simple, lightweight loop for your agent. Start/stop, step-through, and more.
-- [agentaction](https://github.com/elizaOS/agentaction) - Action chaining and history for agents
-- ... and 34 more repositories
-
-**Plugins (3 repositories)**
-- [eliza-plugin-starter](https://github.com/elizaOS/eliza-plugin-starter) - A starter plugin repo for the Solana hackathon
-- [plugin-specification](https://github.com/elizaOS/plugin-specification) - No description available
-- [plugins-automation](https://github.com/elizaOS/plugins-automation) - Automation scripts to manage the 150+ plugins in eliza-plugins organization.
-
-**Tools (1 repositories)**
-- [LJSpeechTools](https://github.com/elizaOS/LJSpeechTools) - Tools for making LJSpeech datasets
-
-
-### Integration Patterns
-
-#### Agent-Cognitive Bridges
-- **AtomSpace Agents**: ElizaOS agents backed by OpenCog AtomSpace knowledge
-- **Reasoning Actions**: ElizaOS actions that invoke PLN reasoning
-- **Pattern Matching**: AtomSpace pattern matching as ElizaOS evaluators
-- **Distributed Cognition**: Multi-agent cognitive processing coordination
-
-#### Implementation Architecture
-```
-ElizaOS Framework
-├── Core Engine
-│   ├── Agent Management
-│   ├── Action Processing  
-│   └── Memory Systems
-├── OpenCog Integration Layer
-│   ├── AtomSpace Connector
-│   ├── CogServer Bridge
-│   ├── PLN Reasoning Interface
-│   └── Scheme Interpreter
-└── Hybrid Applications
-    ├── Cognitive Chatbots
-    ├── Reasoning Agents
-    └── Knowledge Management
-```
-
-### Development Roadmap
-- [ ] Implement AtomSpace storage provider for ElizaOS
-- [ ] Create OpenCog reasoning action templates
-- [ ] Build CogServer communication plugin
-- [ ] Design cognitive agent architecture patterns
-- [ ] Implement distributed reasoning coordination
-- [ ] Create OpenCog-aware ElizaOS dashboard components
-
-## 💰 GnuCash Financial Integration
-
-### Intelligent Financial Management
-Combining ElizaOS agents with GnuCash for smart financial management:
-
-#### Financial Agent Ecosystem
-- **Transaction Categorizer**: AI agent for automatic transaction classification
-- **Expense Analyzer**: Pattern recognition for spending behavior analysis
-- **Budget Optimizer**: Intelligent budget planning and optimization
-- **Investment Tracker**: Multi-asset portfolio monitoring and analysis
-- **Financial Assistant**: Conversational interface for financial queries
-- **Alert Manager**: Smart notification system for financial events
-
-#### Fractal Integration Architecture
-```
-ElizaOS Agents (User Interface)
-├── Financial Conversation Agents
-├── Analysis and Reporting Agents
-└── Automation and Alert Agents
-    ↓
-OpenCog Reasoning (Cognitive Layer)  
-├── Financial Pattern Recognition
-├── Predictive Analysis
-└── Decision Support
-    ↓
-GnuCash Data (Storage Layer)
-├── Account Structures
-├── Transaction Records
-└── Financial Reports
-```
-
-### Implementation Features
-- **Natural Language Queries**: Ask questions about finances in plain English
-- **Predictive Analytics**: AI-powered forecasting and trend analysis
-- **Automated Categorization**: Smart transaction classification
-- **Behavioral Insights**: Understanding spending patterns and habits
-- **Goal Tracking**: Intelligent progress monitoring for financial goals
-- **Risk Assessment**: Cognitive evaluation of financial decisions
-
-
-
-
-## 🧠 OpenCog Integration
-
-### Cognitive Architecture Components
-ElizaOS integrates with OpenCog to provide advanced reasoning capabilities:
-
-#### Repository Ecosystem
-
-**Core (39 repositories)**
-- [agentmemory](https://github.com/elizaOS/agentmemory) - Easy-to-use agent memory, powered by chromadb and postgres
-- [easycompletion](https://github.com/elizaOS/easycompletion) - Easy OpenAI text completion and function calling
-- [agentbrowser](https://github.com/elizaOS/agentbrowser) - A browser for your agent.
-- [agentloop](https://github.com/elizaOS/agentloop) - A simple, lightweight loop for your agent. Start/stop, step-through, and more.
-- [agentaction](https://github.com/elizaOS/agentaction) - Action chaining and history for agents
-- ... and 34 more repositories
-
-**Plugins (3 repositories)**
-- [eliza-plugin-starter](https://github.com/elizaOS/eliza-plugin-starter) - A starter plugin repo for the Solana hackathon
-- [plugin-specification](https://github.com/elizaOS/plugin-specification) - No description available
-- [plugins-automation](https://github.com/elizaOS/plugins-automation) - Automation scripts to manage the 150+ plugins in eliza-plugins organization.
-
-**Tools (1 repositories)**
-- [LJSpeechTools](https://github.com/elizaOS/LJSpeechTools) - Tools for making LJSpeech datasets
-
-
-### Integration Patterns
-
-#### Agent-Cognitive Bridges
-- **AtomSpace Agents**: ElizaOS agents backed by OpenCog AtomSpace knowledge
-- **Reasoning Actions**: ElizaOS actions that invoke PLN reasoning
-- **Pattern Matching**: AtomSpace pattern matching as ElizaOS evaluators
-- **Distributed Cognition**: Multi-agent cognitive processing coordination
-
-#### Implementation Architecture
-```
-ElizaOS Framework
-├── Core Engine
-│   ├── Agent Management
-│   ├── Action Processing  
-│   └── Memory Systems
-├── OpenCog Integration Layer
-│   ├── AtomSpace Connector
-│   ├── CogServer Bridge
-│   ├── PLN Reasoning Interface
-│   └── Scheme Interpreter
-└── Hybrid Applications
-    ├── Cognitive Chatbots
-    ├── Reasoning Agents
-    └── Knowledge Management
-```
-
-### Development Roadmap
-- [ ] Implement AtomSpace storage provider for ElizaOS
-- [ ] Create OpenCog reasoning action templates
-- [ ] Build CogServer communication plugin
-- [ ] Design cognitive agent architecture patterns
-- [ ] Implement distributed reasoning coordination
-- [ ] Create OpenCog-aware ElizaOS dashboard components
-
-## 💰 GnuCash Financial Integration
-
-### Intelligent Financial Management
-Combining ElizaOS agents with GnuCash for smart financial management:
-
-#### Financial Agent Ecosystem
-- **Transaction Categorizer**: AI agent for automatic transaction classification
-- **Expense Analyzer**: Pattern recognition for spending behavior analysis
-- **Budget Optimizer**: Intelligent budget planning and optimization
-- **Investment Tracker**: Multi-asset portfolio monitoring and analysis
-- **Financial Assistant**: Conversational interface for financial queries
-- **Alert Manager**: Smart notification system for financial events
-
-#### Fractal Integration Architecture
-```
-ElizaOS Agents (User Interface)
-├── Financial Conversation Agents
-├── Analysis and Reporting Agents
-└── Automation and Alert Agents
-    ↓
-OpenCog Reasoning (Cognitive Layer)  
-├── Financial Pattern Recognition
-├── Predictive Analysis
-└── Decision Support
-    ↓
-GnuCash Data (Storage Layer)
-├── Account Structures
-├── Transaction Records
-└── Financial Reports
-```
-
-### Implementation Features
-- **Natural Language Queries**: Ask questions about finances in plain English
-- **Predictive Analytics**: AI-powered forecasting and trend analysis
-- **Automated Categorization**: Smart transaction classification
-- **Behavioral Insights**: Understanding spending patterns and habits
-- **Goal Tracking**: Intelligent progress monitoring for financial goals
-- **Risk Assessment**: Cognitive evaluation of financial decisions
-
-
-
-
-## 🧠 OpenCog Integration
-
-### Cognitive Architecture Components
-ElizaOS integrates with OpenCog to provide advanced reasoning capabilities:
-
-#### Repository Ecosystem
-
-**Core (39 repositories)**
-- [agentmemory](https://github.com/elizaOS/agentmemory) - Easy-to-use agent memory, powered by chromadb and postgres
-- [easycompletion](https://github.com/elizaOS/easycompletion) - Easy OpenAI text completion and function calling
-- [agentbrowser](https://github.com/elizaOS/agentbrowser) - A browser for your agent.
-- [agentloop](https://github.com/elizaOS/agentloop) - A simple, lightweight loop for your agent. Start/stop, step-through, and more.
-- [agentaction](https://github.com/elizaOS/agentaction) - Action chaining and history for agents
-- ... and 34 more repositories
-
-**Plugins (3 repositories)**
-- [eliza-plugin-starter](https://github.com/elizaOS/eliza-plugin-starter) - A starter plugin repo for the Solana hackathon
-- [plugin-specification](https://github.com/elizaOS/plugin-specification) - No description available
-- [plugins-automation](https://github.com/elizaOS/plugins-automation) - Automation scripts to manage the 150+ plugins in eliza-plugins organization.
-
-**Tools (1 repositories)**
-- [LJSpeechTools](https://github.com/elizaOS/LJSpeechTools) - Tools for making LJSpeech datasets
-
-
-### Integration Patterns
-
-#### Agent-Cognitive Bridges
-- **AtomSpace Agents**: ElizaOS agents backed by OpenCog AtomSpace knowledge
-- **Reasoning Actions**: ElizaOS actions that invoke PLN reasoning
-- **Pattern Matching**: AtomSpace pattern matching as ElizaOS evaluators
-- **Distributed Cognition**: Multi-agent cognitive processing coordination
-
-#### Implementation Architecture
-```
-ElizaOS Framework
-├── Core Engine
-│   ├── Agent Management
-│   ├── Action Processing  
-│   └── Memory Systems
-├── OpenCog Integration Layer
-│   ├── AtomSpace Connector
-│   ├── CogServer Bridge
-│   ├── PLN Reasoning Interface
-│   └── Scheme Interpreter
-└── Hybrid Applications
-    ├── Cognitive Chatbots
-    ├── Reasoning Agents
-    └── Knowledge Management
-```
-
-### Development Roadmap
-- [ ] Implement AtomSpace storage provider for ElizaOS
-- [ ] Create OpenCog reasoning action templates
-- [ ] Build CogServer communication plugin
-- [ ] Design cognitive agent architecture patterns
-- [ ] Implement distributed reasoning coordination
-- [ ] Create OpenCog-aware ElizaOS dashboard components
-
-## 💰 GnuCash Financial Integration
-
-### Intelligent Financial Management
-Combining ElizaOS agents with GnuCash for smart financial management:
-
-#### Financial Agent Ecosystem
-- **Transaction Categorizer**: AI agent for automatic transaction classification
-- **Expense Analyzer**: Pattern recognition for spending behavior analysis
-- **Budget Optimizer**: Intelligent budget planning and optimization
-- **Investment Tracker**: Multi-asset portfolio monitoring and analysis
-- **Financial Assistant**: Conversational interface for financial queries
-- **Alert Manager**: Smart notification system for financial events
-
-#### Fractal Integration Architecture
-```
-ElizaOS Agents (User Interface)
-├── Financial Conversation Agents
-├── Analysis and Reporting Agents
-└── Automation and Alert Agents
-    ↓
-OpenCog Reasoning (Cognitive Layer)  
-├── Financial Pattern Recognition
-├── Predictive Analysis
-└── Decision Support
-    ↓
-GnuCash Data (Storage Layer)
-├── Account Structures
-├── Transaction Records
-└── Financial Reports
-```
-
-### Implementation Features
-- **Natural Language Queries**: Ask questions about finances in plain English
-- **Predictive Analytics**: AI-powered forecasting and trend analysis
-- **Automated Categorization**: Smart transaction classification
-- **Behavioral Insights**: Understanding spending patterns and habits
-- **Goal Tracking**: Intelligent progress monitoring for financial goals
-- **Risk Assessment**: Cognitive evaluation of financial decisions
-
-
-
-
-## 🧠 OpenCog Integration
-
-### Cognitive Architecture Components
-ElizaOS integrates with OpenCog to provide advanced reasoning capabilities:
-
-#### Repository Ecosystem
-
-**Core (41 repositories)**
-- [agentmemory](https://github.com/elizaOS/agentmemory) - Easy-to-use agent memory, powered by chromadb and postgres
-- [easycompletion](https://github.com/elizaOS/easycompletion) - Easy OpenAI text completion and function calling
-- [agentbrowser](https://github.com/elizaOS/agentbrowser) - A browser for your agent.
-- [agentloop](https://github.com/elizaOS/agentloop) - A simple, lightweight loop for your agent. Start/stop, step-through, and more.
-- [agentaction](https://github.com/elizaOS/agentaction) - Action chaining and history for agents
-- ... and 36 more repositories
+- ... and 46 more repositories
 
 **Plugins (3 repositories)**
 - [eliza-plugin-starter](https://github.com/elizaOS/eliza-plugin-starter) - A starter plugin repo for the Solana hackathon
@@ -3557,68 +555,45 @@ GnuCash Data (Storage Layer)
 - **Risk Assessment**: Cognitive evaluation of financial decisions
 
 
+## 💰 GnuCash Financial Integration
 
+### Intelligent Financial Management
+Combining ElizaOS agents with GnuCash for smart financial management:
 
-## 🧠 OpenCog Integration
+#### Financial Agent Ecosystem
+- **Transaction Categorizer**: AI agent for automatic transaction classification
+- **Expense Analyzer**: Pattern recognition for spending behavior analysis
+- **Budget Optimizer**: Intelligent budget planning and optimization
+- **Investment Tracker**: Multi-asset portfolio monitoring and analysis
+- **Financial Assistant**: Conversational interface for financial queries
+- **Alert Manager**: Smart notification system for financial events
 
-### Cognitive Architecture Components
-ElizaOS integrates with OpenCog to provide advanced reasoning capabilities:
-
-#### Repository Ecosystem
-
-**Core (41 repositories)**
-- [agentmemory](https://github.com/elizaOS/agentmemory) - Easy-to-use agent memory, powered by chromadb and postgres
-- [easycompletion](https://github.com/elizaOS/easycompletion) - Easy OpenAI text completion and function calling
-- [agentbrowser](https://github.com/elizaOS/agentbrowser) - A browser for your agent.
-- [agentloop](https://github.com/elizaOS/agentloop) - A simple, lightweight loop for your agent. Start/stop, step-through, and more.
-- [agentaction](https://github.com/elizaOS/agentaction) - Action chaining and history for agents
-- ... and 36 more repositories
-
-**Plugins (3 repositories)**
-- [eliza-plugin-starter](https://github.com/elizaOS/eliza-plugin-starter) - A starter plugin repo for the Solana hackathon
-- [plugin-specification](https://github.com/elizaOS/plugin-specification) - No description available
-- [plugins-automation](https://github.com/elizaOS/plugins-automation) - Automation scripts to manage the 150+ plugins in eliza-plugins organization.
-
-**Tools (1 repositories)**
-- [LJSpeechTools](https://github.com/elizaOS/LJSpeechTools) - Tools for making LJSpeech datasets
-
-**Documentation (1 repositories)**
-- [docs](https://github.com/elizaOS/docs) - No description available
-
-
-### Integration Patterns
-
-#### Agent-Cognitive Bridges
-- **AtomSpace Agents**: ElizaOS agents backed by OpenCog AtomSpace knowledge
-- **Reasoning Actions**: ElizaOS actions that invoke PLN reasoning
-- **Pattern Matching**: AtomSpace pattern matching as ElizaOS evaluators
-- **Distributed Cognition**: Multi-agent cognitive processing coordination
-
-#### Implementation Architecture
+#### Fractal Integration Architecture
 ```
-ElizaOS Framework
-├── Core Engine
-│   ├── Agent Management
-│   ├── Action Processing  
-│   └── Memory Systems
-├── OpenCog Integration Layer
-│   ├── AtomSpace Connector
-│   ├── CogServer Bridge
-│   ├── PLN Reasoning Interface
-│   └── Scheme Interpreter
-└── Hybrid Applications
-    ├── Cognitive Chatbots
-    ├── Reasoning Agents
-    └── Knowledge Management
+ElizaOS Agents (User Interface)
+├── Financial Conversation Agents
+├── Analysis and Reporting Agents
+└── Automation and Alert Agents
+    ↓
+OpenCog Reasoning (Cognitive Layer)  
+├── Financial Pattern Recognition
+├── Predictive Analysis
+└── Decision Support
+    ↓
+GnuCash Data (Storage Layer)
+├── Account Structures
+├── Transaction Records
+└── Financial Reports
 ```
 
-### Development Roadmap
-- [ ] Implement AtomSpace storage provider for ElizaOS
-- [ ] Create OpenCog reasoning action templates
-- [ ] Build CogServer communication plugin
-- [ ] Design cognitive agent architecture patterns
-- [ ] Implement distributed reasoning coordination
-- [ ] Create OpenCog-aware ElizaOS dashboard components
+### Implementation Features
+- **Natural Language Queries**: Ask questions about finances in plain English
+- **Predictive Analytics**: AI-powered forecasting and trend analysis
+- **Automated Categorization**: Smart transaction classification
+- **Behavioral Insights**: Understanding spending patterns and habits
+- **Goal Tracking**: Intelligent progress monitoring for financial goals
+- **Risk Assessment**: Cognitive evaluation of financial decisions
+
 
 ## 💰 GnuCash Financial Integration
 
@@ -3660,68 +635,45 @@ GnuCash Data (Storage Layer)
 - **Risk Assessment**: Cognitive evaluation of financial decisions
 
 
+## 💰 GnuCash Financial Integration
 
+### Intelligent Financial Management
+Combining ElizaOS agents with GnuCash for smart financial management:
 
-## 🧠 OpenCog Integration
+#### Financial Agent Ecosystem
+- **Transaction Categorizer**: AI agent for automatic transaction classification
+- **Expense Analyzer**: Pattern recognition for spending behavior analysis
+- **Budget Optimizer**: Intelligent budget planning and optimization
+- **Investment Tracker**: Multi-asset portfolio monitoring and analysis
+- **Financial Assistant**: Conversational interface for financial queries
+- **Alert Manager**: Smart notification system for financial events
 
-### Cognitive Architecture Components
-ElizaOS integrates with OpenCog to provide advanced reasoning capabilities:
-
-#### Repository Ecosystem
-
-**Core (42 repositories)**
-- [agentmemory](https://github.com/elizaOS/agentmemory) - Easy-to-use agent memory, powered by chromadb and postgres
-- [easycompletion](https://github.com/elizaOS/easycompletion) - Easy OpenAI text completion and function calling
-- [agentbrowser](https://github.com/elizaOS/agentbrowser) - A browser for your agent.
-- [agentloop](https://github.com/elizaOS/agentloop) - A simple, lightweight loop for your agent. Start/stop, step-through, and more.
-- [agentaction](https://github.com/elizaOS/agentaction) - Action chaining and history for agents
-- ... and 37 more repositories
-
-**Plugins (3 repositories)**
-- [eliza-plugin-starter](https://github.com/elizaOS/eliza-plugin-starter) - A starter plugin repo for the Solana hackathon
-- [plugin-specification](https://github.com/elizaOS/plugin-specification) - No description available
-- [plugins-automation](https://github.com/elizaOS/plugins-automation) - Automation scripts to manage the 150+ plugins in eliza-plugins organization.
-
-**Tools (1 repositories)**
-- [LJSpeechTools](https://github.com/elizaOS/LJSpeechTools) - Tools for making LJSpeech datasets
-
-**Documentation (1 repositories)**
-- [docs](https://github.com/elizaOS/docs) - No description available
-
-
-### Integration Patterns
-
-#### Agent-Cognitive Bridges
-- **AtomSpace Agents**: ElizaOS agents backed by OpenCog AtomSpace knowledge
-- **Reasoning Actions**: ElizaOS actions that invoke PLN reasoning
-- **Pattern Matching**: AtomSpace pattern matching as ElizaOS evaluators
-- **Distributed Cognition**: Multi-agent cognitive processing coordination
-
-#### Implementation Architecture
+#### Fractal Integration Architecture
 ```
-ElizaOS Framework
-├── Core Engine
-│   ├── Agent Management
-│   ├── Action Processing  
-│   └── Memory Systems
-├── OpenCog Integration Layer
-│   ├── AtomSpace Connector
-│   ├── CogServer Bridge
-│   ├── PLN Reasoning Interface
-│   └── Scheme Interpreter
-└── Hybrid Applications
-    ├── Cognitive Chatbots
-    ├── Reasoning Agents
-    └── Knowledge Management
+ElizaOS Agents (User Interface)
+├── Financial Conversation Agents
+├── Analysis and Reporting Agents
+└── Automation and Alert Agents
+    ↓
+OpenCog Reasoning (Cognitive Layer)  
+├── Financial Pattern Recognition
+├── Predictive Analysis
+└── Decision Support
+    ↓
+GnuCash Data (Storage Layer)
+├── Account Structures
+├── Transaction Records
+└── Financial Reports
 ```
 
-### Development Roadmap
-- [ ] Implement AtomSpace storage provider for ElizaOS
-- [ ] Create OpenCog reasoning action templates
-- [ ] Build CogServer communication plugin
-- [ ] Design cognitive agent architecture patterns
-- [ ] Implement distributed reasoning coordination
-- [ ] Create OpenCog-aware ElizaOS dashboard components
+### Implementation Features
+- **Natural Language Queries**: Ask questions about finances in plain English
+- **Predictive Analytics**: AI-powered forecasting and trend analysis
+- **Automated Categorization**: Smart transaction classification
+- **Behavioral Insights**: Understanding spending patterns and habits
+- **Goal Tracking**: Intelligent progress monitoring for financial goals
+- **Risk Assessment**: Cognitive evaluation of financial decisions
+
 
 ## 💰 GnuCash Financial Integration
 
@@ -3763,68 +715,1325 @@ GnuCash Data (Storage Layer)
 - **Risk Assessment**: Cognitive evaluation of financial decisions
 
 
+## 💰 GnuCash Financial Integration
 
+### Intelligent Financial Management
+Combining ElizaOS agents with GnuCash for smart financial management:
 
-## 🧠 OpenCog Integration
+#### Financial Agent Ecosystem
+- **Transaction Categorizer**: AI agent for automatic transaction classification
+- **Expense Analyzer**: Pattern recognition for spending behavior analysis
+- **Budget Optimizer**: Intelligent budget planning and optimization
+- **Investment Tracker**: Multi-asset portfolio monitoring and analysis
+- **Financial Assistant**: Conversational interface for financial queries
+- **Alert Manager**: Smart notification system for financial events
 
-### Cognitive Architecture Components
-ElizaOS integrates with OpenCog to provide advanced reasoning capabilities:
-
-#### Repository Ecosystem
-
-**Core (42 repositories)**
-- [agentmemory](https://github.com/elizaOS/agentmemory) - Easy-to-use agent memory, powered by chromadb and postgres
-- [easycompletion](https://github.com/elizaOS/easycompletion) - Easy OpenAI text completion and function calling
-- [agentbrowser](https://github.com/elizaOS/agentbrowser) - A browser for your agent.
-- [agentloop](https://github.com/elizaOS/agentloop) - A simple, lightweight loop for your agent. Start/stop, step-through, and more.
-- [agentaction](https://github.com/elizaOS/agentaction) - Action chaining and history for agents
-- ... and 37 more repositories
-
-**Plugins (3 repositories)**
-- [eliza-plugin-starter](https://github.com/elizaOS/eliza-plugin-starter) - A starter plugin repo for the Solana hackathon
-- [plugin-specification](https://github.com/elizaOS/plugin-specification) - No description available
-- [plugins-automation](https://github.com/elizaOS/plugins-automation) - Automation scripts to manage the 150+ plugins in eliza-plugins organization.
-
-**Tools (1 repositories)**
-- [LJSpeechTools](https://github.com/elizaOS/LJSpeechTools) - Tools for making LJSpeech datasets
-
-**Documentation (1 repositories)**
-- [docs](https://github.com/elizaOS/docs) - No description available
-
-
-### Integration Patterns
-
-#### Agent-Cognitive Bridges
-- **AtomSpace Agents**: ElizaOS agents backed by OpenCog AtomSpace knowledge
-- **Reasoning Actions**: ElizaOS actions that invoke PLN reasoning
-- **Pattern Matching**: AtomSpace pattern matching as ElizaOS evaluators
-- **Distributed Cognition**: Multi-agent cognitive processing coordination
-
-#### Implementation Architecture
+#### Fractal Integration Architecture
 ```
-ElizaOS Framework
-├── Core Engine
-│   ├── Agent Management
-│   ├── Action Processing  
-│   └── Memory Systems
-├── OpenCog Integration Layer
-│   ├── AtomSpace Connector
-│   ├── CogServer Bridge
-│   ├── PLN Reasoning Interface
-│   └── Scheme Interpreter
-└── Hybrid Applications
-    ├── Cognitive Chatbots
-    ├── Reasoning Agents
-    └── Knowledge Management
+ElizaOS Agents (User Interface)
+├── Financial Conversation Agents
+├── Analysis and Reporting Agents
+└── Automation and Alert Agents
+    ↓
+OpenCog Reasoning (Cognitive Layer)  
+├── Financial Pattern Recognition
+├── Predictive Analysis
+└── Decision Support
+    ↓
+GnuCash Data (Storage Layer)
+├── Account Structures
+├── Transaction Records
+└── Financial Reports
 ```
 
-### Development Roadmap
-- [ ] Implement AtomSpace storage provider for ElizaOS
-- [ ] Create OpenCog reasoning action templates
-- [ ] Build CogServer communication plugin
-- [ ] Design cognitive agent architecture patterns
-- [ ] Implement distributed reasoning coordination
-- [ ] Create OpenCog-aware ElizaOS dashboard components
+### Implementation Features
+- **Natural Language Queries**: Ask questions about finances in plain English
+- **Predictive Analytics**: AI-powered forecasting and trend analysis
+- **Automated Categorization**: Smart transaction classification
+- **Behavioral Insights**: Understanding spending patterns and habits
+- **Goal Tracking**: Intelligent progress monitoring for financial goals
+- **Risk Assessment**: Cognitive evaluation of financial decisions
+
+
+## 💰 GnuCash Financial Integration
+
+### Intelligent Financial Management
+Combining ElizaOS agents with GnuCash for smart financial management:
+
+#### Financial Agent Ecosystem
+- **Transaction Categorizer**: AI agent for automatic transaction classification
+- **Expense Analyzer**: Pattern recognition for spending behavior analysis
+- **Budget Optimizer**: Intelligent budget planning and optimization
+- **Investment Tracker**: Multi-asset portfolio monitoring and analysis
+- **Financial Assistant**: Conversational interface for financial queries
+- **Alert Manager**: Smart notification system for financial events
+
+#### Fractal Integration Architecture
+```
+ElizaOS Agents (User Interface)
+├── Financial Conversation Agents
+├── Analysis and Reporting Agents
+└── Automation and Alert Agents
+    ↓
+OpenCog Reasoning (Cognitive Layer)  
+├── Financial Pattern Recognition
+├── Predictive Analysis
+└── Decision Support
+    ↓
+GnuCash Data (Storage Layer)
+├── Account Structures
+├── Transaction Records
+└── Financial Reports
+```
+
+### Implementation Features
+- **Natural Language Queries**: Ask questions about finances in plain English
+- **Predictive Analytics**: AI-powered forecasting and trend analysis
+- **Automated Categorization**: Smart transaction classification
+- **Behavioral Insights**: Understanding spending patterns and habits
+- **Goal Tracking**: Intelligent progress monitoring for financial goals
+- **Risk Assessment**: Cognitive evaluation of financial decisions
+
+
+## 💰 GnuCash Financial Integration
+
+### Intelligent Financial Management
+Combining ElizaOS agents with GnuCash for smart financial management:
+
+#### Financial Agent Ecosystem
+- **Transaction Categorizer**: AI agent for automatic transaction classification
+- **Expense Analyzer**: Pattern recognition for spending behavior analysis
+- **Budget Optimizer**: Intelligent budget planning and optimization
+- **Investment Tracker**: Multi-asset portfolio monitoring and analysis
+- **Financial Assistant**: Conversational interface for financial queries
+- **Alert Manager**: Smart notification system for financial events
+
+#### Fractal Integration Architecture
+```
+ElizaOS Agents (User Interface)
+├── Financial Conversation Agents
+├── Analysis and Reporting Agents
+└── Automation and Alert Agents
+    ↓
+OpenCog Reasoning (Cognitive Layer)  
+├── Financial Pattern Recognition
+├── Predictive Analysis
+└── Decision Support
+    ↓
+GnuCash Data (Storage Layer)
+├── Account Structures
+├── Transaction Records
+└── Financial Reports
+```
+
+### Implementation Features
+- **Natural Language Queries**: Ask questions about finances in plain English
+- **Predictive Analytics**: AI-powered forecasting and trend analysis
+- **Automated Categorization**: Smart transaction classification
+- **Behavioral Insights**: Understanding spending patterns and habits
+- **Goal Tracking**: Intelligent progress monitoring for financial goals
+- **Risk Assessment**: Cognitive evaluation of financial decisions
+
+
+## 💰 GnuCash Financial Integration
+
+### Intelligent Financial Management
+Combining ElizaOS agents with GnuCash for smart financial management:
+
+#### Financial Agent Ecosystem
+- **Transaction Categorizer**: AI agent for automatic transaction classification
+- **Expense Analyzer**: Pattern recognition for spending behavior analysis
+- **Budget Optimizer**: Intelligent budget planning and optimization
+- **Investment Tracker**: Multi-asset portfolio monitoring and analysis
+- **Financial Assistant**: Conversational interface for financial queries
+- **Alert Manager**: Smart notification system for financial events
+
+#### Fractal Integration Architecture
+```
+ElizaOS Agents (User Interface)
+├── Financial Conversation Agents
+├── Analysis and Reporting Agents
+└── Automation and Alert Agents
+    ↓
+OpenCog Reasoning (Cognitive Layer)  
+├── Financial Pattern Recognition
+├── Predictive Analysis
+└── Decision Support
+    ↓
+GnuCash Data (Storage Layer)
+├── Account Structures
+├── Transaction Records
+└── Financial Reports
+```
+
+### Implementation Features
+- **Natural Language Queries**: Ask questions about finances in plain English
+- **Predictive Analytics**: AI-powered forecasting and trend analysis
+- **Automated Categorization**: Smart transaction classification
+- **Behavioral Insights**: Understanding spending patterns and habits
+- **Goal Tracking**: Intelligent progress monitoring for financial goals
+- **Risk Assessment**: Cognitive evaluation of financial decisions
+
+
+## 💰 GnuCash Financial Integration
+
+### Intelligent Financial Management
+Combining ElizaOS agents with GnuCash for smart financial management:
+
+#### Financial Agent Ecosystem
+- **Transaction Categorizer**: AI agent for automatic transaction classification
+- **Expense Analyzer**: Pattern recognition for spending behavior analysis
+- **Budget Optimizer**: Intelligent budget planning and optimization
+- **Investment Tracker**: Multi-asset portfolio monitoring and analysis
+- **Financial Assistant**: Conversational interface for financial queries
+- **Alert Manager**: Smart notification system for financial events
+
+#### Fractal Integration Architecture
+```
+ElizaOS Agents (User Interface)
+├── Financial Conversation Agents
+├── Analysis and Reporting Agents
+└── Automation and Alert Agents
+    ↓
+OpenCog Reasoning (Cognitive Layer)  
+├── Financial Pattern Recognition
+├── Predictive Analysis
+└── Decision Support
+    ↓
+GnuCash Data (Storage Layer)
+├── Account Structures
+├── Transaction Records
+└── Financial Reports
+```
+
+### Implementation Features
+- **Natural Language Queries**: Ask questions about finances in plain English
+- **Predictive Analytics**: AI-powered forecasting and trend analysis
+- **Automated Categorization**: Smart transaction classification
+- **Behavioral Insights**: Understanding spending patterns and habits
+- **Goal Tracking**: Intelligent progress monitoring for financial goals
+- **Risk Assessment**: Cognitive evaluation of financial decisions
+
+
+## 💰 GnuCash Financial Integration
+
+### Intelligent Financial Management
+Combining ElizaOS agents with GnuCash for smart financial management:
+
+#### Financial Agent Ecosystem
+- **Transaction Categorizer**: AI agent for automatic transaction classification
+- **Expense Analyzer**: Pattern recognition for spending behavior analysis
+- **Budget Optimizer**: Intelligent budget planning and optimization
+- **Investment Tracker**: Multi-asset portfolio monitoring and analysis
+- **Financial Assistant**: Conversational interface for financial queries
+- **Alert Manager**: Smart notification system for financial events
+
+#### Fractal Integration Architecture
+```
+ElizaOS Agents (User Interface)
+├── Financial Conversation Agents
+├── Analysis and Reporting Agents
+└── Automation and Alert Agents
+    ↓
+OpenCog Reasoning (Cognitive Layer)  
+├── Financial Pattern Recognition
+├── Predictive Analysis
+└── Decision Support
+    ↓
+GnuCash Data (Storage Layer)
+├── Account Structures
+├── Transaction Records
+└── Financial Reports
+```
+
+### Implementation Features
+- **Natural Language Queries**: Ask questions about finances in plain English
+- **Predictive Analytics**: AI-powered forecasting and trend analysis
+- **Automated Categorization**: Smart transaction classification
+- **Behavioral Insights**: Understanding spending patterns and habits
+- **Goal Tracking**: Intelligent progress monitoring for financial goals
+- **Risk Assessment**: Cognitive evaluation of financial decisions
+
+
+## 💰 GnuCash Financial Integration
+
+### Intelligent Financial Management
+Combining ElizaOS agents with GnuCash for smart financial management:
+
+#### Financial Agent Ecosystem
+- **Transaction Categorizer**: AI agent for automatic transaction classification
+- **Expense Analyzer**: Pattern recognition for spending behavior analysis
+- **Budget Optimizer**: Intelligent budget planning and optimization
+- **Investment Tracker**: Multi-asset portfolio monitoring and analysis
+- **Financial Assistant**: Conversational interface for financial queries
+- **Alert Manager**: Smart notification system for financial events
+
+#### Fractal Integration Architecture
+```
+ElizaOS Agents (User Interface)
+├── Financial Conversation Agents
+├── Analysis and Reporting Agents
+└── Automation and Alert Agents
+    ↓
+OpenCog Reasoning (Cognitive Layer)  
+├── Financial Pattern Recognition
+├── Predictive Analysis
+└── Decision Support
+    ↓
+GnuCash Data (Storage Layer)
+├── Account Structures
+├── Transaction Records
+└── Financial Reports
+```
+
+### Implementation Features
+- **Natural Language Queries**: Ask questions about finances in plain English
+- **Predictive Analytics**: AI-powered forecasting and trend analysis
+- **Automated Categorization**: Smart transaction classification
+- **Behavioral Insights**: Understanding spending patterns and habits
+- **Goal Tracking**: Intelligent progress monitoring for financial goals
+- **Risk Assessment**: Cognitive evaluation of financial decisions
+
+
+## 💰 GnuCash Financial Integration
+
+### Intelligent Financial Management
+Combining ElizaOS agents with GnuCash for smart financial management:
+
+#### Financial Agent Ecosystem
+- **Transaction Categorizer**: AI agent for automatic transaction classification
+- **Expense Analyzer**: Pattern recognition for spending behavior analysis
+- **Budget Optimizer**: Intelligent budget planning and optimization
+- **Investment Tracker**: Multi-asset portfolio monitoring and analysis
+- **Financial Assistant**: Conversational interface for financial queries
+- **Alert Manager**: Smart notification system for financial events
+
+#### Fractal Integration Architecture
+```
+ElizaOS Agents (User Interface)
+├── Financial Conversation Agents
+├── Analysis and Reporting Agents
+└── Automation and Alert Agents
+    ↓
+OpenCog Reasoning (Cognitive Layer)  
+├── Financial Pattern Recognition
+├── Predictive Analysis
+└── Decision Support
+    ↓
+GnuCash Data (Storage Layer)
+├── Account Structures
+├── Transaction Records
+└── Financial Reports
+```
+
+### Implementation Features
+- **Natural Language Queries**: Ask questions about finances in plain English
+- **Predictive Analytics**: AI-powered forecasting and trend analysis
+- **Automated Categorization**: Smart transaction classification
+- **Behavioral Insights**: Understanding spending patterns and habits
+- **Goal Tracking**: Intelligent progress monitoring for financial goals
+- **Risk Assessment**: Cognitive evaluation of financial decisions
+
+
+## 💰 GnuCash Financial Integration
+
+### Intelligent Financial Management
+Combining ElizaOS agents with GnuCash for smart financial management:
+
+#### Financial Agent Ecosystem
+- **Transaction Categorizer**: AI agent for automatic transaction classification
+- **Expense Analyzer**: Pattern recognition for spending behavior analysis
+- **Budget Optimizer**: Intelligent budget planning and optimization
+- **Investment Tracker**: Multi-asset portfolio monitoring and analysis
+- **Financial Assistant**: Conversational interface for financial queries
+- **Alert Manager**: Smart notification system for financial events
+
+#### Fractal Integration Architecture
+```
+ElizaOS Agents (User Interface)
+├── Financial Conversation Agents
+├── Analysis and Reporting Agents
+└── Automation and Alert Agents
+    ↓
+OpenCog Reasoning (Cognitive Layer)  
+├── Financial Pattern Recognition
+├── Predictive Analysis
+└── Decision Support
+    ↓
+GnuCash Data (Storage Layer)
+├── Account Structures
+├── Transaction Records
+└── Financial Reports
+```
+
+### Implementation Features
+- **Natural Language Queries**: Ask questions about finances in plain English
+- **Predictive Analytics**: AI-powered forecasting and trend analysis
+- **Automated Categorization**: Smart transaction classification
+- **Behavioral Insights**: Understanding spending patterns and habits
+- **Goal Tracking**: Intelligent progress monitoring for financial goals
+- **Risk Assessment**: Cognitive evaluation of financial decisions
+
+
+## 💰 GnuCash Financial Integration
+
+### Intelligent Financial Management
+Combining ElizaOS agents with GnuCash for smart financial management:
+
+#### Financial Agent Ecosystem
+- **Transaction Categorizer**: AI agent for automatic transaction classification
+- **Expense Analyzer**: Pattern recognition for spending behavior analysis
+- **Budget Optimizer**: Intelligent budget planning and optimization
+- **Investment Tracker**: Multi-asset portfolio monitoring and analysis
+- **Financial Assistant**: Conversational interface for financial queries
+- **Alert Manager**: Smart notification system for financial events
+
+#### Fractal Integration Architecture
+```
+ElizaOS Agents (User Interface)
+├── Financial Conversation Agents
+├── Analysis and Reporting Agents
+└── Automation and Alert Agents
+    ↓
+OpenCog Reasoning (Cognitive Layer)  
+├── Financial Pattern Recognition
+├── Predictive Analysis
+└── Decision Support
+    ↓
+GnuCash Data (Storage Layer)
+├── Account Structures
+├── Transaction Records
+└── Financial Reports
+```
+
+### Implementation Features
+- **Natural Language Queries**: Ask questions about finances in plain English
+- **Predictive Analytics**: AI-powered forecasting and trend analysis
+- **Automated Categorization**: Smart transaction classification
+- **Behavioral Insights**: Understanding spending patterns and habits
+- **Goal Tracking**: Intelligent progress monitoring for financial goals
+- **Risk Assessment**: Cognitive evaluation of financial decisions
+
+
+## 💰 GnuCash Financial Integration
+
+### Intelligent Financial Management
+Combining ElizaOS agents with GnuCash for smart financial management:
+
+#### Financial Agent Ecosystem
+- **Transaction Categorizer**: AI agent for automatic transaction classification
+- **Expense Analyzer**: Pattern recognition for spending behavior analysis
+- **Budget Optimizer**: Intelligent budget planning and optimization
+- **Investment Tracker**: Multi-asset portfolio monitoring and analysis
+- **Financial Assistant**: Conversational interface for financial queries
+- **Alert Manager**: Smart notification system for financial events
+
+#### Fractal Integration Architecture
+```
+ElizaOS Agents (User Interface)
+├── Financial Conversation Agents
+├── Analysis and Reporting Agents
+└── Automation and Alert Agents
+    ↓
+OpenCog Reasoning (Cognitive Layer)  
+├── Financial Pattern Recognition
+├── Predictive Analysis
+└── Decision Support
+    ↓
+GnuCash Data (Storage Layer)
+├── Account Structures
+├── Transaction Records
+└── Financial Reports
+```
+
+### Implementation Features
+- **Natural Language Queries**: Ask questions about finances in plain English
+- **Predictive Analytics**: AI-powered forecasting and trend analysis
+- **Automated Categorization**: Smart transaction classification
+- **Behavioral Insights**: Understanding spending patterns and habits
+- **Goal Tracking**: Intelligent progress monitoring for financial goals
+- **Risk Assessment**: Cognitive evaluation of financial decisions
+
+
+## 💰 GnuCash Financial Integration
+
+### Intelligent Financial Management
+Combining ElizaOS agents with GnuCash for smart financial management:
+
+#### Financial Agent Ecosystem
+- **Transaction Categorizer**: AI agent for automatic transaction classification
+- **Expense Analyzer**: Pattern recognition for spending behavior analysis
+- **Budget Optimizer**: Intelligent budget planning and optimization
+- **Investment Tracker**: Multi-asset portfolio monitoring and analysis
+- **Financial Assistant**: Conversational interface for financial queries
+- **Alert Manager**: Smart notification system for financial events
+
+#### Fractal Integration Architecture
+```
+ElizaOS Agents (User Interface)
+├── Financial Conversation Agents
+├── Analysis and Reporting Agents
+└── Automation and Alert Agents
+    ↓
+OpenCog Reasoning (Cognitive Layer)  
+├── Financial Pattern Recognition
+├── Predictive Analysis
+└── Decision Support
+    ↓
+GnuCash Data (Storage Layer)
+├── Account Structures
+├── Transaction Records
+└── Financial Reports
+```
+
+### Implementation Features
+- **Natural Language Queries**: Ask questions about finances in plain English
+- **Predictive Analytics**: AI-powered forecasting and trend analysis
+- **Automated Categorization**: Smart transaction classification
+- **Behavioral Insights**: Understanding spending patterns and habits
+- **Goal Tracking**: Intelligent progress monitoring for financial goals
+- **Risk Assessment**: Cognitive evaluation of financial decisions
+
+
+## 💰 GnuCash Financial Integration
+
+### Intelligent Financial Management
+Combining ElizaOS agents with GnuCash for smart financial management:
+
+#### Financial Agent Ecosystem
+- **Transaction Categorizer**: AI agent for automatic transaction classification
+- **Expense Analyzer**: Pattern recognition for spending behavior analysis
+- **Budget Optimizer**: Intelligent budget planning and optimization
+- **Investment Tracker**: Multi-asset portfolio monitoring and analysis
+- **Financial Assistant**: Conversational interface for financial queries
+- **Alert Manager**: Smart notification system for financial events
+
+#### Fractal Integration Architecture
+```
+ElizaOS Agents (User Interface)
+├── Financial Conversation Agents
+├── Analysis and Reporting Agents
+└── Automation and Alert Agents
+    ↓
+OpenCog Reasoning (Cognitive Layer)  
+├── Financial Pattern Recognition
+├── Predictive Analysis
+└── Decision Support
+    ↓
+GnuCash Data (Storage Layer)
+├── Account Structures
+├── Transaction Records
+└── Financial Reports
+```
+
+### Implementation Features
+- **Natural Language Queries**: Ask questions about finances in plain English
+- **Predictive Analytics**: AI-powered forecasting and trend analysis
+- **Automated Categorization**: Smart transaction classification
+- **Behavioral Insights**: Understanding spending patterns and habits
+- **Goal Tracking**: Intelligent progress monitoring for financial goals
+- **Risk Assessment**: Cognitive evaluation of financial decisions
+
+
+## 💰 GnuCash Financial Integration
+
+### Intelligent Financial Management
+Combining ElizaOS agents with GnuCash for smart financial management:
+
+#### Financial Agent Ecosystem
+- **Transaction Categorizer**: AI agent for automatic transaction classification
+- **Expense Analyzer**: Pattern recognition for spending behavior analysis
+- **Budget Optimizer**: Intelligent budget planning and optimization
+- **Investment Tracker**: Multi-asset portfolio monitoring and analysis
+- **Financial Assistant**: Conversational interface for financial queries
+- **Alert Manager**: Smart notification system for financial events
+
+#### Fractal Integration Architecture
+```
+ElizaOS Agents (User Interface)
+├── Financial Conversation Agents
+├── Analysis and Reporting Agents
+└── Automation and Alert Agents
+    ↓
+OpenCog Reasoning (Cognitive Layer)  
+├── Financial Pattern Recognition
+├── Predictive Analysis
+└── Decision Support
+    ↓
+GnuCash Data (Storage Layer)
+├── Account Structures
+├── Transaction Records
+└── Financial Reports
+```
+
+### Implementation Features
+- **Natural Language Queries**: Ask questions about finances in plain English
+- **Predictive Analytics**: AI-powered forecasting and trend analysis
+- **Automated Categorization**: Smart transaction classification
+- **Behavioral Insights**: Understanding spending patterns and habits
+- **Goal Tracking**: Intelligent progress monitoring for financial goals
+- **Risk Assessment**: Cognitive evaluation of financial decisions
+
+
+## 💰 GnuCash Financial Integration
+
+### Intelligent Financial Management
+Combining ElizaOS agents with GnuCash for smart financial management:
+
+#### Financial Agent Ecosystem
+- **Transaction Categorizer**: AI agent for automatic transaction classification
+- **Expense Analyzer**: Pattern recognition for spending behavior analysis
+- **Budget Optimizer**: Intelligent budget planning and optimization
+- **Investment Tracker**: Multi-asset portfolio monitoring and analysis
+- **Financial Assistant**: Conversational interface for financial queries
+- **Alert Manager**: Smart notification system for financial events
+
+#### Fractal Integration Architecture
+```
+ElizaOS Agents (User Interface)
+├── Financial Conversation Agents
+├── Analysis and Reporting Agents
+└── Automation and Alert Agents
+    ↓
+OpenCog Reasoning (Cognitive Layer)  
+├── Financial Pattern Recognition
+├── Predictive Analysis
+└── Decision Support
+    ↓
+GnuCash Data (Storage Layer)
+├── Account Structures
+├── Transaction Records
+└── Financial Reports
+```
+
+### Implementation Features
+- **Natural Language Queries**: Ask questions about finances in plain English
+- **Predictive Analytics**: AI-powered forecasting and trend analysis
+- **Automated Categorization**: Smart transaction classification
+- **Behavioral Insights**: Understanding spending patterns and habits
+- **Goal Tracking**: Intelligent progress monitoring for financial goals
+- **Risk Assessment**: Cognitive evaluation of financial decisions
+
+
+## 💰 GnuCash Financial Integration
+
+### Intelligent Financial Management
+Combining ElizaOS agents with GnuCash for smart financial management:
+
+#### Financial Agent Ecosystem
+- **Transaction Categorizer**: AI agent for automatic transaction classification
+- **Expense Analyzer**: Pattern recognition for spending behavior analysis
+- **Budget Optimizer**: Intelligent budget planning and optimization
+- **Investment Tracker**: Multi-asset portfolio monitoring and analysis
+- **Financial Assistant**: Conversational interface for financial queries
+- **Alert Manager**: Smart notification system for financial events
+
+#### Fractal Integration Architecture
+```
+ElizaOS Agents (User Interface)
+├── Financial Conversation Agents
+├── Analysis and Reporting Agents
+└── Automation and Alert Agents
+    ↓
+OpenCog Reasoning (Cognitive Layer)  
+├── Financial Pattern Recognition
+├── Predictive Analysis
+└── Decision Support
+    ↓
+GnuCash Data (Storage Layer)
+├── Account Structures
+├── Transaction Records
+└── Financial Reports
+```
+
+### Implementation Features
+- **Natural Language Queries**: Ask questions about finances in plain English
+- **Predictive Analytics**: AI-powered forecasting and trend analysis
+- **Automated Categorization**: Smart transaction classification
+- **Behavioral Insights**: Understanding spending patterns and habits
+- **Goal Tracking**: Intelligent progress monitoring for financial goals
+- **Risk Assessment**: Cognitive evaluation of financial decisions
+
+
+## 💰 GnuCash Financial Integration
+
+### Intelligent Financial Management
+Combining ElizaOS agents with GnuCash for smart financial management:
+
+#### Financial Agent Ecosystem
+- **Transaction Categorizer**: AI agent for automatic transaction classification
+- **Expense Analyzer**: Pattern recognition for spending behavior analysis
+- **Budget Optimizer**: Intelligent budget planning and optimization
+- **Investment Tracker**: Multi-asset portfolio monitoring and analysis
+- **Financial Assistant**: Conversational interface for financial queries
+- **Alert Manager**: Smart notification system for financial events
+
+#### Fractal Integration Architecture
+```
+ElizaOS Agents (User Interface)
+├── Financial Conversation Agents
+├── Analysis and Reporting Agents
+└── Automation and Alert Agents
+    ↓
+OpenCog Reasoning (Cognitive Layer)  
+├── Financial Pattern Recognition
+├── Predictive Analysis
+└── Decision Support
+    ↓
+GnuCash Data (Storage Layer)
+├── Account Structures
+├── Transaction Records
+└── Financial Reports
+```
+
+### Implementation Features
+- **Natural Language Queries**: Ask questions about finances in plain English
+- **Predictive Analytics**: AI-powered forecasting and trend analysis
+- **Automated Categorization**: Smart transaction classification
+- **Behavioral Insights**: Understanding spending patterns and habits
+- **Goal Tracking**: Intelligent progress monitoring for financial goals
+- **Risk Assessment**: Cognitive evaluation of financial decisions
+
+
+## 💰 GnuCash Financial Integration
+
+### Intelligent Financial Management
+Combining ElizaOS agents with GnuCash for smart financial management:
+
+#### Financial Agent Ecosystem
+- **Transaction Categorizer**: AI agent for automatic transaction classification
+- **Expense Analyzer**: Pattern recognition for spending behavior analysis
+- **Budget Optimizer**: Intelligent budget planning and optimization
+- **Investment Tracker**: Multi-asset portfolio monitoring and analysis
+- **Financial Assistant**: Conversational interface for financial queries
+- **Alert Manager**: Smart notification system for financial events
+
+#### Fractal Integration Architecture
+```
+ElizaOS Agents (User Interface)
+├── Financial Conversation Agents
+├── Analysis and Reporting Agents
+└── Automation and Alert Agents
+    ↓
+OpenCog Reasoning (Cognitive Layer)  
+├── Financial Pattern Recognition
+├── Predictive Analysis
+└── Decision Support
+    ↓
+GnuCash Data (Storage Layer)
+├── Account Structures
+├── Transaction Records
+└── Financial Reports
+```
+
+### Implementation Features
+- **Natural Language Queries**: Ask questions about finances in plain English
+- **Predictive Analytics**: AI-powered forecasting and trend analysis
+- **Automated Categorization**: Smart transaction classification
+- **Behavioral Insights**: Understanding spending patterns and habits
+- **Goal Tracking**: Intelligent progress monitoring for financial goals
+- **Risk Assessment**: Cognitive evaluation of financial decisions
+
+
+## 💰 GnuCash Financial Integration
+
+### Intelligent Financial Management
+Combining ElizaOS agents with GnuCash for smart financial management:
+
+#### Financial Agent Ecosystem
+- **Transaction Categorizer**: AI agent for automatic transaction classification
+- **Expense Analyzer**: Pattern recognition for spending behavior analysis
+- **Budget Optimizer**: Intelligent budget planning and optimization
+- **Investment Tracker**: Multi-asset portfolio monitoring and analysis
+- **Financial Assistant**: Conversational interface for financial queries
+- **Alert Manager**: Smart notification system for financial events
+
+#### Fractal Integration Architecture
+```
+ElizaOS Agents (User Interface)
+├── Financial Conversation Agents
+├── Analysis and Reporting Agents
+└── Automation and Alert Agents
+    ↓
+OpenCog Reasoning (Cognitive Layer)  
+├── Financial Pattern Recognition
+├── Predictive Analysis
+└── Decision Support
+    ↓
+GnuCash Data (Storage Layer)
+├── Account Structures
+├── Transaction Records
+└── Financial Reports
+```
+
+### Implementation Features
+- **Natural Language Queries**: Ask questions about finances in plain English
+- **Predictive Analytics**: AI-powered forecasting and trend analysis
+- **Automated Categorization**: Smart transaction classification
+- **Behavioral Insights**: Understanding spending patterns and habits
+- **Goal Tracking**: Intelligent progress monitoring for financial goals
+- **Risk Assessment**: Cognitive evaluation of financial decisions
+
+
+## 💰 GnuCash Financial Integration
+
+### Intelligent Financial Management
+Combining ElizaOS agents with GnuCash for smart financial management:
+
+#### Financial Agent Ecosystem
+- **Transaction Categorizer**: AI agent for automatic transaction classification
+- **Expense Analyzer**: Pattern recognition for spending behavior analysis
+- **Budget Optimizer**: Intelligent budget planning and optimization
+- **Investment Tracker**: Multi-asset portfolio monitoring and analysis
+- **Financial Assistant**: Conversational interface for financial queries
+- **Alert Manager**: Smart notification system for financial events
+
+#### Fractal Integration Architecture
+```
+ElizaOS Agents (User Interface)
+├── Financial Conversation Agents
+├── Analysis and Reporting Agents
+└── Automation and Alert Agents
+    ↓
+OpenCog Reasoning (Cognitive Layer)  
+├── Financial Pattern Recognition
+├── Predictive Analysis
+└── Decision Support
+    ↓
+GnuCash Data (Storage Layer)
+├── Account Structures
+├── Transaction Records
+└── Financial Reports
+```
+
+### Implementation Features
+- **Natural Language Queries**: Ask questions about finances in plain English
+- **Predictive Analytics**: AI-powered forecasting and trend analysis
+- **Automated Categorization**: Smart transaction classification
+- **Behavioral Insights**: Understanding spending patterns and habits
+- **Goal Tracking**: Intelligent progress monitoring for financial goals
+- **Risk Assessment**: Cognitive evaluation of financial decisions
+
+
+## 💰 GnuCash Financial Integration
+
+### Intelligent Financial Management
+Combining ElizaOS agents with GnuCash for smart financial management:
+
+#### Financial Agent Ecosystem
+- **Transaction Categorizer**: AI agent for automatic transaction classification
+- **Expense Analyzer**: Pattern recognition for spending behavior analysis
+- **Budget Optimizer**: Intelligent budget planning and optimization
+- **Investment Tracker**: Multi-asset portfolio monitoring and analysis
+- **Financial Assistant**: Conversational interface for financial queries
+- **Alert Manager**: Smart notification system for financial events
+
+#### Fractal Integration Architecture
+```
+ElizaOS Agents (User Interface)
+├── Financial Conversation Agents
+├── Analysis and Reporting Agents
+└── Automation and Alert Agents
+    ↓
+OpenCog Reasoning (Cognitive Layer)  
+├── Financial Pattern Recognition
+├── Predictive Analysis
+└── Decision Support
+    ↓
+GnuCash Data (Storage Layer)
+├── Account Structures
+├── Transaction Records
+└── Financial Reports
+```
+
+### Implementation Features
+- **Natural Language Queries**: Ask questions about finances in plain English
+- **Predictive Analytics**: AI-powered forecasting and trend analysis
+- **Automated Categorization**: Smart transaction classification
+- **Behavioral Insights**: Understanding spending patterns and habits
+- **Goal Tracking**: Intelligent progress monitoring for financial goals
+- **Risk Assessment**: Cognitive evaluation of financial decisions
+
+
+## 💰 GnuCash Financial Integration
+
+### Intelligent Financial Management
+Combining ElizaOS agents with GnuCash for smart financial management:
+
+#### Financial Agent Ecosystem
+- **Transaction Categorizer**: AI agent for automatic transaction classification
+- **Expense Analyzer**: Pattern recognition for spending behavior analysis
+- **Budget Optimizer**: Intelligent budget planning and optimization
+- **Investment Tracker**: Multi-asset portfolio monitoring and analysis
+- **Financial Assistant**: Conversational interface for financial queries
+- **Alert Manager**: Smart notification system for financial events
+
+#### Fractal Integration Architecture
+```
+ElizaOS Agents (User Interface)
+├── Financial Conversation Agents
+├── Analysis and Reporting Agents
+└── Automation and Alert Agents
+    ↓
+OpenCog Reasoning (Cognitive Layer)  
+├── Financial Pattern Recognition
+├── Predictive Analysis
+└── Decision Support
+    ↓
+GnuCash Data (Storage Layer)
+├── Account Structures
+├── Transaction Records
+└── Financial Reports
+```
+
+### Implementation Features
+- **Natural Language Queries**: Ask questions about finances in plain English
+- **Predictive Analytics**: AI-powered forecasting and trend analysis
+- **Automated Categorization**: Smart transaction classification
+- **Behavioral Insights**: Understanding spending patterns and habits
+- **Goal Tracking**: Intelligent progress monitoring for financial goals
+- **Risk Assessment**: Cognitive evaluation of financial decisions
+
+
+## 💰 GnuCash Financial Integration
+
+### Intelligent Financial Management
+Combining ElizaOS agents with GnuCash for smart financial management:
+
+#### Financial Agent Ecosystem
+- **Transaction Categorizer**: AI agent for automatic transaction classification
+- **Expense Analyzer**: Pattern recognition for spending behavior analysis
+- **Budget Optimizer**: Intelligent budget planning and optimization
+- **Investment Tracker**: Multi-asset portfolio monitoring and analysis
+- **Financial Assistant**: Conversational interface for financial queries
+- **Alert Manager**: Smart notification system for financial events
+
+#### Fractal Integration Architecture
+```
+ElizaOS Agents (User Interface)
+├── Financial Conversation Agents
+├── Analysis and Reporting Agents
+└── Automation and Alert Agents
+    ↓
+OpenCog Reasoning (Cognitive Layer)  
+├── Financial Pattern Recognition
+├── Predictive Analysis
+└── Decision Support
+    ↓
+GnuCash Data (Storage Layer)
+├── Account Structures
+├── Transaction Records
+└── Financial Reports
+```
+
+### Implementation Features
+- **Natural Language Queries**: Ask questions about finances in plain English
+- **Predictive Analytics**: AI-powered forecasting and trend analysis
+- **Automated Categorization**: Smart transaction classification
+- **Behavioral Insights**: Understanding spending patterns and habits
+- **Goal Tracking**: Intelligent progress monitoring for financial goals
+- **Risk Assessment**: Cognitive evaluation of financial decisions
+
+
+## 💰 GnuCash Financial Integration
+
+### Intelligent Financial Management
+Combining ElizaOS agents with GnuCash for smart financial management:
+
+#### Financial Agent Ecosystem
+- **Transaction Categorizer**: AI agent for automatic transaction classification
+- **Expense Analyzer**: Pattern recognition for spending behavior analysis
+- **Budget Optimizer**: Intelligent budget planning and optimization
+- **Investment Tracker**: Multi-asset portfolio monitoring and analysis
+- **Financial Assistant**: Conversational interface for financial queries
+- **Alert Manager**: Smart notification system for financial events
+
+#### Fractal Integration Architecture
+```
+ElizaOS Agents (User Interface)
+├── Financial Conversation Agents
+├── Analysis and Reporting Agents
+└── Automation and Alert Agents
+    ↓
+OpenCog Reasoning (Cognitive Layer)  
+├── Financial Pattern Recognition
+├── Predictive Analysis
+└── Decision Support
+    ↓
+GnuCash Data (Storage Layer)
+├── Account Structures
+├── Transaction Records
+└── Financial Reports
+```
+
+### Implementation Features
+- **Natural Language Queries**: Ask questions about finances in plain English
+- **Predictive Analytics**: AI-powered forecasting and trend analysis
+- **Automated Categorization**: Smart transaction classification
+- **Behavioral Insights**: Understanding spending patterns and habits
+- **Goal Tracking**: Intelligent progress monitoring for financial goals
+- **Risk Assessment**: Cognitive evaluation of financial decisions
+
+
+## 💰 GnuCash Financial Integration
+
+### Intelligent Financial Management
+Combining ElizaOS agents with GnuCash for smart financial management:
+
+#### Financial Agent Ecosystem
+- **Transaction Categorizer**: AI agent for automatic transaction classification
+- **Expense Analyzer**: Pattern recognition for spending behavior analysis
+- **Budget Optimizer**: Intelligent budget planning and optimization
+- **Investment Tracker**: Multi-asset portfolio monitoring and analysis
+- **Financial Assistant**: Conversational interface for financial queries
+- **Alert Manager**: Smart notification system for financial events
+
+#### Fractal Integration Architecture
+```
+ElizaOS Agents (User Interface)
+├── Financial Conversation Agents
+├── Analysis and Reporting Agents
+└── Automation and Alert Agents
+    ↓
+OpenCog Reasoning (Cognitive Layer)  
+├── Financial Pattern Recognition
+├── Predictive Analysis
+└── Decision Support
+    ↓
+GnuCash Data (Storage Layer)
+├── Account Structures
+├── Transaction Records
+└── Financial Reports
+```
+
+### Implementation Features
+- **Natural Language Queries**: Ask questions about finances in plain English
+- **Predictive Analytics**: AI-powered forecasting and trend analysis
+- **Automated Categorization**: Smart transaction classification
+- **Behavioral Insights**: Understanding spending patterns and habits
+- **Goal Tracking**: Intelligent progress monitoring for financial goals
+- **Risk Assessment**: Cognitive evaluation of financial decisions
+
+
+## 💰 GnuCash Financial Integration
+
+### Intelligent Financial Management
+Combining ElizaOS agents with GnuCash for smart financial management:
+
+#### Financial Agent Ecosystem
+- **Transaction Categorizer**: AI agent for automatic transaction classification
+- **Expense Analyzer**: Pattern recognition for spending behavior analysis
+- **Budget Optimizer**: Intelligent budget planning and optimization
+- **Investment Tracker**: Multi-asset portfolio monitoring and analysis
+- **Financial Assistant**: Conversational interface for financial queries
+- **Alert Manager**: Smart notification system for financial events
+
+#### Fractal Integration Architecture
+```
+ElizaOS Agents (User Interface)
+├── Financial Conversation Agents
+├── Analysis and Reporting Agents
+└── Automation and Alert Agents
+    ↓
+OpenCog Reasoning (Cognitive Layer)  
+├── Financial Pattern Recognition
+├── Predictive Analysis
+└── Decision Support
+    ↓
+GnuCash Data (Storage Layer)
+├── Account Structures
+├── Transaction Records
+└── Financial Reports
+```
+
+### Implementation Features
+- **Natural Language Queries**: Ask questions about finances in plain English
+- **Predictive Analytics**: AI-powered forecasting and trend analysis
+- **Automated Categorization**: Smart transaction classification
+- **Behavioral Insights**: Understanding spending patterns and habits
+- **Goal Tracking**: Intelligent progress monitoring for financial goals
+- **Risk Assessment**: Cognitive evaluation of financial decisions
+
+
+## 💰 GnuCash Financial Integration
+
+### Intelligent Financial Management
+Combining ElizaOS agents with GnuCash for smart financial management:
+
+#### Financial Agent Ecosystem
+- **Transaction Categorizer**: AI agent for automatic transaction classification
+- **Expense Analyzer**: Pattern recognition for spending behavior analysis
+- **Budget Optimizer**: Intelligent budget planning and optimization
+- **Investment Tracker**: Multi-asset portfolio monitoring and analysis
+- **Financial Assistant**: Conversational interface for financial queries
+- **Alert Manager**: Smart notification system for financial events
+
+#### Fractal Integration Architecture
+```
+ElizaOS Agents (User Interface)
+├── Financial Conversation Agents
+├── Analysis and Reporting Agents
+└── Automation and Alert Agents
+    ↓
+OpenCog Reasoning (Cognitive Layer)  
+├── Financial Pattern Recognition
+├── Predictive Analysis
+└── Decision Support
+    ↓
+GnuCash Data (Storage Layer)
+├── Account Structures
+├── Transaction Records
+└── Financial Reports
+```
+
+### Implementation Features
+- **Natural Language Queries**: Ask questions about finances in plain English
+- **Predictive Analytics**: AI-powered forecasting and trend analysis
+- **Automated Categorization**: Smart transaction classification
+- **Behavioral Insights**: Understanding spending patterns and habits
+- **Goal Tracking**: Intelligent progress monitoring for financial goals
+- **Risk Assessment**: Cognitive evaluation of financial decisions
+
+
+## 💰 GnuCash Financial Integration
+
+### Intelligent Financial Management
+Combining ElizaOS agents with GnuCash for smart financial management:
+
+#### Financial Agent Ecosystem
+- **Transaction Categorizer**: AI agent for automatic transaction classification
+- **Expense Analyzer**: Pattern recognition for spending behavior analysis
+- **Budget Optimizer**: Intelligent budget planning and optimization
+- **Investment Tracker**: Multi-asset portfolio monitoring and analysis
+- **Financial Assistant**: Conversational interface for financial queries
+- **Alert Manager**: Smart notification system for financial events
+
+#### Fractal Integration Architecture
+```
+ElizaOS Agents (User Interface)
+├── Financial Conversation Agents
+├── Analysis and Reporting Agents
+└── Automation and Alert Agents
+    ↓
+OpenCog Reasoning (Cognitive Layer)  
+├── Financial Pattern Recognition
+├── Predictive Analysis
+└── Decision Support
+    ↓
+GnuCash Data (Storage Layer)
+├── Account Structures
+├── Transaction Records
+└── Financial Reports
+```
+
+### Implementation Features
+- **Natural Language Queries**: Ask questions about finances in plain English
+- **Predictive Analytics**: AI-powered forecasting and trend analysis
+- **Automated Categorization**: Smart transaction classification
+- **Behavioral Insights**: Understanding spending patterns and habits
+- **Goal Tracking**: Intelligent progress monitoring for financial goals
+- **Risk Assessment**: Cognitive evaluation of financial decisions
+
+
+## 💰 GnuCash Financial Integration
+
+### Intelligent Financial Management
+Combining ElizaOS agents with GnuCash for smart financial management:
+
+#### Financial Agent Ecosystem
+- **Transaction Categorizer**: AI agent for automatic transaction classification
+- **Expense Analyzer**: Pattern recognition for spending behavior analysis
+- **Budget Optimizer**: Intelligent budget planning and optimization
+- **Investment Tracker**: Multi-asset portfolio monitoring and analysis
+- **Financial Assistant**: Conversational interface for financial queries
+- **Alert Manager**: Smart notification system for financial events
+
+#### Fractal Integration Architecture
+```
+ElizaOS Agents (User Interface)
+├── Financial Conversation Agents
+├── Analysis and Reporting Agents
+└── Automation and Alert Agents
+    ↓
+OpenCog Reasoning (Cognitive Layer)  
+├── Financial Pattern Recognition
+├── Predictive Analysis
+└── Decision Support
+    ↓
+GnuCash Data (Storage Layer)
+├── Account Structures
+├── Transaction Records
+└── Financial Reports
+```
+
+### Implementation Features
+- **Natural Language Queries**: Ask questions about finances in plain English
+- **Predictive Analytics**: AI-powered forecasting and trend analysis
+- **Automated Categorization**: Smart transaction classification
+- **Behavioral Insights**: Understanding spending patterns and habits
+- **Goal Tracking**: Intelligent progress monitoring for financial goals
+- **Risk Assessment**: Cognitive evaluation of financial decisions
+
+
+## 💰 GnuCash Financial Integration
+
+### Intelligent Financial Management
+Combining ElizaOS agents with GnuCash for smart financial management:
+
+#### Financial Agent Ecosystem
+- **Transaction Categorizer**: AI agent for automatic transaction classification
+- **Expense Analyzer**: Pattern recognition for spending behavior analysis
+- **Budget Optimizer**: Intelligent budget planning and optimization
+- **Investment Tracker**: Multi-asset portfolio monitoring and analysis
+- **Financial Assistant**: Conversational interface for financial queries
+- **Alert Manager**: Smart notification system for financial events
+
+#### Fractal Integration Architecture
+```
+ElizaOS Agents (User Interface)
+├── Financial Conversation Agents
+├── Analysis and Reporting Agents
+└── Automation and Alert Agents
+    ↓
+OpenCog Reasoning (Cognitive Layer)  
+├── Financial Pattern Recognition
+├── Predictive Analysis
+└── Decision Support
+    ↓
+GnuCash Data (Storage Layer)
+├── Account Structures
+├── Transaction Records
+└── Financial Reports
+```
+
+### Implementation Features
+- **Natural Language Queries**: Ask questions about finances in plain English
+- **Predictive Analytics**: AI-powered forecasting and trend analysis
+- **Automated Categorization**: Smart transaction classification
+- **Behavioral Insights**: Understanding spending patterns and habits
+- **Goal Tracking**: Intelligent progress monitoring for financial goals
+- **Risk Assessment**: Cognitive evaluation of financial decisions
+
+
+## 💰 GnuCash Financial Integration
+
+### Intelligent Financial Management
+Combining ElizaOS agents with GnuCash for smart financial management:
+
+#### Financial Agent Ecosystem
+- **Transaction Categorizer**: AI agent for automatic transaction classification
+- **Expense Analyzer**: Pattern recognition for spending behavior analysis
+- **Budget Optimizer**: Intelligent budget planning and optimization
+- **Investment Tracker**: Multi-asset portfolio monitoring and analysis
+- **Financial Assistant**: Conversational interface for financial queries
+- **Alert Manager**: Smart notification system for financial events
+
+#### Fractal Integration Architecture
+```
+ElizaOS Agents (User Interface)
+├── Financial Conversation Agents
+├── Analysis and Reporting Agents
+└── Automation and Alert Agents
+    ↓
+OpenCog Reasoning (Cognitive Layer)  
+├── Financial Pattern Recognition
+├── Predictive Analysis
+└── Decision Support
+    ↓
+GnuCash Data (Storage Layer)
+├── Account Structures
+├── Transaction Records
+└── Financial Reports
+```
+
+### Implementation Features
+- **Natural Language Queries**: Ask questions about finances in plain English
+- **Predictive Analytics**: AI-powered forecasting and trend analysis
+- **Automated Categorization**: Smart transaction classification
+- **Behavioral Insights**: Understanding spending patterns and habits
+- **Goal Tracking**: Intelligent progress monitoring for financial goals
+- **Risk Assessment**: Cognitive evaluation of financial decisions
+
+
+## 💰 GnuCash Financial Integration
+
+### Intelligent Financial Management
+Combining ElizaOS agents with GnuCash for smart financial management:
+
+#### Financial Agent Ecosystem
+- **Transaction Categorizer**: AI agent for automatic transaction classification
+- **Expense Analyzer**: Pattern recognition for spending behavior analysis
+- **Budget Optimizer**: Intelligent budget planning and optimization
+- **Investment Tracker**: Multi-asset portfolio monitoring and analysis
+- **Financial Assistant**: Conversational interface for financial queries
+- **Alert Manager**: Smart notification system for financial events
+
+#### Fractal Integration Architecture
+```
+ElizaOS Agents (User Interface)
+├── Financial Conversation Agents
+├── Analysis and Reporting Agents
+└── Automation and Alert Agents
+    ↓
+OpenCog Reasoning (Cognitive Layer)  
+├── Financial Pattern Recognition
+├── Predictive Analysis
+└── Decision Support
+    ↓
+GnuCash Data (Storage Layer)
+├── Account Structures
+├── Transaction Records
+└── Financial Reports
+```
+
+### Implementation Features
+- **Natural Language Queries**: Ask questions about finances in plain English
+- **Predictive Analytics**: AI-powered forecasting and trend analysis
+- **Automated Categorization**: Smart transaction classification
+- **Behavioral Insights**: Understanding spending patterns and habits
+- **Goal Tracking**: Intelligent progress monitoring for financial goals
+- **Risk Assessment**: Cognitive evaluation of financial decisions
+
+
+## 💰 GnuCash Financial Integration
+
+### Intelligent Financial Management
+Combining ElizaOS agents with GnuCash for smart financial management:
+
+#### Financial Agent Ecosystem
+- **Transaction Categorizer**: AI agent for automatic transaction classification
+- **Expense Analyzer**: Pattern recognition for spending behavior analysis
+- **Budget Optimizer**: Intelligent budget planning and optimization
+- **Investment Tracker**: Multi-asset portfolio monitoring and analysis
+- **Financial Assistant**: Conversational interface for financial queries
+- **Alert Manager**: Smart notification system for financial events
+
+#### Fractal Integration Architecture
+```
+ElizaOS Agents (User Interface)
+├── Financial Conversation Agents
+├── Analysis and Reporting Agents
+└── Automation and Alert Agents
+    ↓
+OpenCog Reasoning (Cognitive Layer)  
+├── Financial Pattern Recognition
+├── Predictive Analysis
+└── Decision Support
+    ↓
+GnuCash Data (Storage Layer)
+├── Account Structures
+├── Transaction Records
+└── Financial Reports
+```
+
+### Implementation Features
+- **Natural Language Queries**: Ask questions about finances in plain English
+- **Predictive Analytics**: AI-powered forecasting and trend analysis
+- **Automated Categorization**: Smart transaction classification
+- **Behavioral Insights**: Understanding spending patterns and habits
+- **Goal Tracking**: Intelligent progress monitoring for financial goals
+- **Risk Assessment**: Cognitive evaluation of financial decisions
+
 
 ## 💰 GnuCash Financial Integration
 
@@ -16339,9 +14548,11 @@ Upon successful completion of the `tauri-release.yml` workflow (triggered by a n
 - iOS: `.ipa` file.
 
 
+
+
 ## 🧠 Comprehensive ElizaOS Ecosystem Analysis
 
-**Last Updated**: 2025-06-13 22:09:08  
+**Last Updated**: 2025-09-29 22:17:35  
 **Total Repositories Analyzed**: 42
 
 ### 📊 Ecosystem Statistics

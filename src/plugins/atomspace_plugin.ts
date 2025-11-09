@@ -5,7 +5,7 @@ import { Plugin, Action, Provider, Evaluator } from "@elizaos/core";
  * 
  * Description: The OpenCog (hyper-)graph database and graph rewriting system
  * Original Repository: https://github.com/opencog/atomspace
- * Generated: 2025-06-13T22:11:51.744707
+ * Generated: 2025-09-29T22:18:52.637545
  */
 
 interface AtomspaceConfig {

@@ -3,7 +3,7 @@ link-grammar Bridge Implementation
 
 Description: The CMU Link Grammar natural language parser
 Original Repository: https://github.com/opencog/link-grammar
-Generated: 2025-06-13T22:11:51.747886
+Generated: 2025-09-29T22:18:52.642144
 
 This bridge enables cross-ecosystem integration between:
 - ElizaOS (TypeScript/JavaScript agents)
@@ -20,7 +20,7 @@ import logging
 
 logger = logging.getLogger(__name__)
 
-class LinkGrammarBridge:
+class Link-GrammarBridge:
     """Bridge for link-grammar cross-ecosystem integration"""
     
     def __init__(self, config: Optional[Dict] = None):
@@ -171,14 +171,14 @@ class LinkGrammarBridge:
         logger.info(f"Shutting down {self.name} bridge")
         self.initialized = False
 
-class LinkGrammarIntegrationFramework:
+class Link-GrammarIntegrationFramework:
     """Framework for managing link-grammar integrations"""
     
     def __init__(self):
         self.bridges = {}
         self.active_sessions = {}
         
-    async def register_bridge(self, bridge: LinkGrammarBridge) -> bool:
+    async def register_bridge(self, bridge: Link-GrammarBridge) -> bool:
         """Register a new bridge"""
         try:
             await bridge.initialize()

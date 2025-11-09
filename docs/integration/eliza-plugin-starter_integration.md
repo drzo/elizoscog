@@ -5,7 +5,7 @@
 **Repository**: [eliza-plugin-starter](https://github.com/elizaOS/eliza-plugin-starter)  
 **Description**: A starter plugin repo for ElizaOS  
 **Priority**: Medium  
-**Generated**: 2025-06-13T22:11:51.749841
+**Generated**: 2025-09-29T22:18:52.645693
 
 ## Integration Assessment
 

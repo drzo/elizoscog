@@ -5,7 +5,7 @@
 **Repository**: [agentloop](https://github.com/elizaOS/agentloop)  
 **Description**: A simple, lightweight loop for your agent  
 **Priority**: High  
-**Generated**: 2025-06-13T22:11:51.749226
+**Generated**: 2025-09-29T22:18:52.644564
 
 ## Integration Assessment
 

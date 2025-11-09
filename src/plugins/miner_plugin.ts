@@ -5,7 +5,7 @@ import { Plugin, Action, Provider, Evaluator } from "@elizaos/core";
  * 
  * Description: Frequent and surprising subhypergraph pattern miner
  * Original Repository: https://github.com/opencog/miner
- * Generated: 2025-06-13T22:11:51.746444
+ * Generated: 2025-09-29T22:18:52.639892
  */
 
 interface MinerConfig {

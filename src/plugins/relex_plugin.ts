@@ -5,7 +5,7 @@ import { Plugin, Action, Provider, Evaluator } from "@elizaos/core";
  * 
  * Description: English Dependency Relationship Extractor
  * Original Repository: https://github.com/opencog/relex
- * Generated: 2025-06-13T22:11:51.747423
+ * Generated: 2025-09-29T22:18:52.641362
  */
 
 interface RelexConfig {

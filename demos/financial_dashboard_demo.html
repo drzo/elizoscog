@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cognitive Financial Intelligence Dashboard</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: #0a0a0a; color: white; }
+        .dashboard { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 20px; padding: 20px; }
+        .widget { background: linear-gradient(135deg, #1a1a2e, #16213e); border-radius: 15px; padding: 20px; border: 1px solid #333; }
+        .widget h3 { color: #4CAF50; margin-bottom: 15px; }
+        .metric { display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; }
+        .metric-value { font-size: 1.5em; font-weight: bold; }
+        .metric-change { padding: 5px 10px; border-radius: 5px; font-size: 0.8em; }
+        .positive { background: #4CAF50; color: white; }
+        .negative { background: #F44336; color: white; }
+        .stable { background: #FF9800; color: white; }
+        .chart-container { height: 300px; }
+        .insight { background: rgba(33, 150, 243, 0.1); border-left: 4px solid #2196F3; padding: 10px; margin: 10px 0; }
+        .alert { background: rgba(255, 152, 0, 0.1); border-left: 4px solid #FF9800; padding: 10px; margin: 10px 0; }
+        .confidence { font-size: 0.8em; color: #888; }
+        .header { grid-column: 1 / -1; text-align: center; margin-bottom: 20px; }
+        .header h1 { color: #4CAF50; font-size: 2.5em; margin-bottom: 10px; }
+        .header p { color: #888; }
+        .full-width { grid-column: 1 / -1; }
+    </style>
+</head>
+<body>
+    <div class="dashboard">
+        <div class="header">
+            <h1>🧠 Cognitive Financial Intelligence</h1>
+            <p>AI-Powered Financial Analysis • OpenCog + ElizaOS + GnuCash Integration</p>
+            <p>Last Updated: 2025-09-29 22:30:59</p>
+        </div>
+        
+        <div class="widget">
+            <h3>📊 Key Metrics</h3>
+            
+            <div class="metric">
+                <div>
+                    <strong>Net Worth</strong><br>
+                    <span class="confidence">Confidence: 90%</span>
+                </div>
+                <div>
+                    <div class="metric-value">$-5,699.00</div>
+                    <div class="metric-change positive">+2.5%</div>
+                </div>
+            </div>
+            
+            <div class="metric">
+                <div>
+                    <strong>Monthly Income</strong><br>
+                    <span class="confidence">Confidence: 95%</span>
+                </div>
+                <div>
+                    <div class="metric-value">$9,750.00</div>
+                    <div class="metric-change positive">+1.2%</div>
+                </div>
+            </div>
+            
+            <div class="metric">
+                <div>
+                    <strong>Monthly Expenses</strong><br>
+                    <span class="confidence">Confidence: 85%</span>
+                </div>
+                <div>
+                    <div class="metric-value">$4,900.00</div>
+                    <div class="metric-change negative">-0.8%</div>
+                </div>
+            </div>
+            
+            <div class="metric">
+                <div>
+                    <strong>Savings Rate</strong><br>
+                    <span class="confidence">Confidence: 80%</span>
+                </div>
+                <div>
+                    <div class="metric-value">$49.74</div>
+                    <div class="metric-change positive">+3.1%</div>
+                </div>
+            </div>
+            
+            <div class="metric">
+                <div>
+                    <strong>Investment Ratio</strong><br>
+                    <span class="confidence">Confidence: 75%</span>
+                </div>
+                <div>
+                    <div class="metric-value">$68.49</div>
+                    <div class="metric-change positive">+1.7%</div>
+                </div>
+            </div>
+            
+        </div>
+        
+        <div class="widget">
+            <h3>💡 Cognitive Insights</h3>
+            
+        <div class="insight">
+            <strong>Risk Assessment: HIGH</strong><br>
+            Debt-to-Asset Ratio: 1.03<br>
+            <span class="confidence">Confidence: 85%</span>
+        </div>
+        
+            <div class="insight">
+                <strong>Reduce entertainment expenses by 20%</strong><br>
+                Potential Impact: $-60.00<br>
+                <span class="confidence">Confidence: 75%</span>
+            </div>
+            
+            <div class="insight">
+                <strong>Increase investment allocation by 10%</strong><br>
+                Potential Impact: $1,500.00<br>
+                <span class="confidence">Confidence: 65%</span>
+            </div>
+            
+        </div>
+        
+        <div class="widget">
+            <h3>🔮 Predictions</h3>
+            
+        <div class="insight">
+            <strong>12-Month Investment Outlook</strong><br>
+            Conservative: $135,000.54<br>
+            Moderate: $143,750.57<br>
+            Aggressive: $156,250.62<br>
+            <span class="confidence">Confidence: 45%</span>
+        </div>
+        
+            <div class="insight">
+                <strong>Next Month Forecast</strong><br>
+                Expected Income: $9,750.00<br>
+                Expected Expenses: $4,900.00<br>
+                Net Cash Flow: $4,850.00<br>
+                <span class="confidence">Confidence: 80%</span>
+            </div>
+            
+        </div>
+        
+        <div class="widget full-width">
+            <h3>📈 Spending Analysis</h3>
+            <div class="chart-container">
+                <canvas id="spendingChart"></canvas>
+            </div>
+        </div>
+        
+        <div class="widget full-width">
+            <h3>💰 Cash Flow Forecast</h3>
+            <div class="chart-container">
+                <canvas id="cashFlowChart"></canvas>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        // Spending Chart
+        const spendingCtx = document.getElementById('spendingChart').getContext('2d');
+        const spendingData = [{"category": "housing", "amount": 2800.0, "percentage": 57.14285714285714, "trend": "increasing", "cognitive_score": 100}, {"category": "food", "amount": 800.0, "percentage": 16.3265306122449, "trend": "stable", "cognitive_score": 48.9795918367347}, {"category": "transportation", "amount": 600.0, "percentage": 12.244897959183673, "trend": "stable", "cognitive_score": 36.73469387755102}, {"category": "utilities", "amount": 400.0, "percentage": 8.16326530612245, "trend": "stable", "cognitive_score": 24.48979591836735}, {"category": "entertainment", "amount": 300.0, "percentage": 6.122448979591836, "trend": "stable", "cognitive_score": 18.36734693877551}];
+        
+        new Chart(spendingCtx, {
+            type: 'doughnut',
+            data: {
+                labels: spendingData.map(item => item.category),
+                datasets: [{
+                    data: spendingData.map(item => item.amount),
+                    backgroundColor: [
+                        '#FF6384', '#36A2EB', '#FFCE56', '#4BC0C0', '#9966FF', '#FF9F40'
+                    ]
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: { position: 'right', labels: { color: 'white' } }
+                }
+            }
+        });
+        
+        // Cash Flow Chart
+        const cashFlowCtx = document.getElementById('cashFlowChart').getContext('2d');
+        const cashFlowData = [{"month": "2025-09", "predicted_income": 9750.0, "predicted_expenses": 4900.0, "net_cash_flow": 4850.0, "confidence": 0.8}, {"month": "2025-10", "predicted_income": 9945.0, "predicted_expenses": 4973.499999999999, "net_cash_flow": 4971.500000000001, "confidence": 0.75}, {"month": "2025-11", "predicted_income": 10140.0, "predicted_expenses": 5047.0, "net_cash_flow": 5093.0, "confidence": 0.7000000000000001}, {"month": "2025-12", "predicted_income": 10335.0, "predicted_expenses": 5120.5, "net_cash_flow": 5214.5, "confidence": 0.65}, {"month": "2026-01", "predicted_income": 10530.0, "predicted_expenses": 5194.0, "net_cash_flow": 5336.0, "confidence": 0.6000000000000001}, {"month": "2026-02", "predicted_income": 10725.0, "predicted_expenses": 5267.5, "net_cash_flow": 5457.5, "confidence": 0.55}, {"month": "2026-03", "predicted_income": 10920.000000000002, "predicted_expenses": 5341.0, "net_cash_flow": 5579.000000000002, "confidence": 0.5}, {"month": "2026-04", "predicted_income": 11115.000000000002, "predicted_expenses": 5414.5, "net_cash_flow": 5700.500000000002, "confidence": 0.45}, {"month": "2026-05", "predicted_income": 11310.0, "predicted_expenses": 5488.000000000001, "net_cash_flow": 5821.999999999999, "confidence": 0.4}, {"month": "2026-06", "predicted_income": 11505.0, "predicted_expenses": 5561.5, "net_cash_flow": 5943.5, "confidence": 0.35000000000000003}, {"month": "2026-07", "predicted_income": 11700.0, "predicted_expenses": 5635.0, "net_cash_flow": 6065.0, "confidence": 0.30000000000000004}, {"month": "2026-08", "predicted_income": 11895.0, "predicted_expenses": 5708.5, "net_cash_flow": 6186.5, "confidence": 0.3}];
+        
+        new Chart(cashFlowCtx, {
+            type: 'line',
+            data: {
+                labels: cashFlowData.map(item => item.month),
+                datasets: [{
+                    label: 'Net Cash Flow',
+                    data: cashFlowData.map(item => item.net_cash_flow),
+                    borderColor: '#4CAF50',
+                    backgroundColor: 'rgba(76, 175, 80, 0.1)',
+                    tension: 0.4
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: {
+                    x: { ticks: { color: 'white' } },
+                    y: { ticks: { color: 'white' } }
+                },
+                plugins: {
+                    legend: { labels: { color: 'white' } }
+                }
+            }
+        });
+    </script>
+</body>
+</html>

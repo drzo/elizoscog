@@ -1,7 +1,7 @@
 ;; cogserver OpenCog Integration
 ;; Description: Distributed AtomSpace Network Server
 ;; Original Repository: https://github.com/opencog/cogserver
-;; Generated: 2025-06-13T22:11:51.745403
+;; Generated: 2025-09-29T22:18:52.638331
 
 (use-modules (opencog)
              (opencog atom-types)

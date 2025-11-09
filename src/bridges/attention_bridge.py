@@ -3,7 +3,7 @@ attention Bridge Implementation
 
 Description: OpenCog Attention Allocation Subsystem
 Original Repository: https://github.com/opencog/attention
-Generated: 2025-06-13T22:11:51.747277
+Generated: 2025-09-29T22:18:52.641086
 
 This bridge enables cross-ecosystem integration between:
 - ElizaOS (TypeScript/JavaScript agents)

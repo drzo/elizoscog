@@ -5,7 +5,7 @@
 **Repository**: [pln](https://github.com/opencog/pln)  
 **Description**: Probabilistic Logic Networks reasoning engine  
 **Priority**: Medium  
-**Generated**: 2025-06-13T22:11:51.746054
+**Generated**: 2025-09-29T22:18:52.639178
 
 ## Integration Assessment
 

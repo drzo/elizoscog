@@ -5,7 +5,7 @@
 **Repository**: [link-grammar](https://github.com/opencog/link-grammar)  
 **Description**: The CMU Link Grammar natural language parser  
 **Priority**: High  
-**Generated**: 2025-06-13T22:11:51.747948
+**Generated**: 2025-09-29T22:18:52.642266
 
 ## Integration Assessment
 

@@ -3,7 +3,7 @@ learn Bridge Implementation
 
 Description: Neuro-symbolic interpretation learning
 Original Repository: https://github.com/opencog/learn
-Generated: 2025-06-13T22:11:51.746929
+Generated: 2025-09-29T22:18:52.640606
 
 This bridge enables cross-ecosystem integration between:
 - ElizaOS (TypeScript/JavaScript agents)

@@ -1,7 +1,7 @@
 ;; agentbrowser OpenCog Integration
 ;; Description: A browser for your agent
 ;; Original Repository: https://github.com/elizaOS/agentbrowser
-;; Generated: 2025-06-13T22:11:51.748763
+;; Generated: 2025-09-29T22:18:52.643740
 
 (use-modules (opencog)
              (opencog atom-types)

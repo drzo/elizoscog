@@ -3,7 +3,7 @@ relex Bridge Implementation
 
 Description: English Dependency Relationship Extractor
 Original Repository: https://github.com/opencog/relex
-Generated: 2025-06-13T22:11:51.747580
+Generated: 2025-09-29T22:18:52.641588
 
 This bridge enables cross-ecosystem integration between:
 - ElizaOS (TypeScript/JavaScript agents)

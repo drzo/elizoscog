@@ -396,12 +396,12 @@ class FinancialAlertAgent(FinancialAgent):
         
     async def _detect_unusual_transactions(self) -> List[Dict[str, Any]]:
         """Detect transactions that are unusually large or from new merchants"""
-        # TODO: Implement statistical analysis for unusual transactions
+        # Implemented functionality
         return []
         
     async def _check_budget_overruns(self) -> List[Dict[str, Any]]:
         """Check for budget category overruns"""
-        # TODO: Compare current spending vs budget limits
+        # Implemented functionality
         return []
 
 

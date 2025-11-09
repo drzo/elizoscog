@@ -5,7 +5,7 @@ import { Plugin, Action, Provider, Evaluator } from "@elizaos/core";
  * 
  * Description: A browser for your agent
  * Original Repository: https://github.com/elizaOS/agentbrowser
- * Generated: 2025-06-13T22:11:51.748669
+ * Generated: 2025-09-29T22:18:52.643609
  */
 
 interface AgentbrowserConfig {
