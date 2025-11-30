@@ -9,6 +9,13 @@ import time
 from collections import OrderedDict
 import sys
 
+# Try to import numpy at module level for efficiency
+try:
+    import numpy as np
+    NUMPY_AVAILABLE = True
+except ImportError:
+    NUMPY_AVAILABLE = False
+
 logger = logging.getLogger(__name__)
 
 
@@ -131,12 +138,8 @@ class InferenceCache:
         """Estimate size of object in bytes"""
         # Use sys.getsizeof as rough estimate
         # For numpy arrays, use nbytes
-        try:
-            import numpy as np
-            if isinstance(obj, np.ndarray):
-                return obj.nbytes
-        except ImportError:
-            pass
+        if NUMPY_AVAILABLE and isinstance(obj, np.ndarray):
+            return obj.nbytes
         
         return sys.getsizeof(obj)
     

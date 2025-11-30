@@ -440,14 +440,15 @@ class BeastModeEngine:
     def _generate_cache_key(self, request: InferenceRequest) -> str:
         """Generate cache key for request"""
         # Hash the input data and model ID
+        # Using full hash to avoid collisions
         if isinstance(request.inputs, np.ndarray):
-            input_hash = hashlib.sha256(request.inputs.tobytes()).hexdigest()[:16]
+            input_hash = hashlib.sha256(request.inputs.tobytes()).hexdigest()
         elif isinstance(request.inputs, dict):
             input_str = json.dumps({k: v.tolist() if isinstance(v, np.ndarray) else v 
                                    for k, v in request.inputs.items()}, sort_keys=True)
-            input_hash = hashlib.sha256(input_str.encode()).hexdigest()[:16]
+            input_hash = hashlib.sha256(input_str.encode()).hexdigest()
         else:
-            input_hash = hashlib.sha256(str(request.inputs).encode()).hexdigest()[:16]
+            input_hash = hashlib.sha256(str(request.inputs).encode()).hexdigest()
         
         return f"{request.model_id}:{input_hash}"
     
