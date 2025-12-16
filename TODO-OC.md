@@ -113,6 +113,7 @@ These are the immature, incomplete, promising projects that haven't taken off ye
 * [atomese-simd](https://github.com/opencog/atomese-simd) - Atomese to OpenCL/CUDA (GPU/compute) I/O Channel
 * [matrix](https://github.com/opencog/matrix) - AtomSpace Graph Sparse Vector Library
 * [evidence](https://github.com/opencog/evidence) - Hierarchical similarity and evidence-gathering
+* [guix-atomese](https://github.com/opencog/guix-atomese) - GUIX packages and channels for OpenCog
 
 
 ## Integration with ElizaOS
