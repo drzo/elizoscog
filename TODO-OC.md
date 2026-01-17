@@ -31,6 +31,7 @@ The core of the system. As of 2025, it is active, stable and supported.
 * [atomspace-metta](https://github.com/opencog/atomspace-metta) - MeTTa on top of AtomSpace
 * [atomspace-pgres](https://github.com/opencog/atomspace-pgres) - Postgres StorageNode for the AtomSpace
 * [atomspace-storage](https://github.com/opencog/atomspace-storage) - AtomSpace StorageNode base system
+* [atomspace-viz](https://github.com/opencog/atomspace-viz) - Visualizer for AtomSpace contents
 
 ### OpenCog Fossils
 Older, abandoned and obsolete components and experiments. These were attempts to build subsystems 
